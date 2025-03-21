@@ -1,0 +1,25 @@
+[2025-03-20T15:00:55.273-0500] {processor.py:186} INFO - Started process (PID=151881) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:00:55.274-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-03-20T15:00:55.277-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.276-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:00:55.286-0500] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:00:55.350-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.349-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:example_sensors
+[2025-03-20T15:00:55.357-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.356-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:example_sensors
+[2025-03-20T15:00:55.362-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.362-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:example_sensors
+[2025-03-20T15:00:55.362-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.362-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:00:55.368-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.368-0500] {dag.py:3234} INFO - Creating ORM DAG for example_sensors
+[2025-03-20T15:00:55.368-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:55.368-0500] {dag.py:4138} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-03-20T15:00:55.381-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py took 0.114 seconds
+[2025-03-20T15:01:49.806-0500] {processor.py:186} INFO - Started process (PID=152177) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:01:49.814-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-03-20T15:01:49.815-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:49.815-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:01:49.821-0500] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:01:49.835-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:49.834-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:49.842-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:49.842-0500] {dag.py:4138} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-03-20T15:01:49.855-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py took 0.054 seconds
+[2025-03-20T15:02:46.345-0500] {processor.py:186} INFO - Started process (PID=152450) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:02:46.353-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py for tasks to queue
+[2025-03-20T15:02:46.354-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:46.354-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:02:46.362-0500] {processor.py:925} INFO - DAG(s) 'example_sensors' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py
+[2025-03-20T15:02:46.375-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:46.375-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:46.383-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:46.383-0500] {dag.py:4138} INFO - Setting next_dagrun for example_sensors to None, run_after=None
+[2025-03-20T15:02:46.397-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_sensors.py took 0.058 seconds

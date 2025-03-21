@@ -1,0 +1,25 @@
+[2025-03-20T15:01:03.269-0500] {processor.py:186} INFO - Started process (PID=151961) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:03.270-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py for tasks to queue
+[2025-03-20T15:01:03.271-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.271-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:03.280-0500] {processor.py:925} INFO - DAG(s) 'example_python_operator' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:03.364-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.364-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:example_python_operator
+[2025-03-20T15:01:03.375-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.375-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:example_python_operator
+[2025-03-20T15:01:03.383-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.383-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:example_python_operator
+[2025-03-20T15:01:03.384-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.384-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:03.395-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.395-0500] {dag.py:3234} INFO - Creating ORM DAG for example_python_operator
+[2025-03-20T15:01:03.396-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:03.396-0500] {dag.py:4138} INFO - Setting next_dagrun for example_python_operator to None, run_after=None
+[2025-03-20T15:01:03.417-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py took 0.152 seconds
+[2025-03-20T15:01:57.226-0500] {processor.py:186} INFO - Started process (PID=152187) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:57.234-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py for tasks to queue
+[2025-03-20T15:01:57.235-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:57.235-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:57.242-0500] {processor.py:925} INFO - DAG(s) 'example_python_operator' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:01:57.252-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:57.251-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:57.258-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:57.258-0500] {dag.py:4138} INFO - Setting next_dagrun for example_python_operator to None, run_after=None
+[2025-03-20T15:01:57.270-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py took 0.049 seconds
+[2025-03-20T15:02:54.207-0500] {processor.py:186} INFO - Started process (PID=152554) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:02:54.215-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py for tasks to queue
+[2025-03-20T15:02:54.218-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:54.217-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:02:54.228-0500] {processor.py:925} INFO - DAG(s) 'example_python_operator' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py
+[2025-03-20T15:02:54.238-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:54.238-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:54.244-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:54.244-0500] {dag.py:4138} INFO - Setting next_dagrun for example_python_operator to None, run_after=None
+[2025-03-20T15:02:54.256-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_python_operator.py took 0.061 seconds

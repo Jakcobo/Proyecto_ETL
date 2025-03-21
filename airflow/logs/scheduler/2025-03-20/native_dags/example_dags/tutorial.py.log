@@ -1,0 +1,25 @@
+[2025-03-20T15:01:04.520-0500] {processor.py:186} INFO - Started process (PID=151967) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:04.521-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2025-03-20T15:01:04.523-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.522-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:04.529-0500] {processor.py:925} INFO - DAG(s) 'tutorial' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:04.611-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.610-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:tutorial
+[2025-03-20T15:01:04.619-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.618-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:tutorial
+[2025-03-20T15:01:04.625-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.625-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:tutorial
+[2025-03-20T15:01:04.626-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.626-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:04.633-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.633-0500] {dag.py:3234} INFO - Creating ORM DAG for tutorial
+[2025-03-20T15:01:04.640-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:04.640-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:01:04.665-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py took 0.151 seconds
+[2025-03-20T15:01:58.377-0500] {processor.py:186} INFO - Started process (PID=152188) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:58.386-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2025-03-20T15:01:58.389-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:58.389-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:58.396-0500] {processor.py:925} INFO - DAG(s) 'tutorial' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:01:58.405-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:58.405-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:58.416-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:58.415-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:01:58.426-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py took 0.062 seconds
+[2025-03-20T15:02:55.348-0500] {processor.py:186} INFO - Started process (PID=152555) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:02:55.357-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py for tasks to queue
+[2025-03-20T15:02:55.358-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:55.358-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:02:55.365-0500] {processor.py:925} INFO - DAG(s) 'tutorial' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py
+[2025-03-20T15:02:55.375-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:55.375-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:55.388-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:55.388-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:02:55.400-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial.py took 0.058 seconds

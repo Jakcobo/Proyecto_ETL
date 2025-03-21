@@ -1,0 +1,32 @@
+[2025-03-20T15:00:21.831-0500] {processor.py:186} INFO - Started process (PID=151603) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:00:21.831-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-03-20T15:00:21.832-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:21.832-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:00:21.838-0500] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:00:21.949-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:21.949-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:tutorial_taskflow_api
+[2025-03-20T15:00:21.960-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:21.959-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:tutorial_taskflow_api
+[2025-03-20T15:00:22.001-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:22.000-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:tutorial_taskflow_api
+[2025-03-20T15:00:22.001-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:22.001-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:00:22.011-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:22.010-0500] {dag.py:3234} INFO - Creating ORM DAG for tutorial_taskflow_api
+[2025-03-20T15:00:22.011-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:22.011-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-03-20T15:00:22.037-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 0.210 seconds
+[2025-03-20T15:01:21.466-0500] {processor.py:186} INFO - Started process (PID=152047) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:01:21.466-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-03-20T15:01:21.467-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:21.467-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:01:21.474-0500] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:01:21.483-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:21.483-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:21.492-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:21.492-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-03-20T15:01:21.510-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 0.050 seconds
+[2025-03-20T15:02:10.417-0500] {processor.py:186} INFO - Started process (PID=152261) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:02:10.426-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-03-20T15:02:10.428-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:10.428-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:02:10.436-0500] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:02:10.445-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:10.445-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:10.453-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:10.453-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-03-20T15:02:10.478-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 0.069 seconds
+[2025-03-20T15:03:03.932-0500] {processor.py:186} INFO - Started process (PID=152624) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:03:03.941-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-03-20T15:03:03.943-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:03:03.943-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:03:03.952-0500] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-03-20T15:03:03.961-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:03:03.961-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:03:03.968-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:03:03.968-0500] {dag.py:4138} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-03-20T15:03:03.979-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 0.053 seconds

@@ -1,0 +1,25 @@
+[2025-03-20T15:00:58.024-0500] {processor.py:186} INFO - Started process (PID=151923) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:00:58.024-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2025-03-20T15:00:58.025-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.025-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:00:58.030-0500] {processor.py:925} INFO - DAG(s) 'example_task_group' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:00:58.095-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.094-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:example_task_group
+[2025-03-20T15:00:58.102-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.101-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:example_task_group
+[2025-03-20T15:00:58.107-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.106-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:example_task_group
+[2025-03-20T15:00:58.107-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.107-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:00:58.113-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.113-0500] {dag.py:3234} INFO - Creating ORM DAG for example_task_group
+[2025-03-20T15:00:58.118-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:58.118-0500] {dag.py:4138} INFO - Setting next_dagrun for example_task_group to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:00:58.131-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py took 0.111 seconds
+[2025-03-20T15:01:52.396-0500] {processor.py:186} INFO - Started process (PID=152180) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:01:52.405-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2025-03-20T15:01:52.407-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:52.407-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:01:52.413-0500] {processor.py:925} INFO - DAG(s) 'example_task_group' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:01:52.423-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:52.422-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:52.433-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:52.433-0500] {dag.py:4138} INFO - Setting next_dagrun for example_task_group to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:01:52.444-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py took 0.055 seconds
+[2025-03-20T15:02:49.759-0500] {processor.py:186} INFO - Started process (PID=152489) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:02:49.768-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py for tasks to queue
+[2025-03-20T15:02:49.769-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:49.768-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:02:49.774-0500] {processor.py:925} INFO - DAG(s) 'example_task_group' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py
+[2025-03-20T15:02:49.783-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:49.783-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:49.794-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:49.794-0500] {dag.py:4138} INFO - Setting next_dagrun for example_task_group to 2025-03-19 00:00:00+00:00, run_after=2025-03-20 00:00:00+00:00
+[2025-03-20T15:02:49.805-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_task_group.py took 0.051 seconds

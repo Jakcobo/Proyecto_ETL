@@ -1,0 +1,25 @@
+[2025-03-20T15:00:49.888-0500] {processor.py:186} INFO - Started process (PID=151760) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:00:49.889-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py for tasks to queue
+[2025-03-20T15:00:49.891-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.890-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:00:49.897-0500] {processor.py:925} INFO - DAG(s) 'example_xcom' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:00:49.964-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.964-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:example_xcom
+[2025-03-20T15:00:49.971-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.971-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:example_xcom
+[2025-03-20T15:00:49.978-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.978-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:example_xcom
+[2025-03-20T15:00:49.978-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.978-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:00:49.984-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.984-0500] {dag.py:3234} INFO - Creating ORM DAG for example_xcom
+[2025-03-20T15:00:49.992-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:00:49.991-0500] {dag.py:4138} INFO - Setting next_dagrun for example_xcom to 2021-01-01 00:00:00+00:00, run_after=2021-01-01 00:00:00+00:00
+[2025-03-20T15:00:50.008-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py took 0.124 seconds
+[2025-03-20T15:01:44.672-0500] {processor.py:186} INFO - Started process (PID=152140) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:01:44.673-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py for tasks to queue
+[2025-03-20T15:01:44.675-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:44.675-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:01:44.680-0500] {processor.py:925} INFO - DAG(s) 'example_xcom' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:01:44.691-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:44.691-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:01:44.704-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:01:44.703-0500] {dag.py:4138} INFO - Setting next_dagrun for example_xcom to 2021-01-01 00:00:00+00:00, run_after=2021-01-01 00:00:00+00:00
+[2025-03-20T15:01:44.717-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py took 0.052 seconds
+[2025-03-20T15:02:41.222-0500] {processor.py:186} INFO - Started process (PID=152420) to work on /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:02:41.222-0500] {processor.py:914} INFO - Processing file /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py for tasks to queue
+[2025-03-20T15:02:41.224-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:41.223-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:02:41.229-0500] {processor.py:925} INFO - DAG(s) 'example_xcom' retrieved from /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py
+[2025-03-20T15:02:41.240-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:41.240-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-20T15:02:41.253-0500] {logging_mixin.py:190} INFO - [2025-03-20T15:02:41.252-0500] {dag.py:4138} INFO - Setting next_dagrun for example_xcom to 2021-01-01 00:00:00+00:00, run_after=2021-01-01 00:00:00+00:00
+[2025-03-20T15:02:41.264-0500] {processor.py:208} INFO - Processing /home/nicolas/Escritorio/proyecto/Proyecto_ETL/venv/lib/python3.8/site-packages/airflow/example_dags/example_xcom.py took 0.049 seconds
