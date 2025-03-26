@@ -1,8 +1,12 @@
 import json
 import pandas as pd
 import logging
+import sys
+import os
 
-from src.extract.extract_data import exe_extract_data
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src")))
+
+from extract.extract_data import exe_extract_data
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 

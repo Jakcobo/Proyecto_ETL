@@ -1,19 +1,10 @@
-from airflow import DAG
+#from airflow import DAG
 from datetime import timedelta, datetime
-from airflow.operators.dummy_operator import DummyOperator
+#from airflow.operators.dummy_operator import DummyOperator
 from airflow.decorators import dag, task
 
 from task_etl import *
 
-#from database.db_operations import creating_engine, load_clean_data
-#from src.extract.extract_data import exe_extract_data
-#from extract.extract_api import extracting_api_data
-#from transform.transform_DWH import transforming_into_DWH
-#from transform.transform_api import transforming_api_data
-#from transform.merge import merging_data
-#from load.load_DWH import loading_data
-
-# Step 2: Initiating the default_args
 default_args = {
     'owner' : 'airflow',
     'depends_on_past': False,
@@ -23,20 +14,23 @@ default_args = {
 }
 
 @dag(
+    dag_id="ETL",
     default_args=default_args,
-    description='Creating an ETL pipeline task.',
+    description='ETL pipeline task in Airflow.',
     schedule=timedelta(days=1),
     max_active_runs=1,
     catchup=False
 )
 
-def dag():
+def etl_dag():
     @task
     def extract_data_task():
         return extract_data()
+    
+    #data = extract_data_task()
+    extract_data_task()
 
-
-etl_tasks = dag()
+etl_instance = etl_dag()
 
 """dag = DAG(dag_id='DAG-1',
         default_args=default_args,

@@ -1090,3 +1090,1219 @@ File Path                                         PID    Runtime      # DAGs    
 /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:33:37                       5
 ================================================================================
 [2025-03-25T22:34:22.662-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T22:43:09.833-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T22:43:09.834-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T22:43:09.834-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T22:43:09.834-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:43:09.836-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:43:09.989-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:43:09                       5
+================================================================================
+[2025-03-25T22:43:40.141-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:43:40                       5
+================================================================================
+[2025-03-25T22:44:10.472-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:44:10                       5
+================================================================================
+[2025-03-25T22:44:40.703-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:44:26                       5
+================================================================================
+[2025-03-25T22:45:10.932-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:44:56                       5
+================================================================================
+[2025-03-25T22:45:41.323-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:45:16                       5
+================================================================================
+[2025-03-25T22:46:11.428-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:45:46                       5
+================================================================================
+[2025-03-25T22:46:41.517-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:46:16                       5
+================================================================================
+[2025-03-25T22:47:11.607-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:46:47                       5
+================================================================================
+[2025-03-25T22:47:41.705-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:47:17                       5
+================================================================================
+[2025-03-25T22:48:09.953-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:48:09.956-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:48:11.803-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:47:47                       5
+================================================================================
+[2025-03-25T22:48:41.977-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:48:18                       5
+================================================================================
+[2025-03-25T22:49:12.072-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:48:48                       5
+================================================================================
+[2025-03-25T22:49:42.163-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:49:19                       5
+================================================================================
+[2025-03-25T22:50:12.278-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:49:49                       5
+================================================================================
+[2025-03-25T22:50:23.052-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T22:51:00.291-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T22:51:00.292-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T22:51:00.292-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T22:51:00.292-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:51:00.294-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:51:00.964-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T03:51:00                       5
+================================================================================
+[2025-03-25T22:51:31.484-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T03:51:02                       5
+================================================================================
+[2025-03-25T22:52:01.730-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.81s           2025-03-26T03:51:34                       5
+================================================================================
+[2025-03-25T22:52:32.042-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T03:52:05                       5
+================================================================================
+[2025-03-25T22:53:02.411-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:52:36                       5
+================================================================================
+[2025-03-25T22:53:32.791-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:53:06                       5
+================================================================================
+[2025-03-25T22:54:03.165-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:53:36                       5
+================================================================================
+[2025-03-25T22:54:33.490-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T03:54:07                       5
+================================================================================
+[2025-03-25T22:55:03.854-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.10s           2025-03-26T03:54:37                       5
+================================================================================
+[2025-03-25T22:55:34.831-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T03:55:08                       5
+================================================================================
+[2025-03-25T22:56:00.398-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:56:00.401-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:56:05.557-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T03:55:39                       5
+================================================================================
+[2025-03-25T22:56:36.290-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T03:56:10                       5
+================================================================================
+[2025-03-25T22:57:06.325-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.81s           2025-03-26T03:56:41                       5
+================================================================================
+[2025-03-25T22:57:36.357-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T03:57:12                       5
+================================================================================
+[2025-03-25T22:58:07.061-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T03:57:42                       5
+================================================================================
+[2025-03-25T22:58:21.442-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T22:58:27.530-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T22:58:27.531-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T22:58:27.531-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T22:58:27.531-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:58:27.533-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:58:28.204-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.62s           2025-03-26T03:58:28                       5
+================================================================================
+[2025-03-25T22:58:57.812-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T22:59:04.660-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T22:59:04.661-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T22:59:04.661-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T22:59:04.661-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:59:04.662-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T22:59:05.329-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T03:59:05                       5
+================================================================================
+[2025-03-25T22:59:36.499-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T03:59:36                       5
+================================================================================
+[2025-03-25T23:00:07.808-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.65s           2025-03-26T04:00:07                       5
+================================================================================
+[2025-03-25T23:00:39.194-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T04:00:39                       5
+================================================================================
+[2025-03-25T23:01:10.265-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:01:10                       5
+================================================================================
+[2025-03-25T23:01:41.311-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T04:01:41                       5
+================================================================================
+[2025-03-25T23:02:12.037-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:02:12                       5
+================================================================================
+[2025-03-25T23:02:42.893-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T04:02:42                       5
+================================================================================
+[2025-03-25T23:03:13.646-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:03:13                       5
+================================================================================
+[2025-03-25T23:03:44.309-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:03:44                       5
+================================================================================
+[2025-03-25T23:04:04.799-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:04:04.800-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:04:14.953-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:04:14                       5
+================================================================================
+[2025-03-25T23:04:45.188-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:04:22                       5
+================================================================================
+[2025-03-25T23:05:15.405-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:04:53                       5
+================================================================================
+[2025-03-25T23:05:45.634-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T04:05:24                       5
+================================================================================
+[2025-03-25T23:06:16.191-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:05:56                       5
+================================================================================
+[2025-03-25T23:06:46.698-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:06:26                       5
+================================================================================
+[2025-03-25T23:07:17.308-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:06:57                       5
+================================================================================
+[2025-03-25T23:07:47.409-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:07:29                       5
+================================================================================
+[2025-03-25T23:08:17.628-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:08:00                       5
+================================================================================
+[2025-03-25T23:08:47.885-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T04:08:32                       5
+================================================================================
+[2025-03-25T23:09:04.971-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:09:04.972-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:09:18.119-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:09:03                       5
+================================================================================
+[2025-03-25T23:09:48.624-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:09:34                       5
+================================================================================
+[2025-03-25T23:10:18.645-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:10:05                       5
+================================================================================
+[2025-03-25T23:10:48.870-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.52s           2025-03-26T04:10:36                       5
+================================================================================
+[2025-03-25T23:11:18.949-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:11:06                       5
+================================================================================
+[2025-03-25T23:11:49.042-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:11:37                       5
+================================================================================
+[2025-03-25T23:12:19.081-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:12:07                       5
+================================================================================
+[2025-03-25T23:12:49.267-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:12:38                       5
+================================================================================
+[2025-03-25T23:13:19.362-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:13:09                       5
+================================================================================
+[2025-03-25T23:13:49.734-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:13:39                       5
+================================================================================
+[2025-03-25T23:14:05.543-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:14:05.544-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:14:20.428-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.62s           2025-03-26T04:14:10                       5
+================================================================================
+[2025-03-25T23:14:51.008-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T04:14:44                       5
+================================================================================
+[2025-03-25T23:15:02.659-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:15:09.230-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:15:09.231-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:15:09.231-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:15:09.231-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:15:09.233-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:15:09.798-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:15:09                       5
+================================================================================
+[2025-03-25T23:15:40.985-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.61s           2025-03-26T04:15:40                       5
+================================================================================
+[2025-03-25T23:16:12.483-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.84s           2025-03-26T04:16:12                       5
+================================================================================
+[2025-03-25T23:16:43.350-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:16:43                       5
+================================================================================
+[2025-03-25T23:17:14.595-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T04:17:14                       5
+================================================================================
+[2025-03-25T23:17:45.850-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:17:45                       5
+================================================================================
+[2025-03-25T23:18:16.616-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:18:16                       5
+================================================================================
+[2025-03-25T23:18:47.354-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:18:47                       5
+================================================================================
+[2025-03-25T23:19:18.107-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:19:18                       5
+================================================================================
+[2025-03-25T23:19:48.841-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:19:48                       5
+================================================================================
+[2025-03-25T23:20:09.361-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:20:09.363-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:20:19.216-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:20:19.218-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:20:19                       0
+================================================================================
+[2025-03-25T23:20:49.547-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:20:49.549-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:20:49                       0
+================================================================================
+[2025-03-25T23:21:19.870-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:21:19.871-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:21:19                       0
+================================================================================
+[2025-03-25T23:21:50.204-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:21:50.206-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:21:50                       0
+================================================================================
+[2025-03-25T23:22:20.541-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:22:20.543-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:22:20                       0
+================================================================================
+[2025-03-25T23:22:50.878-0500] {manager.py:1146} ERROR - Processor for /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py exited with return code 1.
+[2025-03-25T23:22:50.879-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0          -1  0.11s           2025-03-26T04:22:50                       0
+================================================================================
+[2025-03-25T23:23:21.099-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:23:21                       5
+================================================================================
+[2025-03-25T23:23:29.240-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:23:29.241-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:23:29.241-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:23:29.241-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:23:29.243-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:23:29.399-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:23:29                       5
+================================================================================
+[2025-03-25T23:23:51.310-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:23:51                       5
+================================================================================
+[2025-03-25T23:23:59.529-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:23:59                       5
+================================================================================
+[2025-03-25T23:24:21.514-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:24:21                       5
+================================================================================
+[2025-03-25T23:24:29.866-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:24:29                       5
+================================================================================
+[2025-03-25T23:24:51.728-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:24:51                       5
+================================================================================
+[2025-03-25T23:24:54.304-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:25:09.539-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:25:09.541-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:25:21.950-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:25:21                       5
+================================================================================
+[2025-03-25T23:25:23.177-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:25:48.212-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:25:48.212-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:25:48.212-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:25:48.213-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:25:48.214-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:25:48.378-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:25:48                       5
+================================================================================
+[2025-03-25T23:26:18.518-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:26:18                       5
+================================================================================
+[2025-03-25T23:26:48.853-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.11s           2025-03-26T04:26:48                       5
+================================================================================
+[2025-03-25T23:27:07.328-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:27:34.142-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:27:34.142-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:27:34.143-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:27:34.143-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:27:34.144-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:27:34.701-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:27:34                       5
+================================================================================
+[2025-03-25T23:27:52.221-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:29:11.492-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:29:11.493-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:29:11.493-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:29:11.493-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:29:11.494-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:29:12.055-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:29:12                       5
+================================================================================
+[2025-03-25T23:29:43.254-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:29:43                       5
+================================================================================
+[2025-03-25T23:30:14.533-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:30:14                       5
+================================================================================
+[2025-03-25T23:30:45.782-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:30:45                       5
+================================================================================
+[2025-03-25T23:31:17.032-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:31:17                       5
+================================================================================
+[2025-03-25T23:31:48.075-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:31:48                       5
+================================================================================
+[2025-03-25T23:32:18.720-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:32:18                       5
+================================================================================
+[2025-03-25T23:32:27.994-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:53:12.008-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:53:12.008-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:53:12.008-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:53:12.008-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:53:12.010-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:53:12.567-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:53:12                       5
+================================================================================
+[2025-03-25T23:53:43.634-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:53:43                       5
+================================================================================
+[2025-03-25T23:53:56.795-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:54:07.057-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:54:07.057-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:54:07.057-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:54:07.057-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:54:07.059-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:54:07.616-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:54:07                       5
+================================================================================
+[2025-03-25T23:54:14.644-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-25T23:59:28.006-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-25T23:59:28.006-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-25T23:59:28.006-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-25T23:59:28.007-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:59:28.008-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-25T23:59:28.569-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T04:59:28                       5
+================================================================================
+[2025-03-25T23:59:59.656-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T04:59:59                       5
+================================================================================
+[2025-03-26T00:00:30.905-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T05:00:30                       5
+================================================================================
+[2025-03-26T00:01:02.179-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T05:01:02                       5
+================================================================================
+[2025-03-26T00:01:33.428-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T05:01:33                       5
+================================================================================
+[2025-03-26T00:02:00.009-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2025-03-26T00:02:28.636-0500] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-03-26T00:02:28.637-0500] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-03-26T00:02:28.637-0500] {manager.py:485} INFO - Checking for new files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags every 300 seconds
+[2025-03-26T00:02:28.637-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:02:28.639-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:02:29.194-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:02:29                       5
+================================================================================
+[2025-03-26T00:03:00.278-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T05:03:00                       5
+================================================================================
+[2025-03-26T00:03:31.524-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T05:03:31                       5
+================================================================================
+[2025-03-26T00:04:02.783-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.41s           2025-03-26T05:04:02                       5
+================================================================================
+[2025-03-26T00:04:34.136-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:04:34                       5
+================================================================================
+[2025-03-26T00:05:05.472-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.71s           2025-03-26T05:05:05                       5
+================================================================================
+[2025-03-26T00:05:36.207-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:05:36                       5
+================================================================================
+[2025-03-26T00:06:06.927-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:06:06                       5
+================================================================================
+[2025-03-26T00:06:37.575-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.42s           2025-03-26T05:06:37                       5
+================================================================================
+[2025-03-26T00:07:08.315-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:07:08                       5
+================================================================================
+[2025-03-26T00:07:28.728-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:07:28.729-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:07:39.048-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:07:39                       5
+================================================================================
+[2025-03-26T00:08:09.783-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:08:09                       5
+================================================================================
+[2025-03-26T00:08:40.393-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:08:40                       5
+================================================================================
+[2025-03-26T00:09:11.000-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:09:10                       5
+================================================================================
+[2025-03-26T00:09:41.619-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           0           1  0.51s           2025-03-26T05:09:41                       5
+================================================================================
+[2025-03-26T00:10:12.329-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.61s           2025-03-26T05:10:12                      26
+================================================================================
+[2025-03-26T00:10:42.950-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.52s           2025-03-26T05:10:42                      12
+================================================================================
+[2025-03-26T00:11:13.562-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:11:13                      12
+================================================================================
+[2025-03-26T00:11:44.163-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:11:44                      12
+================================================================================
+[2025-03-26T00:12:14.773-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:12:14                      12
+================================================================================
+[2025-03-26T00:12:28.762-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:12:28.763-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:12:45.373-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:12:45                      12
+================================================================================
+[2025-03-26T00:13:15.941-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:13:15                      12
+================================================================================
+[2025-03-26T00:13:46.515-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:13:46                      12
+================================================================================
+[2025-03-26T00:14:17.096-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:14:17                      12
+================================================================================
+[2025-03-26T00:14:47.678-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:14:47                      12
+================================================================================
+[2025-03-26T00:15:18.253-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:15:18                      12
+================================================================================
+[2025-03-26T00:15:48.833-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:15:48                      12
+================================================================================
+[2025-03-26T00:16:19.414-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:16:19                      12
+================================================================================
+[2025-03-26T00:16:49.995-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:16:49                      12
+================================================================================
+[2025-03-26T00:17:20.579-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:17:20                      12
+================================================================================
+[2025-03-26T00:17:29.078-0500] {manager.py:821} INFO - Searching for files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:17:29.079-0500] {manager.py:824} INFO - There are 1 files in /home/y4xul/ETL/Proyecto_ETL/airflow/dags
+[2025-03-26T00:17:51.162-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:17:51                      12
+================================================================================
+[2025-03-26T00:18:21.743-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:18:21                      12
+================================================================================
+[2025-03-26T00:18:52.328-0500] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py                           1           0  0.51s           2025-03-26T05:18:52                      12
+================================================================================
+[2025-03-26T00:18:55.595-0500] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15

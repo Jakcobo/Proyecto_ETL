@@ -10,11 +10,11 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", datefm
 
 env("./env/.env") # revisar para que sirve?
 
-user = os.getenv("PG_USER")
-password = os.getenv("PG_PASSWORD")
-host = os.getenv("PG_HOST")
-port = os.getenv("PG_PORT")
-database = os.getenv("PG_DATABASE")
+user = os.getenv("USER")
+password = os.getenv("PASSWORD")
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+database = os.getenv("DATABASE")
 
 # Creating the connection engine from the URL made up of the environment variables
 def creating_engine(database=database):
