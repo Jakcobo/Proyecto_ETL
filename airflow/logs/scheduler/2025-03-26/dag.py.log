@@ -1,0 +1,865 @@
+[2025-03-25T21:52:09.350-0500] {processor.py:186} INFO - Started process (PID=46660) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:09.351-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:52:09.354-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.353-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:09.362-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:09.459-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.459-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:DAG-1
+[2025-03-25T21:52:09.470-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.470-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:DAG-1
+[2025-03-25T21:52:09.479-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.478-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:DAG-1
+[2025-03-25T21:52:09.479-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.479-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:52:09.489-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.489-0500] {dag.py:3234} INFO - Creating ORM DAG for DAG-1
+[2025-03-25T21:52:09.494-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:09.494-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:52:09.509-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.166 seconds
+[2025-03-25T21:52:40.502-0500] {processor.py:186} INFO - Started process (PID=47059) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:40.503-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:52:40.504-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:40.504-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:40.512-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:52:40.531-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:40.531-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:52:40.547-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:52:40.547-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:52:40.566-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.068 seconds
+[2025-03-25T21:53:10.729-0500] {processor.py:186} INFO - Started process (PID=47152) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:10.731-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:53:10.734-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:10.734-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:10.741-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:10.766-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:10.766-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:53:10.788-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:10.788-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:53:10.806-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.083 seconds
+[2025-03-25T21:53:40.953-0500] {processor.py:186} INFO - Started process (PID=47164) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:40.954-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:53:40.956-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:40.956-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:40.963-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:53:40.989-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:40.988-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:53:41.007-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:53:41.007-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:53:41.026-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.079 seconds
+[2025-03-25T21:54:11.167-0500] {processor.py:186} INFO - Started process (PID=47231) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:11.171-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:54:11.173-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:11.173-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:11.180-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:11.202-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:11.202-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:54:11.220-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:11.220-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:54:11.239-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.078 seconds
+[2025-03-25T21:54:41.399-0500] {processor.py:186} INFO - Started process (PID=47298) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:41.403-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:54:41.407-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:41.406-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:41.418-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:54:41.453-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:41.453-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:54:41.476-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:54:41.476-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:54:41.502-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.108 seconds
+[2025-03-25T21:55:07.745-0500] {processor.py:186} INFO - Started process (PID=47409) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:07.746-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:55:07.748-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:07.748-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:07.754-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:07.773-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:07.772-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:55:07.795-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:07.795-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:55:07.819-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.078 seconds
+[2025-03-25T21:55:37.860-0500] {processor.py:186} INFO - Started process (PID=47639) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:37.862-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:55:37.864-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:37.864-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:37.871-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:55:37.889-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:37.888-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:55:37.904-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:55:37.904-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:55:37.920-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.066 seconds
+[2025-03-25T21:56:08.194-0500] {processor.py:186} INFO - Started process (PID=47714) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:08.196-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:56:08.199-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:08.199-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:08.207-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:08.230-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:08.230-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:56:08.245-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:08.245-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to 2025-03-25 00:00:00+00:00, run_after=2025-03-25 00:00:00+00:00
+[2025-03-25T21:56:08.262-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.073 seconds
+[2025-03-25T21:56:38.521-0500] {processor.py:186} INFO - Started process (PID=47794) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:38.523-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:56:38.525-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:38.525-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:38.531-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:56:38.554-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:38.554-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:56:38.575-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:56:38.575-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:56:38.593-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.076 seconds
+[2025-03-25T21:57:08.858-0500] {processor.py:186} INFO - Started process (PID=47994) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:08.859-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:57:08.862-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:08.862-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:08.868-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:08.890-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:08.890-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:57:08.904-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:08.904-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:57:08.924-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.069 seconds
+[2025-03-25T21:57:39.188-0500] {processor.py:186} INFO - Started process (PID=48358) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:39.190-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:57:39.193-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:39.192-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:39.201-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:57:39.224-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:39.224-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:57:39.245-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:57:39.245-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:57:39.268-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.084 seconds
+[2025-03-25T21:58:09.329-0500] {processor.py:186} INFO - Started process (PID=48673) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:09.330-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:58:09.331-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:09.331-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:09.341-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:09.359-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:09.358-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:58:09.375-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:09.375-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:58:09.390-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.066 seconds
+[2025-03-25T21:58:39.762-0500] {processor.py:186} INFO - Started process (PID=48984) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:39.764-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:58:39.766-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:39.766-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:39.772-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:58:39.790-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:39.789-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:58:39.803-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:58:39.803-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:58:39.819-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.061 seconds
+[2025-03-25T21:59:10.088-0500] {processor.py:186} INFO - Started process (PID=49315) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:10.091-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:59:10.094-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:10.093-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:10.101-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:10.120-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:10.120-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:59:10.139-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:10.138-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:59:10.166-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.082 seconds
+[2025-03-25T21:59:40.388-0500] {processor.py:186} INFO - Started process (PID=49390) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:40.391-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T21:59:40.393-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:40.392-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:40.399-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T21:59:40.418-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:40.418-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T21:59:40.436-0500] {logging_mixin.py:190} INFO - [2025-03-25T21:59:40.436-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T21:59:40.456-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.072 seconds
+[2025-03-25T22:00:10.743-0500] {processor.py:186} INFO - Started process (PID=49578) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:10.744-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:00:10.746-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:10.745-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:10.753-0500] {processor.py:925} INFO - DAG(s) 'DAG-1' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:10.771-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:10.771-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:00:10.786-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:10.785-0500] {dag.py:4138} INFO - Setting next_dagrun for DAG-1 to None, run_after=None
+[2025-03-25T22:00:10.802-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.063 seconds
+[2025-03-25T22:00:24.374-0500] {processor.py:186} INFO - Started process (PID=49702) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:24.376-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:00:24.378-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:24.378-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:24.381-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:24.380-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:00:24.381-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:24.395-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:00:55.469-0500] {processor.py:186} INFO - Started process (PID=49725) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:55.472-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:00:55.474-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:55.473-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:55.476-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:00:55.475-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:00:55.476-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:00:55.491-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.026 seconds
+[2025-03-25T22:01:26.421-0500] {processor.py:186} INFO - Started process (PID=49789) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:26.422-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:01:26.424-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:01:26.424-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:26.427-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:01:26.426-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:01:26.427-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:26.441-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:01:56.639-0500] {processor.py:186} INFO - Started process (PID=50055) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:56.642-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:01:56.644-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:01:56.644-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:56.648-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:01:56.646-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:01:56.648-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:01:56.662-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.027 seconds
+[2025-03-25T22:02:27.022-0500] {processor.py:186} INFO - Started process (PID=50188) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:27.024-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:02:27.025-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:02:27.025-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:27.028-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:02:27.027-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:02:27.028-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:27.041-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.023 seconds
+[2025-03-25T22:02:57.347-0500] {processor.py:186} INFO - Started process (PID=50201) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:57.349-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:02:57.350-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:02:57.350-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:57.353-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:02:57.352-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:02:57.353-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:02:57.366-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.024 seconds
+[2025-03-25T22:03:27.673-0500] {processor.py:186} INFO - Started process (PID=50278) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:27.675-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:03:27.676-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:03:27.676-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:27.678-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:03:27.678-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:03:27.679-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:27.692-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.023 seconds
+[2025-03-25T22:03:57.915-0500] {processor.py:186} INFO - Started process (PID=50288) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:57.917-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:03:57.918-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:03:57.918-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:57.920-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:03:57.920-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:03:57.921-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:03:57.933-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:04:28.238-0500] {processor.py:186} INFO - Started process (PID=50355) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:28.241-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:04:28.242-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:04:28.242-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:28.245-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:04:28.244-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:04:28.245-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:28.259-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.028 seconds
+[2025-03-25T22:04:58.571-0500] {processor.py:186} INFO - Started process (PID=50362) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:58.573-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:04:58.575-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:04:58.574-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:58.577-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:04:58.577-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:04:58.578-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:04:58.591-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.024 seconds
+[2025-03-25T22:05:28.876-0500] {processor.py:186} INFO - Started process (PID=50516) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:28.878-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:05:28.879-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:05:28.879-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:28.882-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:05:28.881-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:05:28.882-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:28.897-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.026 seconds
+[2025-03-25T22:05:59.170-0500] {processor.py:186} INFO - Started process (PID=50533) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:59.172-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:05:59.173-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:05:59.173-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:59.175-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:05:59.175-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:05:59.176-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:05:59.189-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.024 seconds
+[2025-03-25T22:06:29.495-0500] {processor.py:186} INFO - Started process (PID=50607) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:29.497-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:06:29.498-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:06:29.498-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:29.501-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:06:29.500-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:06:29.501-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:29.514-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:06:59.814-0500] {processor.py:186} INFO - Started process (PID=50617) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:59.815-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:06:59.817-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:06:59.816-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:59.819-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:06:59.818-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:06:59.819-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:06:59.833-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.023 seconds
+[2025-03-25T22:07:30.064-0500] {processor.py:186} INFO - Started process (PID=50689) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:07:30.067-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:07:30.068-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:07:30.068-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:07:30.070-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:07:30.070-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:07:30.071-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:07:30.084-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.026 seconds
+[2025-03-25T22:08:00.266-0500] {processor.py:186} INFO - Started process (PID=50715) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:00.266-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:08:00.267-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:08:00.267-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:00.270-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:08:00.269-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:08:00.270-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:00.285-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.023 seconds
+[2025-03-25T22:08:45.167-0500] {processor.py:186} INFO - Started process (PID=50895) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:45.167-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:08:45.169-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:08:45.169-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:45.172-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:08:45.171-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:08:45.172-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:08:45.189-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.027 seconds
+[2025-03-25T22:09:15.316-0500] {processor.py:186} INFO - Started process (PID=51025) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:15.318-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:09:15.320-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:09:15.320-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:15.323-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:09:15.322-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:09:15.323-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:15.339-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.027 seconds
+[2025-03-25T22:09:45.632-0500] {processor.py:186} INFO - Started process (PID=51058) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:45.634-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:09:45.637-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:09:45.636-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:45.640-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:09:45.639-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 33
+    def dag() {
+              ^
+SyntaxError: expected ':'
+[2025-03-25T22:09:45.640-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:09:45.653-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:10:11.982-0500] {processor.py:186} INFO - Started process (PID=51098) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:11.984-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:10:11.985-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:11.985-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:11.991-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:12.065-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.064-0500] {override.py:1858} INFO - Created Permission View: can delete on DAG:dag
+[2025-03-25T22:10:12.072-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.071-0500] {override.py:1858} INFO - Created Permission View: can edit on DAG:dag
+[2025-03-25T22:10:12.077-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.077-0500] {override.py:1858} INFO - Created Permission View: can read on DAG:dag
+[2025-03-25T22:10:12.077-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.077-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:10:12.087-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.087-0500] {dag.py:3234} INFO - Creating ORM DAG for dag
+[2025-03-25T22:10:12.093-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:12.093-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:10:12.106-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.129 seconds
+[2025-03-25T22:10:42.202-0500] {processor.py:186} INFO - Started process (PID=51109) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:42.206-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:10:42.208-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:42.207-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:42.213-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:10:42.227-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:42.227-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:10:42.247-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:10:42.247-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:10:42.267-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.070 seconds
+[2025-03-25T22:11:12.420-0500] {processor.py:186} INFO - Started process (PID=51172) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:12.422-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:11:12.424-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:12.424-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:12.430-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:12.445-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:12.445-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:11:12.461-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:12.460-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:11:12.477-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.062 seconds
+[2025-03-25T22:11:42.636-0500] {processor.py:186} INFO - Started process (PID=51189) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:42.638-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:11:42.641-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:42.640-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:42.647-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:11:42.658-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:42.658-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:11:42.672-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:11:42.672-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:11:42.688-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.056 seconds
+[2025-03-25T22:12:12.825-0500] {processor.py:186} INFO - Started process (PID=51266) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:12.827-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:12:12.829-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:12.829-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:12.835-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:12.846-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:12.846-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:12:12.861-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:12.861-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:12:12.877-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:12:43.034-0500] {processor.py:186} INFO - Started process (PID=51284) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:43.037-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:12:43.040-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:43.039-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:43.045-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:12:43.056-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:43.056-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:12:43.073-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:12:43.073-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:12:43.091-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.061 seconds
+[2025-03-25T22:13:13.248-0500] {processor.py:186} INFO - Started process (PID=51367) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:13.250-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:13:13.252-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:13.252-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:13.258-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:13.271-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:13.271-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:13:13.287-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:13.287-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:13:13.304-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.061 seconds
+[2025-03-25T22:13:43.462-0500] {processor.py:186} INFO - Started process (PID=51378) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:43.464-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:13:43.466-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:43.466-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:43.472-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:13:43.486-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:43.486-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:13:43.501-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:13:43.501-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:13:43.519-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.062 seconds
+[2025-03-25T22:14:13.733-0500] {processor.py:186} INFO - Started process (PID=51523) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:13.736-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:14:13.738-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:13.737-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:13.743-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:13.756-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:13.756-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:14:13.771-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:13.771-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:14:13.786-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:14:43.951-0500] {processor.py:186} INFO - Started process (PID=51530) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:43.954-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:14:43.956-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:43.956-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:43.962-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:14:43.973-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:43.973-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:14:43.988-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:14:43.987-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:14:44.004-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:15:14.169-0500] {processor.py:186} INFO - Started process (PID=51609) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:14.171-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:15:14.172-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:14.172-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:14.178-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:14.190-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:14.190-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:15:14.206-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:14.205-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:15:14.221-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:15:44.386-0500] {processor.py:186} INFO - Started process (PID=51618) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:44.388-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:15:44.390-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:44.390-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:44.396-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:15:44.408-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:44.408-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:15:44.423-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:15:44.423-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:15:44.441-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.060 seconds
+[2025-03-25T22:16:14.580-0500] {processor.py:186} INFO - Started process (PID=51694) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:14.582-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:16:14.584-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:14.584-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:14.591-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:14.602-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:14.602-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:16:14.616-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:14.616-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:16:14.632-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.056 seconds
+[2025-03-25T22:16:44.797-0500] {processor.py:186} INFO - Started process (PID=51713) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:44.799-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:16:44.802-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:44.802-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:44.808-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:16:44.819-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:44.818-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:16:44.833-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:16:44.833-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:16:44.851-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.058 seconds
+[2025-03-25T22:17:15.028-0500] {processor.py:186} INFO - Started process (PID=51789) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:15.031-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:17:15.033-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:15.033-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:15.042-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:15.068-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:15.068-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:17:15.098-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:15.098-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:17:15.126-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.105 seconds
+[2025-03-25T22:17:45.312-0500] {processor.py:186} INFO - Started process (PID=51815) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:45.314-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:17:45.316-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:45.316-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:45.322-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:17:45.334-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:45.334-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:17:45.348-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:17:45.348-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:17:45.368-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.060 seconds
+[2025-03-25T22:18:15.579-0500] {processor.py:186} INFO - Started process (PID=51882) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:15.582-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:18:15.584-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:15.583-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:15.590-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:15.602-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:15.602-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:18:15.619-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:15.619-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:18:15.634-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.060 seconds
+[2025-03-25T22:18:46.375-0500] {processor.py:186} INFO - Started process (PID=52032) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:46.377-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:18:46.379-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:46.379-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:46.385-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:18:46.396-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:46.396-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:18:46.411-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:18:46.411-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:18:46.428-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.058 seconds
+[2025-03-25T22:19:16.550-0500] {processor.py:186} INFO - Started process (PID=52258) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:16.553-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:19:16.557-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:16.556-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:16.570-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:16.591-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:16.591-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:19:16.622-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:16.622-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:19:16.654-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.111 seconds
+[2025-03-25T22:19:46.819-0500] {processor.py:186} INFO - Started process (PID=52299) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:46.821-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:19:46.823-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:46.823-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:46.830-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:19:46.843-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:46.843-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:19:46.863-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:19:46.863-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:19:46.885-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.071 seconds
+[2025-03-25T22:20:16.990-0500] {processor.py:186} INFO - Started process (PID=52340) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:16.991-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:20:16.994-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:16.993-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:17.001-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:17.013-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:17.013-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:20:17.030-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:17.030-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:20:17.046-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.061 seconds
+[2025-03-25T22:20:47.175-0500] {processor.py:186} INFO - Started process (PID=52414) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:47.177-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:20:47.181-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:47.180-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:47.192-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:20:47.211-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:47.211-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:20:47.239-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:20:47.239-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:20:47.264-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.094 seconds
+[2025-03-25T22:21:17.346-0500] {processor.py:186} INFO - Started process (PID=52421) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:17.348-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:21:17.350-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:17.350-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:17.356-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:17.368-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:17.368-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:21:17.387-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:17.387-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:21:17.405-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.064 seconds
+[2025-03-25T22:21:47.511-0500] {processor.py:186} INFO - Started process (PID=52500) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:47.514-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:21:47.516-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:47.516-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:47.521-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:21:47.534-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:47.534-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:21:47.548-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:21:47.548-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:21:47.564-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:22:17.684-0500] {processor.py:186} INFO - Started process (PID=52520) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:17.686-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:22:17.688-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:17.688-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:17.694-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:17.708-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:17.708-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:22:17.724-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:17.724-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:22:17.741-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.062 seconds
+[2025-03-25T22:22:47.852-0500] {processor.py:186} INFO - Started process (PID=52585) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:47.854-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:22:47.856-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:47.856-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:47.862-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:22:47.875-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:47.874-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:22:47.891-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:22:47.891-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:22:47.905-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:23:18.025-0500] {processor.py:186} INFO - Started process (PID=52601) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:18.028-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:23:18.030-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:18.030-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:18.041-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:18.057-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:18.056-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:23:18.079-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:18.078-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:23:18.098-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.079 seconds
+[2025-03-25T22:23:48.171-0500] {processor.py:186} INFO - Started process (PID=52682) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:48.173-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:23:48.176-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:48.175-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:48.181-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:23:48.193-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:48.193-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:23:48.209-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:23:48.209-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:23:48.225-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.059 seconds
+[2025-03-25T22:24:18.338-0500] {processor.py:186} INFO - Started process (PID=52749) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:18.340-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:24:18.341-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:18.341-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:18.348-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:18.359-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:18.358-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:24:18.374-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:18.373-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:24:18.388-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.055 seconds
+[2025-03-25T22:24:48.504-0500] {processor.py:186} INFO - Started process (PID=52837) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:48.506-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:24:48.508-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:48.508-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:48.516-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:24:48.527-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:48.527-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:24:48.541-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:24:48.541-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:24:48.557-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:25:18.683-0500] {processor.py:186} INFO - Started process (PID=52853) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:18.685-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:25:18.687-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:18.687-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:18.694-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:18.706-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:18.705-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:25:18.719-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:18.719-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:25:18.735-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.056 seconds
+[2025-03-25T22:25:48.854-0500] {processor.py:186} INFO - Started process (PID=52918) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:48.856-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:25:48.859-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:48.859-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:48.865-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:25:48.877-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:48.877-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:25:48.892-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:25:48.892-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:25:48.907-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.057 seconds
+[2025-03-25T22:26:19.033-0500] {processor.py:186} INFO - Started process (PID=52947) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:19.034-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:26:19.036-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:19.036-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:19.042-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:19.054-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:19.054-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:26:19.070-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:19.069-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:26:19.208-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.179 seconds
+[2025-03-25T22:26:49.303-0500] {processor.py:186} INFO - Started process (PID=53024) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:49.305-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:26:49.308-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:49.307-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:49.315-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:26:49.328-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:49.328-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:26:49.346-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:26:49.346-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:26:49.483-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.185 seconds
+[2025-03-25T22:27:19.584-0500] {processor.py:186} INFO - Started process (PID=53048) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:19.586-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:27:19.588-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:19.588-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:19.595-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:19.606-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:19.606-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:27:19.716-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:19.716-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:27:19.733-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.153 seconds
+[2025-03-25T22:27:49.861-0500] {processor.py:186} INFO - Started process (PID=53127) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:49.863-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:27:49.865-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:49.865-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:49.872-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:27:49.884-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:49.884-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:27:49.995-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:27:49.995-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:27:50.011-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.155 seconds
+[2025-03-25T22:28:20.124-0500] {processor.py:186} INFO - Started process (PID=53145) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:20.125-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:28:20.127-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:20.127-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:20.133-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:20.144-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:20.144-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:28:20.251-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:20.251-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:28:20.271-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.151 seconds
+[2025-03-25T22:28:50.394-0500] {processor.py:186} INFO - Started process (PID=53224) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:50.396-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:28:50.398-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:50.397-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:50.504-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:28:50.511-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:50.511-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:28:50.523-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:28:50.523-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:28:50.536-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.147 seconds
+[2025-03-25T22:29:33.898-0500] {processor.py:186} INFO - Started process (PID=53464) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:29:33.899-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:29:33.901-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:29:33.901-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:29:33.909-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:29:33.926-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:29:33.926-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:29:33.947-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:29:33.947-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:29:33.973-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.080 seconds
+[2025-03-25T22:30:04.049-0500] {processor.py:186} INFO - Started process (PID=53590) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:04.051-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:30:04.054-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:04.053-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:04.063-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:04.075-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:04.075-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:30:04.095-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:04.095-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:30:04.118-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.074 seconds
+[2025-03-25T22:30:34.420-0500] {processor.py:186} INFO - Started process (PID=53625) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:34.423-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:30:34.425-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:34.425-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:34.431-0500] {processor.py:925} INFO - DAG(s) 'dag' retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:30:34.444-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:34.443-0500] {dag.py:3211} INFO - Sync 1 DAGs
+[2025-03-25T22:30:34.458-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:30:34.457-0500] {dag.py:4138} INFO - Setting next_dagrun for dag to 2025-03-25 00:00:00+00:00, run_after=2025-03-26 00:00:00+00:00
+[2025-03-25T22:30:34.474-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.058 seconds
+[2025-03-25T22:31:04.781-0500] {processor.py:186} INFO - Started process (PID=53682) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:04.783-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:31:04.785-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:31:04.785-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:04.789-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:31:04.788-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:31:04.789-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:04.804-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.028 seconds
+[2025-03-25T22:31:35.184-0500] {processor.py:186} INFO - Started process (PID=53750) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:35.188-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:31:35.193-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:31:35.192-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:35.201-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:31:35.199-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:31:35.202-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:31:35.235-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.062 seconds
+[2025-03-25T22:32:05.303-0500] {processor.py:186} INFO - Started process (PID=53761) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:05.306-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:32:05.308-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:05.307-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:05.312-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:05.310-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:32:05.313-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:05.326-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.028 seconds
+[2025-03-25T22:32:35.764-0500] {processor.py:186} INFO - Started process (PID=53860) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:35.766-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:32:35.768-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:35.767-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:35.772-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:35.771-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:32:35.772-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:35.786-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.027 seconds
+[2025-03-25T22:32:57.097-0500] {processor.py:186} INFO - Started process (PID=53930) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:57.099-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:32:57.101-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:57.100-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:57.106-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:32:57.105-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:32:57.106-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:32:57.121-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.031 seconds
+[2025-03-25T22:33:27.313-0500] {processor.py:186} INFO - Started process (PID=53955) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:27.315-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:33:27.316-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:33:27.315-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:27.319-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:33:27.319-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    import task_etl
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:33:27.320-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:27.334-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
+[2025-03-25T22:33:37.390-0500] {processor.py:186} INFO - Started process (PID=54023) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:37.392-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:33:37.393-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:33:37.393-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:37.398-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:33:37.396-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    from task_etl import *
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:33:37.398-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:33:37.415-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.029 seconds
+[2025-03-25T22:34:07.606-0500] {processor.py:186} INFO - Started process (PID=54032) to work on /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:34:07.608-0500] {processor.py:914} INFO - Processing file /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py for tasks to queue
+[2025-03-25T22:34:07.609-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:34:07.609-0500] {dagbag.py:587} INFO - Filling up the DagBag from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:34:07.612-0500] {logging_mixin.py:190} INFO - [2025-03-25T22:34:07.612-0500] {dagbag.py:386} ERROR - Failed to import: /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/y4xul/ETL/Proyecto_ETL/venv/lib/python3.12/site-packages/airflow/models/dagbag.py", line 382, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py", line 6, in <module>
+    from task_etl import *
+  File "/home/y4xul/ETL/Proyecto_ETL/airflow/dags/task_etl.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2025-03-25T22:34:07.613-0500] {processor.py:927} WARNING - No viable dags retrieved from /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py
+[2025-03-25T22:34:07.626-0500] {processor.py:208} INFO - Processing /home/y4xul/ETL/Proyecto_ETL/airflow/dags/dag.py took 0.025 seconds
