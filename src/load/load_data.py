@@ -33,9 +33,9 @@ def exe_load_data(df: pd.DataFrame, db_name: str = "airbnb", table_name: str = "
             con=engine,
             if_exists="replace",
             index=False,
-            method='multi',
-            #chunksize=100000 #no needed for the airbnb data
-        )
+            method  ='multi',
+            chunksize=40000
+            )
         
         logger.info(f"Data loaded successfully into table '{table_name}'.")
         return True
