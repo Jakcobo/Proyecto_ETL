@@ -30,7 +30,7 @@ def exe_load_data(df: pd.DataFrame, db_name: str = "airbnb", table_name: str = "
         logger.info(f"Loading data into table '{table_name}' with strategy 'replace'.")
         df.to_sql(
             name=table_name,
-            con=engine.url,
+            con=engine,
             if_exists="replace",
             index=False,
             method='multi',

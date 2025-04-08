@@ -98,7 +98,7 @@ def get_db_engine(db_name="airbnb"):
         
         try:
             with target_engine.connect() as conn:
-                logger.info(f"Failed to connect to target database '{db_name}' successful.")
+                logger.info(f"Connection to target database '{db_name}' successful.")
         except OperationalError as oe:
             logger.error(f"Failed to connect to targer database '{db_name}' after creation/check: {oe}")
             raise ConnectionError(f"Failed to connect to target database '{db_name}'.") from oe
