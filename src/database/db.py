@@ -1,3 +1,4 @@
+/home/nicolas/Escritorio/proyecto/otra_prueba/src/database/db.py
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, inspect, Integer, Float, String, DateTime, MetaData, Table, Column, BIGINT, text #, create_sqlalchemy_engine
 from sqlalchemy.exc import OperationalError, ProgrammingError
@@ -109,6 +110,7 @@ def get_db_engine(db_name="airbnb"):
     finally:
         if admin_engine:
             admin_engine.dispose()
+<<<<<<< HEAD
             logger.debug("Admin engine dispose.")
 
 def infer_sqlalchemy_type(dtype, column_name):
@@ -117,3 +119,6 @@ def infer_sqlalchemy_type(dtype, column_name):
     #     if column_name.lower().endswith('id') and dtype.name.startswith('int64'):
     #         return BIGINT
     #TODO
+=======
+            logger.debug("Admin engine dispose.")
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)

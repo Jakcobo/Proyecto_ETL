@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+/home/nicolas/Escritorio/proyecto/otra_prueba/src/transform/dataset_clean.py
+# /home/nicolas/Escritorio/proyecto/otra_prueba/src/transform/dataset_clean.py
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 import logging
 import pandas as pd
 import numpy as np

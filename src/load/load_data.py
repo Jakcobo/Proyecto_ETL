@@ -1,3 +1,4 @@
+/home/nicolas/Escritorio/proyecto/otra_prueba/src/load/load_data.py
 import pandas as pd
 import logging
 from sqlalchemy import create_engine, inspect, text
