@@ -1,107 +1,145 @@
+# /home/nicolas/Escritorio/proyecto/otra_prueba/airflow/dags/task_etl.py
 import pandas as pd
 import logging
-#import json
 import sys
 import os
-from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src")))
-
-from extract.extract_data import exe_extract_data
-from load.load_data import exe_load_data
-from load.model_dimensional import ModelDimensional
-from transform.dataset_clean import DatasetCleaner
-from database.db2 import get_db_engine
+# Asegúrate que la ruta a 'src' sea correcta
+try:
+    src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
+    if src_path not in sys.path:
+        sys.path.append(src_path)
+    # Importar módulos
+    from extract.extract_data import exe_extract_data
+    from load.load_data import exe_load_data
+    from transform.dataset_clean import clean_airbnb_data
+    from database.modeldb import create_dimensional_model_tables
+    # --- NUEVA IMPORTACIÓN ---
+    from load.dimensional_load import load_dimensional_data
+    # --- FIN NUEVA IMPORTACIÓN ---
+    from database.db import get_db_engine
+except ImportError as e:
+     logging.error(f"Error importing project modules: {e}. Check sys.path and project structure relative to Airflow execution.")
+     raise
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 logger = logging.getLogger(__name__)
 
-def extract_data():
-    """Extracts data and returns a pandas DataFrame"""
+FINAL_TABLE_NAME = "airbnb_cleaned" # Tabla donde se cargan los datos limpios
+
+# --- Funciones de Tareas Existentes (sin cambios) ---
+def extract_data() -> pd.DataFrame:
+    # ... (código existente) ...
+    """Tarea de extracción: Extrae datos y devuelve un DataFrame."""
     try:
         logger.info("Executing data extraction task.")
-        df = exe_extract_data()
+        df = exe_extract_data() # Asume que esto devuelve un DataFrame
+        if not isinstance(df, pd.DataFrame):
+             logger.error(f"Extraction function did not return a pandas DataFrame. Got type: {type(df)}")
+             raise TypeError("Extraction must return a pandas DataFrame")
         logger.info(f"Extraction successful. DataFrame shape: {df.shape}")
         return df
-        #return df.to_json(orient="records")
     except Exception as e:
-        logging.error(f"Error during data extraction {e}", exc_info=True)
+        logger.error(f"Error during data extraction: {e}", exc_info=True)
         raise
 
-def load_data(df_to_load):
-    """Loads data into the database, expects a DataFrame."""
+
+def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
+    # ... (código existente) ...
+    """Tarea de limpieza: Recibe un DataFrame, lo limpia y devuelve el DataFrame limpio."""
     try:
-        logger.info("Executing data loading task.")
-        if not isinstance(df_to_load, pd.DataFrame):
-            logger.wargning("Input to load_data is not a DataFrame. Attemping conversion.")
-            
-            try:
-                df_to_load = pd.DataFrame(df_to_load)
-            except ValueError as ve:
-                logger.error(f"Could not convert input to DataFrame: {ve}")
-                raise TypeError("load_data requires a pandas DataFrame or compatible structure")
-        
-        logger.info(f"DataFrame receibed for loading. Shape: {df_to_load.shape}")
-        success = exe_load_data(df_to_load)
+        logger.info("Executing data cleaning task.")
+        if not isinstance(df_raw, pd.DataFrame):
+            logger.error(f"Input to clean_data is not a DataFrame. Got type: {type(df_raw)}. Check XCom backend and previous task output.")
+            raise TypeError("clean_data requires a pandas DataFrame input.")
+
+        logger.info(f"DataFrame received for cleaning. Shape: {df_raw.shape}")
+        df_cleaned = clean_airbnb_data(df_raw)
+        logger.info(f"Data cleaning completed. Cleaned DataFrame shape: {df_cleaned.shape}")
+        return df_cleaned
+    except Exception as e:
+        logger.error(f"Error during data cleaning: {e}", exc_info=True)
+        raise
+
+
+def load_cleaned_data(df_cleaned: pd.DataFrame):
+    # ... (código existente) ...
+    """Tarea de carga: Recibe el DataFrame limpio y lo carga en la tabla final."""
+    try:
+        logger.info(f"Executing loading task for cleaned data into table '{FINAL_TABLE_NAME}'.")
+        if not isinstance(df_cleaned, pd.DataFrame):
+            logger.error(f"Input to load_cleaned_data is not a DataFrame. Got type: {type(df_cleaned)}.")
+            raise TypeError("load_cleaned_data requires a pandas DataFrame input.")
+
+        logger.info(f"Cleaned DataFrame received for loading. Shape: {df_cleaned.shape}")
+        success = exe_load_data(df=df_cleaned, db_name="airbnb", table_name=FINAL_TABLE_NAME)
+
         if success:
-            logger.info("Data loading completed successfully.")
+            logger.info(f"Cleaned data loading into '{FINAL_TABLE_NAME}' completed successfully.")
         else:
-            logger.warning("Data loading function reported failure.")
+            logger.warning(f"Cleaned data loading function reported failure for table '{FINAL_TABLE_NAME}'.")
         return success
-        
+
     except Exception as e:
-        logger.error(f"Error during data loading: {e}", exc_info=True)
+        logger.error(f"Error during cleaned data loading into '{FINAL_TABLE_NAME}': {e}", exc_info=True)
         raise
 
-# def load_data(df):
-#     
-#     try:
-#         exe_load_data(df)
-#         return True
-#     except Exception as e:
-#         logging.error(f"Error loading data {e}")
-#         raise
 
-def clean_data():
-    """Cleans the data in the PostgresSQL table."""
-    #TODO?
+def create_dimensional_model():
+    # ... (código existente) ...
+    """
+    Función lógica para la tarea: Crea las tablas del modelo dimensional
+    si no existen.
+    """
+    engine = None
     try:
-        load_dotenv(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "env", ".env")))
+        logger.info("Executing dimensional model creation task.")
+        engine = get_db_engine(db_name="airbnb")
 
-        user = os.getenv("POSTGRES_USER")
-        password = os.getenv("POSTGRES_PASSWORD")
-        host = os.getenv("POSTGRES_HOST")
-        port = os.getenv("POSTGRES_PORT")
-        database = os.getenv("POSTGRES_DATABASE")
+        if engine:
+            create_dimensional_model_tables(engine)
+            logger.info("Dimensional model tables creation process finished.")
+            return True
+        else:
+            logger.error("Failed to get database engine. Cannot create dimensional model.")
+            return False
 
-        if not all([user, password, host, port, database]):
-            raise ValueError("Faltan variables de entorno necesarias para la conexión a la base de datos.")
-
-
-        engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
-        cleaner = DatasetCleaner(engine)
-        cleaner.execute_transformations()
-        logging.info("Limpieza de datos completada exitosamente.")
-        return True
     except Exception as e:
-        logging.error(f"Error durante la limpieza de datos: {e}")
+        logger.error(f"Error during dimensional model creation: {e}", exc_info=True)
         raise
+    finally:
+        if engine:
+            engine.dispose()
+            logger.info("Database engine disposed after model creation.")
 
 
+# --- NUEVA FUNCIÓN PARA LA TAREA DE INSERCIÓN ---
+def insert_data_to_model():
+    """
+    Función lógica para la tarea: Inserta datos desde la tabla limpia
+    hacia las tablas del modelo dimensional.
+    """
+    engine = None
+    try:
+        logger.info("Executing task to insert data into dimensional model.")
+        # Obtener el engine para la base de datos 'airbnb'
+        engine = get_db_engine(db_name="airbnb")
 
-# def migrate_to_dimensional_model():
-#     try:
-#         with open(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "credentials.json"))) as f:
-#             creds = json.load(f)
+        if engine:
+            # Llamar a la función orquestadora de dimensional_load.py
+            success = load_dimensional_data(engine)
+            logger.info(f"Insertion into dimensional model finished. Success: {success}")
+            return success
+        else:
+            logger.error("Failed to get database engine. Cannot insert data into dimensional model.")
+            return False
 
-#         engine = create_engine(
-#             f'postgresql://{creds["user"]}:{creds["password"]}@{creds["host"]}:{creds["port"]}/{creds["database"]}'
-#         )
-#         model = ModelDimensional(engine)
-#         model.execute_migration()
-#         logging.info("Migración al modelo dimensional completada exitosamente.")
-#         return True
-#     except Exception as e:
-#         logging.error(f"Error durante la migración al modelo dimensional: {e}")
-#         raise
+    except Exception as e:
+        logger.error(f"Error during insertion into dimensional model: {e}", exc_info=True)
+        raise # Relanzar para que la tarea falle en Airflow
+    finally:
+        if engine:
+            engine.dispose()
+            logger.info("Database engine disposed after dimensional model insertion.")
+# --- FIN NUEVA FUNCIÓN ---

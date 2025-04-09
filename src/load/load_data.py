@@ -33,7 +33,7 @@ def exe_load_data(df: pd.DataFrame, db_name: str = "airbnb", table_name: str = "
             con=engine,
             if_exists="replace",
             index=False,
-            method  ='multi',
+              method  ='multi',
             chunksize=40000
             )
         
