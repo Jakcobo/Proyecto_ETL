@@ -3,3 +3,4 @@ venv/
 airflow/*
 !airflow/dags/
 !airflow/dags/**
+credentials.json

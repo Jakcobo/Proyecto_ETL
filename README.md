@@ -6,23 +6,45 @@ This project is an ETL (Extract, Transform, Load) process aimed at loading and t
 
 The project is organized as follows:
 
-Proyecto_ETL:           .gitignore, credentials.json, README.md
+Proyecto_ETL:              .gitignore, credentials.json, configuration_venv_airflow.txt, delete_pycache.sh, model_dimensional.pdf, README.md, requeriremntes.txt
 
-Proyecto_ETL/data:      Airbnb_Open_Data.csv
+Proyecto_ETL/airflow/dags: dag.py, task_etl.py
 
-Proyecto_ETL/Notebooks: 001_DataLoad.ipynb, 002_EDA.ipynb, 003_CleanData.ipynb
+Proyecto_ETL/data:         Airbnb_Open_Data.csv
+
+Proyecto_ETL/env:          .env
+
+Proyecto_ETL/Notebooks:    001_DataLoad.ipynb, 002_EDA.ipynb, 003_CleanData.ipynb
+
+Proyecto_ETL/database:     db.py, model.py
+
+Proyecto_ETL/extract:      extract.py
+
+Proyecto_ETL/load:         load_data.py, model_dimensional.py
+
+Proyecto_ETL/transform:    api_clean.py, dataset_clean.py
 
 ### Description of Files and Folders
 
-- **.gitignore**: File specifying which files and folders should be ignored by Git. In this case, the `credentials.json` file is ignored for security reasons.
-- **credentials.json**: File containing the credentials for accessing the PostgreSQL database.
-- **README.md**: This file, providing an overview of the project.
+- **.gitignore**: File specifying which files and folders should be ignored by Git. In this case, the `env, venv` folder and all in the folder `airflow` except the folder `dags` is ignored for security reasons.
+- **airflow/dags**: Contains Directed Acyclic Graph (DAG) files for scheduling and orchestratong workflows in Apache Airflor.
+- **configuration_venv_airflow.txt**: Lists all the dependencies and setup instructions for creating a virtual enviroment tailored to run Apache Airflow.
+- **credentials.json**: file is ignored for security reasons.
 - **data/**: Folder containing the CSV file with Airbnb data.
+- **delete_pycache.sh**: Bash script to removo Python cache files __pycache\__ from the proyect directories.
+- **env/.env**: Stores sensitives information like PostgresSQL database credentials, ensuring they're kept separate from source code.
 - **Notebooks/**: Folder containing the Jupyter notebooks used in the project.
+- **model_dimensional.pdf:** Diagram detailing the dimensional modeling od the databse schema used in the project.
+- **src/database**: Contains Python scripts or other files related to managing the database, including connection and schema creation.
+- **src/extract**: Implements the data extraction logic, such as fetching data from Airbnb source.
+- **src/load**: Handles loading of transformed data into the PostgresSQL database or other destination systems.
+- **src/transform**: Includes data transformation scripts, cleaning and preparing raw data for analysis or databe insertion.
+- **README.md**: This file, providing an overview of the project.
+- **requeriremntes.txt**: List all requiered dependencies for running the project such as libraries and frameworks.
 
 ### Install Dependencies:
    ```bash
-   pip install pandas sqlalchemy psycopg2 matplotlib seaborn 
+   pip install pandas==2.1.4 numpy==1.26.4 sqlalchemy psycopg2 matplotlib seaborn 
    ```
 
 ## Notebook 001_DataLoad.ipynb
@@ -132,5 +154,50 @@ This notebook performs cleanup and transformation of Airbnb data stored in the P
 6. **Correction of Data Errors**:
    - Errors in the `neighbourhood_group` column are corrected, such as `‘brookln’` and `‘manhatan’`, which are changed to `‘Brooklyn’` and `‘Manhattan’`, respectively.
 
-6. **Run the Notebook**:
-Open notebook 003_CleanData.ipynb in Jupyter and run the cells in order.
+7. **Run the Notebook**:
+   - Open notebook 003_CleanData.ipynb in Jupyter and run the cells in order.
+
+## Notebook 004_EDA_Api.ipynb
+
+This notebook performs exploratory data analysis (EDA) on New York City venue data colleted using the Foursquare Places API V3. The analysis includes data extraction, cleaning, normalization, and various forms of visualizations such as bar charts, heatmaps, and interactive map
+
+### Steps Performed in the Notebook
+1. **Environment Setup:
+   - Import of key libraries:requests, pandas, seaborn, matplotlib, folium, rapidfuzz, etc.
+   - API configurtions: Foursquare API V3 key and endpoints,
+   - Output folder creation for storing CSV data.
+2. **DataCpññectopms**:
+   - Data is collected from five NYC boroughs: Manhattan, Brooklyn, Queens, Bronx and Staten Island.
+   - For each borough, data is retrieved for general venues and specific categories: Arts, Food, Nightlife, Outdoors, Shops.
+   - Additional detailsare fetched for each place and stored ina structured format.
+   - final dataset is saved as a CSV (ny_places_foursquare_v3.csv)
+3. **Data Normalization and Cleaning**:
+   - The category column is normalized using fuzzy string matchiong against standard labels.
+   - The address column is cleaned by removing commas.
+   - Thefirst few rows of the cleaned dataset are displayed using df.head().
+4. **Dataset Structure Overview**:
+   - Use of df.info() to get a summary of columns, data types, and non-null counts.
+5. **Dataset Summary Stadistics**:
+   - Summary stadistics are generated with df.describe(include="all")
+   - Observationshighlight that only geolocation data (lad, log) are complete; other attributes have significant missing values.
+6. **Missing Values Analysis**:
+   - Null value percentages per column are visualized using a horizontal bar chart.
+   - A 50% threshold line is drawn to help indentify problematic columns.
+7. **Geographical Distributions of Places**:
+   - A scatter plot visualizes the lad and long of venues, colored by borough.
+8. **Interactive Map with Heatmap and Markers**:
+   - A Folium-based interactive map is created.
+   - It includes:
+      - A headmap to represent venue density.
+      - Circle markers with popup information for each location.
+      - Color coding for each borough
+      - A minimap for better navigation
+   - The map is saved as an HTML file (ny_heatmap.html) and displayed in the notebook.
+9. **Distribution of Places by Borough**:
+   - a bar chart shows how venues are distributed across boroughs using values_counts().
+10. **Top 5 Most Common Categories**:
+   - A horizontal bar chart displays the top 5 most frequent venue categories after normalization.
+11. **Category Distribution by Borough**:
+   - A heatmap visualizes the cross-tabulation of categories and boroughs, highlighting where specific types of venues are the most common
+12. **Run the Notebook**:
+   - Open Noteboog 004_EDA_Api.ipynb in Jupyter and run all cells in order to reporduce the data extraction, clening, and analysing process.
