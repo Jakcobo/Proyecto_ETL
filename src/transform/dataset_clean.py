@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 /home/nicolas/Escritorio/proyecto/otra_prueba/src/transform/dataset_clean.py
 # /home/nicolas/Escritorio/proyecto/otra_prueba/src/transform/dataset_clean.py
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)

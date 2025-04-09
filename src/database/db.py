@@ -111,6 +111,7 @@ def get_db_engine(db_name="airbnb"):
         if admin_engine:
             admin_engine.dispose()
 <<<<<<< HEAD
+<<<<<<< HEAD
             logger.debug("Admin engine dispose.")
 
 def infer_sqlalchemy_type(dtype, column_name):
@@ -119,6 +120,9 @@ def infer_sqlalchemy_type(dtype, column_name):
     #     if column_name.lower().endswith('id') and dtype.name.startswith('int64'):
     #         return BIGINT
     #TODO
+=======
+            logger.debug("Admin engine dispose.")
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 =======
             logger.debug("Admin engine dispose.")
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)

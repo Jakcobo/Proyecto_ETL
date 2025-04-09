@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 /home/nicolas/Escritorio/proyecto/otra_prueba/airflow/dags/task_etl.py
 # /home/nicolas/Escritorio/proyecto/otra_prueba/airflow/dags/task_etl.py
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
@@ -7,6 +10,7 @@ import pandas as pd
 import logging
 import sys
 import os
+<<<<<<< HEAD
 <<<<<<< HEAD
 #from sqlalchemy import create_engine
 #from dotenv import load_dotenv
@@ -19,11 +23,20 @@ from dotenv import load_dotenv
 
 # Asegúrate que la ruta a 'src' sea correcta
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
+=======
+from dotenv import load_dotenv
+
+# Asegúrate que la ruta a 'src' sea correcta
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 try:
     src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
     if src_path not in sys.path:
         sys.path.append(src_path)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    # Importar módulos
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 =======
     # Importar módulos
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
@@ -31,6 +44,7 @@ try:
     from load.load_data import exe_load_data
     from transform.dataset_clean import clean_airbnb_data
     from database.modeldb import create_dimensional_model_tables
+<<<<<<< HEAD
 <<<<<<< HEAD
     #from database.db import get_db_engine
 except ImportError as e:
@@ -48,6 +62,8 @@ def extract_data() -> pd.DataFrame:
             logger.error(f"Extraction function did not return a pandas DataFrame. Got type: {type(df)}")
             raise TypeError("Extraction must return a pandas DataFrame")
 =======
+=======
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
     # --- NUEVA IMPORTACIÓN ---
     from load.dimensional_load import load_dimensional_data
     # --- FIN NUEVA IMPORTACIÓN ---
@@ -71,6 +87,9 @@ def extract_data() -> pd.DataFrame:
         if not isinstance(df, pd.DataFrame):
              logger.error(f"Extraction function did not return a pandas DataFrame. Got type: {type(df)}")
              raise TypeError("Extraction must return a pandas DataFrame")
+<<<<<<< HEAD
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
+=======
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
         logger.info(f"Extraction successful. DataFrame shape: {df.shape}")
         return df
@@ -79,7 +98,13 @@ def extract_data() -> pd.DataFrame:
         raise
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
+=======
+
+def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
+    # ... (código existente) ...
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 =======
 
 def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
@@ -91,12 +116,15 @@ def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
         if not isinstance(df_raw, pd.DataFrame):
             logger.error(f"Input to clean_data is not a DataFrame. Got type: {type(df_raw)}. Check XCom backend and previous task output.")
 <<<<<<< HEAD
+<<<<<<< HEAD
             # Intentar cargar desde JSON si se pasó como JSON (menos ideal con TaskFlow)
             # try:
             #     df_raw = pd.read_json(df_raw, orient='records')
             #     logger.info("Successfully loaded DataFrame from JSON fallback.")
             # except Exception as json_e:
             #     logger.error(f"Could not convert input to DataFrame: {json_e}")
+=======
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
 =======
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
             raise TypeError("clean_data requires a pandas DataFrame input.")
@@ -109,6 +137,7 @@ def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
         logger.error(f"Error during data cleaning: {e}", exc_info=True)
         raise
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 def create_dimensional_model():
     """
@@ -130,6 +159,13 @@ def migrate_to_dimensional_model(df_cleaned: pd.DataFrame):
 def load_cleaned_data(df_cleaned: pd.DataFrame):
     """Tarea de carga: Recibe el DataFrame limpio y lo carga en la tabla final."""
     try:
+=======
+
+def load_cleaned_data(df_cleaned: pd.DataFrame):
+    # ... (código existente) ...
+    """Tarea de carga: Recibe el DataFrame limpio y lo carga en la tabla final."""
+    try:
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
         logger.info(f"Executing loading task for cleaned data into table '{FINAL_TABLE_NAME}'.")
         if not isinstance(df_cleaned, pd.DataFrame):
             logger.error(f"Input to load_cleaned_data is not a DataFrame. Got type: {type(df_cleaned)}.")
@@ -146,6 +182,7 @@ def load_cleaned_data(df_cleaned: pd.DataFrame):
 
     except Exception as e:
         logger.error(f"Error during cleaned data loading into '{FINAL_TABLE_NAME}': {e}", exc_info=True)
+<<<<<<< HEAD
         raise 
 
 =======
@@ -170,6 +207,8 @@ def load_cleaned_data(df_cleaned: pd.DataFrame):
 
     except Exception as e:
         logger.error(f"Error during cleaned data loading into '{FINAL_TABLE_NAME}': {e}", exc_info=True)
+=======
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
         raise
 
 
@@ -229,5 +268,9 @@ def insert_data_to_model():
         if engine:
             engine.dispose()
             logger.info("Database engine disposed after dimensional model insertion.")
+<<<<<<< HEAD
+# --- FIN NUEVA FUNCIÓN ---
+>>>>>>> aee7dd91 (restablecimiento a la version anterior)
+=======
 # --- FIN NUEVA FUNCIÓN ---
 >>>>>>> aee7dd91 (restablecimiento a la version anterior)
