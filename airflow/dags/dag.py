@@ -1,155 +1,85 @@
+/home/nicolas/Escritorio/proyecto/otra_prueba/airflow/dags/dag.py
 # /home/nicolas/Escritorio/proyecto/otra_prueba/airflow/dags/dag.py
 from datetime import timedelta, datetime
 from airflow.decorators import dag, task
-from airflow.models.param import Param # <--- Importar Param
-import os
+import pandas as pd
 
 # Importar las funciones de tarea refactorizadas
 from task_etl import (
-    extract_data_to_staging,
-    clean_data_from_staging,
-    load_cleaned_data_from_staging,
+    extract_data,
+    clean_data,
+    load_cleaned_data,
     create_dimensional_model,
-    insert_data_to_model
+    insert_data_to_model # --- NUEVA IMPORTACIÓN ---
 )
-
-# Define una ruta base para el staging area (puede ser configurable también)
-STAGING_AREA_BASE_PATH = "/tmp/airflow_staging"
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 4, 8), # Ajusta según necesidad
+    'start_date': datetime(2024, 4, 8),
     'retries': 1,
     'retry_delay': timedelta(minutes=5)
 }
 
 @dag(
-    dag_id="ETL_Airbnb_Parametrized", # ID más genérico
+    dag_id="ETL_Airbnb_Refactored",
     default_args=default_args,
-    description='ETL pipeline parametrizable para Airbnb data usando staging y variables.',
-    schedule=timedelta(days=1), # O tu schedule deseado
+    description='ETL pipeline: Clean, Create Dim Model, Load Dim Model for Airbnb data.', # Descripción actualizada
+    schedule=timedelta(days=1),
     max_active_runs=1,
     catchup=False,
-    tags=['etl', 'airbnb', 'postgres', 'refactored', 'dimensional', 'staging', 'parametrized'],
-    # --- Definición de Parámetros ---
-    params={
-        "output_clean_table": Param(
-            "airbnb_cleaned", # Valor por defecto
-            type="string",
-            description="Nombre de la tabla destino para los datos limpios (staging)."
-        ),
-        "source_csv_var": Param(
-            "airbnb_source_csv_path", # Nombre de la Variable Airflow a usar por defecto
-             type="string",
-             description="Nombre de la Variable Airflow que contiene la ruta relativa del CSV fuente."
-        ),
-         "project_root_var": Param(
-             "AIRFLOW_VAR_AIRBNB_PROJECT_ROOT", # Nombre de la variable para la raíz del proyecto
-             type="string",
-             description="Nombre de la Variable Airflow para la ruta raíz del proyecto (usada si la ruta del CSV es relativa)."
-         ),
-        "target_db_conn_id": Param(
-            "postgres_airbnb", # Nombre de la Conexión Airflow por defecto
-            type="string",
-            description="ID de la Conexión Airflow de Postgres a usar."
-        )
-        # Puedes añadir más: db_name (si no está en la conn), staging_path_base, etc.
-    }
+    tags=['etl', 'airbnb', 'postgres', 'refactored', 'dimensional']
 )
-def etl_dag_parametrized():
-    """
-    DAG parametrizado para procesar datos de Airbnb.
-    Extrae datos de un CSV (ruta definida en Variable Airflow),
-    limpia los datos usando un staging area local, carga los datos limpios
-    a una tabla (nombre parametrizable) y finalmente puebla un modelo dimensional.
-    """
+def etl_dag_refactored():
 
     @task
-    def extract_data_task(**context) -> str:
-        """
-        Task: Extrae datos de la ruta CSV (definida por variables en params),
-        guarda los datos en el staging area y devuelve la ruta del archivo Parquet.
-        """
-        params = context['params']
-        run_id = context['run_id']
-        staging_path = os.path.join(STAGING_AREA_BASE_PATH, run_id)
-        os.makedirs(staging_path, exist_ok=True)
-
-        # Pasa los nombres de las variables a usar como parámetros
-        extracted_file_path = extract_data_to_staging(
-            staging_dir=staging_path,
-            csv_path_var=params['source_csv_var'],
-            project_root_var_name=params['project_root_var']
-        )
-        return extracted_file_path
+    def extract_data_task() -> pd.DataFrame:
+        """Task: Extracts data from the source and returns a DataFrame."""
+        df_extracted = extract_data()
+        return df_extracted
 
     @task
-    def clean_data_task(input_file_path: str, **context) -> str:
-        """
-        Task: Lee datos Parquet del staging, los limpia, guarda el resultado
-        en un nuevo archivo Parquet en staging y devuelve su ruta.
-        """
-        run_id = context['run_id']
-        staging_path = os.path.join(STAGING_AREA_BASE_PATH, run_id)
-        cleaned_file_path = clean_data_from_staging(input_file_path, staging_path)
-        return cleaned_file_path
+    def clean_data_task(df_input: pd.DataFrame) -> pd.DataFrame:
+        """Task: Cleans the DataFrame received from the previous task."""
+        df_cleaned = clean_data(df_input)
+        return df_cleaned
 
     @task
-    def load_cleaned_data_task(cleaned_file_path: str, table_name: str, db_conn_id: str):
-        """
-        Task: Lee datos limpios Parquet del staging y los carga en la tabla especificada
-        usando la conexión de base de datos definida.
-        """
-        load_success = load_cleaned_data_from_staging(cleaned_file_path, table_name, db_conn_id)
+    def load_cleaned_data_task(df_final: pd.DataFrame):
+        """Task: Loads the cleaned DataFrame into the final staging/cleaned table."""
+        load_success = load_cleaned_data(df_final)
         if not load_success:
-             raise ValueError(f"Fallo al cargar datos limpios en la tabla '{table_name}'.")
+             raise ValueError("Loading cleaned data failed.")
 
     @task
-    def create_model_task(db_conn_id: str):
-        """
-        Task: Crea las tablas del modelo dimensional (si no existen)
-        usando la conexión de base de datos definida.
-        """
-        model_created = create_dimensional_model(db_conn_id)
+    def create_model_task():
+        """Task: Creates the dimensional model tables if they don't exist."""
+        model_created = create_dimensional_model()
         if not model_created:
-            raise ValueError("Fallo al crear el modelo dimensional.")
+            raise ValueError("Dimensional model creation failed.")
 
+    # --- NUEVA TAREA ---
     @task
-    def insert_data_to_model_task(source_table_name: str, db_conn_id: str):
-        """
-        Task: Inserta datos desde la tabla limpia especificada hacia las tablas
-        del modelo dimensional, usando la conexión definida.
-        """
-        insert_success = insert_data_to_model(source_table_name, db_conn_id)
+    def insert_data_to_model_task():
+        """Task: Inserts data from cleaned table into the dimensional model tables."""
+        insert_success = insert_data_to_model()
         if not insert_success:
-            raise ValueError(f"Fallo al insertar datos en el modelo dimensional desde '{source_table_name}'.")
+            raise ValueError("Insertion into dimensional model failed.")
+    # --- FIN NUEVA TAREA ---
 
     # --- Definir el flujo del DAG ---
-    # Las tareas acceden a los params directamente o se les pasan vía Jinja
+    extracted_data = extract_data_task()
+    cleaned_data = clean_data_task(extracted_data)
+    load_result = load_cleaned_data_task(cleaned_data)
+    model_creation_result = create_model_task()
+    # --- NUEVA DEPENDENCIA ---
+    # La inserción de datos en el modelo depende de que las tablas del modelo se hayan creado
+    insert_result = insert_data_to_model_task()
 
-    extracted_data_path = extract_data_task() # Accede a params vía context internamente
-    cleaned_data_path = clean_data_task(extracted_data_path) # No necesita params directamente
+    load_result >> model_creation_result # Crear modelo después de cargar datos limpios
+    model_creation_result >> insert_result # Insertar en modelo después de crearlo
+    # --- FIN NUEVA DEPENDENCIA ---
 
-    # Pasar los parámetros relevantes usando Jinja templating
-    load_result = load_cleaned_data_task(
-        cleaned_file_path=cleaned_data_path,
-        table_name="{{ params.output_clean_table }}",
-        db_conn_id="{{ params.target_db_conn_id }}"
-    )
 
-    model_creation_result = create_model_task(
-        db_conn_id="{{ params.target_db_conn_id }}"
-    )
-
-    insert_result = insert_data_to_model_task(
-        source_table_name="{{ params.output_clean_table }}",
-        db_conn_id="{{ params.target_db_conn_id }}"
-    )
-
-    # Definir dependencias
-    load_result >> model_creation_result
-    model_creation_result >> insert_result
-
-# Instanciar el DAG para que Airflow lo reconozca
-etl_instance_parametrized = etl_dag_parametrized()
+# Instanciar el DAG
+etl_instance_refactored = etl_dag_refactored()
