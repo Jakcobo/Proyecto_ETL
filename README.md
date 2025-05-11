@@ -1,136 +1,168 @@
-# ETL Project: Airbnb Data Loading
-
-This project is an ETL (Extract, Transform, Load) process aimed at loading and transforming Airbnb data for subsequent analysis. In this initial stage, we focus on loading data from a CSV file into a PostgreSQL database.
+# ETL Project: Airbnb Data Pipeline with Apache Airflow
+This project implements a full ETL (Extract, Transform, Load) pipeline for Airbnb data and Foursquare Places API data using Python, Jupyter notebooks, and Apache Airflow. The data is transformed, cleaned, analyzed, and loaded into a PostgreSQL database for further exploration and modeling.
 
 ## Project Structure
 
-The project is organized as follows:
+```
+Proyecto_ETL/
+│
+├── airflow/                  # Apache Airflow DAGs and tasks
+│   └── dags/
+│       ├── dag.py            # DAG orchestration
+│       └── task_etl.py       # Task functions for ETL
+│
+├── data/
+│   └── Airbnb_Open_Data.csv  # Raw Airbnb dataset
+│
+├── database/
+│   ├── db.py                 # PostgreSQL connection and database creation
+│   └── model.py              # Database schema and model setup
+│
+├── extract/
+│   └── extract.py            # Data extraction logic
+│
+├── load/
+│   ├── load_data.py          # Load data into PostgreSQL
+│   └── model_dimensional.py  # Dimensional model logic
+│
+├── transform/
+│   ├── api_clean.py          # Data cleaning from APIs
+│   └── dataset_clean.py      # Airbnb data cleaning scripts
+│
+├── Notebooks/
+│   ├── 001_DataLoad.ipynb    # Load Airbnb data into PostgreSQL
+│   ├── 002_EDA.ipynb         # Exploratory Data Analysis
+│   ├── 003_CleanData.ipynb   # Data cleaning and transformation
+│   └── 004_EDA_Api.ipynb     # EDA on Foursquare API data
+│
+├── env/
+│   └── .env                  # PostgreSQL credentials (ignored in Git)
+│
+├── .gitignore
+├── credentials.json          # (Ignored) PostgreSQL config
+├── configuration_venv_airflow.txt
+├── delete_pycache.sh
+├── model_dimensional.pdf     # Star schema diagram
+├── requeriremntes.txt
+└── README.md                 # You are here
+```
+## Installation
+Install the required libraries:
 
-Proyecto_ETL:           .gitignore, credentials.json, README.md
+bash
+pip install pandas==2.1.4 numpy==1.26.4 sqlalchemy psycopg2 matplotlib seaborn
+Create a file named credentials.json:
 
-Proyecto_ETL/data:      Airbnb_Open_Data.csv
-
-Proyecto_ETL/Notebooks: 001_DataLoad.ipynb, 002_EDA.ipynb, 003_CleanData.ipynb
-
-### Description of Files and Folders
-
-- **.gitignore**: File specifying which files and folders should be ignored by Git. In this case, the `credentials.json` file is ignored for security reasons.
-- **credentials.json**: File containing the credentials for accessing the PostgreSQL database.
-- **README.md**: This file, providing an overview of the project.
-- **data/**: Folder containing the CSV file with Airbnb data.
-- **Notebooks/**: Folder containing the Jupyter notebooks used in the project.
-
-### Install Dependencies:
-   ```bash
-   pip install pandas sqlalchemy psycopg2 matplotlib seaborn 
-   ```
-
-## Notebook 001_DataLoad.ipynb
-
-This notebook handles the initial loading of data from the CSV file `Airbnb_Open_Data.csv` into a PostgreSQL database.
-
-### Steps Performed in the Notebook
-
-1. **Credentials Upload**: The database credentials are uploaded from the `credentials.json` file.
-
-2. **Dataset upload**: The CSV file `Airbnb_Open_Data.csv` is uploaded into a Pandas DataFrame.
-
-3. **Database Creation**: Check if the `airbnb` database exists in PostgreSQL. If it does not exist, it is created.
-
-4. **Upload Data to the Database**: A table called `airbnb_data` is created in the database and the data from the DataFrame is uploaded to this table.
-
-5. **Data Verification**: Simple queries are performed to verify that the data has been correctly loaded into the database.
-
-### Instructions for Use
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/tu_usuario/Proyecto_ETL.git
-   cd Proyecto_ETL
-
-Configure Credentials:
-a `credentials.json` file must be created with the following content:
-  ```javascript
-  {
-  "user": "user",
-  "password": "password",
-  "host": "host",
-  "port": "port", 
-  "database": "database"
-  }
-  ```
-
-After you have created it, make sure that the credentials.json file is correctly configured with your PostgreSQL credentials.
-
-### Run the Notebook:
-Open the notebook 001_DataLoad.ipynb in Jupyter and run the cells in order.
-
-# ETL Project: Exploratory Data Analysis (EDA)
-
-In this stage of the project, we focus on EDA using the `002_EDA.ipynb` notebook. This notebook aims to explore and visualise the Airbnb data loaded into the PostgreSQL database to identify patterns, trends and potential problems in the data.
-
-## Notebook 002_EDA.ipynb
-
-This notebook performs an exploratory analysis of the Airbnb data, including identifying null values, duplicates, and visualising distributions and relationships between variables.
-
-### Steps Performed in the Notebook
-
-1. **Data Upload**: Connect to the PostgreSQL database and upload data from the `airbnb_data` table.
-
-2. **Initial Scan**:
-   - The size of the dataset (number of rows and columns) is checked.
-   - Duplicate rows are identified.
-   - Calculate null values and their percentage per column.
+```
+{
+  "user": "your_user",
+  "password": "your_password",
+  "host": "your_host",
+  "port": "your_port",
+  "database": "airbnb"
+}
+```
+## Apache Airflow Pipeline
+This DAG automates the ETL pipeline using Apache Airflow. The graph below shows the execution flow:
 
 
-3. **Data Type Analysis**: The data types of each column are checked to ensure that they are correct.
+DAG Task Flow:
+extract_data_task: Reads Airbnb data from Airbnb_Open_Data.csv.
 
-4. **Data Visualisation**:
-   - Price distribution.
-   - Relationship between prices and minimum nights.
-   - Distribution of service rates.
-   - Detection of outliers in prices and service rates.
-   - Distribution of room types.
-   - Distribution of publications by year of construction.
-   - Percentage of verified vs. unverified hosts.
-   - Number of postings by neighbourhood group.
-   - Percentage of each type of cancellation policy.
-   - Distribution of properties with instant booking.
+- **clean_data_task:** Cleans the raw data using custom transformation logic.
 
-### Run the Notebook:
-Open notebook 002_EDA.ipynb in Jupyter and run the cells in order.
+- **load_cleaned_data_task:** Loads the cleaned data into the PostgreSQL database.
 
-# ETL Project: Data cleansing
+- **create_model_task:** Sets up the dimensional model (star schema).
 
-In this stage of the project, we focus on cleaning and transforming the data using the `003_CleanData.ipynb` notebook. This notebook aims to prepare the data for further analysis by removing null values, correcting errors and transforming columns to make them more useful.
+- **insert_data_to_model_task:** Inserts the final transformed data into the fact and dimension tables.
 
-## Notebook 003_CleanData.ipynb
+Each task is defined using Airflow’s **@task** decorator for modularity and reusability.
 
-This notebook performs cleanup and transformation of Airbnb data stored in the PostgreSQL database. It focuses on creating a new table (`airbnb_EDA`), renaming columns, removing unnecessary columns, handling null values and correcting errors in the data.
+## Jupyter Notebooks
+### 001_DataLoad.ipynb – Initial Data Load
+Loads the raw CSV file.
 
-### Steps Performed in the Notebook
+Creates the airbnb PostgreSQL database.
 
-1. **Load Data**:
-   - Connect to the PostgreSQL database and load data from the `airbnb_data` table.
+Uploads the data into the airbnb_data table.
 
-2. **Creation of a New Table (`airbnb_EDA`)**:
-   - A new table called `airbnb_EDA` is created with the same information as the original table (`airbnb_data`).
-   - Check that the new table has been created correctly and that it contains the same number of records as the original table.
+Verifies the data with queries.
 
-3. **Column renaming**:
-   - Columns that contain spaces in their names are renamed to make them easier to handle in SQL queries.
-   - Example: `host id` becomes `host_id`, `minimum nights` becomes `minimum_nights`, etc.
+### 002_EDA.ipynb – Exploratory Data Analysis
+Checks nulls, duplicates, data types.
 
-4. **Removal of Unnecessary Columns**:
-   - Columns that are not relevant to the analysis are removed, such as `host_name`, `lat`, `long`, `country_code`, `country`, `neighbourhood`, and `house_rules`.
+Visualizes key trends:
 
-5. **Null Value Handling**:
-   - Null values in text columns are replaced with ``not fill``.
-   - Replace null values in numeric columns with `-1`.
-   - Transform the `last_review` column to convert dates to a numeric format (`YYYYYMMDD`). Null dates are replaced with `99999999`.
+Price distribution.
 
-6. **Correction of Data Errors**:
-   - Errors in the `neighbourhood_group` column are corrected, such as `‘brookln’` and `‘manhatan’`, which are changed to `‘Brooklyn’` and `‘Manhattan’`, respectively.
+Minimum nights vs price.
 
-6. **Run the Notebook**:
-Open notebook 003_CleanData.ipynb in Jupyter and run the cells in order.
+Room types.
+
+Host verification.
+
+Neighborhoods and policies.
+
+### 003_CleanData.ipynb – Data Cleaning & Transformation
+Creates a new table airbnb_EDA.
+
+Renames columns for SQL compatibility.
+
+Removes irrelevant columns.
+
+Handles nulls:
+
+**Text:** replaced with ``"not fill"``.
+
+**Numbers:** replaced with ``-1``.
+
+**Dates:** transformed or filled with ``99999999``.
+
+Fixes typos in ``neighbourhood_group``.
+
+### 004_EDA_Api.ipynb – Foursquare Places API EDA
+Fetches venue data for NYC boroughs.
+
+Normalizes categories with fuzzy matching.
+
+Cleans and exports as CSV.
+
+### Visualizes:
+
+Venue distributions (bar chart, heatmap).
+
+Interactive map (Folium).
+
+Top 5 categories by borough.
+
+## Dimensional Modeling
+A star schema is implemented for Airbnb data using the following entities:
+
+**Fact Table:** Reservations (with price, nights, and dates).
+
+**Dimensions:** ``Hosts``, ``room types``, ``location``, and ``cancellation policies``.
+
+## See model_dimensional.pdf for full schema.
+
+## Development Tips
+Use delete_pycache.sh to clean .pyc and __pycache__ folders.
+
+All secrets are managed through .env and .gitignore for safety.
+
+Install Airflow and activate the virtual environment using configuration_venv_airflow.txt.
+
+## Future Improvements
+Integrate a dashboard (e.g., using Streamlit).
+
+Schedule the pipeline for daily updates.
+
+Add ML predictions for dynamic pricing.
+
+## Authors
+### `Jakcobo`
+GitHub: github.com/Jakcobo
+### `y4xulSC`
+GitHub: github.com/y4xulSC
+### `Mrsasayo`
+GitHub: github.com/Mrsasayo
