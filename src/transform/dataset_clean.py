@@ -1,4 +1,5 @@
-# /home/nicolas/Escritorio/proyecto/otra_prueba/src/transform/dataset_clean.py
+# proyecto_etl/src/transform/dataset_clean.py
+import os
 import logging
 import pandas as pd
 import numpy as np # Necesario para np.nan
@@ -188,7 +189,6 @@ def cast_numeric_columns(df: pd.DataFrame) -> pd.DataFrame:
                  logger.debug(f"Column '{col}' already has type {dtype}.")
 
     return df
-
 
 def handle_nulls(df: pd.DataFrame) -> pd.DataFrame:
     """Imputa valores nulos en columnas clave después de las conversiones."""

@@ -1,11 +1,13 @@
-# /home/nicolas/Escritorio/proyecto/otra_prueba/src/database/modeldb.py
+# proyecto_etl/src/database/modeldb.py
 import os
 import logging
 from sqlalchemy import (
     MetaData, Table, Column, Integer, String, Boolean,
     Float, DECIMAL, Date, BIGINT, ForeignKeyConstraint, inspect, create_engine,
-    UniqueConstraint, Text
+    UniqueConstraint, Text, DateTime
 )
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.sql import func
 from .db import get_db_engine, load_enviroment_variables
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p")
@@ -134,3 +136,30 @@ if __name__ == "__main__":
         if engine:
             engine.dispose()
             logger.info("Database engine disposed.")
+
+Base = declarative_base()
+
+class apiPlace(Base): # Renombrado para claridad si tienes otros tipos de Place
+    __tablename__ = 'api_places' # Nombre de la tabla
+
+    # Columnas principales
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    fsq_id = Column(String, unique=True, nullable=False) # ID de Foursquare
+    name = Column(String, nullable=True) # Permitir nulos si es posible
+    latitude = Column(Float, nullable=True)
+    longitude = Column(Float, nullable=True)
+    address = Column(String, nullable=True) # Dirección limpia
+    category_group = Column(String, nullable=True) # Nueva columna de grupo de categoría
+
+    # Timestamps (opcional, pero buena práctica)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    
+    # Columnas que MANTIENES (asegúrate que estas vienen del CSV o se generan)
+    # Por ejemplo, si 'link', 'location', 'name', 'place_id' son del CSV y los quieres:
+    # link = Column(String, nullable=True)
+    # location_address = Column(String, nullable=True) # Si es diferente al 'address' limpio
+    # ... etc.
+
+    def __repr__(self):
+        return f"<apiPlace(fsq_id='{self.fsq_id}', name='{self.name}', category_group='{self.category_group}')>"
