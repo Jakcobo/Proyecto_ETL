@@ -1,4 +1,5 @@
-# proyecto_etl/src/database/modeldb.py
+#/home/nicolas/Escritorio/proyecto ETL/develop/src/database/modeldb.py
+
 import os
 import logging
 from sqlalchemy import (

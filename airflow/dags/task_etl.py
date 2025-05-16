@@ -1,4 +1,4 @@
-# proyecto_etl/airflow/dags/task_etl.py
+#/home/nicolas/Escritorio/proyecto ETL/develop/airflow/dags/task_etl.py
 import pandas as pd
 import logging
 import sys
@@ -62,8 +62,11 @@ def clean_data(df_raw: pd.DataFrame) -> pd.DataFrame:
         raise
 
 
+# airflow/dags/task_etl.py
+
+# ... (otros imports) ...
+
 def load_cleaned_data(df_cleaned: pd.DataFrame):
-    # ... (código existente) ...
     """Tarea de carga: Recibe el DataFrame limpio y lo carga en la tabla final."""
     try:
         logger.info(f"Executing loading task for cleaned data into table '{FINAL_TABLE_NAME}'.")
@@ -77,8 +80,10 @@ def load_cleaned_data(df_cleaned: pd.DataFrame):
         if success:
             logger.info(f"Cleaned data loading into '{FINAL_TABLE_NAME}' completed successfully.")
         else:
-            logger.warning(f"Cleaned data loading function reported failure for table '{FINAL_TABLE_NAME}'.")
-        return success
+            # MODIFICACIÓN IMPORTANTE AQUÍ:
+            logger.error(f"Cleaned data loading function FAILED for table '{FINAL_TABLE_NAME}'.")
+            raise RuntimeError(f"Failed to load data into {FINAL_TABLE_NAME}. Check logs from exe_load_data.")
+        return success # Aunque ahora no se alcanzará si es False
 
     except Exception as e:
         logger.error(f"Error during cleaned data loading into '{FINAL_TABLE_NAME}': {e}", exc_info=True)
