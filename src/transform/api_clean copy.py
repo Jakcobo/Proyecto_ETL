@@ -1,4 +1,4 @@
-# proyecto_etl/src/etl_transform.py
+# /home/nicolas/Escritorio/proyecto ETL/develop/src/transform/api_clean copy.py
 import pandas as pd
 
 def transform_data(input_file_path, output_file_path):

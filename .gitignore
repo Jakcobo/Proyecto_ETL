@@ -1,5 +1,8 @@
+# /home/nicolas/Escritorio/proyecto ETL/develop/.gitignore
+
 env/
 venv/
 airflow/*
 !airflow/dags/
 !airflow/dags/**
+.env
