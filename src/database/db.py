@@ -1,4 +1,5 @@
-# proyecto_etl/src/database/db.py
+#/home/nicolas/Escritorio/proyecto ETL/develop/src/database/db.py
+
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, inspect, Integer, Float, String, DateTime, MetaData, Table, Column, BIGINT, text #, create_sqlalchemy_engine
 from sqlalchemy.exc import OperationalError, ProgrammingError
@@ -14,8 +15,6 @@ logger = logging.getLogger(__name__)
 def load_enviroment_variables():
     """Loads enviroment variables from .env file"""
     env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..','env','.env')) #testing path
-    #env_path = os.path.join(os.path.dirname(__file__), '..','..','env','.env') #testing path
-    #env_path = os.path.join(os.path.dirname(__file__), '../../env/.env') #testing path
     logger.debug(f"Attempinting to load enviroment variables from {env_path}")
     loaded = load_dotenv(dotenv_path=env_path, verbose=True)
     if not loaded:
@@ -35,7 +34,7 @@ def get_db_config(db_name=None):
         'port':     os.getenv("POSTGRES_PORT"),
         'database': db_name if db_name else os.getenv("POSTGRES_DATABASE", "postgres")
     }
-    
+
     missing_vars = [k for k, v in config.items() if k != 'database' and not v]
     if missing_vars:
         logger.error(f"Missing required PostgresSQL enviroment variables: {missing_vars}")
@@ -95,7 +94,7 @@ def get_db_engine(db_name="airbnb"):
         
         target_url = f"postgresql://{config['user']}:{config['password']}@{config['host']}:{config['port']}/{config['database']}"
         logger.info(f"Creating engine for target database '{db_name}'.")
-        target_engine = create_engine(target_url, pool_pre_ping=True)
+        target_engine = create_engine(target_url, pool_pre_ping=True, pool_recycle=1800 )
         
         try:
             with target_engine.connect() as conn:

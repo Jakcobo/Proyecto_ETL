@@ -1,4 +1,4 @@
-# proyecto_etl/src/load/load_data.py
+# /home/nicolas/Escritorio/proyecto ETL/develop/src/load/load_data.py
 import pandas as pd
 import logging
 from sqlalchemy import create_engine, inspect, text
@@ -15,40 +15,42 @@ def exe_load_data(df: pd.DataFrame, db_name: str = "airbnb", table_name: str = "
     Creates the database if it doesn't exist.
     Replaces the table if it exists (drop and recreates).
     """
-    
     logger.info(f"Starting data load into database '{db_name}', table '{table_name}'.")
-    engine = None
     
     if not isinstance(df, pd.DataFrame):
         logger.error("Invalid input: exe_load_data requires a pandas DataFrame.")
         raise TypeError("Invalid input: exe_load_data requires a pandas DataFrame.")
-    
+
     if df.empty:
-        logger.warning("Input DataFrame is empy. Skipping database load.")
+        logger.warning("Input DataFrame is empty. Skipping database load.")
         return False
 
+    engine = None
     try:
         engine = get_db_engine(db_name)
-        logger.info(f"Loading data into table '{table_name}' with strategy 'replace'.")
-        df.to_sql(
-            name=table_name,
-            con=engine,
-            if_exists="replace",
-            index=False,
-              method  ='multi',
-            chunksize=40000
+        logger.info(f"Creating engine for target database '{db_name}'.")
+
+        with engine.begin() as connection:
+            logger.info(f"Loading data into table '{table_name}' with strategy 'replace'.")
+            df.to_sql(
+                name=table_name,
+                con=connection,
+                if_exists="replace",
+                index=False,
+                method='multi',
+                chunksize=10000
             )
-        
+
         logger.info(f"Data loaded successfully into table '{table_name}'.")
         return True
 
     except Exception as e:
-        logger.error(f"Error loading data into table '{table_name}': {e}", exc_info=True)
-        raise
+        logger.error(f" Error loading data into table '{table_name}': {e}", exc_info=True)
+        return False
 
     finally:
         if engine:
-            logger.info("Disposing databse engine.")
+            logger.info(" Disposing database engine.")
             engine.dispose()
 
 def load_api_places_to_db(df: pd.DataFrame, db_name: str = "airbnb", table_name: str = "api_data"):

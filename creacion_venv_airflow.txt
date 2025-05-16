@@ -1,4 +1,4 @@
-todo en escritorio/proyecto
+todo en el directorio raiz /proyecto_etl
 
 sudo apt-get install --reinstall dns-root-data cryptsetup-initramfs
 sudo dpkg --configure -a
@@ -6,26 +6,17 @@ sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt-get install python3-venv
+
 python3 -m venv venv
 source venv/bin/activate
-pip install pip install pandas==2.1.4 numpy==1.26.4 dotenv pyarrow
-pip install apache-airflow-providers-postgres
+
 export AIRFLOW_HOME="$(pwd)/airflow"
 export AIRFLOW_VERSION=2.10.0
-export PYTHON_VERSION="$(python -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+export PYTHON_VERSION="$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
 export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+
+pip install -r requirements.txt
+
+airflow db migrate #solo la primera vez que se inicia
 airflow standalone
-
-*ERROR*
-
-pip install --upgrade pip setuptools wheel pybind11
-pip show pybind11
-pip install --no-build-isolation google-re2
-python -m pybind11 --includes
-export CXXFLAGS="-std=c++17 $(python -m pybind11 --includes)"
-pip install --no-build-isolation google-re2
-pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
-airflow standalone
-
-muy xd esto, me puso reverendos problemas, la primera vez que me llama para instalar airflow con sus dependencias, me dio un error(14), así que hice los demás comandos.

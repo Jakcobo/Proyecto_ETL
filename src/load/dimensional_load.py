@@ -1,4 +1,4 @@
-# proyecto_etl/src/load/dimensional_load.py
+#/home/nicolas/Escritorio/proyecto ETL/develop/src/load/dimensional_load.py
 import logging
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import text
