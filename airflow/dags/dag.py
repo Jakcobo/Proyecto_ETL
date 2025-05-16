@@ -22,9 +22,6 @@ if SRC_PATH not in sys.path:
 from extract.api_extract import extract_foursquare_data # Renombrado para claridad, o usa tu nombre
 from extract.airbnb_extract import extract_airbnb_main_data # Renombrado para claridad, o usa tu nombre
 
-# Load (Bruta)
-from load.bruta_load import load_raw_data_to_db # Necesitará manejar dos DataFrames
-
 # Transform
 from transform.api_transform import clean_api_data_updated # O el nombre de tu función de limpieza API
 from transform.airbnb_transform import clean_airbnb_data_updated # O el nombre de tu función de limpieza Airbnb
@@ -59,7 +56,7 @@ default_args = {
 }
 
 @dag(
-    dag_id="ETL_Airbnb_Foursquare_V2",
+    dag_id="ETL_Airbnb_Foursquare_V2_No_Bruta",
     default_args=default_args,
     description='Nuevo flujo ETL con carga bruta, merge y Kafka.',
     schedule_interval=timedelta(days=1),
@@ -67,7 +64,7 @@ default_args = {
     catchup=False,
     tags=['etl', 'airbnb', 'foursquare', 'postgres', 'kafka', 'v2']
 )
-def etl_pipeline_v2():
+def etl_pipeline_v2_no_bruta():
 
     # --- Tareas de Extracción (Paso 1.x) ---
     @task(task_id="1.1_extraccion_api")
@@ -91,13 +88,6 @@ def etl_pipeline_v2():
         if not isinstance(raw_airbnb_df, pd.DataFrame):
              raise TypeError("extract_airbnb_main_data debe devolver un Pandas DataFrame")
         return raw_airbnb_df
-
-    # --- Tarea de Carga Bruta (Paso 1.3) ---
-    @task(task_id="1.3_carga_bruta")
-    def carga_bruta_task(df_api_raw: pd.DataFrame, df_airbnb_raw: pd.DataFrame):
-        # Esta función en bruta_load.py necesitará dos argumentos DataFrame
-        # y los nombres de las tablas donde se cargarán. Ej: "raw_api_data", "raw_airbnb_data"
-        load_raw_data_to_db(df_api_raw, "raw_api_data", df_airbnb_raw, "raw_airbnb_data")
 
     # --- Tareas de Transformación (Paso 2.x) ---
     @task(task_id="2.1_transformacion_api")
@@ -147,138 +137,143 @@ def etl_pipeline_v2():
     # Voy a asumir que esta tarea *prepara* el DF para el modelo dimensional.
     # Si solo crea tablas, quita la entrada y salida de DataFrame.
     @task(task_id="4.1_preparar_modelo_dimensional")
-    def preparar_modelo_dimensional_task(df_merged: pd.DataFrame) -> pd.DataFrame: # o (df_merged: pd.DataFrame) -> dict[str, pd.DataFrame] si preparas DFs para cada tabla dim/fact
-        # Esta función en model_dimensional.py podría:
-        # 1. Crear las tablas dimensionales si no existen (podría ser una tarea separada sin entrada de DF).
-        # 2. Transformar/seleccionar columnas del df_merged para preparar los datos para las tablas dimensionales y de hechos.
-        #    Si es así, la salida sería el/los DataFrame(s) listos para cargar.
-        # Por ahora, asumo que crea las tablas Y retorna el mismo DF o uno preparado.
-        # Opción más simple: esta tarea SOLO crea/valida las tablas, no necesita input ni output de DF.
-        # create_and_prepare_dimensional_model_data() # Si solo crea tablas
-        # Por ahora, mantengo la idea de que puede transformar el DF.
-        # data_for_dimensional_model = transform_for_dimensional_model(df_merged) # Nombre de función hipotético
-        # return data_for_dimensional_model
-
-        # SIMPLIFICACIÓN: Asumamos que esta tarea crea las tablas como antes y no maneja DFs.
-        # La tarea 4.2 leerá de la tabla cargada por 3.2_carga_merge
-        create_and_prepare_dimensional_model_data() # Esta función no debería tomar ni retornar DF
-        # Para que el flujo sea correcto, la carga dimensional (4.2) necesitará leer de la tabla
-        # creada por carga_merge_task (3.2). Así que esta tarea 4.1 es solo para creación de schema.
-        # No hay output de DF para la siguiente tarea si es solo creación de schema.
-        return "Schema Created" # O algún indicador de éxito, no un DF.
+    def preparar_modelo_dimensional_task(df_merged: pd.DataFrame) -> dict: # <--- TIPO DE RETORNO CORREGIDO
+        """
+        Crea el esquema del modelo dimensional si no existe y prepara los DataFrames
+        para cada tabla del modelo a partir del DataFrame mergeado.
+        Retorna un diccionario de DataFrames.
+        """
+        # La función create_and_prepare_dimensional_model_data ya maneja la creación de tablas
+        # y la preparación de los datos.
+        prepared_data_dict = create_and_prepare_dimensional_model_data(
+            df_merged=df_merged,
+            db_name="airbnb" # Asegúrate que el nombre de la BD sea el correcto
+        )
+        if not isinstance(prepared_data_dict, dict):
+            raise TypeError("create_and_prepare_dimensional_model_data debe devolver un diccionario de DataFrames.")
+        return prepared_data_dict # <--- RETORNO CORREGIDO
 
 
     # --- Tarea de Carga Dimensional (Paso 4.2) ---
     @task(task_id="4.2_carga_dimensional")
-    def carga_dimensional_task(schema_creation_status: str, merged_data_load_status: None): # Depende de que el schema esté y los datos mergeados estén cargados
-        # Esta función en load_dimensional.py leerá de la tabla "final_merged_data"
-        # (creada por carga_merge_task) y poblará las tablas dimensionales.
-        # No toma un DataFrame directamente como argumento de la tarea anterior si 4.1 solo crea schema.
-        populate_dimensional_model(source_table_name="final_merged_data")
+    def carga_dimensional_task(prepared_dataframes_dict: dict): # <--- ARGUMENTO DE ENTRADA CORREGIDO
+        """
+        Carga los DataFrames preparados (dimensiones y hechos) en la base de datos.
+        """
+        # La función populate_dimensional_model toma el diccionario de DataFrames.
+        populate_dimensional_model(
+            prepared_dataframes=prepared_dataframes_dict,
+            db_name="airbnb" # Asegúrate que el nombre de la BD sea el correcto
+        )
+        # Esta tarea no necesita retornar nada para la siguiente (Kafka),
+        # la dependencia se establece por el flujo.
 
     # --- Tarea Productor Kafka (Paso 5) ---
     @task(task_id="5_kafka_producer")
-    def kafka_producer_task(dimensional_load_status: None): # Depende de que el modelo dimensional esté cargado
-        # Esta función leerá datos (ej. de la tabla de hechos) y los enviará a Kafka.
-        stream_data_to_kafka(source_table_for_kafka="fact_publication", count=1000, time_limit_minutes=10)
+    def kafka_producer_task(dimensional_load_status: None): # dimensional_load_status es solo para dependencia
+        # El argumento 'dimensional_load_status' es solo para asegurar que esta tarea
+        # se ejecute DESPUÉS de carga_dimensional_task. No se usa su valor.
+        stream_data_to_kafka(
+            db_name="airbnb", # Nombre de la BD donde está el modelo dimensional
+            source_table_for_kafka="fact_listing_pois", # <--- LÍNEA ACTUALIZADA
+            max_messages=100, # Ajusta según necesidad para pruebas/producción
+            time_limit_seconds=600 # 10 minutos
+        )
 
 
     # --- Definición del Flujo de Tareas ---
-
-    # Flujo API
+    # ... (flujo para tareas 1.1 a 3.2 sin cambios) ...
     df_api_raw_output = extraccion_api_task()
     df_api_cleaned_output = transformacion_api_task(df_api_raw_output)
 
-    # Flujo Airbnb
     df_airbnb_raw_output = extraccion_airbnb_task()
     df_airbnb_cleaned_output = transformacion_airbnb_task(df_airbnb_raw_output)
 
-    # Carga Bruta (paralela a transformaciones, pero depende de extracciones)
-    carga_bruta_resultado = carga_bruta_task(df_api_raw=df_api_raw_output, df_airbnb_raw=df_airbnb_raw_output)
+    carga_limpia_resultado = carga_airbnb_y_api_limpia_task(
+        df_api_cleaned=df_api_cleaned_output,
+        df_airbnb_cleaned=df_airbnb_cleaned_output
+    )
 
-    # Carga de datos limpios (después de transformaciones)
-    carga_limpia_resultado = carga_airbnb_y_api_limpia_task(df_api_cleaned=df_api_cleaned_output, df_airbnb_cleaned=df_airbnb_cleaned_output)
+    df_merged_output = merge_datos_task(
+        df_api_cleaned=df_api_cleaned_output,
+        df_airbnb_cleaned=df_airbnb_cleaned_output
+    )
 
-    # Merge (después de transformaciones)
-    # El merge toma los DataFrames limpios directamente de las tareas de transformación
-    df_merged_output = merge_datos_task(df_api_cleaned=df_api_cleaned_output, df_airbnb_cleaned=df_airbnb_cleaned_output)
-
-    # Carga del Merge (después del merge)
     carga_merge_resultado = carga_merge_task(df_merged_output)
 
-    # Modelo y Carga Dimensional
-    # La creación del schema (4.1) debe completarse.
-    # La carga de datos mergeados (3.2) también debe completarse antes de poblar el modelo dimensional (4.2).
-    schema_status = preparar_modelo_dimensional_task(df_merged_output) # Revisar esta dependencia si 4.1 no necesita el DF
-    # Si 4.1 no necesita df_merged_output, entonces sería: schema_status = preparar_modelo_dimensional_task()
-    # y la dependencia sería implícita o se podría agrupar.
+    # Flujo para Modelo Dimensional y Kafka
+    # La tarea 4.1 toma el df_merged_output y produce un diccionario de DFs.
+    prepared_data_dictionary_output = preparar_modelo_dimensional_task(df_merged=df_merged_output)
 
-    # La carga dimensional (4.2) depende de que las tablas del modelo existan (hecho por 4.1)
-    # y de que los datos mergeados estén en la BD (hecho por 3.2 carga_merge_task).
-    # carga_dimensional_task necesita saber que carga_merge_task ha terminado.
-    carga_dim_resultado = carga_dimensional_task(schema_creation_status=schema_status, merged_data_load_status=carga_merge_resultado)
-
-    # Kafka (después de la carga dimensional)
-    kafka_resultado = kafka_producer_task(dimensional_load_status=carga_dim_resultado)
-
-    # Establecer dependencias explícitas donde el paso de datos no es directo:
-    # La carga bruta puede correr después de las extracciones.
-    # [df_api_raw_output, df_airbnb_raw_output] >> carga_bruta_resultado # Ya está implícito por los args
-
-    # La carga de datos limpios puede correr después de las transformaciones
-    # [df_api_cleaned_output, df_airbnb_cleaned_output] >> carga_limpia_resultado # Ya está implícito
-
-    # La tarea de merge depende de que ambas transformaciones terminen
-    # [df_api_cleaned_output, df_airbnb_cleaned_output] >> df_merged_output # Ya está implícito
-
-
-    # La carga dimensional (4.2) depende de que el modelo (schema en 4.1) esté listo
-    # Y de que los datos mergeados (3.2) estén cargados.
-    # La tarea `preparar_modelo_dimensional_task` (4.1) podría no depender del `df_merged_output` si solo crea tablas.
-    # Si es así, `preparar_modelo_dimensional_task` puede correr en paralelo a `carga_merge_task` después de `df_merged_output`.
-    # Y `carga_dimensional_task` dependería de ambas.
-
-    # Asumiendo que 4.1 SÍ toma df_merged_output (según tu descripción inicial):
-    # df_merged_output >> carga_merge_resultado
-    # df_merged_output >> schema_status
-    # [carga_merge_resultado, schema_status] >> carga_dim_resultado
-    # carga_dim_resultado >> kafka_resultado
-
-    # Flujo más lineal si 4.1 no depende de df_merged_output (solo crea schema):
-    # (df_api_raw_output, df_airbnb_raw_output) -> se usan en transformaciones Y en carga_bruta
-    # (df_api_cleaned_output, df_airbnb_cleaned_output) -> se usan en carga_limpia Y en merge
-    # df_merged_output -> carga_merge_task
-    # carga_merge_task \
-    #                   -> carga_dimensional_task -> kafka_producer_task
-    # preparar_modelo_dimensional_task (corre después de merge o en paralelo a carga_merge) /
+    # La tarea 4.2 toma el diccionario de DFs y carga el modelo.
+    # La dependencia de carga_merge_resultado es implícita porque df_merged_output
+    # (que se usa para generar prepared_data_dictionary_output) depende de carga_merge_task
+    # si el merge leyera de la tabla "final_merged_data".
+    # PERO, si merge_datos_task produce df_merged_output directamente, entonces
+    # preparar_modelo_dimensional_task puede correr en paralelo a carga_merge_task.
+    # Sin embargo, para que populate_dimensional_model funcione correctamente, los datos
+    # de "final_merged_data" (si se usan como referencia indirecta o si las dimensiones se leen de la BD)
+    # deben estar cargados.
     #
-    # Para que sea más claro y robusto, hagamos explícitas las dependencias clave si no hay paso de datos:
-    # carga_merge_task() y preparar_modelo_dimensional_task() deben terminar ANTES de carga_dimensional_task()
-    # Si preparar_modelo_dimensional_task NO toma df_merged_output:
-    # df_merged_output >> carga_merge_resultado
-    # modelo_schema_creado = preparar_modelo_dimensional_task() # No depende de df_merged_output
-    # [carga_merge_resultado, modelo_schema_creado] >> carga_dim_resultado >> kafka_resultado
+    # Para asegurar el orden correcto:
+    # 1. df_merged_output (de 3.1) va a carga_merge_task (3.2) Y a preparar_modelo_dimensional_task (4.1)
+    # 2. carga_dimensional_task (4.2) debe esperar a que preparar_modelo_dimensional_task (4.1) termine
+    #    (para tener el diccionario de DFs) Y a que carga_merge_task (3.2) termine (para que la tabla
+    #    "final_merged_data" esté disponible si `populate_dimensional_model` la consulta, aunque
+    #    la lógica actual de `populate_dimensional_model` usa el diccionario de DFs y relee dimensiones).
 
-    # Siguiendo tu descripción de que 4.1 toma el DF de 3.1:
-    # No es necesario definir las dependencias con `>>` si ya se pasan por argumentos.
-    # Airflow infiere estas dependencias.
-    # Solo necesitamos asegurar el orden correcto para las tareas que no tienen paso de XCom directo
-    # pero sí dependencia lógica (ej. carga_dimensional depende de que carga_merge haya terminado).
+    # Para simplificar y asegurar el orden, hacemos que 4.1 dependa de 3.2 si es necesario,
+    # o simplemente pasamos los datos. El flujo actual es:
+    # 3.1 (merge_datos_task) -> df_merged_output
+    # df_merged_output -> 3.2 (carga_merge_task) -> carga_merge_resultado
+    # df_merged_output -> 4.1 (preparar_modelo_dimensional_task) -> prepared_data_dictionary_output
 
-    # Dependencias Lógicas Clave (Airflow las infiere si hay paso de datos, pero es bueno pensarlas):
-    # 1. Extracciones primero.
-    # 2. Carga Bruta y Transformaciones después de sus respectivas extracciones.
-    # 3. Carga Limpia y Merge después de AMBAS transformaciones.
-    # 4. Carga Merge después de Merge.
-    # 5. Preparar Modelo Dimensional después de Merge (si toma el DF).
-    # 6. Carga Dimensional después de Carga Merge Y Preparar Modelo Dimensional.
-    # 7. Kafka Producer después de Carga Dimensional.
+    # carga_dimensional_task (4.2) necesita prepared_data_dictionary_output.
+    # Y lógicamente, es bueno que la tabla "final_merged_data" esté cargada antes de poblar el modelo,
+    # aunque no se use directamente si todo viene del diccionario.
+    # Para ser explícitos, podemos hacer que 4.1 espere a 3.2 si hay alguna dependencia indirecta.
+    # Pero si 4.1 solo necesita df_merged_output, puede correr en paralelo a 3.2.
 
-    # El flujo definido por los argumentos de las tareas ya establece la mayoría de estas.
-    # La dependencia clave es que `carga_dimensional_task` necesita que `carga_merge_task`
-    # termine (para que los datos estén en la BD) y que `preparar_modelo_dimensional_task`
-    # termine (para que el schema exista). Esto ya está cubierto por cómo se pasan los "status".
+    # Flujo actual con paso de datos:
+    carga_dim_resultado = carga_dimensional_task(prepared_dataframes_dict=prepared_data_dictionary_output)
+    
+    # Asegurar que carga_dimensional_task (4.2) también espere a carga_merge_task (3.2)
+    # Esto se puede hacer si carga_dimensional_task toma una "señal" de carga_merge_resultado,
+    # o si hacemos que preparar_modelo_dimensional_task dependa de carga_merge_resultado.
+    #
+    # Opción más simple y robusta:
+    # Hacer que la preparación del modelo (4.1) dependa de que los datos mergeados estén cargados (3.2).
+    # Esto asegura que la tabla "final_merged_data" existe y está poblada antes de que
+    # `create_and_prepare_dimensional_model_data` (que crea el schema) se ejecute,
+    # y antes de que `populate_dimensional_model` (que podría leer dimensiones de la BD) se ejecute.
+
+    # REVISIÓN DEL FLUJO PARA 4.1 y 4.2:
+    # 1. df_merged_output = merge_datos_task(...)
+    # 2. carga_merge_resultado = carga_merge_task(df_merged_output)
+    # 3. prepared_data_dictionary_output = preparar_modelo_dimensional_task(df_merged=df_merged_output, upstream_task_signal=carga_merge_resultado)
+    #    (donde upstream_task_signal es solo para forzar dependencia si no hay paso de datos directo)
+    #    O, si `create_and_prepare_dimensional_model_data` NO necesita que `final_merged_data` esté en la BD
+    #    (porque todo viene de `df_merged`), entonces `preparar_modelo_dimensional_task` solo depende de `df_merged_output`.
+
+    # El flujo actual donde `preparar_modelo_dimensional_task` solo toma `df_merged_output` es correcto
+    # si `create_and_prepare_dimensional_model_data` solo usa ese DataFrame para preparar los datos
+    # y crea el schema independientemente de la tabla `final_merged_data`.
+    # Y `populate_dimensional_model` usa el diccionario.
+
+    # La dependencia de `carga_dimensional_task` con `carga_merge_task` es implícita si
+    # `populate_dimensional_model` lee las dimensiones de la BD, y esas dimensiones
+    # se poblaron a partir de `final_merged_data` (lo cual no es el caso aquí, se pueblan
+    # a partir del diccionario).
+
+    # Por lo tanto, el flujo:
+    # df_merged_output -> carga_merge_resultado
+    # df_merged_output -> prepared_data_dictionary_output
+    # prepared_data_dictionary_output -> carga_dim_resultado
+    # Es correcto. `carga_dim_resultado` no necesita esperar explícitamente a `carga_merge_resultado`
+    # si `populate_dimensional_model` solo usa `prepared_data_dictionary_output` y el engine.
+
+    kafka_producer_task(dimensional_load_status=carga_dim_resultado)
 
 
 # Instanciar el DAG
-etl_dag_v2 = etl_pipeline_v2()
+etl_dag_v2_no_bruta_instance = etl_pipeline_v2_no_bruta()

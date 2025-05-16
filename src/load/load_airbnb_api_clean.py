@@ -5,57 +5,89 @@ import logging
 import os
 from sqlalchemy.exc import SQLAlchemyError
 
-# Asegurarse de que src esté en el path para importar db
+# Asegurarse de que src esté en el path para importar db y definir PROCESSED_DATA_PATH
 import sys
-SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+SRC_PATH = os.path.join(PROJECT_ROOT, "src")
 if SRC_PATH not in sys.path:
-    sys.path.append(SRC_PATH)
+    sys.path.insert(0, SRC_PATH)
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 try:
     from database.db import get_db_engine
 except ImportError:
     logger_fallback = logging.getLogger(__name__ + "_fallback")
     logger_fallback.error("Error importando get_db_engine. Asegúrate que 'src' esté en PYTHONPATH.")
-    # from ..database.db import get_db_engine # Alternativa para pruebas directas
 
 logger = logging.getLogger(__name__)
 
-def _load_single_cleaned_dataframe_to_db(df: pd.DataFrame, table_name: str, engine, if_exists_strategy: str = "replace"):
-    """
-    Carga un único DataFrame limpio a una tabla específica en la base de datos.
-    (Esta función es idéntica a la de bruta_load.py, podría moverse a un utils.db_load)
+PROCESSED_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "processed") # Corregido a "processed"
 
-    Args:
-        df (pd.DataFrame): El DataFrame a cargar.
-        table_name (str): El nombre de la tabla destino.
-        engine: El engine de SQLAlchemy para la conexión a la BD.
-        if_exists_strategy (str): Estrategia si la tabla ya existe ('replace', 'append', 'fail').
-    """
+def _ensure_processed_dir_exists():
+    if not os.path.exists(PROCESSED_DATA_PATH):
+        try:
+            os.makedirs(PROCESSED_DATA_PATH)
+            logger.info(f"Directorio creado: {PROCESSED_DATA_PATH}")
+        except OSError as e:
+            logger.error(f"Error al crear el directorio {PROCESSED_DATA_PATH}: {e}")
+            raise
+
+def _df_to_str_sample(df: pd.DataFrame, n: int = 3) -> str:
+    """Retorna una representación en string de las primeras n filas y columnas de un DataFrame."""
+    if df is None or df.empty:
+        return "DataFrame vacío o None."
+    return f"Shape: {df.shape}\nColumnas: {df.columns.tolist()}\nPrimeras {n} filas:\n{df.head(n).to_string()}"
+
+
+def _save_df_to_processed_csv(df: pd.DataFrame, file_name: str):
+    if df is None or df.empty:
+        logger.warning(f"DataFrame para '{file_name}' está vacío o es None. No se guardará el CSV.")
+        return
+
+    _ensure_processed_dir_exists()
+    file_path = os.path.join(PROCESSED_DATA_PATH, file_name)
+    
+    logger.info(f"Intentando guardar DataFrame en CSV: {file_path}")
+    logger.debug(f"Muestra del DataFrame a guardar en '{file_name}':\n{_df_to_str_sample(df, n=3)}")
+    
+    try:
+        df.to_csv(file_path, index=False, encoding='utf-8')
+        logger.info(f"DataFrame guardado exitosamente como CSV en: {file_path}. Shape: {df.shape}")
+    except Exception as e:
+        logger.error(f"Error al guardar DataFrame como CSV en '{file_path}': {e}", exc_info=True)
+
+def _load_single_cleaned_dataframe_to_db(df: pd.DataFrame, table_name: str, engine, if_exists_strategy: str = "replace"):
     if not isinstance(df, pd.DataFrame):
         logger.error(f"La entrada para la tabla '{table_name}' no es un DataFrame. Tipo recibido: {type(df)}")
         raise TypeError(f"Se esperaba un DataFrame para la tabla '{table_name}', se obtuvo {type(df)}")
 
     if df.empty:
-        logger.warning(f"El DataFrame para la tabla '{table_name}' está vacío. No se realizará la carga.")
-        return False # Indicar que no se cargó nada
+        logger.warning(f"El DataFrame para la tabla '{table_name}' está vacío. No se realizará la carga a la BD.")
+        return False
+
+    logger.info(f"Iniciando carga a BD para tabla '{table_name}'. Estrategia: '{if_exists_strategy}'. Shape: {df.shape}.")
+    logger.debug(f"Muestra del DataFrame a cargar en tabla '{table_name}':\n{_df_to_str_sample(df, n=3)}")
+
+    logger.info(f"DataFrame dtypes para tabla '{table_name}':\n{df.dtypes.to_string()}")
+    logger.info(f"Valores únicos para 'license' en tabla '{table_name}' (si existe):\n{df['license'].unique() if 'license' in df.columns else 'Columna no existe'}")
+    logger.info(f"Valores únicos para 'house_rules' en tabla '{table_name}' (si existe):\n{df['house_rules'].unique() if 'house_rules' in df.columns else 'Columna no existe'}")
 
     try:
-        logger.info(f"Iniciando carga del DataFrame limpio en la tabla '{table_name}' con estrategia '{if_exists_strategy}'. Shape: {df.shape}")
         df.to_sql(
             name=table_name,
             con=engine,
             if_exists=if_exists_strategy,
             index=False,
             method='multi',
-            chunksize=10000
         )
-        logger.info(f"DataFrame limpio cargado exitosamente en la tabla '{table_name}'.")
+        logger.info(f"DataFrame cargado exitosamente en la tabla '{table_name}'.")
         return True
     except SQLAlchemyError as e:
-        logger.error(f"Error de SQLAlchemy al cargar datos limpios en la tabla '{table_name}': {e}", exc_info=True)
+        logger.error(f"Error de SQLAlchemy al cargar datos en la tabla '{table_name}': {e}", exc_info=True)
         raise
     except Exception as e:
-        logger.error(f"Error inesperado al cargar datos limpios en la tabla '{table_name}': {e}", exc_info=True)
+        logger.error(f"Error inesperado al cargar datos en la tabla '{table_name}': {e}", exc_info=True)
         raise
 
 def load_cleaned_api_airbnb_to_db(
@@ -64,54 +96,53 @@ def load_cleaned_api_airbnb_to_db(
     df_airbnb_cleaned: pd.DataFrame,
     airbnb_cleaned_table_name: str,
     db_name: str = "airbnb",
-    if_exists_strategy: str = "replace"
+    if_exists_strategy: str = "replace",
+    save_csv: bool = True
 ):
-    """
-    Carga los DataFrames limpios de API y Airbnb a sus respectivas tablas de staging en la base de datos.
+    logger.info(f"Iniciando proceso de carga de datos limpios. BD: '{db_name}'.")
+    logger.info(f"DataFrame API limpio - Tabla: '{api_cleaned_table_name}'. {_df_to_str_sample(df_api_cleaned, n=2)}")
+    logger.info(f"DataFrame Airbnb limpio - Tabla: '{airbnb_cleaned_table_name}'. {_df_to_str_sample(df_airbnb_cleaned, n=2)}")
 
-    Args:
-        df_api_cleaned (pd.DataFrame): DataFrame limpio de datos de API.
-        api_cleaned_table_name (str): Nombre de la tabla para los datos limpios de API.
-        df_airbnb_cleaned (pd.DataFrame): DataFrame limpio de datos de Airbnb.
-        airbnb_cleaned_table_name (str): Nombre de la tabla para los datos limpios de Airbnb.
-        db_name (str, optional): Nombre de la base de datos. Por defecto "airbnb".
-        if_exists_strategy (str, optional): Estrategia si la tabla ya existe. Por defecto "replace".
-    """
-    logger.info(f"Iniciando proceso de carga de datos limpios para tablas '{api_cleaned_table_name}' y '{airbnb_cleaned_table_name}' en la BD '{db_name}'.")
     engine = None
-    api_load_successful = False
-    airbnb_load_successful = False
+    api_load_successful_db = False
+    airbnb_load_successful_db = False
+
+    if save_csv:
+        logger.info("Guardando DataFrames limpios como CSVs...")
+        _save_df_to_processed_csv(df_api_cleaned, "cleaned_api_data.csv")
+        _save_df_to_processed_csv(df_airbnb_cleaned, "cleaned_airbnb_data.csv")
+    else:
+        logger.info("Guardado de CSVs para datos limpios está desactivado.")
 
     try:
         engine = get_db_engine(db_name=db_name)
         logger.info(f"Engine para la base de datos '{db_name}' obtenido.")
 
-        # Cargar datos de API limpios
-        logger.info(f"Procesando carga para {api_cleaned_table_name}...")
+        # Cargar datos de API limpios a la BD
         if df_api_cleaned is not None and not df_api_cleaned.empty:
-            api_load_successful = _load_single_cleaned_dataframe_to_db(df_api_cleaned, api_cleaned_table_name, engine, if_exists_strategy)
+            logger.info(f"Procesando carga a BD para API: {api_cleaned_table_name}...")
+            api_load_successful_db = _load_single_cleaned_dataframe_to_db(df_api_cleaned, api_cleaned_table_name, engine, if_exists_strategy)
         else:
-            logger.warning(f"DataFrame para '{api_cleaned_table_name}' es None o está vacío. Saltando carga.")
-            api_load_successful = True # Considerar éxito si no había nada que cargar
+            logger.warning(f"DataFrame API limpio para '{api_cleaned_table_name}' es None o está vacío. Saltando carga a BD.")
+            api_load_successful_db = True # Considerar éxito si no había nada que cargar
 
-        # Cargar datos de Airbnb limpios
-        logger.info(f"Procesando carga para {airbnb_cleaned_table_name}...")
+        # Cargar datos de Airbnb limpios a la BD
         if df_airbnb_cleaned is not None and not df_airbnb_cleaned.empty:
-            airbnb_load_successful = _load_single_cleaned_dataframe_to_db(df_airbnb_cleaned, airbnb_cleaned_table_name, engine, if_exists_strategy)
+            logger.info(f"Procesando carga a BD para Airbnb: {airbnb_cleaned_table_name}...")
+            airbnb_load_successful_db = _load_single_cleaned_dataframe_to_db(df_airbnb_cleaned, airbnb_cleaned_table_name, engine, if_exists_strategy)
         else:
-            logger.warning(f"DataFrame para '{airbnb_cleaned_table_name}' es None o está vacío. Saltando carga.")
-            airbnb_load_successful = True # Considerar éxito si no había nada que cargar
+            logger.warning(f"DataFrame Airbnb limpio para '{airbnb_cleaned_table_name}' es None o está vacío. Saltando carga a BD.")
+            airbnb_load_successful_db = True
         
-        if api_load_successful and airbnb_load_successful:
-            logger.info("Carga de ambos DataFrames limpios completada exitosamente.")
+        if api_load_successful_db and airbnb_load_successful_db:
+            logger.info("Carga a BD de ambos DataFrames limpios completada exitosamente.")
         else:
-            # Esto solo se alcanzaría si una carga falló por una razón que no sea DataFrame vacío,
-            # ya que _load_single_cleaned_dataframe_to_db lanzaría una excepción en caso de error.
-            logger.error("Falló la carga de uno o ambos DataFrames limpios. Revise los logs anteriores.")
-            # No es necesario lanzar una excepción aquí si las individuales ya lo hacen.
+            # Si una carga falló (y no fue por DF vacío), la excepción ya se habría lanzado.
+            # Este log es más para el caso donde uno o ambos DFs estaban vacíos y se saltó la carga.
+            logger.info("Una o ambas cargas a BD no se realizaron (posiblemente DataFrames vacíos o error previo).")
 
     except Exception as e:
-        logger.error(f"Error general durante el proceso de carga de datos limpios: {e}", exc_info=True)
+        logger.error(f"Error general durante el proceso de carga de datos limpios a la BD: {e}", exc_info=True)
         raise
     finally:
         if engine:
@@ -119,46 +150,40 @@ def load_cleaned_api_airbnb_to_db(
             logger.info("Engine de base de datos dispuesto.")
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO,
-                        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # Configurar logging para pruebas locales, puedes ponerlo en DEBUG para ver más
+    logging.basicConfig(
+        level=logging.DEBUG, # Nivel DEBUG para ver todos los logs
+        format='%(asctime)s - %(name)s - [%(levelname)s] - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
 
     logger.info("--- Iniciando prueba local de load_cleaned_api_airbnb_to_db ---")
 
-    # Crear DataFrames de ejemplo limpios para la prueba
-    sample_api_cleaned_data = {
-        'fsq_id': ['1_clean', '2_clean', '3_clean'],
-        'name_api_clean': ['Clean Place A', 'Clean Place B', 'Clean Place C'],
-        'category_group_api': ['restaurants', 'cultural', 'retail_&_shopping']
-    }
+    sample_api_cleaned_data = {'fsq_id': ['1_clean_test', '2_clean_test', '3_clean_test', '4_clean_test', '5_clean_test'], 'name_api_clean': ['Clean Place A Test', 'Clean Place B Test', 'Clean Place C Test', 'Clean Place D Test', 'Clean Place E Test'], 'category_group_api': ['restaurants', 'cultural', 'retail_&_shopping', 'restaurants', 'parks_&_outdoor']}
     test_df_api_cleaned = pd.DataFrame(sample_api_cleaned_data)
 
-    sample_airbnb_cleaned_data = {
-        'id_airbnb_clean': [101, 102, 103],
-        'name_airbnb_clean': ['Clean Cozy Flat', 'Clean Sunny Room', 'Clean Spacious House'],
-        'price_clean': [100.0, 50.0, 200.0],
-        'last_review_clean': [20221231, 20230115, 19000101]
-    }
+    sample_airbnb_cleaned_data = {'id_airbnb_clean': [1010, 1020, 1030, 1040, 1050], 'name_airbnb_clean': ['Clean Cozy Flat Test', 'Clean Sunny Room Test', 'Clean Spacious House Test', 'Another Flat', 'The Best Room'], 'price_clean': [110.0, 60.0, 210.0, 90.0, 150.0], 'last_review_clean': [20231231, 20240115, 19010101, 20231010, 20240202]}
     test_df_airbnb_cleaned = pd.DataFrame(sample_airbnb_cleaned_data)
 
-    # Nombres de las tablas para la prueba
     test_api_cleaned_table = "test_cleaned_api_staging"
     test_airbnb_cleaned_table = "test_cleaned_airbnb_staging"
-    test_db_name = "airbnb" # Asegúrate que esta BD exista y las credenciales en .env sean correctas
+    test_db_name = "airbnb_test_model"
 
     try:
-        logger.info(f"Intentando cargar datos limpios de prueba en BD '{test_db_name}', tablas '{test_api_cleaned_table}', '{test_airbnb_cleaned_table}'.")
-        # Nota: Esta prueba MODIFICARÁ tu base de datos 'airbnb' creando/reemplazando estas tablas de prueba.
+        logger.info(f"Intentando cargar y guardar datos limpios de prueba. BD: '{test_db_name}', Tablas: '{test_api_cleaned_table}', '{test_airbnb_cleaned_table}'.")
+        
         load_cleaned_api_airbnb_to_db(
             df_api_cleaned=test_df_api_cleaned,
             api_cleaned_table_name=test_api_cleaned_table,
             df_airbnb_cleaned=test_df_airbnb_cleaned,
             airbnb_cleaned_table_name=test_airbnb_cleaned_table,
-            db_name=test_db_name
+            db_name=test_db_name,
+            save_csv=True
         )
-        logger.info("Prueba de carga de datos limpios completada. Verifica las tablas en tu base de datos.")
+        logger.info("Prueba de carga y guardado de datos limpios completada.")
+        logger.info(f"Verifica las tablas en tu BD '{test_db_name}' y los archivos CSV en '{PROCESSED_DATA_PATH}'.")
 
     except Exception as main_exception:
-        logger.error(f"Error durante la prueba local de carga de datos limpios: {main_exception}", exc_info=True)
+        logger.error(f"Error durante la prueba local: {main_exception}", exc_info=True)
     finally:
-        # Opcional: Limpiar tablas de prueba (similar a bruta_load.py)
         logger.info("--- Prueba local de load_cleaned_api_airbnb_to_db finalizada ---")

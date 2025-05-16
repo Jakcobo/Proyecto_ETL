@@ -1,0 +1,645 @@
+name,latitude,longitude,address_cleaned,category_group
+Central Park,40.78272,-73.965614,"14 E 60th St (btwn 5th Ave & Central Park W), New York, NY 10022",parks_&_outdoor
+Jacqueline Kennedy Onassis Reservoir,40.785516,-73.962646,"Central Park (btwn 85th & 96th St), New York, NY 10024",parks_&_outdoor
+Metropolitan Museum of Art,40.779438,-73.96345,"1000 5th Ave (btwn E 80th & E 84th St), New York, NY 10028",cultural
+Metropolitan Museum of Art Store,40.779202,-73.96262,"1000 5th Ave (at E 82nd St), New York, NY 10028",cultural
+Bethesda Fountain,40.774177,-73.970859,"72ND St (Central Park), New York, NY 10021",Other
+Bethesda Terrace,40.773959,-73.970938,"72ND St (at Central Park), New York, NY 10021",Other
+"Levain Bakery – Original Location, 74th St, NYC",40.779913,-73.980304,"167 W 74th St (at Amsterdam Ave), New York, NY 10023",retail_&_shopping
+Lincoln Center for the Performing Arts,40.772771,-73.982953,"10 Lincoln Center Plz (btwn Columbus & 10th Ave), New York, NY 10023",cultural
+Metropolitan Opera,40.772628,-73.984258,"70 Lincoln Center Plz (at Columbus Ave), New York, NY 10023",cultural
+Central Park - Wien Walk,40.76599,-73.972245,"5th Ave (at E 61st St), New York, NY 10065",parks_&_outdoor
+Hudson Greenery 59th Entrance,40.77771420012256,-73.98937940597534,"Riverside Blvd (btwn W 65th & W 72nd St), New York, NY 10069",parks_&_outdoor
+Carl Schurz Park,40.775229,-73.943631,"599 E 86th St (at East End Ave), New York, NY 10028",parks_&_outdoor
+Riverside Park,40.779667,-73.987419,"Riverside Dr (btwn W 59th St & St. Clair Pl), New York, NY 10069",parks_&_outdoor
+Radio City Music Hall,40.759975,-73.97998,"1260 Avenue of the Americas (at W 50th St), New York, NY 10020",cultural
+St. Patrick's Cathedral,40.758526,-73.97615,"5TH Ave (at 5th Ave), New York, NY 10022",Other
+Sottocasa Pizzeria,40.805571,-73.947505,"227 Malcolm X Blvd, New York, NY 10027",restaurants
+Los Tacos No. 1,40.75743,-73.987507,"229 W 43rd St (btwn 7th & 8th Ave), New York, NY 10036",restaurants
+Bryant Park,40.755528,-73.993985,"W 42nd St (btwn 5th & 6th Ave), New York, NY 10018",parks_&_outdoor
+MUJI,40.752478,-73.981067,"475 5th Ave (at E 41st St), New York, NY 10017",Other
+Gantry Plaza State Park,40.744382,-73.95708,"474 48th Ave (btwn 46th & 48th Ave), Queens, NY 11109",parks_&_outdoor
+Madison Square Park,40.742253,-73.988091,"23 Madison Ave (btwn E 23rd & E 26th St), New York, NY 10010",parks_&_outdoor
+Jua,40.739781,-73.987732,"36 E 22nd St (btw Broadway & Park Ave S), New York, NY 10010",restaurants
+Gramercy Tavern,40.73846,-73.988371,"42 E 20th St (btwn Broadway & Park Ave), New York, NY 10003",bars_&_clubs
+David Zwirner Gallery,40.746699,-74.007134,"537 W 20th St (at 11th Ave), New York, NY 10011",cultural
+Malt & Mold,40.736712,-73.981499,"362 2nd Ave (btwn 21st & 22nd St), New York, NY 10010",restaurants
+Strand,40.73321,-73.99068,"828 Broadway (at E 12th St), New York, NY 10003",Other
+Washington Square Park,40.730823,-73.997332,"5 Avenue A (btwn MacDougal St & University Pl), New York, NY 10009",parks_&_outdoor
+L'Artusi,40.733806,-74.005138,"228 W 10th St (btwn Bleecker & Hudson St), New York, NY 10014",restaurants
+The Public Theater,40.72899,-73.991762,"425 Lafayette St (btwn Astor Pl & E 4th St), New York, NY 10003",cultural
+Astor Wine & Spirits,40.727937,-73.992812,"399 Lafayette St (at E 4th St), New York, NY 10003",restaurants
+Murray’s Cheese,40.731003,-74.003062,"254 Bleecker St (at Cornelia St), New York, NY 10014",Other
+Hudson River Park,40.7342,-74.010481,"West St (btwn Battery Pl & W 59th St), New York, NY 10011",parks_&_outdoor
+Fish Cheeks,40.725709,-73.9952569,"55 Bond St (btwn Lafayette & Bowery St), New York, NY 10012",restaurants
+Book Club Bar,40.723019,-73.98319,"197 E 3rd St (Avenue B), New York, NY 10009",Other
+Elizabeth Street Garden,40.722386,-73.994602,"Elizabeth Street (btwn Prince & Spring St), New York, NY 10012",landmarks
+Thai Diner,40.720687,-73.995626,"186 Mott St (at Kenmare), New York, NY 10012",restaurants
+La Compagnie des Vins Surnaturels,40.720508,-73.998238,"249 Centre St (at Broome St), New York, NY 10013",restaurants
+Nelson A. Rockefeller Park,40.71776,-74.015939,"River Ter (btwn Chambers St & Vesey Pl), New York, NY 10282",parks_&_outdoor
+Brooklyn Bridge,40.706234,-73.99699,"New York, NY 10038",landmarks
+Fort Tryon Park,40.860783,-73.932772,"1 Margaret Corbin Dr (at Fort Tyron Pl), New York, NY 10040",parks_&_outdoor
+Metropolitan Museum of Art,40.779438,-73.96345,"1000 5th Ave (btwn E 80th & E 84th St), New York, NY 10028",cultural
+Metropolitan Museum of Art Store,40.779202,-73.96262,"1000 5th Ave (at E 82nd St), New York, NY 10028",cultural
+American Museum of Natural History,40.781322,-73.97399,"Central Park (btwn W 77th & W 81st St), New York, NY 10024",cultural
+Cooper-Hewitt National Design Museum,40.784351,-73.957792,"2 E 91st St (at 5th Ave), New York, NY 10128",cultural
+AMC 84th Street 6,40.786627,-73.97755,"2310 Broadway (btwn W 83rd & W 84th St), New York, NY 10024",entertainment_&_leisure
+New-York Historical Society Museum and Library,40.77927,-73.9742,"170 Central Park W (at W 77th St), New York, NY 10024",cultural
+Auditorium Of New York Historical,40.779215,-73.974158,"170 Central Park W, New York, NY 10024",cultural
+92nd Street Y,40.782809,-73.952881,"1395 Lexington Ave (at E 92nd St), New York, NY 10128",cultural
+Cat Hill - Still Hunt by Edward Kemeys,40.776698642107306,-73.96720290184021,"at Cedar Hill, New York, NY 10024",cultural
+Lincoln Center for the Performing Arts,40.772771,-73.982953,"10 Lincoln Center Plz (btwn Columbus & 10th Ave), New York, NY 10023",cultural
+Park Avenue Armory,40.767451,-73.966097,"643 Park Ave (btwn E 66th & E 67th St), New York, NY 10065",cultural
+Walter Reade Theater,40.772668,-73.982774,"70 Lincoln Center Plz (btwn Broadway & Amsterdam Ave), New York, NY 10023",cultural
+Society of Illustrators,40.764677,-73.966907,"128 E 63rd St (Lexington Avenue), New York, NY 10065",cultural
+AMC Lincoln Square 13,40.775018,-73.981686,"1998 Broadway (at W 68th St), New York, NY 10023",entertainment_&_leisure
+Carnegie Hall,40.76497,-73.97972,"57th Street and Seventh (at W 57th St), New York, NY 10019",cultural
+Stern Auditorium / Perelman Stage,40.765026,-73.979985,"881 7th Ave (at W 57th St), New York, NY 10019",cultural
+New York City Center,40.763854,-73.979414,"131 W 55th St (btwn 6th & 7th Ave), New York, NY 10019",cultural
+Museum of Modern Art (MoMA),40.761539,-73.977227,"11 W 53rd St (btwn 5th & 6th Ave), New York, NY 10019",cultural
+Central Park Zoo,40.76778543898998,-73.97185921669006,"E 64th St (at 5th Ave), New York, NY 10065",parks_&_outdoor
+Radio City Music Hall,40.759975,-73.97998,"1260 Avenue of the Americas (at W 50th St), New York, NY 10020",cultural
+"Levain Bakery – Original Location, 74th St, NYC",40.779913,-73.980304,"167 W 74th St (at Amsterdam Ave), New York, NY 10023",retail_&_shopping
+Central Park Boathouse,40.775314,-73.968718,"E 72ND St (Park Dr N), New York, NY 10028",restaurants
+Tavern On the Green,40.772193439565,-73.97761523723602,"W 67th St (at West Dr), New York, NY 10023",restaurants
+As Is NYC,40.764721,-73.991482,"734 10th Ave (50th Street/10th Ave), New York, NY 10019",bars_&_clubs
+Gallagher's Steak House,40.762761,-73.983915,"228 W 52nd St (btwn Broadway & 8th Ave), New York, NY 10019",restaurants
+La Grande Boucherie,40.762681,-73.980898,"145 W 53rd St, New York, NY 10019",restaurants
+Rise Bar,40.767221,-73.986624,"859 9th Ave, New York, NY 10019",bars_&_clubs
+LumLum,40.762922,-73.989951,"404 W 49th St (9th Avenue), New York, NY 10019",restaurants
+Carmine's,40.757504,-73.986768,"200 W 44th St (btwn Broadway & 8th Ave), New York, NY 10036",restaurants
+Fogo de Chão,40.761144,-73.977867,"40 W 53rd St (at 5th Ave), New York, NY 10019",restaurants
+Joe's Pizza,40.754692,-73.987007,"1435 Broadway (W 40th St), New York, NY 10018",restaurants
+Haswell Green's,40.762913,-73.984315,"240 W 52nd St (Broadway), New York, NY 10019",restaurants
+Junior's Restaurant & Bakery - 49th St,40.760926,-73.983931,"1626 Broadway (W 49th St), New York, NY 10019",restaurants
+Chick-fil-A,40.757363,-73.982,"1180 Avenue of the Americas (at W 46th St), New York, NY 10036",restaurants
+Ess-A-Bagel,40.756226,-73.970118,"831 3rd Ave (btwn 50th & 51st St.), New York, NY 10022",Other
+Junior's,40.757839,-73.986344,"1515 Broadway (at W 45th St), New York, NY 10036",Other
+Rudy's Bar & Grill,40.760014,-73.991715,"627 9th Ave (btwn W 44th & W 45th St), New York, NY 10036",bars_&_clubs
+The Dickens,40.760937,-73.987514,"783 8th Ave (48th), New York, NY 10036",bars_&_clubs
+Other Half Brewing,40.757673,-73.978518,"600 5th Ave (btwn W 48th & 49th St), New York, NY 10020",bars_&_clubs
+Cafe Grumpy,40.752579,-73.977314,"89 E 42nd St (at Lexington Ave), New York, NY 10017",restaurants
+Bemelmans Bar,40.774381,-73.963263,"35 E 76th St (at Madison Ave), New York, NY 10021",restaurants
+The Jeffrey Craft Beer & Bites,40.761057,-73.963053,"311 E 60th St (btwn 1st & 2nd Ave), New York, NY 10022",entertainment_&_leisure
+As Is NYC,40.764721,-73.991482,"734 10th Ave (50th Street/10th Ave), New York, NY 10019",bars_&_clubs
+Tanner Smith's,40.764277,-73.981747,"204 W 55th St (btwn 7th Ave & Broadway), New York, NY 10019",bars_&_clubs
+Rise Bar,40.767221,-73.986624,"859 9th Ave, New York, NY 10019",bars_&_clubs
+Clay,40.809443,-73.95377,"553 Manhattan Ave (W 123rd Street), New York, NY 10027",bars_&_clubs
+Treadwell Park,40.761434,-73.961058,"1125 1st Ave (E 62nd Street), New York, NY 10065",entertainment_&_leisure
+Haswell Green's,40.762913,-73.984315,"240 W 52nd St (Broadway), New York, NY 10019",restaurants
+Dutch Fred's,40.760875,-73.987817,"307 W 47th St (btwn 8th Ave & 9th Ave), New York, NY 10036",restaurants
+Beer Culture,40.759673,-73.98966,"328 W 45th St (btwn 8th & 9th Ave), New York, NY 10036",bars_&_clubs
+Rudy's Bar & Grill,40.760014,-73.991715,"627 9th Ave (btwn W 44th & W 45th St), New York, NY 10036",bars_&_clubs
+The Dickens,40.760937,-73.987514,"783 8th Ave (48th), New York, NY 10036",bars_&_clubs
+Other Half Brewing,40.757673,-73.978518,"600 5th Ave (btwn W 48th & 49th St), New York, NY 10020",bars_&_clubs
+La Pecora Bianca Bryant Park,40.752534,-73.982991,"20 W 40th St (btwn 5th Ave & 6th Ave), New York, NY 10018",bars_&_clubs
+Zou Zou's,40.752873,-73.99838,"385 9th Ave (31st St), New York, NY 10001",restaurants
+Dolly Varden,40.762971,-73.986152,"302 W 51st St (btwn 8th and 9th Aves), New York, NY 10019",restaurants
+Jimmy's Corner,40.75659,-73.984635,"140 W 44th St (btwn 6th & 7th Ave.), New York, NY 10036",bars_&_clubs
+Gramercy Tavern,40.73846,-73.988371,"42 E 20th St (btwn Broadway & Park Ave), New York, NY 10003",bars_&_clubs
+Dive Bar,40.794043,-73.970758,"732 Amsterdam Ave (btwn 95th & 96th St), New York, NY 10025",bars_&_clubs
+Hotel Chelsea Lobby Bar,40.744337,-73.996777,"226 W 23rd St, New York, NY 10011",bars_&_clubs
+Central Park,40.78272,-73.965614,"14 E 60th St (btwn 5th Ave & Central Park W), New York, NY 10022",parks_&_outdoor
+Jacqueline Kennedy Onassis Reservoir,40.785516,-73.962646,"Central Park (btwn 85th & 96th St), New York, NY 10024",parks_&_outdoor
+Metropolitan Museum of Art Store,40.779202,-73.96262,"1000 5th Ave (at E 82nd St), New York, NY 10028",cultural
+The Obelisk,40.779663,-73.965522,"East Dr (at 81st St), New York, NY 10028",landmarks
+Belvedere Castle,40.779356,-73.968919,"79TH St, New York, NY 10024",landmarks
+The Ramble,40.744184,-74.006379,"79th St Transverse, New York, NY 10011",landmarks
+Bethesda Fountain,40.774177,-73.970859,"72ND St (Central Park), New York, NY 10021",Other
+Bethesda Terrace,40.773959,-73.970938,"72ND St (at Central Park), New York, NY 10021",Other
+Engineers Gate,40.784109,-73.958745,"5TH Ave (at E 90th St), New York, NY 10128",landmarks
+Alice in Wonderland Statue,40.774939,-73.966606,"E 74TH St (btwn E 75th & 76th St), New York, NY 10021",landmarks
+Central Park Mall,40.772378,-73.971532,"New York, NY 10028",parks_&_outdoor
+Riverside Park,40.809406,-73.967472,"New York, NY 10025",parks_&_outdoor
+Central Park - W 69th St Entrance Garden,40.774386,-73.977116,"W 69TH St (Central Park West), New York, NY 10023",parks_&_outdoor
+Central Park - Wien Walk,40.76599,-73.972245,"5th Ave (at E 61st St), New York, NY 10065",parks_&_outdoor
+Diana Ross Playground,40.769697,-73.982876,"Central Park W (at 81st St), New York, NY 10024",parks_&_outdoor
+Carl Schurz Park,40.775229,-73.943631,"599 E 86th St (at East End Ave), New York, NY 10028",parks_&_outdoor
+Hudson Greenery 59th Entrance,40.77771420012256,-73.98937940597534,"Riverside Blvd (btwn W 65th & W 72nd St), New York, NY 10069",parks_&_outdoor
+Carl Schurz Dog Run,40.773926,-73.943931,"E END AVE AND 86TH St (East River Promenade), New York, NY 10128",parks_&_outdoor
+96th Street Playground,40.787594,-73.955601,"5TH Ave (at E 96th St), New York, NY 10128",parks_&_outdoor
+Imagine Circle,40.775734,-73.975159,"Central Park, New York, NY 10023",Other
+City Swiggers,40.777356,-73.950923,"320 E 86th St (btw. 1st Ave. & 2nd Ave.), New York, NY 10028",retail_&_shopping
+Trader Joe's,40.790625,-73.969401,"670 Columbus Ave (93rd Street), New York, NY 10025",retail_&_shopping
+Barnes & Noble,40.786218,-73.978715,"2289 Broadway (at W 82nd St), New York, NY 10024",Other
+Target,40.77907,-73.955447,"150 E 86th St (3rd Ave), New York, NY 10028",retail_&_shopping
+Agata & Valentina,40.772227,-73.952998,"1505 1st Ave (at 79th St), New York, NY 10075",retail_&_shopping
+Fifth Avenue,40.7637325,-73.9727439,"5TH Ave (btwn E 58th & E 59th St), New York, NY 10021",retail_&_shopping
+Trader Joe's,40.778615,-73.98222,"2073 Broadway (at W 72nd St), New York, NY 10023",retail_&_shopping
+MoMA Design Store,40.761082,-73.97817,"44 W 53rd St (btwn 6th & 5th Ave.), New York, NY 10019",Other
+Westerly Natural Market,40.765177,-73.984403,"911 8th Ave (at 54th St), New York, NY 10019",retail_&_shopping
+Whole Foods Market,40.768514,-73.982742,"10 Columbus Cir (at W 58th St), New York, NY 10019",retail_&_shopping
+Whole Foods Market,40.779785,-73.95294,"1551 3rd Ave (East 88th St.), New York, NY 10128",retail_&_shopping
+Trader Joe's,40.759539,-73.961291,"405 E 59th St (1st and Sutton), New York, NY 10022",retail_&_shopping
+UNIQLO,40.760381,-73.976133,"666 5th Ave (at W 53rd St), New York, NY 10103",retail_&_shopping
+Nintendo World,40.75811,-73.97943,"10 Rockefeller Plz (btwn 5th & 6th Ave), New York, NY 10020",retail_&_shopping
+Saks Fifth Avenue,40.758038,-73.976959,"611 5th Ave (btwn E 49th & E 50th St), New York, NY 10022",retail_&_shopping
+Nike,40.759878,-73.976769,"650 5th Ave (at W 52nd St), New York, NY 10019",retail_&_shopping
+Adidas,40.756001,-73.978496,"565 5th Ave (at E 46th St), New York, NY 10017",retail_&_shopping
+Fairway Market,40.780791,-73.981781,"2131 Broadway (btwn W 74th & 75th St), New York, NY 10023",retail_&_shopping
+MUJI,40.752478,-73.981067,"475 5th Ave (at E 41st St), New York, NY 10017",Other
+Disney Store,40.758095,-73.984869,"1540 Broadway (btwn W 45th & 46th St), New York, NY 10036",retail_&_shopping
+Kings Theatre,40.645974,-73.957429,"1027 Flatbush Ave (btwn Tilden Ave & Duryea Pl), Brooklyn, NY 11226",entertainment_&_leisure
+Nethermead,40.660706,-73.968678,"Brooklyn, NY 11218",landmarks
+Prospect Park,40.661865,-73.969682,"Prospect Park W/SW (Flatbush Ave), Brooklyn, NY 11215",parks_&_outdoor
+Brooklyn Botanic Garden,40.666325,-73.96208,"990 Washington Avenue (btwn President St & Empire Blvd), Brooklyn, NY 11225",parks_&_outdoor
+Villabate Alba,40.61603,-73.992947,"7001 18th Ave (at 70th St), Brooklyn, NY 11204",retail_&_shopping
+Long Meadow,40.668798,-73.970431,"btwn East Dr & West Dr, Brooklyn, NY 11215",landmarks
+Brooklyn Museum,40.67091,-73.9635,"200 Eastern Pkwy (at Washington Ave), Brooklyn, NY 11238",cultural
+Villager,40.6718,-73.960998,"841 Classon Ave, Brooklyn, NY 11238",restaurants
+Covenhoven,40.67527,-73.96026,"730 Classon Ave (btwn Prospect Pl & Park Pl), Brooklyn, NY 11238",bars_&_clubs
+Grand Army Plaza,40.673487,-73.968433,"1 Grand Army Plz, Brooklyn, NY 11238",Other
+Gold Star Beer Counter,40.675147,-73.96684,"176 Underhill Ave (Sterling Pl), Brooklyn, NY 11238",bars_&_clubs
+Baba's Pierogies,40.676879,-73.986328,"295 3rd Ave (Carroll Street), Brooklyn, NY 11215",Other
+Other Half Brewing Company,40.673897,-73.999105,"195 Centre St (Smith & Court St), Brooklyn, NY 11231",bars_&_clubs
+Greenlight Bookstore,40.686204,-73.97464,"686 Fulton St (at S Portland Ave), Brooklyn, NY 11217",Other
+Miss Ada,40.689488,-73.972389,"184 Dekalb Ave (at Carlton Ave), Brooklyn, NY 11205",restaurants
+BAM Harvey Theater,40.688305,-73.978691,"651 Fulton St (at Rockwell Pl), Brooklyn, NY 11217",cultural
+Books Are Magic,40.684006,-73.992088,"225 Smith St (Butler St), Brooklyn, NY 11231",Other
+Paisanos Butcher Shop,40.686301,-73.990957,"162 Smith St (btw Wyckoff & Bergen), Brooklyn, NY 11201",Other
+Fort Greene Park,40.69177563832657,-73.97558212280273,"Washington Park (btwn Myrtle & DeKalb Ave), Brooklyn, NY 11201",parks_&_outdoor
+Sahadi's,40.69017,-73.993421,"187 Atlantic Ave (btwn Clinton & Court St), Brooklyn, NY 11201",retail_&_shopping
+Sunny's Bar,40.675623,-74.016835,"253 Conover St (at Beard St), Brooklyn, NY 11231",entertainment_&_leisure
+Strong Rope Brewery,40.677299,-74.018646,"185 Van Dyke St, Brooklyn, NY 11231",bars_&_clubs
+Pier 5 Soccer Fields,40.69338,-73.999569,"at Joralemon St, Brooklyn, NY 10004",parks_&_outdoor
+Brooklyn Heights Promenade,40.697405,-73.997022,"Pierrepont Pl (btwn Remsen & Orange St), Brooklyn, NY 11201",parks_&_outdoor
+Syndicated Bar Theater Kitchen,40.704897,-73.932955,"40 Bogart St (btwn Thames & Grattan), Brooklyn, NY 11206",cultural
+Brooklyn Bridge Park Pebble Beach,40.704331,-73.990182,"Brooklyn, NY 11201",parks_&_outdoor
+Grimm Artisanal Ales,40.714348,-73.936501,"990 Metropolitan Ave (btwn Catherine St & Morgan Ave), Brooklyn, NY 11211",bars_&_clubs
+Ace's Pizza,40.715006,-73.958304,"637 Driggs Ave (btwn Metropolitan Ave & N 4th St), Brooklyn, NY 11211",restaurants
+Domino Park,40.714812,-73.967506,"15 River St (btwn Grand & S 5th St), Brooklyn, NY 11249",parks_&_outdoor
+Nitehawk Cinema,40.715971,-73.962531,"136 Metropolitan Ave (btwn Berry St & Wythe Ave), Brooklyn, NY 11249",entertainment_&_leisure
+Gelateria Gentile,40.716151,-73.963848,"253 Wythe Ave (N 1st), Brooklyn, NY 11249",restaurants
+Other Half Brewing Domino Park,40.715851,-73.966978,"34 S River St (at S 1st St), Brooklyn, NY 11249",bars_&_clubs
+Four Five Six,40.719133,-73.943143,"199 Richardson St, Brooklyn, NY 11222",bars_&_clubs
+Brooklyn Steel,40.719357,-73.938787,"319 Frost St (at Debevoise St), Brooklyn, NY 11222",cultural
+Forma Pasta Factory,40.723708,-73.951568,"14 Bedford Ave (at Lorimer St), Brooklyn, NY 11222",restaurants
+Goldie's,40.725659,-73.945139,"195 Nassau Ave (Humboldt St.), Brooklyn, NY 11222",restaurants
+Transmitter Park,40.729988,-73.96076,"Greenpoint Ave (at West St), Brooklyn, NY 11222",parks_&_outdoor
+Paulie Gee's,40.729615,-73.958562,"60 Greenpoint Ave (btwn Franklin & West St), Brooklyn, NY 11222",restaurants
+Radio Bakery,40.73241,-73.954915,"135 India St (at Manhattan Ave), Brooklyn, NY 11222",retail_&_shopping
+Archestratus Books & Foods,40.732834,-73.955194,"160 Huron St (at Manhattan Ave), Brooklyn, NY 11222",Other
+The Blue Light Speak Cheesy,40.729786,-73.956211,"114 Greenpoint Ave (at Manhattan Ave), Brooklyn, NY 11222",restaurants
+Bakeri,40.734443,-73.95757,"105 Freeman St (btwn Franklin & Manhattan Ave), Brooklyn, NY 11222",retail_&_shopping
+Kings Theatre,40.645974,-73.957429,"1027 Flatbush Ave (btwn Tilden Ave & Duryea Pl), Brooklyn, NY 11226",entertainment_&_leisure
+Sycamore Flower Shop + Bar,40.639713,-73.967362,"1118 Cortelyou Rd (btwn Stratford & Westminster Rd), Brooklyn, NY 11218",cultural
+Brooklyn Museum,40.67091,-73.9635,"200 Eastern Pkwy (at Washington Ave), Brooklyn, NY 11238",cultural
+Nitehawk Prospect Park,40.661592,-73.979786,"188 Prospect Park W (15th Street), Brooklyn, NY 11215",entertainment_&_leisure
+Dyker Heights Christmas Lights,40.617309,-74.015168,"1158 83rd St, Brooklyn, NY 11228",Other
+BAM Rose Cinemas,40.686607,-73.977665,"30 Lafayette Ave (btwn Ashland Pl & St. Felix St), Brooklyn, NY 11217",cultural
+Public Records,40.682219,-73.986435,"233 Butler St (btw Bond & Nevins), Brooklyn, NY 11217",cultural
+Brooklyn Children's Museum,40.674467,-73.943964,"145 Brooklyn Ave (Brower Park), New York, NY 11213",cultural
+Brooklyn Academy of Music,40.686499,-73.977661,"30 Lafayette Ave (btwn Ashland Pl & Saint Felix St), Brooklyn, NY 11217",cultural
+Prospect Park Zoo,40.665025,-73.964399,"450 Flatbush Ave (at Ocean Ave), Brooklyn, NY 11225",parks_&_outdoor
+BAM Harvey Theater,40.688305,-73.978691,"651 Fulton St (at Rockwell Pl), Brooklyn, NY 11217",cultural
+BAM Howard Gilman Opera House,40.686499,-73.977661,"30 Lafayette Ave (btwn Ashland Pl & St Felix St), Brooklyn, NY 11217",cultural
+Littlefield,40.678582,-73.983371,"635 Sackett St (between 3rd & 4th Aves), Brooklyn, NY 11217",cultural
+BRIC House,40.688616,-73.97914,"647 Fulton St (at Rockwell Place), Brooklyn, NY 11217",cultural
+Salsa Salsa Dance Studio,40.682687,-73.979083,"55 4th Ave (at Bergen St.), Brooklyn, NY 11217",cultural
+The Bell House,40.67372,-73.991728,"149 7th St (btwn 2nd & 3rd Ave), Brooklyn, NY 11215",bars_&_clubs
+Union Hall,40.676084,-73.980046,"702 Union St (btwn 5th & 6th Ave), Brooklyn, NY 11215",entertainment_&_leisure
+Alamo Drafthouse Downtown Brooklyn,40.690767,-73.983324,"445 Albee Sq (at Fulton St), Brooklyn, NY 11201",entertainment_&_leisure
+Barclays Center,40.682681,-73.975332,"620 Atlantic Ave (at Flatbush Ave), Brooklyn, NY 11217",entertainment_&_leisure
+Wonderville,40.692421,-73.927682,"1186 Broadway (Lafayette), Brooklyn, NY 11221",bars_&_clubs
+Villager,40.6718,-73.960998,"841 Classon Ave, Brooklyn, NY 11238",restaurants
+Gold Star Beer Counter,40.675147,-73.96684,"176 Underhill Ave (Sterling Pl), Brooklyn, NY 11238",bars_&_clubs
+Daytime,40.65862,-73.9781,"199 Windsor Pl, Brooklyn, NY 11215",restaurants
+La Bagel Delight,40.668582,-73.980407,"284 7th Ave (at 6th St), Brooklyn, NY 11215",restaurants
+Leland Eating & Drinking House,40.679882,-73.965148,"755 Dean St (Dean St & Underhill Ave), Brooklyn, NY 11238",Other
+Variety Coffee,40.66775,-73.98129,"312 7th Ave, Brooklyn, NY 11215",restaurants
+The Royal Palms Shuffleboard Club,40.678538,-73.986989,"514 Union St (btwn 3rd Ave & Nevins St), Gowanus, NY 11215",restaurants
+Other Half Brewing Company,40.673897,-73.999105,"195 Centre St (Smith & Court St), Brooklyn, NY 11231",bars_&_clubs
+Threes Brewing,40.679692,-73.982193,"333 Douglass St (at 4th Ave), Brooklyn, NY 11217",bars_&_clubs
+Public Records,40.682219,-73.986435,"233 Butler St (btw Bond & Nevins), Brooklyn, NY 11217",cultural
+Finback Brewery,40.67752,-73.984769,"545 President St, Brooklyn, NY 11215",bars_&_clubs
+Beer Street South,40.680609,-73.968186,"550 Vanderbilt Ave, Brooklyn, NY 11238",bars_&_clubs
+The Bell House,40.67372,-73.991728,"149 7th St (btwn 2nd & 3rd Ave), Brooklyn, NY 11215",bars_&_clubs
+The Rockwell Place,40.689047,-73.979156,"31 Rockwell Pl, Brooklyn, NY 11217",restaurants
+Grand Army,40.6882,-73.986539,"336 State St (at Hoyt St), Brooklyn, NY 11217",restaurants
+Black Forest Brooklyn,40.685653,-73.991019,"181 Smith St, Brooklyn, NY 11201",entertainment_&_leisure
+Stumptown Coffee Roasters,40.68875,-73.9921,"212 Pacific St (Court St), Brooklyn, NY 11201",restaurants
+Brooklyn Social,40.680491,-73.99448,"335 Smith St (at Carroll St), Brooklyn, NY 11231",restaurants
+Sisters,40.6829,-73.965178,"900 Fulton St (btwn Washington & Waverly Ave), Brooklyn, NY 11238",restaurants
+Strong Rope Brewery,40.677299,-74.018646,"185 Van Dyke St, Brooklyn, NY 11231",bars_&_clubs
+Covenhoven,40.67527,-73.96026,"730 Classon Ave (btwn Prospect Pl & Park Pl), Brooklyn, NY 11238",bars_&_clubs
+Gold Star Beer Counter,40.675147,-73.96684,"176 Underhill Ave (Sterling Pl), Brooklyn, NY 11238",bars_&_clubs
+BierWax,40.680016,-73.968206,"556 Vanderbilt Ave, Brooklyn, NY 11238",bars_&_clubs
+Franklin Park,40.672373,-73.95775,"618 Saint Johns Pl (btwn Classon & Franklin Ave), Brooklyn, NY 11238",bars_&_clubs
+The Royal Palms Shuffleboard Club,40.678538,-73.986989,"514 Union St (btwn 3rd Ave & Nevins St), Gowanus, NY 11215",restaurants
+Other Half Brewing Company,40.673897,-73.999105,"195 Centre St (Smith & Court St), Brooklyn, NY 11231",bars_&_clubs
+Threes Brewing,40.679692,-73.982193,"333 Douglass St (at 4th Ave), Brooklyn, NY 11217",bars_&_clubs
+Public Records,40.682219,-73.986435,"233 Butler St (btw Bond & Nevins), Brooklyn, NY 11217",cultural
+Finback Brewery,40.67752,-73.984769,"545 President St, Brooklyn, NY 11215",bars_&_clubs
+Beer Street South,40.680609,-73.968186,"550 Vanderbilt Ave, Brooklyn, NY 11238",bars_&_clubs
+The Bell House,40.67372,-73.991728,"149 7th St (btwn 2nd & 3rd Ave), Brooklyn, NY 11215",bars_&_clubs
+LaRina Pastificio & Vino,40.69338,-73.970426,"387 Myrtle Ave (btwn Clermont & Vanderbilt Ave), Brooklyn, NY 11205",restaurants
+Union Hall,40.676084,-73.980046,"702 Union St (btwn 5th & 6th Ave), Brooklyn, NY 11215",entertainment_&_leisure
+The Rockwell Place,40.689047,-73.979156,"31 Rockwell Pl, Brooklyn, NY 11217",restaurants
+Leyenda,40.684229,-73.991835,"221 Smith St (btwn Butler St & Baltic St), Brooklyn, NY 11201",restaurants
+Grand Army,40.6882,-73.986539,"336 State St (at Hoyt St), Brooklyn, NY 11217",restaurants
+Black Forest Brooklyn,40.685653,-73.991019,"181 Smith St, Brooklyn, NY 11201",entertainment_&_leisure
+The Coyote Club,40.688595,-73.941757,"417 Throop Ave (at Lexington Ave), Brooklyn, NY 11221",restaurants
+June,40.686113,-73.993916,"231 Court St (btwn Baltic & Warren St), Brooklyn, NY 11201",restaurants
+Brooklyn Social,40.680491,-73.99448,"335 Smith St (at Carroll St), Brooklyn, NY 11231",restaurants
+Prospect Park Parkside Entrance,40.655166,-73.962273,"Parkside Ave (at Ocean Ave), Brooklyn, NY 11226",parks_&_outdoor
+Boathouse & Audubon Center,40.660798,-73.965281,"Hill Dr (at East Dr), Brooklyn, NY 11225",landmarks
+Nethermead,40.660706,-73.968678,"Brooklyn, NY 11218",landmarks
+Prospect Park,40.661865,-73.969682,"Prospect Park W/SW (Flatbush Ave), Brooklyn, NY 11215",parks_&_outdoor
+The Peninsula,40.656818,-73.968963,"16TH St, Brooklyn, NY 11226",landmarks
+Brooklyn Botanic Garden,40.666325,-73.96208,"990 Washington Avenue (btwn President St & Empire Blvd), Brooklyn, NY 11225",parks_&_outdoor
+Long Meadow,40.668798,-73.970431,"btwn East Dr & West Dr, Brooklyn, NY 11215",landmarks
+Mount Prospect Park,40.673187,-73.967549,"68 Eastern Pkwy (Flatbush Ave), Brooklyn, NY 11238",parks_&_outdoor
+The Shakespeare Garden,40.66762,-73.962101,"1000 Washington Ave, Brooklyn, NY 11225",landmarks
+Lincoln Road Playground,40.660952,-73.963543,"20 Lincoln Rd (at Ocean Ave), Brooklyn, NY 11225",parks_&_outdoor
+Brower Park,40.673564,-73.94345,"900 Prospect Pl, Brooklyn, NY 11213",parks_&_outdoor
+Prospect Park Picnic House,40.665589,-73.971483,"West Dr, Brooklyn, NY 11225",parks_&_outdoor
+Prospect Park Dog Beach,40.66261,-73.972022,"West Dr (Upper Pool), Brooklyn, NY 11215",parks_&_outdoor
+J.J. Byrne Playground,40.672204,-73.983994,"344 5th Ave (btwn 3rd & 4th St), Brooklyn, NY 11215",parks_&_outdoor
+Bouldering Project Brooklyn,40.679693,-73.984156,"575 Degraw St (at 3rd Ave), Brooklyn, NY 11217",entertainment_&_leisure
+Marquis de Lafayette Monument,40.664587,-73.976676,"Prospect Park W (at 9th St), Brooklyn, NY 11215",landmarks
+James Forten Playground,40.67664,-73.965459,"Underhill Ave (at Prospect Pl), Brooklyn, NY 11238",parks_&_outdoor
+Underwood Park,40.68842,-73.966395,"LAFAYETTE Ave, Brooklyn , 11238, United States (Washington Avenue), Brooklyn, NY 11205",parks_&_outdoor
+Greenwood Playground,40.65047,-73.976562,"E 5th Street, Between Fort Hamilton Parkway and Greenwood Ave, Brooklyn , 11218, United States (at E 5th St), Brooklyn, NY 11218",parks_&_outdoor
+Vale of Cashmere,40.668856,-73.968253,"439 Flatbush Ave (East Dr), Brooklyn, NY 11225",Other
+Flatbush Food Co-Op,40.641251,-73.964742,"1415 Cortelyou Rd (Marlborough Rd), Brooklyn, NY 11226",retail_&_shopping
+Lincoln Market,40.660889,-73.961884,"33 Lincoln Rd, Brooklyn, NY 11225",retail_&_shopping
+Union Market,40.676085,-73.972022,"342 Flatbush Ave (Sterling Pl), Brooklyn, NY 11238",retail_&_shopping
+Whole Foods Market,40.674879,-73.988721,"214 3rd St (at 3rd Ave), Brooklyn, NY 11215",retail_&_shopping
+Mr Mango,40.687188,-73.976118,"59 Lafayette Ave (btwn S Elliot Pl & Ft Green Pl), Brooklyn, NY 11217",retail_&_shopping
+Park Slope Food Coop,40.674769,-73.976855,"782 Union St (btwn 6th & 7th Ave), Brooklyn, NY 11215",retail_&_shopping
+Food Garden Market,40.677383,-73.95585,"608 Franklin Ave (Dean St.), Brooklyn, NY 11238",retail_&_shopping
+Union Market,40.670674,-73.954763,"656 Lincoln Pl, Brooklyn, NY 11216",retail_&_shopping
+Jmart 新世界超市,40.610151,-74.001121,"8121 New Utrecht Ave, Brooklyn, NY 11214",retail_&_shopping
+Windsor Farms Market,40.656744,-73.977722,"589 Prospect Ave, Brooklyn, NY 11215",retail_&_shopping
+Trader Joe's,40.691258,-73.983125,"445 Gold St (btwn Willoughby & Fulton St), Brooklyn, NY 11201",retail_&_shopping
+Micro Center,40.659413,-74.004462,"850 3rd Ave (at 31st St), Brooklyn, NY 11232",retail_&_shopping
+ShopRite,40.654892,-73.868857,"590 Gateway Dr (Erskine St), Brooklyn, NY 11239",retail_&_shopping
+Trader Joe's,40.689498,-73.992543,"130 Court St (at Atlantic Ave), Brooklyn, NY 11201",retail_&_shopping
+Barnes & Noble,40.668764,-73.979673,"267 7th Ave (at 6th St), Brooklyn, NY 11215",Other
+Gateway Center,40.65202,-73.871541,"409 Gateway Dr, Brooklyn, NY 11239",retail_&_shopping
+Amazon Locker Whole Foods,40.686373,-73.978354,"292 Ashland Pl, Brooklyn, NY 11217",retail_&_shopping
+McNally Jackson Books,40.717287,-73.961709,"76 N 4th St (Wythe), Brooklyn, NY 11249",Other
+Caesar's Shopping Center,40.59345,-73.999374,"8949 Bay Pkwy, Brooklyn, NY 11214",retail_&_shopping
+The Shop at Threes,40.679692,-73.982193,"333 Douglass St (4th Ave), Brooklyn, NY 11217",retail_&_shopping
+Forest Park,40.702907,-73.852688,"Forest Park Dr (at Myrtle Ave), Queens, NY 11418",parks_&_outdoor
+Taqueria Kermes,40.707929,-73.897857,"6636 Fresh Pond Rd (at Woodbine St), Ridgewood, NY 11385",restaurants
+Rolo's,40.701955,-73.903567,"853 Onderdonk Ave (Cornelia Street), Ridgewood, NY 11385",restaurants
+Flushing Meadows Corona Park,40.749576,-73.854123,"100 Flushing Meadows (Dwight Eisenhower Promenade), Queens, NY 11368",parks_&_outdoor
+USTA Billie Jean King National Tennis Center,40.749415,-73.846017,"5201 111th St, Flushing, NY 11368",entertainment_&_leisure
+Basement,40.715222,-73.913709,"5219 Flushing Ave, Queens, NY 11378",bars_&_clubs
+Arthur Ashe Stadium,40.749919,-73.847104,"USTA Billie Jean King National Tennis Center, Queens, NY 11368",cultural
+Ayada Thai,40.743419,-73.887522,"7708 Woodside Ave (btwn 77th & 78th St), Elmhurst, NY 11373",restaurants
+Louis Armstrong House Museum,40.754563,-73.861554,"3456 107th St (btwn 34th & 37th Ave), Corona, NY 11368",cultural
+Haidilao Hotpot,40.761155,-73.827724,"13823 39th Ave (Union St), Flushing, NY 11354",restaurants
+Bolivian Llama Party,40.739251,-73.920858,"44-14 48TH Ave, Sunnyside, NY 11104",restaurants
+Sotto Le Stelle,40.743748,-73.920111,"4407 Queens Blvd, Sunnyside, NY 11104",restaurants
+Museum of the Moving Image,40.756325,-73.92395,"3601 35th Ave (btwn 36th St and 37th St), Astoria, NY 11106",cultural
+Loukoumi Taverna,40.770807,-73.902739,"4507 Ditmars Blvd, Astoria, NY 11105",restaurants
+Dutch Kills,40.747692,-73.940218,"2724 Jackson Ave (btwn Queens & Dutch Kills St), Long Island City, NY 11101",restaurants
+Brooklyn Bagel & Coffee Company,40.764601,-73.917098,"3614 30th Ave (btwn 36th & 37th St), Astoria, NY 11103",Other
+Hibino LIC,40.742648,-73.952005,"1070 Jackson Ave (btw 50th Ave & 11th St), Long Island City, NY 11101",restaurants
+"Sal, Kris & Charlie's Deli",40.773163,-73.911653,"3312 23rd Ave (btwn 33rd & 35th St), Astoria, NY 11105",restaurants
+Fifth Hammer Brewing Company,40.746529,-73.951442,"10 W 46th St, Queens, NY 10036",Other
+Casa Enrique,40.743379,-73.954246,"548 49th Ave (at Vernon Blvd), Long Island City, NY 11101",restaurants
+SingleCut Beersmiths,40.778335,-73.901753,"1933 37th St (btwn 19th & 20th Ave), Astoria, NY 11105",Other
+The Bonnie,40.774675,-73.913677,"2912 23rd Ave (btwn 29th & 31st St), Astoria, NY 11105",restaurants
+New York City Bagel & Coffee House,40.774831,-73.913901,"2908 23rd Ave (btwn 29th & 31st St), Astoria, NY 11105",Other
+Hunter's Point South Park,40.742452,-73.960674,"Center Blvd (at Borden Ave), Queens, NY 11101",parks_&_outdoor
+Gantry Plaza State Park,40.744382,-73.95708,"474 48th Ave (btwn 46th & 48th Ave), Queens, NY 11109",parks_&_outdoor
+Vesta Trattoria & Wine Bar,40.769609,-73.927686,"2102 30th Ave (at 21st St), Astoria, NY 11102",restaurants
+Pepsi Cola Sign,40.747355,-73.956889,"4610 Center Blvd (at Center Blvd), Queens, NY 11109",landmarks
+The Noguchi Museum,40.766922,-73.93783,"9-01 33rd Rd (at Vernon Blvd), Long Island City, NY 11106",cultural
+Breezy Point Beach,40.558405,-73.92126,"Queens, NY 11697",parks_&_outdoor
+Kew Gardens Cinema,40.709106,-73.829787,"8105 Lefferts Blvd (at Austin St), Kew Gardens, NY 11415",entertainment_&_leisure
+Indoors at Nowadays,40.692521,-73.901469,"5606 Cooper Ave, Glendale, NY 11385",bars_&_clubs
+TV Eye,40.697978,-73.90512,"1647 Weirfield St, Ridgewood, NY 11385",cultural
+USTA Billie Jean King National Tennis Center,40.749415,-73.846017,"5201 111th St, Flushing, NY 11368",entertainment_&_leisure
+Knockdown Center,40.715222,-73.913709,"5219 Flushing Ave (at 54th St), Maspeth, NY 11378",cultural
+Arthur Ashe Stadium,40.749919,-73.847104,"USTA Billie Jean King National Tennis Center, Queens, NY 11368",cultural
+Trans-Pecos,40.697031,-73.906262,"915 Wyckoff Ave, Ridgewood, NY 11385",bars_&_clubs
+Basement,40.715222,-73.913709,"5219 Flushing Ave, Queens, NY 11378",bars_&_clubs
+Louis Armstrong House Museum,40.754563,-73.861554,"3456 107th St (btwn 34th & 37th Ave), Corona, NY 11368",cultural
+Louis Armstrong Stadium,40.751047,-73.845223,"Flushing Meadows, Queens, NY 11368",cultural
+The Keep,40.708218,-73.919598,"205 Cypress Ave (Between Starr & Willoughby), Ridgewood, NY 11385",cultural
+AMC Fresh Meadows 7,40.741125,-73.783869,"19002 Horace Harding Expy, Fresh Meadows, NY 11365",entertainment_&_leisure
+Citi Field,40.756992,-73.845985,"12001 Roosevelt Ave (at Roosevelt Ave), Flushing, NY 11368",entertainment_&_leisure
+Queens Zoo,40.743806,-73.849852,"5351 111th St, Flushing, NY 11368",parks_&_outdoor
+Queens Museum of Art,40.74583,-73.846694,"Flushing Meadows (Kennedy Circle), Queens, NY 11368",cultural
+Practice Courts (1-5),40.749085,-73.848078,"Flushing, NY 11368",entertainment_&_leisure
+New York Hall of Science,40.747318,-73.851726,"4701 111th St (at 47th Ave), Corona, NY 11368",cultural
+Museum of the Moving Image,40.756325,-73.92395,"3601 35th Ave (btwn 36th St and 37th St), Astoria, NY 11106",cultural
+Regal Atlas Park,40.70801,-73.86797,"8028 Cooper Ave (Suite #6216), Glendale, NY 11385",entertainment_&_leisure
+The Gutter,40.74652,-73.951791,"1022 46th Ave (btwn Vernon Blvd & 11th St), Queens, NY 11101",entertainment_&_leisure
+Rolo's,40.701955,-73.903567,"853 Onderdonk Ave (Cornelia Street), Ridgewood, NY 11385",restaurants
+Aunt Ginny's,40.705528,-73.907104,"652 Woodward Ave (at Linden St), Ridgewood, NY 11385",bars_&_clubs
+TV Eye,40.697978,-73.90512,"1647 Weirfield St, Ridgewood, NY 11385",cultural
+Park Side Restaurant,40.743859,-73.856142,"10701 Corona Ave, Corona, NY 11368",restaurants
+Starbucks,40.726256,-73.852707,"10102 Queens Blvd, Forest Hills, NY 11375",restaurants
+Fillmore's Tavern,40.736494,-73.802698,"16602 65th Ave (at 166th St), Fresh Meadows, NY 11365",restaurants
+Shake Shack,40.642273,-73.783389,"JFK International Airport, Queens, NY 11430",restaurants
+The Dinerbar,40.729588,-73.85942,"9745 Queens Blvd (64th Road), Rego Park, NY 11374",restaurants
+Haidilao Hotpot,40.761155,-73.827724,"13823 39th Ave (Union St), Flushing, NY 11354",restaurants
+Shanghai You Garden,40.758978,-73.830572,"13533 40th Rd, Flushing, NY 11354",Other
+Forest Cafe,40.721262,-73.851871,"6804 Burns St (btwn 68th Ave & 69th Ave), Forest Hills, NY 11375",restaurants
+Pollos Mario Steak House & Seafood,40.747701,-73.884711,"8101 Roosevelt Ave, Jackson Heights, NY 11372",Other
+SriPraPhai,40.746404,-73.899205,"6413 39th Ave (btwn 64th & 65th St), Woodside, NY 11377",restaurants
+Spring Shabu-Shabu,40.760998,-73.82964,"13620 38th Ave, Flushing, NY 11354",Other
+Dutch Kills,40.747692,-73.940218,"2724 Jackson Ave (btwn Queens & Dutch Kills St), Long Island City, NY 11101",restaurants
+Brooklyn Bagel & Coffee Company,40.764601,-73.917098,"3614 30th Ave (btwn 36th & 37th St), Astoria, NY 11103",Other
+Hibino LIC,40.742648,-73.952005,"1070 Jackson Ave (btw 50th Ave & 11th St), Long Island City, NY 11101",restaurants
+Utopia Bagels,40.78005,-73.79353,"1909 Utopia Pkwy (19th Ave), Whitestone, NY 11357",restaurants
+Grey Cafe,40.75817,-73.78608,"19519 Northern Blvd (Btwn 195th & 196th St), Flushing, NY 11358",restaurants
+Fifth Hammer Brewing Company,40.746529,-73.951442,"10 W 46th St, Queens, NY 10036",Other
+Nowadays,40.692521,-73.901469,"5606 Cooper Ave (at Wyckoff Ave), Glendale, NY 11385",entertainment_&_leisure
+Rolo's,40.701955,-73.903567,"853 Onderdonk Ave (Cornelia Street), Ridgewood, NY 11385",restaurants
+Topos Bookstore Cafe,40.703569,-73.903715,"788 Woodward Ave (at Putnam Ave), Ridgewood, NY 11385",bars_&_clubs
+Aunt Ginny's,40.705528,-73.907104,"652 Woodward Ave (at Linden St), Ridgewood, NY 11385",bars_&_clubs
+Evil Twin Brewing NYC,40.69628,-73.904097,"1616 George St (Wyckoff Ave.), Ridgewood, NY 11385",bars_&_clubs
+TV Eye,40.697978,-73.90512,"1647 Weirfield St, Ridgewood, NY 11385",cultural
+Havana Dreams Cigar Lounge,40.723989,-73.869386,"6310 Woodhaven Blvd (btwn 63rd Ave & 63rd Rd), Middle Village, NY 11374",bars_&_clubs
+Trans-Pecos,40.697031,-73.906262,"915 Wyckoff Ave, Ridgewood, NY 11385",bars_&_clubs
+Fillmore's Tavern,40.736494,-73.802698,"16602 65th Ave (at 166th St), Fresh Meadows, NY 11365",restaurants
+The Keep,40.708218,-73.919598,"205 Cypress Ave (Between Starr & Willoughby), Ridgewood, NY 11385",cultural
+Bridge And Tunnel Brewery,40.693727,-73.90278,"1535 Decatur St (Decatur St. & Wycoff Ave.), Ridgewood, NY 11385",bars_&_clubs
+The Dinerbar,40.729588,-73.85942,"9745 Queens Blvd (64th Road), Rego Park, NY 11374",restaurants
+Rove,40.719151,-73.841756,"7227 Austin St, Forest Hills, NY 11375",bars_&_clubs
+The Queensboro Restaurant,40.755249,-73.886956,"8002 Northern Blvd, Jackson Heights, NY 11372",bars_&_clubs
+Dutch Kills,40.747692,-73.940218,"2724 Jackson Ave (btwn Queens & Dutch Kills St), Long Island City, NY 11101",restaurants
+Mar's,40.758371,-73.924114,"3421 34th Ave (at 35th St), Astoria, NY 11106",restaurants
+The Bungalow Bar,40.589026,-73.817152,"377 Beach 92nd St (at Beach Channel Dr), Rockaway Beach, NY 11693",Other
+The Windjammer,40.709091,-73.906976,"552 Grandview Ave, Ridgewood, NY 11385",bars_&_clubs
+SingleCut Beersmiths,40.778335,-73.901753,"1933 37th St (btwn 19th & 20th Ave), Astoria, NY 11105",Other
+The Bonnie,40.774675,-73.913677,"2912 23rd Ave (btwn 29th & 31st St), Astoria, NY 11105",restaurants
+Forest Park,40.702907,-73.852688,"Forest Park Dr (at Myrtle Ave), Queens, NY 11418",parks_&_outdoor
+The Overlook,40.71050768647108,-73.83545279502869,"Forest Ln (Forest Park Dr), Forest Hills, NY 11415",parks_&_outdoor
+Juniper Valley Park,40.72036,-73.880338,"76-00 Juniper N Blvd (btwn Juniper Blvd N & S), Queens, NY 11379",parks_&_outdoor
+Flushing Meadows Corona Park,40.749576,-73.854123,"100 Flushing Meadows (Dwight Eisenhower Promenade), Queens, NY 11368",parks_&_outdoor
+Elmhurst Park,40.73005,-73.885149,"Grand Ave (at 79th St), Queens, NY 11373",parks_&_outdoor
+Kissena Park,40.746200298055705,-73.80810499191284,"OAK Ave (btwn Kissena Blvd & 164th St), Flushing, NY 11355",parks_&_outdoor
+Cunningham Park,40.72781164387366,-73.77237796783447,"73RD Ave (at Francis Lewis Blvd), Queens, NY 11365",parks_&_outdoor
+Forest Park Barking Lot,40.71041009500999,-73.83671879768372,"Forest Park Dr (at Park Ln), Queens, NY 11418",parks_&_outdoor
+New York State Pavilion,40.743889,-73.844571,"Flushing Meadows, Queens, NY 11368",landmarks
+Hunter's Point South Park,40.742452,-73.960674,"Center Blvd (at Borden Ave), Queens, NY 11101",parks_&_outdoor
+Gantry Plaza State Park,40.744382,-73.95708,"474 48th Ave (btwn 46th & 48th Ave), Queens, NY 11109",parks_&_outdoor
+Crocheron Park,40.7720106250771,-73.76746416091919,"33RD Rd (at 215th Pl), Queens, NY 11361",parks_&_outdoor
+Kissena Corridor Park (West),40.74756583086727,-73.82040023803711,"Colden St (btwn Elder & Oak Ave), Flushing, NY 11355",parks_&_outdoor
+World's Fair Playground,40.73726,-73.846427,"Grand Central Parkway (at 62nd Dr), Forest Hills, NY 11375",parks_&_outdoor
+Pepsi Cola Sign,40.747355,-73.956889,"4610 Center Blvd (at Center Blvd), Queens, NY 11109",landmarks
+Brooklyn Boulders Queensbridge,40.752761,-73.940325,"2310 41st Ave, Long Island City, NY 11101",entertainment_&_leisure
+John F Murray Playground,40.747244,-73.948936,"21ST St (45th Rd), Long Island City, NY 11101",parks_&_outdoor
+Bowne Park,40.775432,-73.775542,"29TH Ave (156th St), Flushing, NY 11360",parks_&_outdoor
+Alley Pond Park,40.74329031912237,-73.74152183532715,"Springfield Blvd, Queens, NY 11364",parks_&_outdoor
+Jacob Riis Park,40.569127,-73.863671,"190 Rockaway Beach Blvd (at Beach 149th St.), Rockaway Park, NY 11697",parks_&_outdoor
+Micro Center,40.729014,-73.8147,"72ND Ave (btwn 71st & 72nd Ave), Flushing, NY 11367",retail_&_shopping
+Trader Joe's,40.711248,-73.8583,"9030 Metropolitan Ave (at Woodhaven Blvd), Rego Park, NY 11374",retail_&_shopping
+The Shops at Atlas Park,40.708673,-73.869434,"8000 Cooper Ave (at 80th St), Glendale, NY 11385",retail_&_shopping
+Rego Center,40.733159,-73.86313,"6135 Junction Blvd (btwn 62nd Dr & LIE), Rego Park, NY 11374",retail_&_shopping
+H Mart,40.772129,-73.826937,"2929 Union St (at 29th Rd.), Flushing, NY 11354",retail_&_shopping
+Book Culture,40.747588,-73.942092,"2609 Jackson Ave (44th Dr), Long Island City, NY 11101",Other
+United Brothers Fruit Markets,40.766188,-73.920347,"3224 30th Ave (33rd St.), Astoria, NY 11102",retail_&_shopping
+Stop & Shop,40.780122,-73.777889,"21315 26th Ave, Bayside, NY 11360",retail_&_shopping
+Stop & Shop,40.707279,-73.854592,"8989 Union Tpke (at Woodhaven Blvd.), Glendale, NY 11385",retail_&_shopping
+Stop & Shop,40.768536,-73.834454,"3106 Farrington St, Flushing, NY 11354",retail_&_shopping
+H Mart,40.762929,-73.809004,"15640 Northern Blvd (at 157th St), Flushing, NY 11354",retail_&_shopping
+HomeGoods,40.780533,-73.776549,"2380 Bell Blvd, Bayside, NY 11360",retail_&_shopping
+Macy's,40.734453,-73.871472,"9001 Queens Blvd (Queens Center Mall), Elmhurst, NY 11373",retail_&_shopping
+Stop & Shop,40.731284,-73.887465,"74-17 Grand Avenue (at 74th St), Elmhurst, NY 11378",retail_&_shopping
+Target,40.735338,-73.874736,"8801 Queens Blvd (56th Ave), Elmhurst, NY 11373",retail_&_shopping
+Stop & Shop,40.679456,-73.755515,"13440 Springfield Blvd (Springfield Blvd and Merrick Blvd), Springfield Gardens, NY 11413",retail_&_shopping
+Teso Life,40.76026,-73.826862,"13690 Roosevelt Ave, Flushing, NY 11354",retail_&_shopping
+Costco,40.733359,-73.863748,"6135 Junction Blvd, Rego Park, NY 11374",retail_&_shopping
+City Acres Market,40.749092,-73.938307,"2918 Queens Plz S, Long Island City, NY 11101",retail_&_shopping
+Target,40.783677,-73.833251,"13505 20th Ave (132nd St), College Point, NY 11356",retail_&_shopping
+Bronx Zoo,40.849655,-73.87669,"2300 Southern Blvd (at Boston Rd), Bronx, NY 10460",parks_&_outdoor
+"Sea Lion Pool, Bronx Zoo",40.852906,-73.878409,"2300 Southern Blvd (at Astor Court), Bronx, NY 10460",parks_&_outdoor
+Congo Gorilla Forest,40.848101,-73.881028,"2300 Southern Blvd (Bronx Zoo), Bronx, NY 10460",parks_&_outdoor
+The New York Botanical Garden,40.865424,-73.881592,"2900 Southern Blvd (at Bronx Park Rd), Bronx, NY 10458",parks_&_outdoor
+Antonio's Trattoria,40.854219,-73.886562,"2370 Belmont Ave, Bronx, NY 10458",restaurants
+Tino's Delicatessen,40.855772,-73.887101,"2410 Arthur Ave (E. 187 St.), Bronx, NY 10458",restaurants
+Delillo Pastry Shop,40.85528,-73.887301,"606 E 187th St (at Arthur Ave), Bronx, NY 10458",retail_&_shopping
+Shop in the Garden,40.865424,-73.881592,"2900 Southern Blvd, Bronx, NY 10458",retail_&_shopping
+Enid A. Haupt Conservatory,40.865424,-73.881592,"2900 Southern Blvd, Bronx, NY 10458",parks_&_outdoor
+Zeppieri & Sons Bakery,40.846939,-73.831808,"3004 Buhre Ave (Crosby Avenue), Bronx, NY 10461",retail_&_shopping
+Starbucks,40.823519,-73.837396,"815 Hutchinson River Pkwy (at Lafayette Ave), Bronx, NY 10465",restaurants
+Pelham Bay Park,40.8615,-73.7972,"Watt Avenue, Bronx, NY 10465",parks_&_outdoor
+Garden Gourmet Market,40.881168,-73.903548,"5665 Broadway (btwn W 233rd & W 234th St), Bronx, NY 10463",retail_&_shopping
+Van Cortlandt Park,40.892113,-73.89675,"Broadway and Vancortlandt Park S (W. 242nd St.), Bronx, NY 10471",parks_&_outdoor
+Kingsbridge Social Club,40.884612,-73.902056,"3625 Kingsbridge Ave, Bronx, NY 10463",bars_&_clubs
+Bronx Museum of the Arts,40.831037,-73.91987,"1040 Grand Concourse (at E 165th St.), Bronx, NY 10456",cultural
+Yankee Stadium,40.82978,-73.92629,"1 E 161st St (btwn Jerome & River Ave), Bronx, NY 10451",entertainment_&_leisure
+Wave Hill,40.900261,-73.91123,"675 W 252nd St (Independence Ave), Bronx, NY 10471",Other
+Bronx Zoo,40.849655,-73.87669,"2300 Southern Blvd (at Boston Rd), Bronx, NY 10460",parks_&_outdoor
+JungleWorld,40.845339,-73.876998,"Asia Plaza, New York, NY 10460",parks_&_outdoor
+"Sea Lion Pool, Bronx Zoo",40.852906,-73.878409,"2300 Southern Blvd (at Astor Court), Bronx, NY 10460",parks_&_outdoor
+Congo Gorilla Forest,40.848101,-73.881028,"2300 Southern Blvd (Bronx Zoo), Bronx, NY 10460",parks_&_outdoor
+Children's Zoo,40.851846,-73.880215,"Bronx, NY 10460",parks_&_outdoor
+World of Birds,40.852412,-73.875663,"2300 Southern Blvd (2300 Southern Blvd), Bronx, NY 10460",parks_&_outdoor
+Bug Carousel,40.849425,-73.879819,"Bronx, NY 10460",entertainment_&_leisure
+Madagascar,40.852573,-73.879235,"Bronx, NY 10460",parks_&_outdoor
+Tiger Mountain,40.851227,-73.876997,"Bronx, NY 10460",parks_&_outdoor
+Bronx Museum of the Arts,40.831037,-73.91987,"1040 Grand Concourse (at E 165th St.), Bronx, NY 10456",cultural
+Park Billiards & Cafe,40.850827,-73.867441,"2020 White Plains Rd, Bronx, NY 10462",entertainment_&_leisure
+World of Reptiles,40.84944,-73.878812,"Southern Boulevard, Bronx, NY 10460",parks_&_outdoor
+Yankee Stadium,40.82978,-73.92629,"1 E 161st St (btwn Jerome & River Ave), Bronx, NY 10451",entertainment_&_leisure
+The Christmas House of the Garabedian Family,40.857914,-73.839862,"1605 Pelham Pkwy N, Bronx, NY 10469",cultural
+Marina Del Rey,40.814012,-73.814357,"1 Marina Dr (Schurz Ave), Bronx, NY 10465",entertainment_&_leisure
+The Bronx Equestrian Center,40.865924,-73.813972,"9 Shore Rd, Bronx, NY 10464",Other
+Port Morris Distillery,40.800533,-73.913558,"780 E 133rd St (Willow Ave), Bronx, NY 10454",Other
+Lehman Center for the Performing Arts,40.874581,-73.89301,"250 Bedford Park Blvd W, Bronx, NY 10468",cultural
+Champion Suite,40.829619,-73.92651,"Yankee Stadium, Bronx, NY 10452",entertainment_&_leisure
+Tortoise and Hare Statue,40.893953,-73.896185,"at W 248 St, Bronx, NY 10471",cultural
+F & J Pine Restaurant,40.8488,-73.86229,"1913 Bronxdale Ave (Btw Matthews & Muliner Ave.), New York, NY 10462",restaurants
+Delillo Pastry Shop,40.85528,-73.887301,"606 E 187th St (at Arthur Ave), Bronx, NY 10458",retail_&_shopping
+Antonio's Trattoria,40.854219,-73.886562,"2370 Belmont Ave, Bronx, NY 10458",restaurants
+Zeppieri & Sons Bakery,40.846939,-73.831808,"3004 Buhre Ave (Crosby Avenue), Bronx, NY 10461",retail_&_shopping
+Estrellita Poblana IV,40.842202,-73.843802,"45 Westchester Sq (at Roberts Ave.), Bronx, NY 10461",restaurants
+Empire Bagels,40.849398,-73.830714,"3101 Westchester Ave, Bronx, NY 10461",restaurants
+White Castle,40.866089,-73.862222,"2701 Boston Rd, Bronx, NY 10467",restaurants
+Starbucks,40.851164,-73.843951,"1886 Eastchester Rd (at Morris Park Ave), Bronx, NY 10461",restaurants
+Pruzzo's Stop One Deli,40.846914,-73.832769,"2937 Westchester Ave (Buhre Ave), Bronx, NY 10461",restaurants
+Louie & Ernie's Pizza,40.838271,-73.828608,"1300 Crosby Ave (at Waterbury Ave), Bronx, NY 10461",restaurants
+Starbucks,40.823519,-73.837396,"815 Hutchinson River Pkwy (at Lafayette Ave), Bronx, NY 10465",restaurants
+Bronx Ale House,40.884618,-73.899735,"216 W 238th St (btwn Review Pl & Putnam Ave W), Bronx, NY 10463",bars_&_clubs
+Kingsbridge Social Club,40.884612,-73.902056,"3625 Kingsbridge Ave, Bronx, NY 10463",bars_&_clubs
+Kingston Tropical Bakery,40.888577,-73.85976,"4000 White Plains Rd (E 226th Street & White Plains Road), Bronx, NY 10466",retail_&_shopping
+Sal's Pizzeria,40.875305,-73.879769,"3167 Bainbridge Ave (E 205th St), Bronx, NY 10467",restaurants
+Tibbett Diner,40.880375,-73.909036,"3033 Tibbett Ave (btwn 230th & 231st), Bronx, NY 10463",Other
+Salsa Con Fuego,40.862263,-73.911507,"2297 Cedar Ave, Bronx, NY 10468",entertainment_&_leisure
+Liebman's Kosher Deli,40.885439,-73.909665,"552 W 235th St (Johnson Ave), Bronx, NY 10463",restaurants
+An Beal Bocht Cafe,40.887451,-73.905053,"445 W 238th St (btwn Greystone & Waldo Ave), Bronx, NY 10463",restaurants
+Panera Bread,40.867838,-73.827874,"340 Baychester Ave, Bronx, NY 10475",retail_&_shopping
+F & J Pine Restaurant,40.8488,-73.86229,"1913 Bronxdale Ave (Btw Matthews & Muliner Ave.), New York, NY 10462",restaurants
+Isla Cafe,40.832824,-73.863937,"1859 Westchester Ave, Bronx, NY 10472",restaurants
+Park Billiards & Cafe,40.850827,-73.867441,"2020 White Plains Rd, Bronx, NY 10462",entertainment_&_leisure
+Bronx Ale House,40.884618,-73.899735,"216 W 238th St (btwn Review Pl & Putnam Ave W), Bronx, NY 10463",bars_&_clubs
+Kingsbridge Social Club,40.884612,-73.902056,"3625 Kingsbridge Ave, Bronx, NY 10463",bars_&_clubs
+Salsa Con Fuego,40.862263,-73.911507,"2297 Cedar Ave, Bronx, NY 10468",entertainment_&_leisure
+Cocina Chente,40.886201,-73.907372,"3535 Riverdale Ave, New York, NY 10463",restaurants
+Doyle's Pub,40.848336,-73.855183,"1024 Morris Park Ave, Bronx, NY 10461",bars_&_clubs
+An Beal Bocht Cafe,40.887451,-73.905053,"445 W 238th St (btwn Greystone & Waldo Ave), Bronx, NY 10463",restaurants
+Delta Sky360 Suites,40.829504,-73.926768,"Yankee Stadium (Home Plate), Bronx, NY 10452",entertainment_&_leisure
+Rambling House,40.898494,-73.867089,"4292 Katonah Ave (236th St), Bronx, NY 10470",restaurants
+Budweiser Hall of Fame Lounge,40.829623,-73.926335,"Yankee Stadium, Bronx, NY 10452",entertainment_&_leisure
+Brewski's Bar & Grill,40.826549,-73.822414,"3718 E Tremont Ave (at Phillip Ave.), Bronx, NY 10465",entertainment_&_leisure
+Giovanni's Restaurant,40.819394,-73.927215,"579 Grand Concourse (at 150th St), Bronx, NY 10451",bars_&_clubs
+Avenue Cigar Lounge,40.850197,-73.852005,"1074 Morris Park Ave (Tomlinson Ave), Bronx, NY 10461",entertainment_&_leisure
+Paddys On The Bay,40.810132,-73.803507,"50 Pennyfield Ave, Bronx, NY 10465",bars_&_clubs
+Stan's Sports Bar,40.826816,-73.926316,"836 River Ave (at E 158th St), Bronx, NY 10451",entertainment_&_leisure
+Port Morris Distillery,40.800533,-73.913558,"780 E 133rd St (Willow Ave), Bronx, NY 10454",Other
+Mon Amour Coffee & Wine,40.884765,-73.90031,"234 W 238th St (nr Broadway), Bronx, NY 10463",restaurants
+Tropicana Theatere & Lounge,40.837487,-73.877802,"1060 Home St (Westchester Ave), Bronx, NY 10459",restaurants
+The New York Botanical Garden,40.865424,-73.881592,"2900 Southern Blvd (at Bronx Park Rd), Bronx, NY 10458",parks_&_outdoor
+Enid A. Haupt Conservatory,40.865424,-73.881592,"2900 Southern Blvd, Bronx, NY 10458",parks_&_outdoor
+Native Plant Garden,40.862752,-73.878385,"Bronx, NY",Other
+Van Cortlandt Park,40.892113,-73.89675,"Broadway and Vancortlandt Park S (W. 242nd St.), Bronx, NY 10471",parks_&_outdoor
+Pelham Bay Parkway Greenway,40.857365,-73.867375,"Pelham Parkway, Bronx, NY 10462",parks_&_outdoor
+Pelham Bay Park,40.8615,-73.7972,"Watt Avenue, Bronx, NY 10465",parks_&_outdoor
+Clason Point Park,40.821024,-73.869191,"Bronx, NY 10473",parks_&_outdoor
+Claremont Park,40.84049,-73.907494,"Clay Ave (Mount Eden), New York, NY 10457",parks_&_outdoor
+E. Mosholu Parkway South and Bainbridge Ave,40.872319,-73.882373,"New York, NY 10467",parks_&_outdoor
+Mosholu Gate,40.866466,-73.880974,"Bronx Park Rd, Bronx, NY 10467",Other
+Wave Hill,40.900261,-73.91123,"675 W 252nd St (Independence Ave), Bronx, NY 10471",Other
+The Christmas House of the Garabedian Family,40.857914,-73.839862,"1605 Pelham Pkwy N, Bronx, NY 10469",cultural
+High Bridge,40.842162,-73.92808,"Harlem River, New York, NY 10452",landmarks
+Monument Park,40.829911,-73.92569,"Yankee Stadium, Bronx, NY 10452",cultural
+Stone Mill,40.859563,-73.876133,"Bronx, NY",landmarks
+Bell Tower Park,40.889257,-73.908319,"239th St Henry Hudson Pkwy, New York, NY 10471",parks_&_outdoor
+Riverdale Park,40.89518,-73.915332,"Palisade Ave, Bronx, NY 10471",parks_&_outdoor
+Starlight Park,40.838953,-73.867093,"Sheridan Expressway (E. 174th Street), Bronx, NY 10460",parks_&_outdoor
+Bicentennial Veterans Memorial Park,40.823056,-73.813371,"Throggs Neck Expressway (Weir Creek), Bronx, NY 10465",parks_&_outdoor
+Westchester Square,40.844113,-73.845096,"Tremont Av, Bronx, NY 10461",parks_&_outdoor
+Zoo Store,40.850227,-73.880155,"Bronx, NY 10460",retail_&_shopping
+Shop in the Garden,40.865424,-73.881592,"2900 Southern Blvd, Bronx, NY 10458",retail_&_shopping
+Target,40.823519,-73.837396,"815 Hutchinson River Pkwy, Bronx, NY 10465",retail_&_shopping
+7-Eleven,40.846683,-73.902037,"1845 Webster Ave, Bronx, NY 10457",retail_&_shopping
+Garden Gourmet Market,40.881168,-73.903548,"5665 Broadway (btwn W 233rd & W 234th St), Bronx, NY 10463",retail_&_shopping
+Western Beef Retail 35,40.82108,-73.867006,"831 Rosedale Ave (Story avenue), Bronx, NY 10473",retail_&_shopping
+ShopRite,40.824109,-73.8564,"1994 Bruckner Blvd, Bronx, NY 10473",retail_&_shopping
+Stop & Shop,40.868762,-73.825543,"2136 Bartow Ave, Bronx, NY 10475",retail_&_shopping
+Mall At Bay Plaza,40.86385,-73.827469,"200 Baychester Ave, Bronx, NY 10475",retail_&_shopping
+ALDI,40.877897,-73.904651,"5532 Broadway, Bronx, NY 10463",retail_&_shopping
+Amadiz Cigar,40.851393,-73.788379,"470 City Island Ave, Bronx, NY 10464",retail_&_shopping
+BJ's Wholesale Club,40.884007,-73.900369,"184 W 237th St, Bronx, NY 10463",retail_&_shopping
+Bay Plaza Shopping Center,40.867365,-73.825231,"2100 Bartow Ave (Baychester ave), Bronx, NY 10475",retail_&_shopping
+Key Food Stores Co-Op,40.850374,-73.830574,"3151 Westchester Ave (at Arnow Pl.), Bronx, NY 10461",retail_&_shopping
+The Home Depot,40.827024,-73.839709,"2560 Bruckner Blvd, Bronx, NY 10465",Other
+Palm Tree Marketplace,40.880574,-73.841119,"3717 Boston Rd (Grace Ave), Bronx, NY 10466",retail_&_shopping
+Marshalls,40.868487,-73.829955,"352 Baychester Ave, Bronx, NY 10475",retail_&_shopping
+Fine Fair Supermarket,40.829645,-73.872001,"1221 Fteley Ave (Westchester Ave), Bronx, NY 10472",retail_&_shopping
+Wine & Liquor Superstore,40.823519,-73.837396,"815 Hutchinson River Pkwy, Bronx, NY 10465",retail_&_shopping
+Stop & Shop,40.83814,-73.883821,"961 E 174th St (Bryant Ave), Bronx, NY 10460",retail_&_shopping
+Trader Joe's,40.589822,-74.165663,"2385 Richmond Ave (at Nome Ave), Staten Island, NY 10314",retail_&_shopping
+Primark,40.580266,-74.166514,"2655 Richmond Ave (in Staten Island Mall), Staten Island, NY 10314",retail_&_shopping
+Cake Chef,40.612962,-74.130547,"957 Jewett Ave (Victory Blvd), Staten Island, NY 10314",retail_&_shopping
+Jimmy Max,40.616018,-74.138648,"280 Watchogue Rd, Staten Island, NY 10314",restaurants
+Max's Es-Ca,40.59149,-74.101254,"1559 Richmond Rd, Staten Island, NY 10304",restaurants
+Brother's Pizzeria,40.625568,-74.143845,"750 Port Richmond Ave, Staten Island, NY 10302",restaurants
+Rinconcito Paisa,40.625623,-74.155132,"1976 Forest Ave (at Van Name Ave), Staten Island, NY 10303",Other
+Clove Lakes Park,40.617922,-74.105621,"1150 Clove Rd, Staten Island, NY 10301",parks_&_outdoor
+Royal Crown Bakery,40.59559,-74.085663,"1350 Hylan Blvd (at Quintard St), Staten Island, NY 10305",retail_&_shopping
+Silver Lake Park,40.628137,-74.094893,"700 Victory Blvd (at Victory Blvd), Staten Island, NY 10301",parks_&_outdoor
+Harbor Eats at Snug Harbor Cultural Center and Botanical Gardens,40.643782,-74.101905,"1000 Richmond Ter (Snug Harbor Rd), Staten Island, NY 10301",cultural
+Starbucks,40.521628,-74.235646,"106 Page Ave (at Richmond Valley Plaza), Staten Island, NY 10309",restaurants
+Tottenville Hot Bagels & Deli,40.521819,-74.234655,"Page Ave, Staten Island, NY 10309",Other
+La Bella Marketplace,40.516974,-74.243873,"99 Ellis St (Arthur Kill Rd.), Staten Island, NY 10307",retail_&_shopping
+Conference House Park,40.503139,-74.253253,"7455 Hylan Blvd, Staten Island, NY 10307",parks_&_outdoor
+Historic Richmond Town,40.570902,-74.145614,"441 Clarke Ave, Staten Island, NY 10306",cultural
+AMC DINE-IN Staten Island 11,40.581221,-74.166991,"2655 Richmond Ave, Staten Island, NY 10314",entertainment_&_leisure
+St George Theatre,40.642254,-74.077566,"35 Hyatt St, Staten Island, NY 10301",cultural
+Regal Bricktown Charleston,40.530566,-74.229999,"165 Bricktown Way, Staten Island, NY 10309",entertainment_&_leisure
+Cobra Sun Studio,40.637317,-74.07684,"194 Bay St (Victory Blvd), Staten Island, NY 10301",Other
+Atrium Cinemas,40.559453,-74.163793,"680 Arthur Kill Rd, Staten Island, NY 10308",entertainment_&_leisure
+Imax,40.581231,-74.164771,"2655 Richmond Ave, Staten Island, NY 10314",entertainment_&_leisure
+"Go! Calendars, Toys & Games",40.581902,-74.165801,"2655 Richmond Ave, Staten Island, NY 10314",entertainment_&_leisure
+Staten Island Historical Society,40.569961,-74.144616,"441 Clarke Ave, Staten Island, NY 10306",cultural
+Third County Courthouse,40.570957,-74.145573,"Court Place (Center Street), Staten Island, NY 10306",cultural
+Thomas Kinkade Gallery,40.582057,-74.166025,"2655 Richmond Ave, Staten Island, NY 10314",cultural
+Salvatore Eretto Auditorium,40.56809,-74.115729,"485 Clawson St, Staten Island, NY 10306",cultural
+F2K Entertainment,40.553264,-74.141122,"6 Cranford St, Staten Island, NY 10308",Other
+Bee-Line Entertainment,40.562882,-74.181215,"5 Chatham St, Staten Island, NY 10312",Other
+Showplace Entertainment Center,40.589016,-74.191794,"141 E Service Rd, Staten Island, NY 10314",entertainment_&_leisure
+The Hollaback Hut,40.611994,-74.1248,"19-27 Lester St, Staten Island, NY 10314",bars_&_clubs
+Painting with a Twist,40.575431,-74.105489,"2271 Hylan Blvd, Staten Island, NY 10306",Other
+Alamo Drafthouse Staten Island,40.56626994407817,-74.10955846309662,"2636 Hylan Blvd, Staten Island, NY 10306",entertainment_&_leisure
+Funworks,40.576052,-74.104485,"2239 Hylan Blvd, Staten Island, NY 10306",Other
+Krissy's Alley,40.553256,-74.173359,"138 Stroud Ave, Staten Island, NY 10312",entertainment_&_leisure
+Tommy's Tavern + Tap,40.581046,-74.167462,"2655 Richmond Ave, Staten Island, NY 10314",bars_&_clubs
+Cake Chef,40.612962,-74.130547,"957 Jewett Ave (Victory Blvd), Staten Island, NY 10314",retail_&_shopping
+Brother's Pizzeria,40.625568,-74.143845,"750 Port Richmond Ave, Staten Island, NY 10302",restaurants
+Starbucks,40.586693,-74.167748,"2505 Richmond Ave (at Richmond Hill Rd), Staten Island, NY 10314",restaurants
+Max's Es-Ca,40.59149,-74.101254,"1559 Richmond Rd, Staten Island, NY 10304",restaurants
+Jimmy Max,40.616018,-74.138648,"280 Watchogue Rd, Staten Island, NY 10314",restaurants
+Joe & Pat's,40.612988,-74.122011,"1758 Victory Blvd, Staten Island, NY 10314",restaurants
+Royal Crown Bakery,40.59559,-74.085663,"1350 Hylan Blvd (at Quintard St), Staten Island, NY 10305",retail_&_shopping
+Bagels & Buns,40.610457,-74.146644,"2491 Victory Blvd (at Stewart Ave), Staten Island, NY 10314",restaurants
+Scoops Ice Cream & Cafe,40.613125,-74.13051,"949 Jewett Ave (btwn Victory Blvd & Coale Ave), Staten Island, NY 10314",restaurants
+Heartland Bagels,40.591273,-74.163896,"2311 Richmond Ave, Staten Island, NY 10314",restaurants
+Panini Grill,40.630083,-74.108089,"538 Forest Ave (at Davis Ave), Staten Island, NY 10310",restaurants
+La Piazza,40.611766,-74.157415,"1445 Richmond Ave, Staten Island, NY 10314",restaurants
+Precious Island Dim Sum,40.570608,-74.110438,"366 New Dorp Ln, Staten Island, NY 10306",restaurants
+Jody's Club Forest,40.630797,-74.101844,"372 Forest Ave (Hart), Staten Island, NY 10301",entertainment_&_leisure
+Nino's Restaurant,40.59834,-74.079768,"1110 Hylan Blvd (at Lamport Blvd), Staten Island, NY 10305",restaurants
+Cole's Dockside,40.54273,-74.142459,"369 Cleveland Ave, Staten Island, NY 10308",restaurants
+La Fontana Restaurant,40.56827,-74.126485,"2879 Amboy Rd, Staten Island, NY 10306",restaurants
+Starbucks,40.612257,-74.132608,"2070 Victory Blvd (at Bradley Ave), Staten Island, NY 10314",restaurants
+Blue,40.645398,-74.107683,"1115 Richmond Ter (at Snug Harbor Rd), Staten Island, NY 10310",restaurants
+Tommy's Tavern + Tap,40.581046,-74.167462,"2655 Richmond Ave, Staten Island, NY 10314",bars_&_clubs
+Jody's Club Forest,40.630797,-74.101844,"372 Forest Ave (Hart), Staten Island, NY 10301",entertainment_&_leisure
+Duffy's,40.629634,-74.110641,"650 Forest Ave, Staten Island, NY 10310",bars_&_clubs
+Kills Boro Brewing Co,40.636436,-74.077501,"62 Van Duzer St, Staten Island, NY 10301",restaurants
+Pier 76 Italian Restaurant,40.640147,-74.075823,"76 Bay St (at Slosson Terace), Staten Island, NY 10301",bars_&_clubs
+Miller's Ale House,40.575123,-74.16934,"2883 Richmond Ave, Staten Island, NY 10314",Other
+The Hop Shoppe,40.629152,-74.079816,"372 Van Duzer St (Beach St), Staten Island, NY 10304",entertainment_&_leisure
+Killmeyer S Old Bavari,40.538483,-74.237178,"4254 Arthur Kill Rd, Staten Island, NY 10309",restaurants
+Sofia's Taqueria,40.618831,-74.069329,"977 Bay St, Staten Island, NY 10305",restaurants
+Chili's Grill & Bar,40.611659,-74.159283,"1497 Richmond Ave (at Akron St), Staten Island, NY 10314",bars_&_clubs
+Flagship Brewing Co,40.637296,-74.075663,"40 Minthorne St (Victory Blvd), Staten Island, NY 10301",restaurants
+Griff's Place,40.565717,-74.100574,"702 New Dorp Ln, Staten Island, NY 10306",entertainment_&_leisure
+Mother Pugs Saloon,40.625598,-74.13522,"1371 Forest Ave (Path Mark Super Center‎), Staten Island, NY 10302",bars_&_clubs
+The Kettle Black,40.631026,-74.103292,"415 Forest Ave (Kissel Avenue and Walbrooke Avenue), Staten Island, NY 10301",restaurants
+Steiny's Pub,40.642333,-74.076654,"3 Hyatt St (btwn Stuyvesant & St Marks Pl), Staten Island, NY 10301",entertainment_&_leisure
+Joyce’s Tavern,40.545086,-74.165438,"3823 Richmond Ave, Staten Island, NY 10312",bars_&_clubs
+1001 Nights Cafe & Lounge,40.598331,-74.161935,"2025 Richmond Ave, Staten Island, NY 10314",bars_&_clubs
+Rosebank Tavern,40.612482,-74.065149,"1258 Bay St, Staten Island, NY 10305",bars_&_clubs
+South Shore Bar & Grill,40.515628,-74.249378,"225 Ellis St, Staten Island, NY 10307",entertainment_&_leisure
+Lily Red's Bar & Grille,40.513679,-74.196387,"507 Seguine Ave, Staten Island, NY 10309",bars_&_clubs
+Greenbelt Nature Center,40.591761,-74.139274,"501 Brielle Ave (Rockland Ave), Staten Island, NY 10314",parks_&_outdoor
+Historic Richmond Town,40.570902,-74.145614,"441 Clarke Ave, Staten Island, NY 10306",cultural
+Clove Lakes Park,40.617922,-74.105621,"1150 Clove Rd, Staten Island, NY 10301",parks_&_outdoor
+Franklin D. Roosevelt Boardwalk,40.579651,-74.075996,"Father Capodanno Blvd (at Seaview Ave), Staten Island, NY 10305",parks_&_outdoor
+Gateway Beach,40.537185,-74.129264,"Great Kills Park (Hylan Blvd.), Staten Island, NY 10308",parks_&_outdoor
+Silver Lake Park,40.628137,-74.094893,"700 Victory Blvd (at Victory Blvd), Staten Island, NY 10301",parks_&_outdoor
+Midland Beach Board Walk,40.572757,-74.087637,"Midland Beach, Staten Island, NY 10305",parks_&_outdoor
+Chinese Scholar's Garden,40.641991,-74.104271,"Staten Island, NY 10301",landmarks
+Conference House Park,40.503139,-74.253253,"7455 Hylan Blvd, Staten Island, NY 10307",parks_&_outdoor
+Seaside Wildlife Nature Park,40.54083,-74.14303,"Nelson Ave, Staten Island, NY 10308",parks_&_outdoor
+Henry Kaufmann Campgrounds,40.596715,-74.120325,"1131 Manor Rd, Staten Island, NY 10314",parks_&_outdoor
+Tappen Park,40.626869,-74.076672,"BAY St (btwn Water & Canal St), Staten Island, NY 10304",parks_&_outdoor
+Arthur Von Briesen Park,40.606728,-74.060951,"1497 Bay St, Staten Island, NY 10305",parks_&_outdoor
+Lemon Creek Fishing Pier,40.510924,-74.209742,"527 Sharrott Ave (Hylan Blvd), Staten Island, NY 10309",parks_&_outdoor
+Willowbrook Park,40.604136,-74.158613,"1 Eton Pl, Staten Island, NY 10314",parks_&_outdoor
+Miller Field,40.568333,-74.099464,"722 New Dorp Ln, Staten Island, NY 10306",parks_&_outdoor
+Randolph Walker Park,40.643597,-74.110397,"New York, NY 10310",parks_&_outdoor
+The Heartland,40.584312,-74.153106,"24 Nome Ave, Staten Island, NY 10314",landmarks
+The Greenbelt High Rock Park,40.588689,-74.148809,"Staten Island, NY 10314",parks_&_outdoor
+Greenbelt Trail,40.588383,-74.146314,"854 Rockland Ave, Staten Island, NY 10314",parks_&_outdoor
+Trader Joe's,40.589822,-74.165663,"2385 Richmond Ave (at Nome Ave), Staten Island, NY 10314",retail_&_shopping
+Primark,40.580266,-74.166514,"2655 Richmond Ave (in Staten Island Mall), Staten Island, NY 10314",retail_&_shopping
+HomeGoods,40.565149,-74.113082,"2718 Hylan Blvd, Staten Island, NY 10306",retail_&_shopping
+Stop & Shop,40.626236,-74.135508,"1351 Forest Ave (Barret Ave), Staten Island, NY 10302",retail_&_shopping
+HomeGoods,40.574157,-74.16734,"2875 Richmond Ave, Staten Island, NY 10314",retail_&_shopping
+Costco,40.572672,-74.168451,"2975 Richmond Ave (at Forest Hill Rd), Staten Island, NY 10314",retail_&_shopping
+City Wine Cellar,40.591221,-74.16385,"2295 Richmond Ave (Nome Ave & Travis Ave), Staten Island, NY 10314",retail_&_shopping
+Dollar Tree,40.624775,-74.156534,"2040 Forest Ave, Staten Island, NY 10303",retail_&_shopping
+Walgreens,40.559811,-74.166332,"758 Arthur Kill Rd, Staten Island, NY 10312",Other
+Target Pharmacy,40.574818,-74.166846,"2873 Richmond Ave, Staten Island, NY 10314",Other
+Nitecap,40.613519,-74.180795,"690 Gulf Ave, Staten Island, NY 10314",retail_&_shopping
+Kohl's,40.628148,-74.164827,"2239 Forest Ave (at South Ave), Staten Island, NY 10303",retail_&_shopping
+JCPenney,40.581256,-74.163902,"140 Marsh Ave, Staten Island, NY 10314",retail_&_shopping
+Walgreens,40.603666,-74.120225,"955 Manor Rd, Staten Island, NY 10314",Other
+La Bella Marketplace,40.516974,-74.243873,"99 Ellis St (Arthur Kill Rd.), Staten Island, NY 10307",retail_&_shopping
+CVS Pharmacy,40.549661,-74.152323,"4065 Amboy Rd, Staten Island, NY 10308",Other
+CVS Pharmacy,40.56649,-74.113269,"2690 Hylan Blvd, Staten Island, NY 10306",Other
+Staples,40.583824,-74.09619,"1885 Hylan Blvd, Staten Island, NY 10305",retail_&_shopping
+Dollar Tree,40.52131,-74.215241,"6410 Amboy Rd, Staten Island, NY 10309",retail_&_shopping
+Family Fruit,40.575244,-74.104495,"320 Greeley Ave, Staten Island, NY 10306",retail_&_shopping
