@@ -118,7 +118,7 @@ def etl_pipeline_v2_no_bruta():
         # NOTA: Si el volumen de datos es muy grande, considera que esta tarea lea
         # desde las tablas creadas en 2.3_carga_airbnb_y_api_limpia_task en lugar de pasar DFs por XCom.
         # Por ahora, sigo tu descripción de "entrada los dataframes de 2.1 y 2.2".
-        merged_df = merge_airbnb_api_data(df_api_cleaned, df_airbnb_cleaned)
+        merged_df = merge_airbnb_api_data(df_airbnb_cleaned, df_api_cleaned)
         if not isinstance(merged_df, pd.DataFrame):
              raise TypeError("merge_airbnb_api_data debe devolver un Pandas DataFrame")
         return merged_df

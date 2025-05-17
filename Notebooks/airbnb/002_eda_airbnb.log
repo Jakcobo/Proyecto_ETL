@@ -1,0 +1,420 @@
+2025-05-16 22:08:41,092 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-16 22:08:41,093 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 22:08:41,100 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:08:41,101 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-16 22:08:41,103 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:08:41,104 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-16 22:08:41,111 - INFO - Intentando conectar a la base de datos PostgreSQL y extraer datos.
+2025-05-16 22:08:41,126 - INFO - Consultando la tabla completa 'raw_airbnb'...
+2025-05-16 22:08:41,950 - INFO - Datos extraídos exitosamente de la tabla 'raw_airbnb'.
+2025-05-16 22:08:41,951 - INFO - El DataFrame df_bruto tiene 102599 filas y 26 columnas.
+2025-05-16 22:08:41,951 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-16 22:08:41,957 - INFO - Celda 5: Mostrando las primeras 5 filas del DataFrame df_bruto.
+2025-05-16 22:08:41,963 - INFO - Head de df_bruto mostrado.
+2025-05-16 22:08:41,983 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-16 22:08:42,154 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-16 22:08:42,160 - INFO - Celda 7: Calculando la cantidad y porcentaje de valores nulos por columna en df_bruto.
+2025-05-16 22:08:42,235 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-16 22:08:42,241 - INFO - Celda 8: Mostrando información general de df_bruto con df_bruto.info(show_counts=False).
+2025-05-16 22:08:42,246 - INFO - df_bruto.info ejecutado.
+2025-05-16 22:08:42,268 - INFO - Celda 9: Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-16 22:08:42,292 - INFO - Copia de df_bruto creada como df_cleaned.
+2025-05-16 22:08:42,294 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-16 22:08:42,295 - INFO - Columna 'id' convertida a Int64.
+2025-05-16 22:08:42,335 - INFO - Columna 'name' limpiada.
+2025-05-16 22:08:42,337 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-16 22:08:42,367 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-16 22:08:42,447 - INFO - Columna 'host_name' limpiada.
+2025-05-16 22:08:42,533 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-16 22:08:42,603 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-16 22:08:42,605 - INFO - Columna 'lat' convertida a float.
+2025-05-16 22:08:42,606 - INFO - Columna 'long' convertida a float.
+2025-05-16 22:08:42,683 - INFO - Columna 'country' convertida a category.
+2025-05-16 22:08:42,763 - INFO - Columna 'country_code' convertida a category.
+2025-05-16 22:08:42,779 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-16 22:08:42,843 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-16 22:08:42,906 - INFO - Columna 'room_type' convertida a category.
+2025-05-16 22:08:42,912 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-16 22:08:43,013 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-16 22:08:43,125 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-16 22:08:43,131 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-16 22:08:43,136 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-16 22:08:43,164 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-16 22:08:43,166 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-16 22:08:43,171 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-16 22:08:43,177 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-16 22:08:43,182 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-16 22:08:43,229 - INFO - Columna 'house_rules' limpiada.
+2025-05-16 22:08:43,259 - INFO - Columna 'license' limpiada.
+2025-05-16 22:08:43,296 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-16 22:08:43,297 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-16 22:08:43,303 - INFO - Celda 10: Calculando estadísticas descriptivas para columnas numéricas en df_cleaned.
+2025-05-16 22:08:43,361 - INFO - Estadísticas descriptivas para columnas numéricas mostradas.
+2025-05-16 22:08:43,368 - INFO - Celda 11: Calculando estadísticas descriptivas para columnas object, string y category en df_cleaned.
+2025-05-16 22:08:43,524 - INFO - Estadísticas descriptivas para columnas object/string/category mostradas.
+2025-05-16 22:08:43,531 - INFO - Celda 12: Calculando estadísticas descriptivas para columnas boolean en df_cleaned.
+2025-05-16 22:08:43,538 - INFO - Estadísticas descriptivas para columnas boolean mostradas.
+2025-05-16 22:08:43,545 - INFO - Celda 13: Calculando estadísticas descriptivas para columnas datetime en df_cleaned.
+2025-05-16 22:08:43,548 - INFO - Argumento 'datetime_is_numeric' no soportado (probablemente Pandas < 1.0.0). Se llamará a describe() sin él.
+2025-05-16 22:08:43,554 - INFO - Estadísticas descriptivas para columnas datetime mostradas.
+2025-05-16 22:08:43,563 - INFO - Celda 15: Analizando 'construction_year' con un gráfico de líneas.
+2025-05-16 22:08:43,753 - INFO - Gráfico de líneas para 'construction_year' generado y mostrado.
+2025-05-16 22:08:43,764 - INFO - Celda 16: Analizando 'minimum_nights' con un gráfico de barras.
+2025-05-16 22:08:43,780 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:43,788 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:44,088 - INFO - Gráfico de barras para los top 20 'minimum_nights' generado y mostrado.
+2025-05-16 22:08:44,098 - INFO - Celda 17: Determinando el año con mayor actividad de reviews basado en 'last_review'.
+2025-05-16 22:08:44,105 - INFO - El año con mayor actividad de 'últimos reviews' fue 2019 con 42931 reviews.
+2025-05-16 22:08:44,115 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:44,120 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:44,313 - INFO - Gráfico de barras de actividad de reviews por año generado y mostrado.
+2025-05-16 22:08:44,326 - INFO - Celda 18: Analizando 'number_of_reviews' y 'reviews_per_month'.
+2025-05-16 22:08:44,328 - INFO - Analizando la columna: number_of_reviews
+2025-05-16 22:08:44,897 - INFO - La columna 'number_of_reviews' está sesgada (skewness: 3.84). Mostrando con transformación logarítmica.
+2025-05-16 22:08:45,397 - INFO - Analizando la columna: reviews_per_month
+2025-05-16 22:08:45,844 - INFO - La columna 'reviews_per_month' está sesgada (skewness: 7.03). Mostrando con transformación logarítmica.
+2025-05-16 22:08:46,330 - INFO - Celda 19: Analizando 'review_rate_number'.
+2025-05-16 22:08:46,334 - INFO - Generando gráfico de barras para 'review_rate_number'.
+2025-05-16 22:08:46,346 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:46,353 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:08:46,468 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
+2025-05-16 22:08:48,336 - INFO - Matriz de histogramas y boxplots generada.
+2025-05-16 22:08:48,336 - INFO - Fin del notebook de EDA (002_eda.ipynb).
+2025-05-16 22:09:41,907 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-16 22:09:41,908 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 22:10:07,249 - INFO - Inicio del notebook de EDA (002_clean_airbnb.ipynb).
+2025-05-16 22:10:07,250 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 22:11:15,741 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:11:15,742 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-16 22:11:15,744 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:11:15,744 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-16 22:12:07,458 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-16 22:12:07,459 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 22:12:07,466 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:12:07,467 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-16 22:12:07,468 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:12:07,469 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-16 22:12:07,516 - INFO - Intentando conectar a la base de datos PostgreSQL y extraer datos.
+2025-05-16 22:12:07,518 - INFO - Consultando la tabla completa 'raw_airbnb'...
+2025-05-16 22:12:08,424 - INFO - Datos extraídos exitosamente de la tabla 'raw_airbnb'.
+2025-05-16 22:12:08,424 - INFO - El DataFrame df_bruto tiene 102599 filas y 26 columnas.
+2025-05-16 22:12:08,425 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-16 22:12:08,431 - INFO - Celda 5: Mostrando las primeras 5 filas del DataFrame df_bruto.
+2025-05-16 22:12:08,436 - INFO - Head de df_bruto mostrado.
+2025-05-16 22:12:08,453 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-16 22:12:08,732 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-16 22:12:08,739 - INFO - Celda 7: Calculando la cantidad y porcentaje de valores nulos por columna en df_bruto.
+2025-05-16 22:12:08,842 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-16 22:12:08,848 - INFO - Celda 8: Mostrando información general de df_bruto con df_bruto.info(show_counts=False).
+2025-05-16 22:12:08,852 - INFO - df_bruto.info ejecutado.
+2025-05-16 22:12:08,872 - INFO - Celda 9: Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-16 22:12:08,910 - INFO - Copia de df_bruto creada como df_cleaned.
+2025-05-16 22:12:08,911 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-16 22:12:08,913 - INFO - Columna 'id' convertida a Int64.
+2025-05-16 22:12:08,949 - INFO - Columna 'name' limpiada.
+2025-05-16 22:12:08,950 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-16 22:12:08,990 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-16 22:12:09,055 - INFO - Columna 'host_name' limpiada.
+2025-05-16 22:12:09,168 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-16 22:12:09,255 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-16 22:12:09,257 - INFO - Columna 'lat' convertida a float.
+2025-05-16 22:12:09,258 - INFO - Columna 'long' convertida a float.
+2025-05-16 22:12:09,359 - INFO - Columna 'country' convertida a category.
+2025-05-16 22:12:09,488 - INFO - Columna 'country_code' convertida a category.
+2025-05-16 22:12:09,509 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-16 22:12:09,596 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-16 22:12:09,684 - INFO - Columna 'room_type' convertida a category.
+2025-05-16 22:12:09,690 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-16 22:12:09,841 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-16 22:12:09,952 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-16 22:12:09,958 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-16 22:12:09,965 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-16 22:12:10,000 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-16 22:12:10,001 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-16 22:12:10,006 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-16 22:12:10,013 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-16 22:12:10,019 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-16 22:12:10,069 - INFO - Columna 'house_rules' limpiada.
+2025-05-16 22:12:10,102 - INFO - Columna 'license' limpiada.
+2025-05-16 22:12:10,165 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-16 22:12:10,166 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-16 22:12:10,172 - INFO - Celda 10: Calculando estadísticas descriptivas para columnas numéricas en df_cleaned.
+2025-05-16 22:12:10,229 - INFO - Estadísticas descriptivas para columnas numéricas mostradas.
+2025-05-16 22:12:10,235 - INFO - Celda 11: Calculando estadísticas descriptivas para columnas object, string y category en df_cleaned.
+2025-05-16 22:12:10,414 - INFO - Estadísticas descriptivas para columnas object/string/category mostradas.
+2025-05-16 22:12:10,420 - INFO - Celda 12: Calculando estadísticas descriptivas para columnas boolean en df_cleaned.
+2025-05-16 22:12:10,428 - INFO - Estadísticas descriptivas para columnas boolean mostradas.
+2025-05-16 22:12:10,435 - INFO - Celda 13: Calculando estadísticas descriptivas para columnas datetime en df_cleaned.
+2025-05-16 22:12:10,437 - INFO - Argumento 'datetime_is_numeric' no soportado (probablemente Pandas < 1.0.0). Se llamará a describe() sin él.
+2025-05-16 22:12:10,444 - INFO - Estadísticas descriptivas para columnas datetime mostradas.
+2025-05-16 22:12:10,452 - INFO - Celda 15: Analizando 'construction_year' con un gráfico de líneas.
+2025-05-16 22:12:10,621 - INFO - Gráfico de líneas para 'construction_year' generado y mostrado.
+2025-05-16 22:12:10,631 - INFO - Celda 16: Analizando 'minimum_nights' con un gráfico de barras.
+2025-05-16 22:12:10,650 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:10,664 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:10,952 - INFO - Gráfico de barras para los top 20 'minimum_nights' generado y mostrado.
+2025-05-16 22:12:10,963 - INFO - Celda 17: Determinando el año con mayor actividad de reviews basado en 'last_review'.
+2025-05-16 22:12:10,969 - INFO - El año con mayor actividad de 'últimos reviews' fue 2019 con 42931 reviews.
+2025-05-16 22:12:10,982 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:10,987 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:11,160 - INFO - Gráfico de barras de actividad de reviews por año generado y mostrado.
+2025-05-16 22:12:11,174 - INFO - Celda 18: Analizando 'number_of_reviews' y 'reviews_per_month'.
+2025-05-16 22:12:11,178 - INFO - Analizando la columna: number_of_reviews
+2025-05-16 22:12:11,772 - INFO - La columna 'number_of_reviews' está sesgada (skewness: 3.84). Mostrando con transformación logarítmica.
+2025-05-16 22:12:12,262 - INFO - Analizando la columna: reviews_per_month
+2025-05-16 22:12:12,768 - INFO - La columna 'reviews_per_month' está sesgada (skewness: 7.03). Mostrando con transformación logarítmica.
+2025-05-16 22:12:13,275 - INFO - Celda 19: Analizando 'review_rate_number'.
+2025-05-16 22:12:13,278 - INFO - Generando gráfico de barras para 'review_rate_number'.
+2025-05-16 22:12:13,289 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:13,296 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:12:13,424 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
+2025-05-16 22:12:15,273 - INFO - Matriz de histogramas y boxplots generada.
+2025-05-16 22:12:15,274 - INFO - Fin del notebook de EDA (002_eda.ipynb).
+2025-05-16 22:15:25,520 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-16 22:15:25,521 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 22:15:25,531 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:15:25,533 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-16 22:15:25,534 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 22:15:25,546 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-16 22:15:25,658 - INFO - Intentando conectar a la base de datos PostgreSQL y extraer datos.
+2025-05-16 22:15:25,660 - INFO - Consultando la tabla completa 'raw_airbnb'...
+2025-05-16 22:15:26,593 - INFO - Datos extraídos exitosamente de la tabla 'raw_airbnb'.
+2025-05-16 22:15:26,593 - INFO - El DataFrame df_bruto tiene 102599 filas y 26 columnas.
+2025-05-16 22:15:26,594 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-16 22:15:26,601 - INFO - Celda 5: Mostrando las primeras 5 filas del DataFrame df_bruto.
+2025-05-16 22:15:26,606 - INFO - Head de df_bruto mostrado.
+2025-05-16 22:15:26,615 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-16 22:15:26,876 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-16 22:15:26,884 - INFO - Celda 7: Calculando la cantidad y porcentaje de valores nulos por columna en df_bruto.
+2025-05-16 22:15:26,988 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-16 22:15:27,007 - INFO - Celda 8: Mostrando información general de df_bruto con df_bruto.info(show_counts=False).
+2025-05-16 22:15:27,010 - INFO - df_bruto.info ejecutado.
+2025-05-16 22:15:27,033 - INFO - Celda 9: Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-16 22:15:27,074 - INFO - Copia de df_bruto creada como df_cleaned.
+2025-05-16 22:15:27,075 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-16 22:15:27,076 - INFO - Columna 'id' convertida a Int64.
+2025-05-16 22:15:27,115 - INFO - Columna 'name' limpiada.
+2025-05-16 22:15:27,117 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-16 22:15:27,159 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-16 22:15:27,225 - INFO - Columna 'host_name' limpiada.
+2025-05-16 22:15:27,321 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-16 22:15:27,405 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-16 22:15:27,406 - INFO - Columna 'lat' convertida a float.
+2025-05-16 22:15:27,407 - INFO - Columna 'long' convertida a float.
+2025-05-16 22:15:27,509 - INFO - Columna 'country' convertida a category.
+2025-05-16 22:15:27,606 - INFO - Columna 'country_code' convertida a category.
+2025-05-16 22:15:27,629 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-16 22:15:27,707 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-16 22:15:27,788 - INFO - Columna 'room_type' convertida a category.
+2025-05-16 22:15:27,794 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-16 22:15:27,946 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-16 22:15:28,062 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-16 22:15:28,068 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-16 22:15:28,074 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-16 22:15:28,108 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-16 22:15:28,109 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-16 22:15:28,115 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-16 22:15:28,120 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-16 22:15:28,126 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-16 22:15:28,177 - INFO - Columna 'house_rules' limpiada.
+2025-05-16 22:15:28,208 - INFO - Columna 'license' limpiada.
+2025-05-16 22:15:28,267 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-16 22:15:28,268 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-16 22:15:28,274 - INFO - Celda 10: Calculando estadísticas descriptivas para columnas numéricas en df_cleaned.
+2025-05-16 22:15:28,338 - INFO - Estadísticas descriptivas para columnas numéricas mostradas.
+2025-05-16 22:15:28,346 - INFO - Celda 11: Calculando estadísticas descriptivas para columnas object, string y category en df_cleaned.
+2025-05-16 22:15:28,546 - INFO - Estadísticas descriptivas para columnas object/string/category mostradas.
+2025-05-16 22:15:28,552 - INFO - Celda 12: Calculando estadísticas descriptivas para columnas boolean en df_cleaned.
+2025-05-16 22:15:28,563 - INFO - Estadísticas descriptivas para columnas boolean mostradas.
+2025-05-16 22:15:28,582 - INFO - Celda 13: Calculando estadísticas descriptivas para columnas datetime en df_cleaned.
+2025-05-16 22:15:28,583 - INFO - Argumento 'datetime_is_numeric' no soportado (probablemente Pandas < 1.0.0). Se llamará a describe() sin él.
+2025-05-16 22:15:28,593 - INFO - Estadísticas descriptivas para columnas datetime mostradas.
+2025-05-16 22:15:28,615 - INFO - Celda 15: Analizando 'construction_year' con un gráfico de líneas.
+2025-05-16 22:15:28,815 - INFO - Gráfico de líneas para 'construction_year' generado y mostrado.
+2025-05-16 22:15:28,825 - INFO - Celda 16: Analizando 'minimum_nights' con un gráfico de barras.
+2025-05-16 22:15:28,837 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:28,843 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:29,112 - INFO - Gráfico de barras para los top 20 'minimum_nights' generado y mostrado.
+2025-05-16 22:15:29,124 - INFO - Celda 17: Determinando el año con mayor actividad de reviews basado en 'last_review'.
+2025-05-16 22:15:29,130 - INFO - El año con mayor actividad de 'últimos reviews' fue 2019 con 42931 reviews.
+2025-05-16 22:15:29,141 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:29,147 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:29,349 - INFO - Gráfico de barras de actividad de reviews por año generado y mostrado.
+2025-05-16 22:15:29,362 - INFO - Celda 18: Analizando 'number_of_reviews' y 'reviews_per_month'.
+2025-05-16 22:15:29,364 - INFO - Analizando la columna: number_of_reviews
+2025-05-16 22:15:29,964 - INFO - La columna 'number_of_reviews' está sesgada (skewness: 3.84). Mostrando con transformación logarítmica.
+2025-05-16 22:15:30,477 - INFO - Analizando la columna: reviews_per_month
+2025-05-16 22:15:30,952 - INFO - La columna 'reviews_per_month' está sesgada (skewness: 7.03). Mostrando con transformación logarítmica.
+2025-05-16 22:15:31,401 - INFO - Celda 19: Analizando 'review_rate_number'.
+2025-05-16 22:15:31,404 - INFO - Generando gráfico de barras para 'review_rate_number'.
+2025-05-16 22:15:31,415 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:31,421 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 22:15:31,532 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
+2025-05-16 22:15:33,619 - INFO - Matriz de histogramas y boxplots generada.
+2025-05-16 22:15:33,620 - INFO - Fin del notebook de EDA (002_eda.ipynb).
+2025-05-16 22:24:05,990 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-16 22:24:06,201 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-16 23:42:19,232 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-16 23:42:19,233 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-16 23:42:19,240 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 23:42:19,253 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-16 23:42:19,255 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-16 23:42:19,256 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-16 23:42:19,307 - INFO - Intentando conectar a la base de datos PostgreSQL y extraer datos.
+2025-05-16 23:42:19,308 - INFO - Consultando la tabla completa 'raw_airbnb'...
+2025-05-16 23:42:20,219 - INFO - Datos extraídos exitosamente de la tabla 'raw_airbnb'.
+2025-05-16 23:42:20,220 - INFO - El DataFrame df_bruto tiene 102599 filas y 26 columnas.
+2025-05-16 23:42:20,221 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-16 23:42:20,227 - INFO - Celda 5: Mostrando las primeras 5 filas del DataFrame df_bruto.
+2025-05-16 23:42:20,232 - INFO - Head de df_bruto mostrado.
+2025-05-16 23:42:20,243 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-16 23:42:20,587 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-16 23:42:20,594 - INFO - Celda 7: Calculando la cantidad y porcentaje de valores nulos por columna en df_bruto.
+2025-05-16 23:42:20,691 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-16 23:42:20,696 - INFO - Celda 8: Mostrando información general de df_bruto con df_bruto.info(show_counts=False).
+2025-05-16 23:42:20,701 - INFO - df_bruto.info ejecutado.
+2025-05-16 23:42:20,725 - INFO - Celda 9: Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-16 23:42:20,784 - INFO - Copia de df_bruto creada como df_cleaned.
+2025-05-16 23:42:20,785 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-16 23:42:20,787 - INFO - Columna 'id' convertida a Int64.
+2025-05-16 23:42:20,829 - INFO - Columna 'name' limpiada.
+2025-05-16 23:42:20,831 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-16 23:42:20,874 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-16 23:42:20,946 - INFO - Columna 'host_name' limpiada.
+2025-05-16 23:42:21,047 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-16 23:42:21,130 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-16 23:42:21,132 - INFO - Columna 'lat' convertida a float.
+2025-05-16 23:42:21,133 - INFO - Columna 'long' convertida a float.
+2025-05-16 23:42:21,239 - INFO - Columna 'country' convertida a category.
+2025-05-16 23:42:21,337 - INFO - Columna 'country_code' convertida a category.
+2025-05-16 23:42:21,359 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-16 23:42:21,443 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-16 23:42:21,528 - INFO - Columna 'room_type' convertida a category.
+2025-05-16 23:42:21,565 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-16 23:42:21,783 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-16 23:42:21,910 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-16 23:42:21,917 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-16 23:42:21,923 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-16 23:42:21,960 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-16 23:42:21,961 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-16 23:42:21,967 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-16 23:42:21,974 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-16 23:42:21,980 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-16 23:42:22,034 - INFO - Columna 'house_rules' limpiada.
+2025-05-16 23:42:22,068 - INFO - Columna 'license' limpiada.
+2025-05-16 23:42:22,135 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-16 23:42:22,135 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-16 23:42:22,141 - INFO - Celda 10: Calculando estadísticas descriptivas para columnas numéricas en df_cleaned.
+2025-05-16 23:42:22,200 - INFO - Estadísticas descriptivas para columnas numéricas mostradas.
+2025-05-16 23:42:22,206 - INFO - Celda 11: Calculando estadísticas descriptivas para columnas object, string y category en df_cleaned.
+2025-05-16 23:42:22,407 - INFO - Estadísticas descriptivas para columnas object/string/category mostradas.
+2025-05-16 23:42:22,414 - INFO - Celda 12: Calculando estadísticas descriptivas para columnas boolean en df_cleaned.
+2025-05-16 23:42:22,436 - INFO - Estadísticas descriptivas para columnas boolean mostradas.
+2025-05-16 23:42:22,457 - INFO - Celda 13: Calculando estadísticas descriptivas para columnas datetime en df_cleaned.
+2025-05-16 23:42:22,460 - INFO - Argumento 'datetime_is_numeric' no soportado (probablemente Pandas < 1.0.0). Se llamará a describe() sin él.
+2025-05-16 23:42:22,467 - INFO - Estadísticas descriptivas para columnas datetime mostradas.
+2025-05-16 23:42:22,479 - INFO - Celda 15: Analizando 'construction_year' con un gráfico de líneas.
+2025-05-16 23:42:22,779 - INFO - Gráfico de líneas para 'construction_year' generado y mostrado.
+2025-05-16 23:42:22,787 - INFO - Celda 16: Analizando 'minimum_nights' con un gráfico de barras.
+2025-05-16 23:42:22,802 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:22,808 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:23,037 - INFO - Gráfico de barras para los top 20 'minimum_nights' generado y mostrado.
+2025-05-16 23:42:23,047 - INFO - Celda 17: Determinando el año con mayor actividad de reviews basado en 'last_review'.
+2025-05-16 23:42:23,055 - INFO - El año con mayor actividad de 'últimos reviews' fue 2019 con 42931 reviews.
+2025-05-16 23:42:23,065 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:23,071 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:23,343 - INFO - Gráfico de barras de actividad de reviews por año generado y mostrado.
+2025-05-16 23:42:23,357 - INFO - Celda 18: Analizando 'number_of_reviews' y 'reviews_per_month'.
+2025-05-16 23:42:23,359 - INFO - Analizando la columna: number_of_reviews
+2025-05-16 23:42:23,985 - INFO - La columna 'number_of_reviews' está sesgada (skewness: 3.84). Mostrando con transformación logarítmica.
+2025-05-16 23:42:24,594 - INFO - Analizando la columna: reviews_per_month
+2025-05-16 23:42:25,137 - INFO - La columna 'reviews_per_month' está sesgada (skewness: 7.03). Mostrando con transformación logarítmica.
+2025-05-16 23:42:25,649 - INFO - Celda 19: Analizando 'review_rate_number'.
+2025-05-16 23:42:25,653 - INFO - Generando gráfico de barras para 'review_rate_number'.
+2025-05-16 23:42:25,664 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:25,671 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 23:42:25,794 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
+2025-05-16 23:42:28,026 - INFO - Matriz de histogramas y boxplots generada.
+2025-05-16 23:42:28,027 - INFO - Fin del notebook de EDA (002_eda.ipynb).
+2025-05-17 00:10:41,593 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-17 00:10:41,594 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 00:10:41,600 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-17 00:10:41,601 - INFO - Nombre de la tabla en PostgreSQL a leer: raw_airbnb
+2025-05-17 00:10:41,602 - INFO - Archivo .env encontrado y cargado desde /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-17 00:10:41,603 - INFO - Variables de entorno para PostgreSQL cargadas correctamente.
+2025-05-17 00:10:41,652 - INFO - Intentando conectar a la base de datos PostgreSQL y extraer datos.
+2025-05-17 00:10:41,653 - INFO - Consultando la tabla completa 'raw_airbnb'...
+2025-05-17 00:10:42,564 - INFO - Datos extraídos exitosamente de la tabla 'raw_airbnb'.
+2025-05-17 00:10:42,565 - INFO - El DataFrame df_bruto tiene 102599 filas y 26 columnas.
+2025-05-17 00:10:42,566 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-17 00:10:42,572 - INFO - Celda 5: Mostrando las primeras 5 filas del DataFrame df_bruto.
+2025-05-17 00:10:42,576 - INFO - Head de df_bruto mostrado.
+2025-05-17 00:10:42,584 - INFO - Celda 6: Verificando filas duplicadas en df_bruto.
+2025-05-17 00:10:42,840 - INFO - Número de filas duplicadas encontradas en df_bruto: 541
+2025-05-17 00:10:42,846 - INFO - Celda 7: Calculando la cantidad y porcentaje de valores nulos por columna en df_bruto.
+2025-05-17 00:10:42,991 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-17 00:10:42,996 - INFO - Celda 8: Mostrando información general de df_bruto con df_bruto.info(show_counts=False).
+2025-05-17 00:10:43,001 - INFO - df_bruto.info ejecutado.
+2025-05-17 00:10:43,025 - INFO - Celda 9: Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-17 00:10:43,076 - INFO - Copia de df_bruto creada como df_cleaned.
+2025-05-17 00:10:43,077 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-17 00:10:43,078 - INFO - Columna 'id' convertida a Int64.
+2025-05-17 00:10:43,120 - INFO - Columna 'name' limpiada.
+2025-05-17 00:10:43,122 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-17 00:10:43,163 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-17 00:10:43,231 - INFO - Columna 'host_name' limpiada.
+2025-05-17 00:10:43,330 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 00:10:43,415 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-17 00:10:43,416 - INFO - Columna 'lat' convertida a float.
+2025-05-17 00:10:43,418 - INFO - Columna 'long' convertida a float.
+2025-05-17 00:10:43,519 - INFO - Columna 'country' convertida a category.
+2025-05-17 00:10:43,626 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 00:10:43,649 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-17 00:10:43,736 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 00:10:43,822 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 00:10:43,828 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-17 00:10:43,994 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-17 00:10:44,141 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-17 00:10:44,148 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-17 00:10:44,156 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-17 00:10:44,208 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 00:10:44,210 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-17 00:10:44,218 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-17 00:10:44,227 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-17 00:10:44,235 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-17 00:10:44,292 - INFO - Columna 'house_rules' limpiada.
+2025-05-17 00:10:44,330 - INFO - Columna 'license' limpiada.
+2025-05-17 00:10:44,396 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 00:10:44,396 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-17 00:10:44,403 - INFO - Celda 10: Calculando estadísticas descriptivas para columnas numéricas en df_cleaned.
+2025-05-17 00:10:44,460 - INFO - Estadísticas descriptivas para columnas numéricas mostradas.
+2025-05-17 00:10:44,465 - INFO - Celda 11: Calculando estadísticas descriptivas para columnas object, string y category en df_cleaned.
+2025-05-17 00:10:44,670 - INFO - Estadísticas descriptivas para columnas object/string/category mostradas.
+2025-05-17 00:10:44,678 - INFO - Celda 12: Calculando estadísticas descriptivas para columnas boolean en df_cleaned.
+2025-05-17 00:10:44,685 - INFO - Estadísticas descriptivas para columnas boolean mostradas.
+2025-05-17 00:10:44,698 - INFO - Celda 13: Calculando estadísticas descriptivas para columnas datetime en df_cleaned.
+2025-05-17 00:10:44,701 - INFO - Argumento 'datetime_is_numeric' no soportado (probablemente Pandas < 1.0.0). Se llamará a describe() sin él.
+2025-05-17 00:10:44,707 - INFO - Estadísticas descriptivas para columnas datetime mostradas.
+2025-05-17 00:10:44,716 - INFO - Celda 15: Analizando 'construction_year' con un gráfico de líneas.
+2025-05-17 00:10:44,882 - INFO - Gráfico de líneas para 'construction_year' generado y mostrado.
+2025-05-17 00:10:44,891 - INFO - Celda 16: Analizando 'minimum_nights' con un gráfico de barras.
+2025-05-17 00:10:44,903 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:44,909 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:45,103 - INFO - Gráfico de barras para los top 20 'minimum_nights' generado y mostrado.
+2025-05-17 00:10:45,113 - INFO - Celda 17: Determinando el año con mayor actividad de reviews basado en 'last_review'.
+2025-05-17 00:10:45,120 - INFO - El año con mayor actividad de 'últimos reviews' fue 2019 con 42931 reviews.
+2025-05-17 00:10:45,132 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:45,139 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:45,329 - INFO - Gráfico de barras de actividad de reviews por año generado y mostrado.
+2025-05-17 00:10:45,341 - INFO - Celda 18: Analizando 'number_of_reviews' y 'reviews_per_month'.
+2025-05-17 00:10:45,344 - INFO - Analizando la columna: number_of_reviews
+2025-05-17 00:10:46,011 - INFO - La columna 'number_of_reviews' está sesgada (skewness: 3.84). Mostrando con transformación logarítmica.
+2025-05-17 00:10:46,555 - INFO - Analizando la columna: reviews_per_month
+2025-05-17 00:10:47,021 - INFO - La columna 'reviews_per_month' está sesgada (skewness: 7.03). Mostrando con transformación logarítmica.
+2025-05-17 00:10:47,477 - INFO - Celda 19: Analizando 'review_rate_number'.
+2025-05-17 00:10:47,481 - INFO - Generando gráfico de barras para 'review_rate_number'.
+2025-05-17 00:10:47,494 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:47,500 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-17 00:10:47,613 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
+2025-05-17 00:10:49,497 - INFO - Matriz de histogramas y boxplots generada.
+2025-05-17 00:10:49,498 - INFO - Fin del notebook de EDA (002_eda.ipynb).

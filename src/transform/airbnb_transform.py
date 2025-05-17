@@ -18,7 +18,7 @@ def _rename_columns_airbnb(df: pd.DataFrame) -> pd.DataFrame:
     
     df.columns = df.columns.str.strip() # Eliminar espacios al inicio/final
     df.columns = df.columns.str.replace(' ', '_', regex=False)
-    df.columns = df.columns.str.lower()
+    df.columns = df.columns.str.lower() # Esto convertiría 'ID' a 'id'
     # Opcional: Limpieza más agresiva (si la necesitas y sabes que no rompe nada)
     # df.columns = df.columns.str.replace(r'[^a-z0-9_]+', '', regex=True)
 
