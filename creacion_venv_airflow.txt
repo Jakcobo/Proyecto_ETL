@@ -20,3 +20,15 @@ pip install -r requirements.txt
 
 airflow db migrate #solo la primera vez que se inicia
 airflow standalone
+
+
+######################################################################################3
+apache-airflow==2.10.0
+
+# Constraints matching your Python version (ajustado para Python 3.12)
+# Estos se usarán automáticamente si instalas con --constraint más adelante
+apache-airflow-providers-postgres==5.4.0
+apache-airflow-providers-common-sql==1.15.0
+
+# Dependencias auxiliares recomendadas
+psycopg2-binary>=2.9

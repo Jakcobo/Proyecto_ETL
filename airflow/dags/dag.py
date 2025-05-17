@@ -1,58 +1,38 @@
-#/home/nicolas/Escritorio/proyecto ETL/develop/airflow/dags/dag.py
-
 import os
 import sys
 from datetime import timedelta, datetime
 from airflow.decorators import dag, task
 import pandas as pd
 
-# --- Configuración de Paths ---
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SRC_PATH = os.path.join(PROJECT_ROOT, "src")
 
-# Añadir PROJECT_ROOT y SRC_PATH a sys.path para permitir importaciones directas
+if SRC_PATH not in sys.path:
+    sys.path.append(SRC_PATH)
+
+from extract.api_extract import extract_foursquare_data 
+from extract.airbnb_extract import extract_airbnb_main_data
+from transform.api_transform import clean_api_data_updated 
+from transform.airbnb_transform import clean_airbnb_data_updated 
+from load.load_airbnb_api_clean import load_cleaned_api_airbnb_to_db 
+from database.merge import merge_airbnb_api_data 
+from load.load_merge import load_merged_data_to_db
+from database.model_dimensional import create_and_prepare_dimensional_model_data
+from load.load_dimensional import populate_dimensional_model
+from kafka_producer import stream_data_to_kafka
+
+
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 if SRC_PATH not in sys.path:
     sys.path.insert(0, SRC_PATH)
 
-# --- Importar lógica de las tareas desde src ---
-
-# Extract
-from extract.api_extract import extract_foursquare_data # Renombrado para claridad, o usa tu nombre
-from extract.airbnb_extract import extract_airbnb_main_data # Renombrado para claridad, o usa tu nombre
-
-# Transform
-from transform.api_transform import clean_api_data_updated # O el nombre de tu función de limpieza API
-from transform.airbnb_transform import clean_airbnb_data_updated # O el nombre de tu función de limpieza Airbnb
-
-# Load (Cleaned Airbnb y API)
-from load.load_airbnb_api_clean import load_cleaned_api_airbnb_to_db # Necesitará manejar dos DataFrames limpios
-
-# Merge
-from database.merge import merge_airbnb_api_data # O el nombre de tu función de merge
-
-# Load (Merge)
-from load.load_merge import load_merged_data_to_db
-
-# Dimensional Model
-# Asumo que model_dimensional.py tendrá una función para crear/asegurar las tablas, similar a modeldb.py
-from database.model_dimensional import create_and_prepare_dimensional_model_data # o el nombre de tu función
-
-# Load (Dimensional)
-# Asumo que load_dimensional.py (nuevo) leerá de la tabla mergeada y poblará el modelo
-from load.load_dimensional import populate_dimensional_model
-
-# Kafka
-from kafka_producer import stream_data_to_kafka
-
-# Argumentos por defecto para el DAG
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 5, 14), # Actualiza según necesidad
+    'start_date': datetime(2024, 5, 14), 
     'retries': 1,
-    'retry_delay': timedelta(minutes=2) # Reducido para pruebas más rápidas
+    'retry_delay': timedelta(minutes=2) 
 }
 
 @dag(

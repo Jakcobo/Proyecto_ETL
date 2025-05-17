@@ -418,3 +418,242 @@
 2025-05-17 00:10:47,613 - INFO - Celda 20: Generando matriz de histogramas y boxplots para columnas numéricas adicionales.
 2025-05-17 00:10:49,497 - INFO - Matriz de histogramas y boxplots generada.
 2025-05-17 00:10:49,498 - INFO - Fin del notebook de EDA (002_eda.ipynb).
+2025-05-17 18:10:17,919 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-17 18:10:17,922 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:10:17,924 - INFO - Ruta del archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:10:17,927 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:10:17,929 - INFO - Intentando cargar el archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:10:17,932 - ERROR - Error: Archivo CSV no encontrado en '/home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv'
+2025-05-17 18:11:27,514 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-17 18:11:27,516 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:11:27,518 - INFO - Ruta del archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:11:27,519 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:11:27,520 - INFO - Intentando cargar el archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:11:27,522 - ERROR - Error: Archivo CSV no encontrado en '/home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv'
+2025-05-17 18:11:27,880 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-17 18:11:27,882 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:11:27,883 - INFO - Ruta del archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:11:27,884 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:11:27,885 - INFO - Intentando cargar el archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:11:27,886 - ERROR - Error: Archivo CSV no encontrado en '/home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv'
+2025-05-17 18:15:48,670 - INFO - Inicio del notebook de EDA (002_eda_airbnb.ipynb).
+2025-05-17 18:15:48,671 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:15:48,672 - INFO - Ruta del archivo CSV: ../../data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:15:48,674 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:15:48,675 - INFO - Intentando cargar el archivo CSV: ../../data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:15:49,338 - INFO - Archivo CSV '../../data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:15:49,340 - INFO - El DataFrame tiene 102599 filas y 26 columnas.
+2025-05-17 18:15:49,341 - INFO - Mostrando las primeras 5 filas del DataFrame df_airbnb (formato markdown):
+2025-05-17 18:15:49,350 - INFO - 
+|      id | NAME                                             |     host id | host_identity_verified   | host name   | neighbourhood group   | neighbourhood   |     lat |     long | country       | country code   | instant_bookable   | cancellation_policy   | room type       |   Construction year | price   | service fee   |   minimum nights |   number of reviews | last review   |   reviews per month |   review rate number |   calculated host listings count |   availability 365 | house_rules                                                                                                                                                                                                                                                                                                                                                                                                         |   license |
+|--------:|:-------------------------------------------------|------------:|:-------------------------|:------------|:----------------------|:----------------|--------:|---------:|:--------------|:---------------|:-------------------|:----------------------|:----------------|--------------------:|:--------|:--------------|-----------------:|--------------------:|:--------------|--------------------:|---------------------:|---------------------------------:|-------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|
+| 1001254 | Clean & quiet apt home by the park               | 80014485718 | unconfirmed              | Madaline    | Brooklyn              | Kensington      | 40.6475 | -73.9724 | United States | US             | False              | strict                | Private room    |                2020 | $966    | $193          |               10 |                   9 | 10/19/2021    |                0.21 |                    4 |                                6 |                286 | Clean up and treat the home the way you'd like your home to be treated.  No smoking.                                                                                                                                                                                                                                                                                                                                |       nan |
+| 1002102 | Skylit Midtown Castle                            | 52335172823 | verified                 | Jenna       | Manhattan             | Midtown         | 40.7536 | -73.9838 | United States | US             | False              | moderate              | Entire home/apt |                2007 | $142    | $28           |               30 |                  45 | 5/21/2022     |                0.38 |                    4 |                                2 |                228 | Pet friendly but please confirm with me if the pet you are planning on bringing with you is OK. I have a cute and quiet mixed chihuahua. I could accept more guests (for an extra fee) but this also needs to be confirmed beforehand. Also friends traveling together could sleep in separate beds for an extra fee (the second bed is either a sofa bed or inflatable bed). Smoking is only allowed on the porch. |       nan |
+| 1002403 | THE VILLAGE OF HARLEM....NEW YORK !              | 78829239556 | nan                      | Elise       | Manhattan             | Harlem          | 40.809  | -73.9419 | United States | US             | True               | flexible              | Private room    |                2005 | $620    | $124          |                3 |                   0 | nan           |              nan    |                    5 |                                1 |                352 | I encourage you to use my kitchen, cooking and laundry facilities. There is no additional charge to use the washer/dryer in the basement.  No smoking, inside or outside. Come home as late as you want.  If you come home stumbling drunk, it's OK the first time. If you do it again, and you wake up me or the neighbors downstairs, we will be annoyed.  (Just so you know . . . )                              |       nan |
+| 1002755 | nan                                              | 85098326012 | unconfirmed              | Garry       | Brooklyn              | Clinton Hill    | 40.6851 | -73.9598 | United States | US             | True               | moderate              | Entire home/apt |                2005 | $368    | $74           |               30 |                 270 | 7/5/2019      |                4.64 |                    4 |                                1 |                322 | nan                                                                                                                                                                                                                                                                                                                                                                                                                 |       nan |
+| 1003689 | Entire Apt: Spacious Studio/Loft by central park | 92037596077 | verified                 | Lyndon      | Manhattan             | East Harlem     | 40.7985 | -73.944  | United States | US             | False              | moderate              | Entire home/apt |                2009 | $204    | $41           |               10 |                   9 | 11/19/2018    |                0.1  |                    3 |                                1 |                289 | Please no smoking in the house, porch or on the property (you can go to the nearby corner).  Reasonable quiet after 10:30 pm.  Please remove shoes in the house.                                                                                                                                                                                                                                                    |       nan |
+2025-05-17 18:15:49,351 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:15:49,499 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:15:49,500 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:15:49,547 - INFO - Tabla de nulos por columna generada y mostrada.
+2025-05-17 18:15:49,548 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:15:49,557 - INFO - df_airbnb.info ejecutado.
+2025-05-17 18:15:49,558 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión concisa).
+2025-05-17 18:15:49,570 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:15:49,572 - INFO - Columnas de df_cleaned normalizadas. Nuevas columnas: ['id', 'name', 'host_id', 'host_identity_verified', 'host_name', 'neighbourhood_group', 'neighbourhood', 'lat', 'long', 'country', 'country_code', 'instant_bookable', 'cancellation_policy', 'room_type', 'construction_year', 'price', 'service_fee', 'minimum_nights', 'number_of_reviews', 'last_review', 'reviews_per_month', 'review_rate_number', 'calculated_host_listings_count', 'availability_365', 'house_rules', 'license']
+2025-05-17 18:15:49,576 - INFO - Columna 'id' convertida a Int64.
+2025-05-17 18:15:49,609 - INFO - Columna 'name' limpiada.
+2025-05-17 18:15:49,611 - INFO - Columna 'host_id' convertida a Int64.
+2025-05-17 18:15:49,636 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas.
+2025-05-17 18:15:49,665 - INFO - Columna 'host_name' limpiada.
+2025-05-17 18:15:49,697 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:15:49,723 - INFO - Columna 'neighbourhood' limpiada.
+2025-05-17 18:15:49,725 - INFO - Columna 'lat' convertida a float.
+2025-05-17 18:15:49,727 - INFO - Columna 'long' convertida a float.
+2025-05-17 18:15:49,759 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:15:49,794 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:15:49,807 - INFO - Columna 'instant_bookable_flag' creada.
+2025-05-17 18:15:49,836 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:15:49,866 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:15:49,876 - INFO - Columna 'construction_year' convertida a Int64.
+2025-05-17 18:15:49,993 - INFO - Columnas 'price_str_cleaned' y 'price_numeric' creadas.
+2025-05-17 18:15:50,112 - INFO - Columnas 'service_fee_str_cleaned' y 'service_fee_numeric' creadas.
+2025-05-17 18:15:50,129 - INFO - Columna 'minimum_nights' convertida a Int64.
+2025-05-17 18:15:50,141 - INFO - Columna 'number_of_reviews' convertida a Int64.
+2025-05-17 18:15:50,167 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:15:50,169 - INFO - Columna 'reviews_per_month' convertida a float.
+2025-05-17 18:15:50,178 - INFO - Columna 'review_rate_number' convertida a Int64.
+2025-05-17 18:15:50,187 - INFO - Columna 'calculated_host_listings_count' convertida a Int64.
+2025-05-17 18:15:50,197 - INFO - Columna 'availability_365' convertida a Int64.
+2025-05-17 18:15:50,236 - INFO - Columna 'house_rules' limpiada.
+2025-05-17 18:15:50,287 - INFO - Columna 'license' limpiada.
+2025-05-17 18:15:50,318 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:15:50,320 - INFO - Proceso de limpieza preliminar y conversión de tipos completado.
+2025-05-17 18:19:36,975 - INFO - Inicio del notebook de EDA optimizado (002_eda_airbnb_optimized.py).
+2025-05-17 18:19:36,976 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:19:36,977 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:19:36,986 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:19:36,987 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:19:37,640 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:19:37,641 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-17 18:19:37,642 - INFO - Mostrando las primeras 5 filas del DataFrame df_airbnb (formato markdown):
+2025-05-17 18:19:37,645 - INFO - 
+|      id | NAME                                             |     host id | host_identity_verified   | host name   | neighbourhood group   | neighbourhood   |     lat |     long | country       | country code   | instant_bookable   | cancellation_policy   | room type       |   Construction year | price   | service fee   |   minimum nights |   number of reviews | last review   |   reviews per month |   review rate number |   calculated host listings count |   availability 365 | house_rules                                                                                                                                                                                                                                                                                                                                                                                                         |   license |
+|--------:|:-------------------------------------------------|------------:|:-------------------------|:------------|:----------------------|:----------------|--------:|---------:|:--------------|:---------------|:-------------------|:----------------------|:----------------|--------------------:|:--------|:--------------|-----------------:|--------------------:|:--------------|--------------------:|---------------------:|---------------------------------:|-------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------:|
+| 1001254 | Clean & quiet apt home by the park               | 80014485718 | unconfirmed              | Madaline    | Brooklyn              | Kensington      | 40.6475 | -73.9724 | United States | US             | False              | strict                | Private room    |                2020 | $966    | $193          |               10 |                   9 | 10/19/2021    |                0.21 |                    4 |                                6 |                286 | Clean up and treat the home the way you'd like your home to be treated.  No smoking.                                                                                                                                                                                                                                                                                                                                |       nan |
+| 1002102 | Skylit Midtown Castle                            | 52335172823 | verified                 | Jenna       | Manhattan             | Midtown         | 40.7536 | -73.9838 | United States | US             | False              | moderate              | Entire home/apt |                2007 | $142    | $28           |               30 |                  45 | 5/21/2022     |                0.38 |                    4 |                                2 |                228 | Pet friendly but please confirm with me if the pet you are planning on bringing with you is OK. I have a cute and quiet mixed chihuahua. I could accept more guests (for an extra fee) but this also needs to be confirmed beforehand. Also friends traveling together could sleep in separate beds for an extra fee (the second bed is either a sofa bed or inflatable bed). Smoking is only allowed on the porch. |       nan |
+| 1002403 | THE VILLAGE OF HARLEM....NEW YORK !              | 78829239556 | nan                      | Elise       | Manhattan             | Harlem          | 40.809  | -73.9419 | United States | US             | True               | flexible              | Private room    |                2005 | $620    | $124          |                3 |                   0 | nan           |              nan    |                    5 |                                1 |                352 | I encourage you to use my kitchen, cooking and laundry facilities. There is no additional charge to use the washer/dryer in the basement.  No smoking, inside or outside. Come home as late as you want.  If you come home stumbling drunk, it's OK the first time. If you do it again, and you wake up me or the neighbors downstairs, we will be annoyed.  (Just so you know . . . )                              |       nan |
+| 1002755 | nan                                              | 85098326012 | unconfirmed              | Garry       | Brooklyn              | Clinton Hill    | 40.6851 | -73.9598 | United States | US             | True               | moderate              | Entire home/apt |                2005 | $368    | $74           |               30 |                 270 | 7/5/2019      |                4.64 |                    4 |                                1 |                322 | nan                                                                                                                                                                                                                                                                                                                                                                                                                 |       nan |
+| 1003689 | Entire Apt: Spacious Studio/Loft by central park | 92037596077 | verified                 | Lyndon      | Manhattan             | East Harlem     | 40.7985 | -73.944  | United States | US             | False              | moderate              | Entire home/apt |                2009 | $204    | $41           |               10 |                   9 | 11/19/2018    |                0.1  |                    3 |                                1 |                289 | Please no smoking in the house, porch or on the property (you can go to the nearby corner).  Reasonable quiet after 10:30 pm.  Please remove shoes in the house.                                                                                                                                                                                                                                                    |       nan |
+2025-05-17 18:19:37,647 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:19:37,789 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:19:37,790 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:19:37,840 - INFO - Tabla de nulos por columna (original) generada y mostrada.
+2025-05-17 18:19:37,842 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:19:37,848 - INFO - df_airbnb.info (original) ejecutado.
+2025-05-17 18:19:37,848 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-17 18:19:37,881 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:19:37,884 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-17 18:19:37,885 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-17 18:19:38,255 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:19:38,287 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-17 18:19:38,322 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:19:38,357 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:19:38,390 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:19:38,426 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:19:38,445 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:19:38,472 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas a partir de 'host_identity_verified'.
+2025-05-17 18:19:38,519 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-17 18:19:38,659 - INFO - Columna 'price_numeric' creada a partir de 'price'.
+2025-05-17 18:19:38,781 - INFO - Columna 'service_fee_numeric' creada a partir de 'service_fee'.
+2025-05-17 18:19:38,808 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:19:38,809 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-17 18:19:38,810 - INFO - Mostrando las primeras 5 filas del DataFrame df_cleaned (formato markdown):
+2025-05-17 18:21:15,611 - INFO - Inicio del notebook de EDA optimizado (002_eda_airbnb_optimized.py).
+2025-05-17 18:21:15,612 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:21:15,614 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:21:15,623 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:21:15,624 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:21:16,256 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:21:16,257 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-17 18:21:16,258 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:21:16,414 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:21:16,414 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:21:16,470 - INFO - Tabla de nulos por columna (original) generada y mostrada.
+2025-05-17 18:21:16,471 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:21:16,476 - INFO - df_airbnb.info (original) ejecutado.
+2025-05-17 18:21:16,477 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-17 18:21:16,486 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:21:16,489 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-17 18:21:16,490 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-17 18:21:16,897 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:21:16,934 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-17 18:21:16,976 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:21:17,016 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:21:17,048 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:21:17,086 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:21:17,105 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:21:17,136 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas a partir de 'host_identity_verified'.
+2025-05-17 18:21:17,194 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-17 18:21:17,328 - INFO - Columna 'price_numeric' creada a partir de 'price'.
+2025-05-17 18:21:17,468 - INFO - Columna 'service_fee_numeric' creada a partir de 'service_fee'.
+2025-05-17 18:21:17,490 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:21:17,491 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-17 18:21:17,492 - INFO - Mostrando las primeras 5 filas del DataFrame df_cleaned (formato markdown):
+2025-05-17 18:21:25,182 - INFO - Inicio del notebook de EDA optimizado (002_eda_airbnb_optimized.py).
+2025-05-17 18:21:25,184 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:21:25,185 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:21:25,195 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:21:25,197 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:21:25,864 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:21:25,865 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-17 18:21:25,866 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:21:26,091 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:21:26,093 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:21:26,162 - INFO - Tabla de nulos por columna (original) generada y mostrada.
+2025-05-17 18:21:26,164 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:21:26,173 - INFO - df_airbnb.info (original) ejecutado.
+2025-05-17 18:21:26,176 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-17 18:21:26,193 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:21:26,196 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-17 18:21:26,197 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-17 18:21:26,797 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:21:26,840 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-17 18:21:26,887 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:21:26,935 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:21:26,972 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:21:27,015 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:21:27,034 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:21:27,067 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas a partir de 'host_identity_verified'.
+2025-05-17 18:21:27,134 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-17 18:21:27,288 - INFO - Columna 'price_numeric' creada a partir de 'price'.
+2025-05-17 18:21:27,441 - INFO - Columna 'service_fee_numeric' creada a partir de 'service_fee'.
+2025-05-17 18:21:27,458 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:21:27,459 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-17 18:21:27,460 - INFO - Mostrando las primeras 5 filas del DataFrame df_cleaned (formato markdown):
+2025-05-17 18:22:50,893 - INFO - Inicio del notebook de EDA optimizado (002_eda_airbnb_optimized.py).
+2025-05-17 18:22:50,896 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:22:50,899 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:22:50,908 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:22:50,909 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:22:51,628 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:22:51,630 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-17 18:22:51,632 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:22:51,792 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:22:51,793 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:22:51,851 - INFO - Tabla de nulos por columna (original) generada y mostrada.
+2025-05-17 18:22:51,852 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:22:51,857 - INFO - df_airbnb.info (original) ejecutado.
+2025-05-17 18:22:51,858 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-17 18:22:51,888 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:22:51,891 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-17 18:22:51,891 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-17 18:22:52,381 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:22:52,426 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-17 18:22:52,466 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:22:52,507 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:22:52,543 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:22:52,584 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:22:52,604 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:22:52,635 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas a partir de 'host_identity_verified'.
+2025-05-17 18:22:52,690 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-17 18:22:52,847 - INFO - Columna 'price_numeric' creada a partir de 'price'.
+2025-05-17 18:22:53,006 - INFO - Columna 'service_fee_numeric' creada a partir de 'service_fee'.
+2025-05-17 18:22:53,028 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:22:53,030 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-17 18:22:53,032 - INFO - Mostrando las primeras 5 filas del DataFrame df_cleaned (formato markdown):
+2025-05-17 18:23:38,308 - INFO - Inicio del notebook de EDA optimizado (002_eda_airbnb_optimized.py).
+2025-05-17 18:23:38,310 - INFO - Configuraciones de Pandas para visualización aplicadas.
+2025-05-17 18:23:38,311 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:23:38,316 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-17 18:23:38,318 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 18:23:37,049 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-17 18:23:37,050 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-17 18:23:37,050 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-17 18:23:37,187 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-17 18:23:37,188 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_airbnb.
+2025-05-17 18:23:37,243 - INFO - Tabla de nulos por columna (original) generada y mostrada.
+2025-05-17 18:23:37,244 - INFO - Mostrando información general de df_airbnb con df_airbnb.info(show_counts=False).
+2025-05-17 18:23:37,248 - INFO - df_airbnb.info (original) ejecutado.
+2025-05-17 18:23:37,249 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-17 18:23:37,262 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-17 18:23:37,264 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-17 18:23:37,265 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-17 18:23:37,680 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-17 18:23:37,713 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-17 18:23:37,749 - INFO - Columna 'country' convertida a category.
+2025-05-17 18:23:37,784 - INFO - Columna 'country_code' convertida a category.
+2025-05-17 18:23:37,819 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-17 18:23:37,859 - INFO - Columna 'room_type' convertida a category.
+2025-05-17 18:23:37,884 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-17 18:23:37,920 - INFO - Columnas 'is_verified', 'is_unconfirmed' creadas a partir de 'host_identity_verified'.
+2025-05-17 18:23:37,990 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-17 18:23:38,133 - INFO - Columna 'price_numeric' creada a partir de 'price'.
+2025-05-17 18:23:38,269 - INFO - Columna 'service_fee_numeric' creada a partir de 'service_fee'.
+2025-05-17 18:23:38,305 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'price', 'service_fee'] eliminadas de df_cleaned.
+2025-05-17 18:23:38,306 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-17 18:23:38,307 - INFO - Calculando la cantidad y porcentaje de valores nulos por columna en df_cleaned.
+2025-05-17 18:23:38,332 - INFO - Tabla de nulos por columna (df_cleaned) generada y mostrada.
+2025-05-17 18:23:38,334 - INFO - Mostrando información general de df_cleaned con df_cleaned.info(show_counts=True).
+2025-05-17 18:23:38,367 - INFO - df_cleaned.info ejecutado.
+2025-05-17 18:23:38,368 - INFO - Fin del notebook de EDA optimizado.

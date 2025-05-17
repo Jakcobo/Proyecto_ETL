@@ -1,5 +1,7 @@
+#/home/nicolas/Escritorio/proyecto ETL/develop/src/database/db.py
+
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, inspect, Integer, Float, String, DateTime, MetaData, Table, Column, BIGINT, text
+from sqlalchemy import create_engine, inspect, Integer, Float, String, DateTime, MetaData, Table, Column, BIGINT, text #, create_sqlalchemy_engine
 from sqlalchemy.exc import OperationalError, ProgrammingError
 from sqlalchemy_utils import database_exists, create_database
 
