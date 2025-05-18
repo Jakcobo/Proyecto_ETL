@@ -26,3 +26,12 @@
 2025-05-16 22:04:24,684 - INFO - Primeras 5 filas obtenidas de PostgreSQL (formato markdown):
 2025-05-16 22:04:24,692 - INFO - Script de carga de datos finalizado.
 2025-05-16 22:04:24,693 - INFO - Conexiones del motor de SQLAlchemy dispuestas (cerradas).
+2025-05-17 14:34:37,206 - INFO - Inicio del notebook de la carga 001_load_airbnb
+2025-05-17 14:34:39,750 - INFO - Ruta del archivo CSV: /home/nicolas/Escritorio/proyecto ETL/develop/data/raw/Airbnb_Open_Data.csv
+2025-05-17 14:34:39,754 - INFO - Ruta del archivo .env: /home/nicolas/Escritorio/proyecto ETL/develop/env/.env
+2025-05-17 14:34:39,756 - INFO - Nombre de la tabla en PostgreSQL: raw_airbnb
+2025-05-17 14:34:39,759 - ERROR - Una o más variables de entorno de PostgreSQL no están definidas. Revisa tu archivo .env.
+2025-05-17 14:37:01,653 - INFO - Ruta del archivo CSV: /home/y4xul/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-17 14:37:01,657 - INFO - Ruta del archivo .env: /home/y4xul/Proyecto_ETL/env/.env
+2025-05-17 14:37:01,660 - INFO - Nombre de la tabla en PostgreSQL: raw_airbnb
+2025-05-17 14:37:01,669 - ERROR - Una o más variables de entorno de PostgreSQL no están definidas. Revisa tu archivo .env.
