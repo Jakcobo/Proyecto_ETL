@@ -37,4 +37,10 @@ psycopg2-binary>=2.9
 cada vez:
 
 export AIRFLOW_HOME="$(pwd)/airflow"
+export AIRFLOW_ENV=local
+airflow standalone
 
+verificar el index de ge:
+ls -lah great_expectations/uncommitted/data_docs/local_site/index.html
+abrir navegador de ge:
+explorer.exe "$(wslpath -w ./great_expectations/uncommitted/data_docs/local_site/index.html)"

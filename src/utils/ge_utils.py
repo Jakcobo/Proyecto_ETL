@@ -5,7 +5,7 @@ from great_expectations.exceptions import GreatExpectationsError
 import pandas as pd
 import logging
 import os
-
+import webbrowser
 logger = logging.getLogger(__name__)
 
 DEFAULT_GE_CONTEXT_ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "great_expectations"))
@@ -80,5 +80,27 @@ def validate_dataframe_with_ge(
 
     context.save_expectation_suite(expectation_suite=validator.get_expectation_suite(discard_failed_expectations=False))
     context.build_data_docs() # Si quieres reconstruir Data Docs aquí
+    # Abrir Data Docs automáticamente si se está ejecutando localmente
+        # Abrir Data Docs automáticamente si se está ejecutando localmente
+    import subprocess
+
+    import subprocess
+
+    if os.environ.get("AIRFLOW_ENV", "local") == "local":
+        docs_path = os.path.abspath(os.path.join(ge_context_root_dir, "uncommitted", "data_docs", "local_site", "index.html"))
+        if os.path.exists(docs_path):
+            logger.info(f"Abrir Data Docs en navegador: {docs_path}")
+            if os.name == "posix" and "microsoft" in os.uname().release.lower():  # WSL
+                windows_path = subprocess.check_output(["wslpath", "-w", docs_path]).decode("utf-8").strip()
+                file_url = f"file:///{windows_path.replace('\\', '/')}"
+                subprocess.Popen(["cmd.exe", "/C", f'start chrome {file_url}'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+            else:
+                import webbrowser
+                webbrowser.open(f"file://{docs_path}")
+        else:
+            logger.warning(f"Data Docs no encontrado en: {docs_path}")
+
 
     return validation_result

@@ -1,4 +1,3 @@
-#/Proyecto_ETL/airflow/dags/dag.py
 import os
 import sys
 from datetime import timedelta, datetime
