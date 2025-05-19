@@ -1,0 +1,20 @@
+2025-05-18 20:08:17,867 - INFO - Inicio del merge de datos.
+2025-05-18 20:08:17,869 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/data/clean/Airbnb_Open_Data.csv
+2025-05-18 20:08:17,871 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/data/clean/airbnb_top5_nearby.csv
+2025-05-18 20:08:17,872 - INFO - Intentando leer los archivos CSV.
+2025-05-18 20:08:17,872 - ERROR - Error: Archivo principal no encontrado en '/home/jacobo/data/clean/Airbnb_Open_Data.csv'
+2025-05-18 20:08:36,739 - INFO - Inicio del merge de datos.
+2025-05-18 20:08:36,741 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/Airbnb_Open_Data.csv
+2025-05-18 20:08:36,743 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/airbnb_top5_nearby.csv
+2025-05-18 20:08:36,744 - INFO - Intentando leer los archivos CSV.
+2025-05-18 20:08:36,746 - ERROR - Error: Archivo principal no encontrado en '/home/data/clean/Airbnb_Open_Data.csv'
+2025-05-18 20:09:20,785 - INFO - Inicio del merge de datos.
+2025-05-18 20:09:20,787 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/Airbnb_Open_Data_cleaned.csv
+2025-05-18 20:09:20,788 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/airbnb_top5_nearby.csv
+2025-05-18 20:09:20,789 - INFO - Intentando leer los archivos CSV.
+2025-05-18 20:09:20,790 - ERROR - Error: Archivo principal no encontrado en '/home/data/clean/Airbnb_Open_Data_cleaned.csv'
+2025-05-18 20:09:25,834 - INFO - Inicio del merge de datos.
+2025-05-18 20:09:25,837 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/Airbnb_Open_Data_cleaned.csv
+2025-05-18 20:09:25,839 - INFO - Ruta del archivo CSV construida con os: /home/data/clean/airbnb_top5_nearby.csv
+2025-05-18 20:09:25,840 - INFO - Intentando leer los archivos CSV.
+2025-05-18 20:09:25,841 - ERROR - Error: Archivo principal no encontrado en '/home/data/clean/Airbnb_Open_Data_cleaned.csv'

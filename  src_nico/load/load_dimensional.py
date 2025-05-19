@@ -33,7 +33,6 @@ try:
     from database.db import get_db_engine
 except ImportError:
     logging.error("Error importando get_db_engine desde database.db. Asegúrate que 'src' esté en PYTHONPATH o la estructura del proyecto sea correcta.")
-    # Fallback o error si no se puede importar
     sys.exit("Fallo crítico: no se pudo importar get_db_engine.")
 
 

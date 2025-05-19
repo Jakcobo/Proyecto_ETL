@@ -1,0 +1,710 @@
+2025-05-18 12:03:52,448 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 12:03:52,450 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 12:03:52,453 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 12:03:52,454 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 12:03:53,044 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 12:03:53,045 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 12:03:53,046 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 12:03:53,178 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 12:03:53,179 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 12:03:53,189 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 12:03:53,191 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 12:03:53,192 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 12:03:53,447 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 12:03:53,449 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 12:03:53,455 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 12:03:53,481 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 12:03:53,510 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 12:03:53,539 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 12:03:53,559 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 12:03:53,570 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 12:03:53,609 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 12:03:53,714 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 12:03:53,822 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 12:03:53,833 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 12:03:53,834 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 12:03:53,834 - INFO - Proceso finalizado exitosamente.
+2025-05-18 13:01:06,980 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 13:01:06,983 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:01:07,018 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 13:01:07,019 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:01:07,763 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 13:01:07,764 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 13:01:07,765 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 13:01:07,873 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 13:01:07,874 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 13:01:07,884 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 13:01:07,887 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 13:01:07,888 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 13:01:08,545 - ERROR - Ocurrió un error general durante la limpieza: Cannot setitem on a Categorical with a new category (not_specified), set the categories first
+Traceback (most recent call last):
+  File "/tmp/ipykernel_16251/26158130.py", line 157, in <module>
+    df_cleaned['cancellation_policy'].fillna('not_specified', inplace=True)
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2008, in fillna
+    new_values = self.values.fillna(value=value, method=None, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/_mixins.py", line 359, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/_mixins.py", line 253, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/categorical.py", line 1562, in _validate_setitem_value
+    return self._validate_scalar(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/categorical.py", line 1587, in _validate_scalar
+    raise TypeError(
+TypeError: Cannot setitem on a Categorical with a new category (not_specified), set the categories first
+2025-05-18 13:01:08,556 - INFO - Proceso finalizado exitosamente.
+2025-05-18 13:03:35,699 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 13:03:35,701 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:03:35,709 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 13:03:35,711 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:03:36,344 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 13:03:36,345 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 13:03:36,346 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 13:03:36,485 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 13:03:36,486 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 13:03:36,527 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 13:03:36,530 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 13:03:36,531 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 13:03:37,213 - ERROR - Ocurrió un error general durante la limpieza: Invalid value 'Not Provided' for dtype boolean
+Traceback (most recent call last):
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2002, in fillna
+    new_values = self.values.fillna(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_16251/4021240739.py", line 161, in <module>
+    df_cleaned['host_verification'].fillna('Not Provided', inplace=True)
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2008, in fillna
+    new_values = self.values.fillna(value=value, method=None, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+2025-05-18 13:03:37,216 - INFO - Proceso finalizado exitosamente.
+2025-05-18 13:08:30,881 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 13:08:30,882 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:08:30,899 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 13:08:30,900 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:08:31,492 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 13:08:31,493 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 13:08:31,494 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 13:08:31,594 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 13:08:31,595 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 13:08:31,616 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 13:08:31,617 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 13:08:31,618 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 13:08:31,940 - INFO - Columna 'host_verification' creada como booleana y nulos rellenados con False.
+2025-05-18 13:08:32,267 - INFO - Imputaciones personalizadas y eliminación de nulos completadas.
+2025-05-18 13:08:32,268 - INFO - Total de registros después de limpieza: 1
+2025-05-18 13:08:32,269 - INFO - Proceso finalizado exitosamente.
+2025-05-18 13:08:50,583 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 13:08:50,585 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:08:50,594 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 13:08:50,596 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 13:08:51,037 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 13:08:51,038 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 13:08:51,040 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 13:08:51,143 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 13:08:51,144 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 13:08:51,154 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 13:08:51,155 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 13:08:51,156 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 13:08:51,471 - INFO - Columna 'host_verification' creada como booleana y nulos rellenados con False.
+2025-05-18 13:08:51,785 - INFO - Imputaciones personalizadas y eliminación de nulos completadas.
+2025-05-18 13:08:51,787 - INFO - Total de registros después de limpieza: 1
+2025-05-18 13:08:51,788 - INFO - Proceso finalizado exitosamente.
+2025-05-18 14:41:32,148 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:41:32,151 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:41:32,357 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:41:33,447 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:41:33,449 - INFO - Verificando filas duplicadas.
+2025-05-18 14:41:33,594 - INFO - Duplicados encontrados: 541
+2025-05-18 14:41:33,607 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:41:33,617 - INFO - Columnas normalizadas.
+2025-05-18 14:41:33,618 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:41:34,226 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:41:34,332 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:41:34,410 - INFO - Se eliminarán 0 registros sin datos de review.
+2025-05-18 14:41:34,495 - INFO - Total de registros después de limpieza: 1
+2025-05-18 14:41:34,510 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:41:34,511 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:41:56,459 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:41:56,461 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:41:56,470 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:41:56,961 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:41:56,962 - INFO - Verificando filas duplicadas.
+2025-05-18 14:41:57,066 - INFO - Duplicados encontrados: 541
+2025-05-18 14:41:57,077 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:41:57,078 - INFO - Columnas normalizadas.
+2025-05-18 14:41:57,079 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:41:57,526 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:41:57,640 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:41:57,701 - INFO - Se eliminarán 0 registros sin datos de review.
+2025-05-18 14:41:57,765 - INFO - Total de registros después de limpieza: 1
+2025-05-18 14:41:57,768 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:41:57,769 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:44:04,264 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:44:04,266 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:44:04,277 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:44:04,828 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:44:04,829 - INFO - Verificando filas duplicadas.
+2025-05-18 14:44:04,928 - INFO - Duplicados encontrados: 541
+2025-05-18 14:44:04,937 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:44:04,939 - INFO - Columnas normalizadas.
+2025-05-18 14:44:04,939 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:44:05,397 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:44:05,500 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:44:05,584 - INFO - Total de registros después de limpieza: 1
+2025-05-18 14:44:05,588 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:44:05,589 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:44:14,122 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:44:14,123 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:44:14,132 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:44:14,597 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:44:14,598 - INFO - Verificando filas duplicadas.
+2025-05-18 14:44:14,704 - INFO - Duplicados encontrados: 541
+2025-05-18 14:44:14,714 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:44:14,716 - INFO - Columnas normalizadas.
+2025-05-18 14:44:14,717 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:44:15,165 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:44:15,261 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:44:15,351 - INFO - Total de registros después de limpieza: 1
+2025-05-18 14:44:15,354 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:44:15,355 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:45:36,854 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:45:36,855 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:45:36,864 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:45:37,436 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:45:37,437 - INFO - Verificando filas duplicadas.
+2025-05-18 14:45:37,558 - INFO - Duplicados encontrados: 541
+2025-05-18 14:45:37,567 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:45:37,569 - INFO - Columnas normalizadas.
+2025-05-18 14:45:37,570 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:45:38,060 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:45:38,155 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:45:38,205 - INFO - Total de registros después de limpieza: 102546
+2025-05-18 14:45:39,175 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:45:39,176 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:46:24,631 - INFO - Inicio de la extracción de datos de AirBnB.
+2025-05-18 14:46:24,632 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:46:24,638 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:46:25,109 - INFO - Archivo CSV cargado exitosamente. Filas: 102599, Columnas: 26
+2025-05-18 14:46:25,110 - INFO - Verificando filas duplicadas.
+2025-05-18 14:46:25,222 - INFO - Duplicados encontrados: 541
+2025-05-18 14:46:25,231 - INFO - Copia creada como df_cleaned.
+2025-05-18 14:46:25,232 - INFO - Columnas normalizadas.
+2025-05-18 14:46:25,233 - INFO - Renombramiento: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:46:25,676 - WARNING - price: 247 nuevos NaNs por coerción.
+2025-05-18 14:46:25,774 - WARNING - service_fee: 273 nuevos NaNs por coerción.
+2025-05-18 14:46:25,822 - INFO - Se eliminarán 0 registros sin datos de review.
+2025-05-18 14:46:25,841 - INFO - Total de registros después de limpieza: 102546
+2025-05-18 14:46:26,841 - INFO - CSV limpio guardado exitosamente en: /home/jacobo/Proyecto_ETL/data/clean/airbnb_cleaned.csv
+2025-05-18 14:46:26,842 - INFO - Proceso de limpieza finalizado exitosamente.
+2025-05-18 14:47:20,079 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 14:47:20,081 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:47:20,087 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:47:20,089 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:47:20,637 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 14:47:20,638 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 14:47:20,639 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 14:47:20,750 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 14:47:20,751 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 14:47:20,761 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 14:47:20,763 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 14:47:20,764 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:47:21,076 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 14:47:21,078 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 14:47:21,086 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 14:47:21,118 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 14:47:21,158 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 14:47:21,198 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 14:47:21,219 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 14:47:21,236 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 14:47:21,287 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 14:47:21,475 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 14:47:21,580 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 14:47:21,592 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 14:47:21,593 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 14:47:21,594 - INFO - Proceso finalizado exitosamente.
+2025-05-18 14:51:45,477 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 14:51:45,479 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:51:45,480 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:51:45,481 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:51:46,017 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 14:51:46,018 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 14:51:46,019 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 14:51:46,120 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 14:51:46,121 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 14:51:46,131 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 14:51:46,133 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 14:51:46,133 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:51:46,419 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 14:51:46,421 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 14:51:46,429 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 14:51:46,458 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 14:51:46,486 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 14:51:46,515 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 14:51:46,530 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 14:51:46,542 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 14:51:46,583 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 14:51:46,688 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 14:51:46,792 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 14:51:46,803 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 14:51:46,804 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 14:51:46,832 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 14:51:46,847 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 14:51:46,849 - ERROR - Ocurrió un error general durante la limpieza: Invalid value 'Not Provided' for dtype boolean
+Traceback (most recent call last):
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2002, in fillna
+    new_values = self.values.fillna(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_50967/352643060.py", line 246, in <module>
+    df_cleaned['host_verification'] = df_cleaned['host_verification'].fillna("Not Provided")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2008, in fillna
+    new_values = self.values.fillna(value=value, method=None, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+2025-05-18 14:51:46,859 - ERROR - Ocurrió un error general: Invalid value 'Not Provided' for dtype boolean
+2025-05-18 14:51:46,860 - INFO - Proceso finalizado exitosamente.
+2025-05-18 14:53:06,179 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 14:53:06,180 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:53:06,188 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:53:06,189 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:53:06,699 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 14:53:06,700 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 14:53:06,701 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 14:53:06,804 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 14:53:06,805 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 14:53:06,822 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 14:53:06,823 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 14:53:06,824 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:53:07,104 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 14:53:07,106 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 14:53:07,113 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 14:53:07,140 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 14:53:07,168 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 14:53:07,197 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 14:53:07,211 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 14:53:07,223 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 14:53:07,261 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 14:53:07,364 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 14:53:07,465 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 14:53:07,475 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 14:53:07,476 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 14:53:07,491 - ERROR - Ocurrió un error general durante la limpieza: Cannot setitem on a Categorical with a new category (False), set the categories first
+Traceback (most recent call last):
+  File "/tmp/ipykernel_50967/2684963039.py", line 217, in <module>
+    df_cleaned['cancellation_policy'] = df_cleaned['cancellation_policy'].fillna(False).astype('object')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2008, in fillna
+    new_values = self.values.fillna(value=value, method=None, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/_mixins.py", line 359, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/_mixins.py", line 253, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/categorical.py", line 1562, in _validate_setitem_value
+    return self._validate_scalar(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/categorical.py", line 1587, in _validate_scalar
+    raise TypeError(
+TypeError: Cannot setitem on a Categorical with a new category (False), set the categories first
+2025-05-18 14:53:07,495 - ERROR - Ocurrió un error general: Cannot setitem on a Categorical with a new category (False), set the categories first
+2025-05-18 14:53:07,496 - INFO - Proceso finalizado exitosamente.
+2025-05-18 14:58:13,539 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 14:58:13,541 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:58:13,547 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 14:58:13,549 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 14:58:14,194 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 14:58:14,195 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 14:58:14,195 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 14:58:14,303 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 14:58:14,304 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 14:58:14,317 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 14:58:14,318 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 14:58:14,319 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 14:58:14,564 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 14:58:14,566 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 14:58:14,573 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 14:58:14,598 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 14:58:14,630 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 14:58:14,661 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 14:58:14,675 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 14:58:14,686 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 14:58:14,725 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 14:58:14,833 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 14:58:14,938 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 14:58:14,948 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 14:58:14,949 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 14:58:14,963 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 14:58:14,979 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 14:58:14,995 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 14:58:14,998 - ERROR - Ocurrió un error general durante la limpieza: Invalid value 'Not Provided' for dtype boolean
+Traceback (most recent call last):
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2002, in fillna
+    new_values = self.values.fillna(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_50967/509487237.py", line 255, in <module>
+    df_cleaned['host_verification'] = df_cleaned['host_verification'].fillna("Not Provided")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 2008, in fillna
+    new_values = self.values.fillna(value=value, method=None, limit=limit)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 244, in fillna
+    new_values[mask] = value
+    ~~~~~~~~~~^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 292, in __setitem__
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/masked.py", line 283, in _validate_setitem_value
+    raise TypeError(f"Invalid value '{str(value)}' for dtype {self.dtype}")
+TypeError: Invalid value 'Not Provided' for dtype boolean
+2025-05-18 14:58:15,000 - ERROR - Ocurrió un error general: Invalid value 'Not Provided' for dtype boolean
+2025-05-18 14:58:15,000 - INFO - Proceso finalizado exitosamente.
+2025-05-18 15:00:32,202 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 15:00:32,203 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 15:00:32,213 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 15:00:32,214 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 15:00:31,644 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 15:00:31,645 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 15:00:31,646 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 15:00:31,754 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 15:00:31,755 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 15:00:31,768 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 15:00:31,770 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 15:00:31,771 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 15:00:32,029 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 15:00:32,031 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 15:00:32,037 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 15:00:32,063 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 15:00:32,091 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 15:00:32,120 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 15:00:32,134 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 15:00:32,145 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 15:00:32,185 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 15:00:32,289 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 15:00:32,391 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 15:00:32,402 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 15:00:32,403 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 15:00:32,417 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 15:00:32,433 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 15:00:32,450 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 15:00:32,454 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 15:00:32,455 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 15:00:32,455 - INFO - Proceso finalizado exitosamente.
+2025-05-18 16:05:47,667 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 16:05:47,672 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:05:47,754 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 16:05:47,755 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:05:48,740 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 16:05:48,741 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 16:05:48,742 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 16:05:48,911 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 16:05:48,913 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 16:05:48,927 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 16:05:48,932 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 16:05:48,933 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 16:05:49,293 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 16:05:49,295 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 16:05:49,305 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 16:05:49,339 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 16:05:49,376 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 16:05:49,409 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 16:05:49,449 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 16:05:49,475 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 16:05:49,532 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 16:05:49,733 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 16:05:49,846 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 16:05:49,859 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 16:05:49,860 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 16:05:49,876 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 16:05:49,893 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 16:05:49,915 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 16:05:49,919 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 16:05:49,920 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 16:05:49,921 - INFO - Proceso finalizado exitosamente.
+2025-05-18 16:16:02,134 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 16:16:02,136 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:16:02,139 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 16:16:02,140 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:16:02,757 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 16:16:02,758 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 16:16:02,758 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 16:16:02,883 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 16:16:02,884 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 16:16:02,894 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 16:16:02,896 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 16:16:02,897 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 16:16:03,155 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 16:16:03,156 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 16:16:03,164 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 16:16:03,189 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 16:16:03,218 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 16:16:03,249 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 16:16:03,265 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 16:16:03,277 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 16:16:03,319 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 16:16:03,445 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 16:16:03,554 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 16:16:03,576 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 16:16:03,577 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 16:16:03,597 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 16:16:03,621 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 16:16:03,639 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 16:16:03,642 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 16:16:03,643 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 16:16:03,644 - INFO - Proceso finalizado exitosamente.
+2025-05-18 16:32:47,887 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 16:32:47,890 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:32:47,902 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 16:32:47,903 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:32:48,514 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 16:32:48,515 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 16:32:48,516 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 16:32:48,619 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 16:32:48,620 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 16:32:48,635 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 16:32:48,637 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 16:32:48,637 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 16:32:48,901 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 16:32:48,902 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 16:32:48,910 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 16:32:48,937 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 16:32:48,966 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 16:32:48,996 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 16:32:49,011 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 16:32:49,023 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 16:32:49,063 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 16:32:49,172 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 16:32:49,282 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 16:32:49,293 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 16:32:49,293 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 16:32:49,308 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 16:32:49,325 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 16:32:49,342 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 16:32:49,346 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 16:32:49,347 - INFO - Aplicando reglas adicionales para 'last_review' y 'review_rate_number'.
+2025-05-18 16:32:49,351 - ERROR - Ocurrió un error general durante la limpieza: Did not expect new dtype datetime64[ns] to equal self.dtype datetime64[ns]. Please report a bug at https://github.com/pandas-dev/pandas/issues.
+Traceback (most recent call last):
+  File "timestamps.pyx", line 1105, in pandas._libs.tslibs.timestamps._Timestamp._as_creso
+  File "np_datetime.pyx", line 629, in pandas._libs.tslibs.np_datetime.convert_reso
+OverflowError: value too large
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 1803, in where
+    res_values = arr._where(cond, other).T
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/_mixins.py", line 414, in _where
+    value = self._validate_setitem_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py", line 697, in _validate_setitem_value
+    return self._validate_scalar(value, allow_listlike=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/datetimelike.py", line 612, in _validate_scalar
+    return self._unbox_scalar(value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/arrays/datetimes.py", line 520, in _unbox_scalar
+    return value.as_unit(self.unit).asm8
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "timestamps.pyx", line 1144, in pandas._libs.tslibs.timestamps._Timestamp.as_unit
+  File "timestamps.pyx", line 1108, in pandas._libs.tslibs.timestamps._Timestamp._as_creso
+pandas._libs.tslibs.np_datetime.OutOfBoundsDatetime: Cannot cast 9999-01-01 00:00:00 to unit='ns' without overflow.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_66480/1057061375.py", line 268, in <module>
+    df_cleaned['last_review'] = df_cleaned['last_review'].fillna(fecha_ficticia)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/generic.py", line 7212, in fillna
+    new_data = self._mgr.fillna(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/base.py", line 173, in fillna
+    return self.apply_with_block(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 1419, in fillna
+    nbs = self.where(value, ~mask.T, _downcast=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 1819, in where
+    blk = self.coerce_to_target_dtype(orig_other)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacobo/Proyecto_ETL/venv/lib/python3.12/site-packages/pandas/core/internals/blocks.py", line 490, in coerce_to_target_dtype
+    raise AssertionError(
+AssertionError: Did not expect new dtype datetime64[ns] to equal self.dtype datetime64[ns]. Please report a bug at https://github.com/pandas-dev/pandas/issues.
+2025-05-18 16:32:49,366 - ERROR - Ocurrió un error general: Did not expect new dtype datetime64[ns] to equal self.dtype datetime64[ns]. Please report a bug at https://github.com/pandas-dev/pandas/issues.
+2025-05-18 16:32:49,367 - INFO - Proceso finalizado exitosamente.
+2025-05-18 16:36:31,661 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 16:36:31,663 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:36:31,671 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 16:36:31,672 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:36:32,226 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 16:36:32,227 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 16:36:32,228 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 16:36:32,327 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 16:36:32,328 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 16:36:32,341 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 16:36:32,342 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 16:36:32,343 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 16:36:32,619 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 16:36:32,621 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 16:36:32,628 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 16:36:32,654 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 16:36:32,683 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 16:36:32,714 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 16:36:32,730 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 16:36:32,742 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 16:36:32,782 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 16:36:32,898 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 16:36:33,006 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 16:36:33,015 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 16:36:33,016 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 16:36:33,031 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 16:36:33,050 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 16:36:33,067 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 16:36:33,069 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 16:36:33,070 - INFO - Aplicando reglas adicionales para 'last_review' y 'review_rate_number'.
+2025-05-18 16:36:33,072 - INFO - Valores nulos en 'last_review' imputados con '2262-04-11 00:00:00'.
+2025-05-18 16:36:33,086 - INFO - Filas eliminadas por nulos en 'review_rate_number': 291
+2025-05-18 16:36:33,087 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 16:36:33,088 - INFO - Proceso finalizado exitosamente.
+2025-05-18 16:39:17,552 - INFO - Inicio de la extración de datos de AirBnB.
+2025-05-18 16:39:17,553 - INFO - Ruta del archivo CSV construida con os: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:39:17,563 - INFO - DataFrame 'df_airbnb' predefinido como un DataFrame vacío.
+2025-05-18 16:39:17,565 - INFO - Intentando cargar el archivo CSV: /home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv
+2025-05-18 16:39:18,143 - INFO - Archivo CSV '/home/jacobo/Proyecto_ETL/data/raw/Airbnb_Open_Data.csv' cargado exitosamente.
+2025-05-18 16:39:18,144 - INFO - El DataFrame original tiene 102599 filas y 26 columnas.
+2025-05-18 16:39:18,145 - INFO - Verificando filas duplicadas en df_airbnb.
+2025-05-18 16:39:18,257 - INFO - Número de filas duplicadas encontradas en df_airbnb: 541
+2025-05-18 16:39:18,258 - INFO - Iniciando limpieza preliminar y conversión de tipos de datos (versión optimizada).
+2025-05-18 16:39:18,269 - INFO - Copia de df_airbnb creada como df_cleaned.
+2025-05-18 16:39:18,271 - INFO - Columnas de df_cleaned normalizadas.
+2025-05-18 16:39:18,272 - INFO - Cambios en nombres de columnas: {'id': 'id', 'NAME': 'name', 'host id': 'host_id', 'host_identity_verified': 'host_identity_verified', 'host name': 'host_name', 'neighbourhood group': 'neighbourhood_group', 'neighbourhood': 'neighbourhood', 'lat': 'lat', 'long': 'long', 'country': 'country', 'country code': 'country_code', 'instant_bookable': 'instant_bookable', 'cancellation_policy': 'cancellation_policy', 'room type': 'room_type', 'Construction year': 'construction_year', 'price': 'price', 'service fee': 'service_fee', 'minimum nights': 'minimum_nights', 'number of reviews': 'number_of_reviews', 'last review': 'last_review', 'reviews per month': 'reviews_per_month', 'review rate number': 'review_rate_number', 'calculated host listings count': 'calculated_host_listings_count', 'availability 365': 'availability_365', 'house_rules': 'house_rules', 'license': 'license'}
+2025-05-18 16:39:18,527 - INFO - Columna 'neighbourhood_group': 2 valores estandarizados usando RapidFuzz.
+2025-05-18 16:39:18,528 - INFO - RapidFuzz aplicado a 'neighbourhood_group'.
+2025-05-18 16:39:18,535 - INFO - Columna 'neighbourhood_group' convertida a category.
+2025-05-18 16:39:18,561 - INFO - Columna 'neighbourhood' limpiada (no convertida a category debido a alta cardinalidad: 225).
+2025-05-18 16:39:18,591 - INFO - Columna 'cancellation_policy' convertida a category.
+2025-05-18 16:39:18,621 - INFO - Columna 'room_type' convertida a category.
+2025-05-18 16:39:18,638 - INFO - Columna 'last_review' convertida a datetime.
+2025-05-18 16:39:18,650 - INFO - Columnas 'host_verification', creada a partir de 'host_identity_verified'.
+2025-05-18 16:39:18,692 - INFO - Columna 'instant_bookable_flag' creada a partir de 'instant_bookable'.
+2025-05-18 16:39:18,808 - INFO - Columna 'price' creada a partir de 'price'.
+2025-05-18 16:39:18,922 - INFO - Columna 'service_fee' creada a partir de 'service_fee'.
+2025-05-18 16:39:18,934 - INFO - Columnas ['host_identity_verified', 'instant_bookable', 'country', 'country_code', 'license', 'house_rules'] eliminadas de df_cleaned.
+2025-05-18 16:39:18,935 - INFO - Iniciando imputación y eliminación de valores nulos según reglas específicas.
+2025-05-18 16:39:18,953 - INFO - Columna 'cancellation_policy' imputada con la moda: 'moderate'.
+2025-05-18 16:39:18,973 - INFO - Filas eliminadas por nulos en neighbourhood_group, neighbourhood, lat o long: 53
+2025-05-18 16:39:19,006 - INFO - Filas eliminadas por no tener reseñas y tener last_review y review_rate_number nulos: 33
+2025-05-18 16:39:19,009 - INFO - Imputación y limpieza de nulos completada.
+2025-05-18 16:39:19,010 - INFO - Aplicando reglas adicionales para 'last_review' y 'review_rate_number'.
+2025-05-18 16:39:19,011 - INFO - Valores nulos en 'last_review' imputados con '2262-04-11 00:00:00'.
+2025-05-18 16:39:19,025 - INFO - Filas eliminadas por nulos en 'review_rate_number': 291
+2025-05-18 16:39:19,026 - INFO - Proceso de limpieza preliminar y conversión de tipos optimizado completado.
+2025-05-18 16:39:19,027 - INFO - Proceso finalizado exitosamente.

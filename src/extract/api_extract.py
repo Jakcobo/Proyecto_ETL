@@ -20,7 +20,7 @@ def extract_api_data(csv_path: str = None) -> pd.DataFrame:
         FileNotFoundError: Si el archivo CSV no se encuentra.
         Exception: Para otros errores durante la lectura del CSV.
     """
-    RELATIVE_CSV_PATH_API = "data/raw/ny_places_foursquare_v3.csv"
+    RELATIVE_CSV_PATH_API = "data/raw/api_data.csv"
     absolute_file_path = csv_path
 
     if absolute_file_path is None:

@@ -32,3 +32,9 @@ apache-airflow-providers-common-sql==1.15.0
 
 # Dependencias auxiliares recomendadas
 psycopg2-binary>=2.9
+
+
+cada vez:
+
+export AIRFLOW_HOME="$(pwd)/airflow"
+

@@ -14,6 +14,8 @@ from extract.api_extract import extract_api_data
 from extract.airbnb_extract import extract_airbnb_data
 from transform.airbnb_transform import clean_airbnb_data
 from transform.api_transform import clean_api_data
+from load.merge_operacional import merge_operacional
+from load.data_merge import data_merge
 #from load.load_airbnb_api_clean import load_cleaned_api_to_db 
 #from database.merge import merge_airbnb_api_data
 #from load.load_merge import load_merged_data_to_db
@@ -75,13 +77,30 @@ def etl_pipeline():
             raise TypeError("clean_api_data debe devolver un Pandas DataFrame")
         return cleaned_api_df
     
+    @task(task_id="3.1_merge_operacional")
+    def merge_operacional_task(df_airbnb: pd.DataFrame, df_tiendas: pd.DataFrame) -> pd.DataFrame:
+        merged_df = merge_operacional(df_airbnb, df_tiendas)
+        if not isinstance(merged_df, pd.DataFrame):
+            raise TypeError("merge_operacional_airbnb_api debe devolver un DataFrame")
+        return merged_df
+    
+    @task(task_id="3.2_data_merge")
+    def data_merge_task(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataFrame:
+        df_data_merge = data_merge(df_airbnb, df_operations)
+        if not isinstance(df_data_merge, pd.DataFrame):
+            raise TypeError("data_merge debe debolver un DataFrame")
+        return df_data_merge
+        
     df_airbnb_raw_output = extraccion_airbnb_task()
     df_airbnb_cleaned_output = transformacion_airbnb_task(df_airbnb_raw_output)
     df_api_raw_output = extraccion_api_task()
     df_api_cleaned_output = transformacion_api_task(df_api_raw_output)
+    df_merge_output = merge_operacional_task(df_airbnb_cleaned_output, df_api_cleaned_output)
 
-    df_airbnb_cleaned_output
-    df_api_cleaned_output
+    #df_airbnb_cleaned_output
+    #df_api_cleaned_output
+    
+    data_merge_task(df_airbnb_cleaned_output, df_merge_output)
     
     #carga_limpia_resultado = carga_airbnb_y_api_limpia_task(
     #    df_api_cleaned=df_api_cleaned_output,
