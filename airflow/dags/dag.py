@@ -2,6 +2,7 @@ import os
 import sys
 from datetime import timedelta, datetime
 from airflow.decorators import dag, task
+from airflow.exceptions import AirflowFailException
 import pandas as pd
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -9,7 +10,10 @@ SRC_PATH = os.path.join(PROJECT_ROOT, "src")
 
 if SRC_PATH not in sys.path:
     sys.path.append(SRC_PATH)
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
 
+from utils.ge_utils import validate_dataframe_with_ge
 from extract.api_extract import extract_api_data
 from extract.airbnb_extract import extract_airbnb_data
 from transform.airbnb_transform import clean_airbnb_data
@@ -22,6 +26,8 @@ from load.data_merge import data_merge
 #from database.model_dimensional import create_and_prepare_dimensional_model_data
 #from load.load_dimensional import populate_dimensional_model
 #from kafka_producer import stream_data_to_kafka
+
+GE_CONTEXT_ROOT_DIR = os.path.join(PROJECT_ROOT, "great_expectations")
 
 if SRC_PATH not in sys.path:
     sys.path.append(SRC_PATH)
@@ -54,12 +60,30 @@ def etl_pipeline():
         raw_airbnb_df = extract_airbnb_data()
         if not isinstance(raw_airbnb_df, pd.DataFrame):
             raise TypeError("extract_airbnb_main_data debe devolver un Pandas DataFrame")
+        
+        validation_result = validate_dataframe_with_ge(
+            df=raw_airbnb_df,
+            expectation_suite_name="raw_airbnb_suite",
+            data_asset_name="raw_airbnb_from_pipeline",
+            ge_context_root_dir=GE_CONTEXT_ROOT_DIR
+        )
+        if not validation_result.success:
+            raise AirflowFailException(f"Validación de GE fallida para raw_airbnb_df -> '{str(validation_result)}'")
         return raw_airbnb_df
     
     @task(task_id="1.2_extraccion_api")
     def extraccion_api_task() -> pd.DataFrame:
         raw_api_df = extract_api_data()
         if not isinstance(raw_api_df, pd.DataFrame):
+                raise TypeError("extract_foursquare_data debe devolver un Pandas DataFrame")
+
+        validation_result = validate_dataframe_with_ge(
+            df=raw_api_df,
+            expectation_suite_name="raw_api_suite",
+            data_asset_name="raw_api_from_pipeline",
+            ge_context_root_dir=GE_CONTEXT_ROOT_DIR
+        )
+        if not validation_result.success:
             raise TypeError("extract_foursquare_data debe devolver un Pandas DataFrame")
         return raw_api_df
     
@@ -68,6 +92,15 @@ def etl_pipeline():
         cleaned_airbnb_df = clean_airbnb_data(df_airbnb_raw)
         if not isinstance(cleaned_airbnb_df, pd.DataFrame):
             raise TypeError("clean_airbnb_data debe devolver un Pandas DataFrame")
+
+        validation_result = validate_dataframe_with_ge(
+            df=cleaned_airbnb_df,
+            expectation_suite_name="cleaned_airbnb_suite",
+            data_asset_name="cleaned_airbnb_from_pipeline",
+            ge_context_root_dir=GE_CONTEXT_ROOT_DIR
+        )
+        if not validation_result.success:
+            raise TypeError("Validación de GE fallida para cleaned_airbnb_df")
         return cleaned_airbnb_df
     
     @task(task_id="2.2_transformacion_api")
