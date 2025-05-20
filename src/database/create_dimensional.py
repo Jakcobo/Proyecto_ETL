@@ -1,3 +1,4 @@
+# Proyecto_ETL/src/
 import pandas as pd
 import logging
 from sqlalchemy import (
@@ -29,7 +30,7 @@ def define_dim_host(metadata_obj: MetaData) -> Table:
         Column('host_key', Integer, primary_key=True, autoincrement=True),
         Column('host_id', BIGINT, unique=True, nullable=False),
         Column('host_name', String(255)),
-        Column('host_identity_verified', Boolean),
+        Column('host_verification', Boolean),
         Column('calculated_host_listings_count', Integer)
     )
 
@@ -51,12 +52,10 @@ def define_dim_property(metadata_obj: MetaData) -> Table:
         Column('property_key', Integer, primary_key=True, autoincrement=True),
         Column('property_id', BIGINT, unique=True, nullable=False),
         Column('property_name', Text),
-        Column('instant_bookable', Boolean),
+        Column('instant_bookable_flag', Boolean),
         Column('cancellation_policy', String(100)),
         Column('room_type', String(50)),
-        Column('construction_year', Integer),
-        Column('house_rules', Text),
-        Column('license', Text)
+        Column('construction_year', Integer)
     )
 
 def define_dim_date(metadata_obj: MetaData) -> Table:
@@ -74,7 +73,7 @@ def define_dim_date(metadata_obj: MetaData) -> Table:
 def define_fact_publication(metadata_obj: MetaData) -> Table:
     logger.info("Definiendo tabla: fact_publication")
     return Table('fact_publication', metadata_obj,
-        Column('publication_key', Integer, primary_key=True, autoincrement=True),
+        Column('id', Integer, primary_key=True, autoincrement=True),
         Column('fk_property', Integer, nullable=False),
         Column('fk_host', Integer, nullable=False),
         Column('fk_property_location', Integer, nullable=False),
@@ -116,12 +115,12 @@ def create_dimensional_tables_if_not_exist(engine):
 
 def prepare_dim_host_data(df_merged: pd.DataFrame) -> pd.DataFrame:
     logger.info("Preparando datos para dim_host...")
-    required_cols = ['host_id', 'host_name', 'host_identity_verified', 'calculated_host_listings_count']
+    required_cols = ['host_id', 'host_name', 'host_verification', 'calculated_host_listings_count']
     if not all(col in df_merged.columns for col in required_cols):
         missing = [col for col in required_cols if col not in df_merged.columns]
         raise ValueError(f"Faltan columnas en dim_host: {missing}")
     dim_host = df_merged[required_cols].drop_duplicates(subset=['host_id']).copy()
-    dim_host['host_identity_verified'] = dim_host['host_identity_verified'].apply(
+    dim_host['host_verification'] = dim_host['host_verification'].apply(
         lambda x: True if isinstance(x, str) and x.lower() == 'verified' else bool(x)
     )
     return dim_host
@@ -144,11 +143,11 @@ def prepare_dim_property_data(df_merged: pd.DataFrame) -> pd.DataFrame:
     logger.info("Preparando datos para dim_property...")
     df = df_merged.rename(columns={'id': 'property_id', 'name': 'property_name'})
     cols = [
-        'property_id', 'property_name', 'instant_bookable', 'cancellation_policy',
-        'room_type', 'construction_year', 'house_rules', 'license'
+        'property_id', 'property_name', 'instant_bookable_flag', 'cancellation_policy',
+        'room_type', 'construction_year'
     ]
     df = df[cols].drop_duplicates(subset=['property_id']).copy()
-    df['instant_bookable'] = df['instant_bookable'].apply(lambda x: str(x).lower() == 'true')
+    df['instant_bookable_flag'] = df['instant_bookable_flag'].apply(lambda x: str(x).lower() == 'true')
     df['construction_year'] = pd.to_numeric(df['construction_year'], errors='coerce').astype('Int64')
     return df
 
@@ -187,7 +186,7 @@ def prepare_fact_publication_data(df_merged: pd.DataFrame) -> pd.DataFrame:
         df[col] = pd.to_numeric(df[col], errors='coerce')
     return df
 
-def create_and_prepare_dimensional_model_data(df_merged: pd.DataFrame, db_name: str = "airbnb") -> dict:
+def create_and_prepare_dimensional_model_data(df_merged: pd.DataFrame, db_name: str) -> dict:
     if not isinstance(df_merged, pd.DataFrame):
         raise TypeError("df_merged debe ser un DataFrame.")
     if df_merged.empty:
@@ -195,7 +194,7 @@ def create_and_prepare_dimensional_model_data(df_merged: pd.DataFrame, db_name: 
         return {k: pd.DataFrame() for k in ["dim_host", "dim_property_location", "dim_property", "dim_date", "fact_publication"]}
 
     logger.info("Iniciando proceso de creación de modelo dimensional...")
-    engine = get_db_engine(db_name=db_name)
+    engine = get_db_engine(db_name)
     try:
         create_dimensional_tables_if_not_exist(engine)
         return {

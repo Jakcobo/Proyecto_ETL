@@ -69,8 +69,16 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
             
             poi_counts.rename(columns=new_column_names, inplace=True)
             logger.info(f"Columnas de conteo de POIs renombradas: {poi_counts.columns.tolist()}")
-            
+
             if 'id' in df_data_airbnb.columns:
+                if 'last_review' in df_data_airbnb.columns:
+                    try:
+                        logger.info("Convirtiendo columna 'last_review' a formato entero AAAAMMDD.")
+                        df_data_airbnb['last_review'] = pd.to_datetime(df_data_airbnb['last_review'], errors='coerce')
+                        df_data_airbnb['last_review'] = df_data_airbnb['last_review'].dt.strftime('%Y%m%d').astype(float).astype('Int64')
+                    except Exception as e:
+                        logger.warning(f"No se pudo convertir 'last_review' a entero: {e}", exc_info=True)
+                
                 logger.info(f"Realizando left merge entre df_data_airbnb (on 'id') y poi_counts (on index).")
                 df_merged = pd.merge(
                     df_data_airbnb,
@@ -90,6 +98,7 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
                 logger.info("Primeras filas del DataFrame fusionado (df_merged):")
                 logger.info(f"\n{df_merged.head().to_markdown(index=False)}")
                 logger.info("Información del DataFrame fusionado:")
+
                 df_merged.info()
                 
             else:
