@@ -46,16 +46,16 @@ def define_dim_property_location(metadata_obj: MetaData) -> Table:
         UniqueConstraint(*natural_key_cols, name='uq_dim_property_location_nk')
     )
 
-def define_dim_property(metadata_obj: MetaData) -> Table:
-    logger.info("Definiendo tabla: dim_property")
-    return Table('dim_property', metadata_obj,
-        Column("property_id", Integer, primary_key=True, autoincrement=True),
-        Column('property_key', Integer, nullable=False),
-        Column('property_name', Text),
-        Column('instant_bookable_flag', Boolean),
-        Column('cancellation_policy', String(100)),
-        Column('room_type', String(50)),
-        Column('construction_year', Integer)
+def define_dim_property(metadata: MetaData):
+    return Table(
+        "dim_property", metadata,
+        Column("property_id", Integer, primary_key=True, autoincrement=True),  # <-- aquí
+        Column("property_key", Integer, nullable=False, unique=True),
+        Column("property_name", String(255)),
+        Column("instant_bookable_flag", Boolean),
+        Column("cancellation_policy", String(50)),
+        Column("room_type", String(50)),
+        Column("construction_year", Integer),
     )
 
 def define_dim_date(metadata_obj: MetaData) -> Table:
