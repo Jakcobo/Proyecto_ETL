@@ -1,4 +1,5 @@
 # Proyecto_ETL/src/load/load_dimensional.py
+
 import logging
 import pandas as pd
 from datetime import datetime
@@ -26,9 +27,6 @@ from database.create_dimensional import (
 logger = logging.getLogger(__name__)
 
 def truncate_table(table_name: str, engine):
-    """
-    Elimina todos los registros de una tabla. ¡USAR CON PRECAUCIÓN!
-    """
     try:
         with engine.connect() as conn:
             trans = conn.begin()
@@ -49,38 +47,50 @@ def truncate_table(table_name: str, engine):
 
 def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bool:
     """
-    Carga en el modelo dimensional: primero borra tablas, carga dimensiones en bloque
-    y finalmente inserta la tabla de hechos desde el DataFrame de fact_publication.
+    Carga en el modelo dimensional:
+      1) Elimina columna obsoleta property_id
+      2) Crea tablas (checkfirst=True)
+      3) Trunca tablas
+      4) Carga en bloque las dimensiones
+      5) Inserta fila a fila la fact_publication
     """
     engine = get_db_engine(db_name)
-    metadata = MetaData()
 
-    # Definir tablas
+    # 1) DEBUG: URL de conexión
+    logger.info("DEBUG: Conectando a %s", engine.url)
+
+    # 2) Eliminar columna obsoleta property_id de dim_property
+    with engine.connect() as conn:
+        logger.info("DEBUG: DROP COLUMN IF EXISTS property_id en dim_property")
+        conn.execute(text('ALTER TABLE public.dim_property DROP COLUMN IF EXISTS property_id;'))
+
+    # 3) Definir esquema en SQLAlchemy
+    metadata = MetaData()
     tbl_host = define_dim_host(metadata)
-    tbl_loc = define_dim_property_location(metadata)
+    tbl_loc  = define_dim_property_location(metadata)
     tbl_prop = define_dim_property(metadata)
     tbl_date = define_dim_date(metadata)
     tbl_fact = define_fact_publication(metadata)
-    # Crea tablas si no existen (asegúrate de que property_id sea IDENTITY/SERIAL ahí)
+
+    # 4) Crear tablas si no existen
     metadata.create_all(engine, checkfirst=True)
 
-    # Truncar todas las tablas para evitar duplicados
+    # 5) Truncar tablas para empezar limpias
     for table in ['fact_publication', 'dim_date', 'dim_property', 'dim_property_location', 'dim_host']:
         truncate_table(table, engine)
 
     try:
-        # 1) Carga masiva de dimensiones
+        # 6) Carga masiva de dimensiones
         dim_tables = ['dim_host', 'dim_property_location', 'dim_property', 'dim_date']
         with engine.begin() as conn:
             for table in dim_tables:
                 df = input_data.get(table)
                 if isinstance(df, pd.DataFrame) and not df.empty:
-                    # Sólo para dim_property: imprimir DEBUG
                     if table == 'dim_property':
-                        logger.info("DEBUG: dim_property HEAD:\n%s", df.head().to_markdown(index=False))
-                        logger.info("DEBUG: dim_property COLUMNS: %s", df.columns.tolist())
-                        logger.info("DEBUG: dim_property DTYPES:\n%s", df.dtypes.to_string())
-                    logger.info(f"Cargando dimensión '{table}' con {len(df)} registros.")
+                        logger.info("DEBUG dim_property HEAD:\n%s", df.head().to_markdown(index=False))
+                        logger.info("DEBUG dim_property COLUMNS: %s", df.columns.tolist())
+                        logger.info("DEBUG dim_property DTYPES:\n%s", df.dtypes.to_string())
+                    logger.info(f"Cargando dimensión '{table}' ({len(df)} registros)...")
                     df.to_sql(
                         name=table,
                         con=conn,
@@ -90,15 +100,15 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                         chunksize=1000
                     )
                 else:
-                    logger.info(f"No hay datos para '{table}', se omite.")
+                    logger.info(f"No hay datos para '{table}' — se omite.")
 
-        # 2) Inserción fila a fila en fact_publication
+        # 7) Inserción fila a fila en fact_publication
         fact_df = input_data.get('fact_publication')
         if not isinstance(fact_df, pd.DataFrame) or fact_df.empty:
-            logger.warning("No hay datos en 'fact_publication', carga final omitida.")
+            logger.warning("No hay datos en fact_publication — se omite la carga final.")
             return True
 
-        # Mapear columnas count_nearby a nearby
+        # Preparar mapeo de POIs
         col_map = {
             'count_nearby_restaurants': 'nearby_restaurants',
             'count_nearby_parks_and_outdoor': 'nearby_parks_and_outdoor',
@@ -113,11 +123,9 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
         conn = engine.connect()
         trans = conn.begin()
         for _, row in fact_df.iterrows():
-            # Upsert en dimensiones claves (host, location, property, date)
-            # --- host ---
+            # upsert en dim_host
             host_key = conn.execute(
-                select(tbl_host.c.host_key)
-                .where(tbl_host.c.host_id == row['host_id'])
+                select(tbl_host.c.host_key).where(tbl_host.c.host_id == row['host_id'])
             ).scalar()
             if host_key is None:
                 host_key = conn.execute(
@@ -129,7 +137,7 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                     )
                 ).inserted_primary_key[0]
 
-            # --- location ---
+            # upsert en dim_property_location
             loc_key = conn.execute(
                 select(tbl_loc.c.property_location_key)
                 .where(and_(
@@ -149,15 +157,15 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                     )
                 ).inserted_primary_key[0]
 
-            # --- property ---
+            # upsert en dim_property (usa publication_key)
             prop_key = conn.execute(
                 select(tbl_prop.c.property_key)
-                .where(tbl_prop.c.property_id == row['property_key'])
+                .where(tbl_prop.c.property_key == row['publication_key'])
             ).scalar()
             if prop_key is None:
                 prop_key = conn.execute(
                     tbl_prop.insert().values(
-                        property_key=row['property_key'],
+                        property_key=row['publication_key'],
                         property_name=row['name'],
                         instant_bookable_flag=row['instant_bookable_flag'],
                         cancellation_policy=row['cancellation_policy'],
@@ -166,11 +174,10 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                     )
                 ).inserted_primary_key[0]
 
-            # --- date ---
+            # upsert en dim_date
             date_key = int(row['last_review'])
             exists = conn.execute(
-                select(tbl_date.c.date_key)
-                .where(tbl_date.c.date_key == date_key)
+                select(tbl_date.c.date_key).where(tbl_date.c.date_key == date_key)
             ).scalar()
             if exists is None:
                 dt = datetime.strptime(str(date_key), '%Y%m%d').date()
@@ -186,12 +193,12 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                     )
                 )
 
-            # --- hecho ---
+            # insertar hecho en fact_publication
             fact_vals = {
-                'fk_property': prop_key,
-                'fk_host': host_key,
-                'fk_property_location': loc_key,
-                'fk_last_review_date': date_key,
+                'property_key': prop_key,
+                'host_key': host_key,
+                'property_location_key': loc_key,
+                'date_key': date_key,
                 'price': row['price'],
                 'service_fee': row['service_fee'],
                 'minimum_nights': row['minimum_nights'],
@@ -201,7 +208,7 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                 'availability_365': row['availability_365']
             }
             for k in poi_keys:
-                fact_vals[k] = int(row.get('count_nearby_' + k.split('_', 1)[1], 0))
+                fact_vals[k] = int(row.get('count_nearby_' + k.split('_',1)[1], 0))
 
             conn.execute(tbl_fact.insert().values(**fact_vals))
 

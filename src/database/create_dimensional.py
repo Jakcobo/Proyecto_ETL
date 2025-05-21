@@ -49,7 +49,8 @@ def define_dim_property_location(metadata_obj: MetaData) -> Table:
 def define_dim_property(metadata_obj: MetaData) -> Table:
     logger.info("Definiendo tabla: dim_property")
     return Table('dim_property', metadata_obj,
-        Column('property_key', Integer, primary_key=True),
+        Column("property_id", Integer, primary_key=True, autoincrement=True),
+        Column('property_key', Integer, nullable=False),
         Column('property_name', Text),
         Column('instant_bookable_flag', Boolean),
         Column('cancellation_policy', String(100)),
