@@ -49,8 +49,7 @@ def define_dim_property_location(metadata_obj: MetaData) -> Table:
 def define_dim_property(metadata_obj: MetaData) -> Table:
     logger.info("Definiendo tabla: dim_property")
     return Table('dim_property', metadata_obj,
-        Column('property_key', Integer, primary_key=True, autoincrement=True),
-        Column('property_id', BIGINT, unique=True, nullable=False),
+        Column('property_key', Integer, primary_key=True),
         Column('property_name', Text),
         Column('instant_bookable_flag', Boolean),
         Column('cancellation_policy', String(100)),
@@ -74,10 +73,10 @@ def define_fact_publication(metadata_obj: MetaData) -> Table:
     logger.info("Definiendo tabla: fact_publication")
     return Table('fact_publication', metadata_obj,
         Column('publication_key', Integer, primary_key=True, autoincrement=True),
-        Column('fk_property', Integer, nullable=False),
-        Column('fk_host', Integer, nullable=False),
-        Column('fk_property_location', Integer, nullable=False),
-        Column('fk_last_review_date', Integer, nullable=False),
+        Column('property_key', Integer, nullable=False),
+        Column('host_key', Integer, nullable=False),
+        Column('property_location_key', Integer, nullable=False),
+        Column('date_key', Integer, nullable=False),
         Column('price', Float),
         Column('service_fee', DECIMAL(10, 2)),
         Column('minimum_nights', Integer),
@@ -92,10 +91,10 @@ def define_fact_publication(metadata_obj: MetaData) -> Table:
         Column('nearby_bars_and_clubs', Integer),
         Column('nearby_landmarks', Integer),
         Column('nearby_entertainment_leisure', Integer),
-        ForeignKeyConstraint(['fk_property'], ['dim_property.property_key']),
-        ForeignKeyConstraint(['fk_host'], ['dim_host.host_key']),
-        ForeignKeyConstraint(['fk_property_location'], ['dim_property_location.property_location_key']),
-        ForeignKeyConstraint(['fk_last_review_date'], ['dim_date.date_key'])
+        ForeignKeyConstraint(['property_key'], ['dim_property.property_key']),
+        ForeignKeyConstraint(['host_key'], ['dim_host.host_key']),
+        ForeignKeyConstraint(['property_location_key'], ['dim_property_location.property_location_key']),
+        ForeignKeyConstraint(['date_key'], ['dim_date.date_key'])
     )
 
 def create_dimensional_tables_if_not_exist(engine):
@@ -146,8 +145,16 @@ def prepare_dim_property_data(df_merged: pd.DataFrame) -> pd.DataFrame:
         'property_name', 'instant_bookable_flag', 'cancellation_policy',
         'room_type', 'construction_year'
     ]
-    df = df[cols]
+    df = df_merged.rename(columns={'name': 'property_name'})
     df['property_key'] = range(1, len(df) + 1)
+    logger.info("Primeras filas del DataFrame fusionado (df_merged):")
+    logger.info(f"\n{df.head().to_markdown(index=False)}")
+    logger.info("Información del DataFrame fusionado:")
+    cols = [
+        'property_key', 'property_name', 'instant_bookable_flag', 'cancellation_policy',
+        'room_type', 'construction_year'
+    ]
+    df = df[cols]
     df['instant_bookable_flag'] = df['instant_bookable_flag'].apply(lambda x: str(x).lower() == 'true')
     df['construction_year'] = pd.to_numeric(df['construction_year'], errors='coerce').astype('Int64')
     return df

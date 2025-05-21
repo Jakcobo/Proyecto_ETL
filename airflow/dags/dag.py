@@ -37,7 +37,7 @@ default_args = {
 }
 
 @dag(
-    dag_id="ETL_Airbnb",
+    dag_id="Airbnb_ETL",
     default_args=default_args,
     description='Pipeline on ETL from AirBnB and FourSquare Data.',
     schedule_interval=timedelta(days=1),

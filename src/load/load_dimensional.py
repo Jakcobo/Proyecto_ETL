@@ -1,3 +1,4 @@
+# Proyecto_ETL/src/load/load_dimensional.py
 import logging
 import pandas as pd
 from datetime import datetime
@@ -8,7 +9,6 @@ import os
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 SRC_PATH = os.path.join(PROJECT_ROOT, "src")
-
 if SRC_PATH not in sys.path:
     sys.path.append(SRC_PATH)
 if PROJECT_ROOT not in sys.path:
@@ -47,28 +47,21 @@ def truncate_table(table_name: str, engine):
             trans.rollback()
         raise
 
-
 def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bool:
     """
     Carga en el modelo dimensional: primero borra tablas, carga dimensiones en bloque
     y finalmente inserta la tabla de hechos desde el DataFrame de fact_publication.
-
-    Args:
-        input_data (dict): Diccionario con DataFrames para cada tabla dimensional y 'fact_publication'.
-        db_name (str): Nombre de la base de datos.
-        load_order (list, optional): Orden de carga de dimensiones (ignorado).
-
-    Returns:
-        bool: True si la carga fue exitosa, False en caso de error.
     """
     engine = get_db_engine(db_name)
     metadata = MetaData()
+
     # Definir tablas
     tbl_host = define_dim_host(metadata)
     tbl_loc = define_dim_property_location(metadata)
     tbl_prop = define_dim_property(metadata)
     tbl_date = define_dim_date(metadata)
     tbl_fact = define_fact_publication(metadata)
+    # Crea tablas si no existen (asegúrate de que property_id sea IDENTITY/SERIAL ahí)
     metadata.create_all(engine, checkfirst=True)
 
     # Truncar todas las tablas para evitar duplicados
@@ -82,6 +75,11 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
             for table in dim_tables:
                 df = input_data.get(table)
                 if isinstance(df, pd.DataFrame) and not df.empty:
+                    # Sólo para dim_property: imprimir DEBUG
+                    if table == 'dim_property':
+                        logger.info("DEBUG: dim_property HEAD:\n%s", df.head().to_markdown(index=False))
+                        logger.info("DEBUG: dim_property COLUMNS: %s", df.columns.tolist())
+                        logger.info("DEBUG: dim_property DTYPES:\n%s", df.dtypes.to_string())
                     logger.info(f"Cargando dimensión '{table}' con {len(df)} registros.")
                     df.to_sql(
                         name=table,
@@ -115,59 +113,80 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
         conn = engine.connect()
         trans = conn.begin()
         for _, row in fact_df.iterrows():
-            # Upsert en dimensiones claves
-            # host
-            host_sel = select(tbl_host.c.host_key).where(tbl_host.c.host_id == row['host_id'])
-            host_key = conn.execute(host_sel).scalar()
+            # Upsert en dimensiones claves (host, location, property, date)
+            # --- host ---
+            host_key = conn.execute(
+                select(tbl_host.c.host_key)
+                .where(tbl_host.c.host_id == row['host_id'])
+            ).scalar()
             if host_key is None:
-                host_key = conn.execute(tbl_host.insert().values(
-                    host_id=row['host_id'],
-                    host_name=row['host_name'],
-                    host_verification=row['host_verification'],
-                    calculated_host_listings_count=row['calculated_host_listings_count']
-                )).inserted_primary_key[0]
-            # property_location
-            loc_sel = select(tbl_loc.c.property_location_key).where(and_(
-                tbl_loc.c.airbnb_neighbourhood_group == row['neighbourhood_group'],
-                tbl_loc.c.airbnb_neighbourhood == row['neighbourhood'],
-                tbl_loc.c.airbnb_lat == row['lat'],
-                tbl_loc.c.airbnb_long == row['long']
-            ))
-            loc_key = conn.execute(loc_sel).scalar()
-            if loc_key is None:
-                loc_key = conn.execute(tbl_loc.insert().values(
-                    airbnb_neighbourhood_group=row['neighbourhood_group'],
-                    airbnb_neighbourhood=row['neighbourhood'],
-                    airbnb_lat=row['lat'],
-                    airbnb_long=row['long']
-                )).inserted_primary_key[0]
-            # property
-            prop_sel = select(tbl_prop.c.property_key).where(tbl_prop.c.property_id == row['property_key'])
-            prop_key = conn.execute(prop_sel).scalar()
-            if prop_key is None:
-                prop_key = conn.execute(tbl_prop.insert().values(
-                    property_id=row['property_key'],
-                    property_name=row['name'],
-                    instant_bookable_flag=row['instant_bookable_flag'],
-                    cancellation_policy=row['cancellation_policy'],
-                    room_type=row['room_type'],
-                    construction_year=row.get('construction_year')
-                )).inserted_primary_key[0]
-            # date
-            date_key = int(row['last_review'])
-            date_sel = select(tbl_date.c.date_key).where(tbl_date.c.date_key == date_key)
-            if conn.execute(date_sel).scalar() is None:
-                dt = datetime.strptime(str(date_key), '%Y%m%d').date()
-                conn.execute(tbl_date.insert().values(
-                    date_key=date_key,
-                    full_date=dt,
-                    year=dt.year,
-                    month=dt.month,
-                    day=dt.day,
-                    day_of_week=dt.strftime('%A'),
-                    month_name=dt.strftime('%B')
+                host_key = conn.execute(
+                    tbl_host.insert().values(
+                        host_id=row['host_id'],
+                        host_name=row['host_name'],
+                        host_verification=row['host_verification'],
+                        calculated_host_listings_count=row['calculated_host_listings_count']
+                    )
+                ).inserted_primary_key[0]
+
+            # --- location ---
+            loc_key = conn.execute(
+                select(tbl_loc.c.property_location_key)
+                .where(and_(
+                    tbl_loc.c.airbnb_neighbourhood_group == row['neighbourhood_group'],
+                    tbl_loc.c.airbnb_neighbourhood       == row['neighbourhood'],
+                    tbl_loc.c.airbnb_lat                 == row['lat'],
+                    tbl_loc.c.airbnb_long                == row['long']
                 ))
-            # Insertar hecho
+            ).scalar()
+            if loc_key is None:
+                loc_key = conn.execute(
+                    tbl_loc.insert().values(
+                        airbnb_neighbourhood_group=row['neighbourhood_group'],
+                        airbnb_neighbourhood=row['neighbourhood'],
+                        airbnb_lat=row['lat'],
+                        airbnb_long=row['long']
+                    )
+                ).inserted_primary_key[0]
+
+            # --- property ---
+            prop_key = conn.execute(
+                select(tbl_prop.c.property_key)
+                .where(tbl_prop.c.property_id == row['property_key'])
+            ).scalar()
+            if prop_key is None:
+                prop_key = conn.execute(
+                    tbl_prop.insert().values(
+                        property_key=row['property_key'],
+                        property_name=row['name'],
+                        instant_bookable_flag=row['instant_bookable_flag'],
+                        cancellation_policy=row['cancellation_policy'],
+                        room_type=row['room_type'],
+                        construction_year=row.get('construction_year')
+                    )
+                ).inserted_primary_key[0]
+
+            # --- date ---
+            date_key = int(row['last_review'])
+            exists = conn.execute(
+                select(tbl_date.c.date_key)
+                .where(tbl_date.c.date_key == date_key)
+            ).scalar()
+            if exists is None:
+                dt = datetime.strptime(str(date_key), '%Y%m%d').date()
+                conn.execute(
+                    tbl_date.insert().values(
+                        date_key=date_key,
+                        full_date=dt,
+                        year=dt.year,
+                        month=dt.month,
+                        day=dt.day,
+                        day_of_week=dt.strftime('%A'),
+                        month_name=dt.strftime('%B')
+                    )
+                )
+
+            # --- hecho ---
             fact_vals = {
                 'fk_property': prop_key,
                 'fk_host': host_key,
@@ -181,49 +200,18 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                 'review_rate_number': row['review_rate_number'],
                 'availability_365': row['availability_365']
             }
-            # Inicializar nearby y asignar valores reales
             for k in poi_keys:
                 fact_vals[k] = int(row.get('count_nearby_' + k.split('_', 1)[1], 0))
-            conn.execute(tbl_fact.insert().values(**fact_vals)) #aqui falla el código. TODO
+
+            conn.execute(tbl_fact.insert().values(**fact_vals))
+
         trans.commit()
         conn.close()
         return True
+
     except Exception as e:
         logger.error(f"Error en carga dimensional: {e}", exc_info=True)
         return False
+
     finally:
         engine.dispose()
-
-# if __name__ == '__main__':
-#     logger.info("--- Iniciando prueba local de get_db_engine ---")
-#     try:
-#         os.environ["RENDER"] = "true"
-# 
-#         os.environ["POSTGRES_USER"] = "etl"
-#         os.environ["POSTGRES_PASSWORD"] = "zX8SINAoIUawjRh0MgYPU2Tzu6bAXTlu"
-#         os.environ["POSTGRES_HOST"] = "dpg-d0luc5ogjchc739bpf7g-a.oregon-postgres.render.com"
-#         os.environ["POSTGRES_PORT"] = "5432"
-#         os.environ["POSTGRES_DATABASE"] = "airbnb_etl_db"
-#         
-#         TARGET_DB = os.getenv("POSTGRES_DATABASE")
-#         if not TARGET_DB:
-#             raise ValueError("POSTGRES_DATABASE no está seteado para la prueba.")
-# 
-#         engine = get_db_engine(db_name_target=TARGET_DB)
-#         if engine:
-#             logger.info(f"Prueba de get_db_engine exitosa. Engine para '{TARGET_DB}' obtenido.")
-#             with engine.connect() as connection:
-#                 result = connection.execute(text("SELECT version();"))
-#                 db_version = result.scalar_one()
-#                 logger.info(f"PostgreSQL Version (desde {TARGET_DB}): {db_version}")
-#         else:
-#             logger.error("La prueba de get_db_engine falló, no se obtuvo ningún engine.")
-# 
-#     except ValueError as ve:
-#         logger.error(f"Error de configuración: {ve}")
-#     except ConnectionError as ce:
-#         logger.error(f"Error de conexión: {ce}")
-#     except Exception as e:
-#         logger.error(f"Error inesperado durante la prueba: {e}", exc_info=True)
-#     finally:
-#         logger.info("--- Prueba local de get_db_engine finalizada ---")
