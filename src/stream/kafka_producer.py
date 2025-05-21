@@ -1,5 +1,3 @@
-# /home/nicolas/Escritorio/proyecto ETL/develop/src/kafka_producer.py
-
 import pandas as pd
 import json
 import time
@@ -8,13 +6,12 @@ from kafka import KafkaProducer
 from kafka.errors import KafkaError
 from sqlalchemy import text
 
-# Asegurarse de que src esté en el path para importar db
 import sys
 import os
-SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) # .. porque estamos en src/
+SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) 
 if SRC_PATH not in sys.path:
     sys.path.append(SRC_PATH)
-DB_MODULE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'database')) # para importar src.database.db
+DB_MODULE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'database')) 
 if DB_MODULE_PATH not in sys.path:
      sys.path.insert(0, DB_MODULE_PATH)
 
@@ -23,12 +20,11 @@ try:
 except ImportError:
     logger_fallback = logging.getLogger(__name__ + "_fallback_producer")
     logger_fallback.error("Error importando get_db_engine para Kafka Producer. Asegúrate que 'src' esté en PYTHONPATH.")
-    # from .database.db import get_db_engine # No funcionaría si database no es un paquete reconocido aquí
+
 
 logger = logging.getLogger(__name__)
 
-# --- Constantes de Configuración de Kafka ---
-# Es mejor mover esto a variables de entorno o configuración de Airflow para producción
+
 KAFKA_BROKERS = os.getenv('KAFKA_BROKERS', 'localhost:9092').split(',')
 KAFKA_TOPIC = os.getenv('KAFKA_TOPIC_LISTINGS', 'airbnb_listings_stream')
 

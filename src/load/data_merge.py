@@ -24,6 +24,7 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
 
     if not df_data_airbnb.empty or df_data_api.empty:
         logger.info("Verificando filas duplicadas en df_data_airbnb y df_data_api.")
+        df_data_airbnb.rename(columns={'id': 'publication_key'}, inplace=True)
         num_duplicados_airbnb = df_data_airbnb.duplicated().sum()
         num_duplicados_api = df_data_api.duplicated().sum()
         logger.info(f"Número de filas duplicadas encontradas en df_data_airbnb: {num_duplicados_airbnb}")
@@ -70,7 +71,7 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
             poi_counts.rename(columns=new_column_names, inplace=True)
             logger.info(f"Columnas de conteo de POIs renombradas: {poi_counts.columns.tolist()}")
 
-            if 'id' in df_data_airbnb.columns:
+            if 'publication_key' in df_data_airbnb.columns:
                 if 'last_review' in df_data_airbnb.columns:
                     try:
                         logger.info("Convirtiendo columna 'last_review' a formato entero AAAAMMDD.")
@@ -79,11 +80,11 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
                     except Exception as e:
                         logger.warning(f"No se pudo convertir 'last_review' a entero: {e}", exc_info=True)
                 
-                logger.info(f"Realizando left merge entre df_data_airbnb (on 'id') y poi_counts (on index).")
+                logger.info(f"Realizando left merge entre df_data_airbnb (on 'publication_key') y poi_counts (on index).")
                 df_merged = pd.merge(
                     df_data_airbnb,
                     poi_counts,
-                    left_on='id',
+                    left_on='publication_key',
                     right_index=True,
                     how='left'
                 )
@@ -102,7 +103,7 @@ def data_merge(df_airbnb: pd.DataFrame, df_operations: pd.DataFrame) -> pd.DataF
                 df_merged.info()
                 
             else:
-                logger.error("La columna 'id' no se encuentra en df_data_airbnb. No se puede realizar el merge.")
+                logger.error("La columna 'publication_key' no se encuentra en df_data_airbnb. No se puede realizar el merge.")
                 df_merged = df_data_airbnb.copy()
 
         else:

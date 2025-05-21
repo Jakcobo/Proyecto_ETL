@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2 # Es buena práctica usar versiones específicas
+    container_name: zookeeper_workshop3 # Nombre único para el contenedor
+    hostname: zookeeper
+    ports:
+      - "2181:2181" # Puerto estándar de Zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.2 # Misma versión que Zookeeper es buena idea
+    container_name: kafka_broker_workshop3 # Nombre único para el contenedor
+    hostname: kafka
+    depends_on:
+      - zookeeper # Kafka depende de Zookeeper
+    ports:
+      # Puerto para clientes FUERA de la red Docker (como tu Airflow corriendo en el host y tu consumidor local)
+      - "29092:29092" 
+      # Puerto para clientes DENTRO de la misma red Docker (si tuvieras otros servicios Docker comunicándose con Kafka)
+      # - "9092:9092" # No es estrictamente necesario exponer este al host si no lo necesitas
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181' # Kafka se conecta a Zookeeper por su nombre de servicio y puerto interno
+      # KAFKA_LISTENERS: Configura cómo Kafka escucha conexiones.
+      #   PLAINTEXT://0.0.0.0:9092 es para comunicación INTERNA dentro de la red Docker.
+      #   PLAINTEXT_HOST://0.0.0.0:29092 es para comunicación EXTERNA desde el host.
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:29092
+      # KAFKA_ADVERTISED_LISTENERS: Cómo los clientes deben conectarse.
+      #   PLAINTEXT://kafka:9092 para clientes DENTRO de la red Docker (usando el hostname del servicio).
+      #   PLAINTEXT_HOST://localhost:29092 para clientes FUERA de la red Docker (como tu Airflow y consumidor).
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1 # Para entornos de un solo broker
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0 # Para desarrollo, para que los consumidores se unan rápido
+      KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 1 # Requerido por imágenes de Confluent
+      KAFKA_CONFLUENT_BALANCER_TOPIC_REPLICATION_FACTOR: 1 # Requerido por imágenes de Confluent
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1 # Para entornos de un solo broker
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1 # Para entornos de un solo broker
+    # Podrías añadir un volumen para persistir datos de Kafka si quieres que los topics sobrevivan
+    # a un docker-compose down, pero para desarrollo no siempre es necesario.
+    # volumes:
+    #   - ./kafka_data:/var/lib/kafka/data 
+
+# networks: # Opcional, Docker Compose crea una red por defecto
+#   kafka_network:
+#     driver: bridge

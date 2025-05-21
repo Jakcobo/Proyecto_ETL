@@ -1,4 +1,4 @@
-# Proyecto_ETL/src/
+# Proyecto_ETL/src/database/create_dimensional.py
 import pandas as pd
 import logging
 from sqlalchemy import (
@@ -73,7 +73,7 @@ def define_dim_date(metadata_obj: MetaData) -> Table:
 def define_fact_publication(metadata_obj: MetaData) -> Table:
     logger.info("Definiendo tabla: fact_publication")
     return Table('fact_publication', metadata_obj,
-        Column('id', Integer, primary_key=True, autoincrement=True),
+        Column('publication_key', Integer, primary_key=True, autoincrement=True),
         Column('fk_property', Integer, nullable=False),
         Column('fk_host', Integer, nullable=False),
         Column('fk_property_location', Integer, nullable=False),
@@ -141,12 +141,13 @@ def prepare_dim_property_location_data(df_merged: pd.DataFrame) -> pd.DataFrame:
 
 def prepare_dim_property_data(df_merged: pd.DataFrame) -> pd.DataFrame:
     logger.info("Preparando datos para dim_property...")
-    df = df_merged.rename(columns={'id': 'property_id', 'name': 'property_name'})
+    df = df_merged.rename(columns={'name': 'property_name'})
     cols = [
-        'property_id', 'property_name', 'instant_bookable_flag', 'cancellation_policy',
+        'property_name', 'instant_bookable_flag', 'cancellation_policy',
         'room_type', 'construction_year'
     ]
-    df = df[cols].drop_duplicates(subset=['property_id']).copy()
+    df = df[cols]
+    df['property_key'] = range(1, len(df) + 1)
     df['instant_bookable_flag'] = df['instant_bookable_flag'].apply(lambda x: str(x).lower() == 'true')
     df['construction_year'] = pd.to_numeric(df['construction_year'], errors='coerce').astype('Int64')
     return df
@@ -176,7 +177,7 @@ def prepare_fact_publication_data(df_merged: pd.DataFrame) -> pd.DataFrame:
     ]
     poi_metrics = [col for col in df_merged.columns if col.startswith('nearby_') and col.endswith('_count')]
 
-    lookup_cols = ['id', 'host_id', 'lat', 'long', 'neighbourhood_group', 'neighbourhood', 'last_review']
+    lookup_cols = ['publication_key', 'host_id', 'lat', 'long', 'neighbourhood_group', 'neighbourhood', 'last_review']
     required_cols = airbnb_metrics + poi_metrics + lookup_cols
     missing_cols = [col for col in required_cols if col not in df_merged.columns]
     if missing_cols:

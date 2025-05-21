@@ -3,6 +3,17 @@ import pandas as pd
 from datetime import datetime
 from sqlalchemy import MetaData, select, and_, text
 from sqlalchemy.exc import SQLAlchemyError
+import sys
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SRC_PATH = os.path.join(PROJECT_ROOT, "src")
+
+if SRC_PATH not in sys.path:
+    sys.path.append(SRC_PATH)
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
+
 from database.db import get_db_engine
 from database.create_dimensional import (
     define_dim_host,
@@ -131,11 +142,11 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
                     airbnb_long=row['long']
                 )).inserted_primary_key[0]
             # property
-            prop_sel = select(tbl_prop.c.property_key).where(tbl_prop.c.property_id == row['id'])
+            prop_sel = select(tbl_prop.c.property_key).where(tbl_prop.c.property_id == row['property_key'])
             prop_key = conn.execute(prop_sel).scalar()
             if prop_key is None:
                 prop_key = conn.execute(tbl_prop.insert().values(
-                    property_id=row['id'],
+                    property_id=row['property_key'],
                     property_name=row['name'],
                     instant_bookable_flag=row['instant_bookable_flag'],
                     cancellation_policy=row['cancellation_policy'],
@@ -173,7 +184,7 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
             # Inicializar nearby y asignar valores reales
             for k in poi_keys:
                 fact_vals[k] = int(row.get('count_nearby_' + k.split('_', 1)[1], 0))
-            conn.execute(tbl_fact.insert().values(**fact_vals))
+            conn.execute(tbl_fact.insert().values(**fact_vals)) #aqui falla el código. TODO
         trans.commit()
         conn.close()
         return True
@@ -182,3 +193,37 @@ def load_dimensional_data(input_data: dict, db_name: str, load_order=None) -> bo
         return False
     finally:
         engine.dispose()
+
+# if __name__ == '__main__':
+#     logger.info("--- Iniciando prueba local de get_db_engine ---")
+#     try:
+#         os.environ["RENDER"] = "true"
+# 
+#         os.environ["POSTGRES_USER"] = "etl"
+#         os.environ["POSTGRES_PASSWORD"] = "zX8SINAoIUawjRh0MgYPU2Tzu6bAXTlu"
+#         os.environ["POSTGRES_HOST"] = "dpg-d0luc5ogjchc739bpf7g-a.oregon-postgres.render.com"
+#         os.environ["POSTGRES_PORT"] = "5432"
+#         os.environ["POSTGRES_DATABASE"] = "airbnb_etl_db"
+#         
+#         TARGET_DB = os.getenv("POSTGRES_DATABASE")
+#         if not TARGET_DB:
+#             raise ValueError("POSTGRES_DATABASE no está seteado para la prueba.")
+# 
+#         engine = get_db_engine(db_name_target=TARGET_DB)
+#         if engine:
+#             logger.info(f"Prueba de get_db_engine exitosa. Engine para '{TARGET_DB}' obtenido.")
+#             with engine.connect() as connection:
+#                 result = connection.execute(text("SELECT version();"))
+#                 db_version = result.scalar_one()
+#                 logger.info(f"PostgreSQL Version (desde {TARGET_DB}): {db_version}")
+#         else:
+#             logger.error("La prueba de get_db_engine falló, no se obtuvo ningún engine.")
+# 
+#     except ValueError as ve:
+#         logger.error(f"Error de configuración: {ve}")
+#     except ConnectionError as ce:
+#         logger.error(f"Error de conexión: {ce}")
+#     except Exception as e:
+#         logger.error(f"Error inesperado durante la prueba: {e}", exc_info=True)
+#     finally:
+#         logger.info("--- Prueba local de get_db_engine finalizada ---")
