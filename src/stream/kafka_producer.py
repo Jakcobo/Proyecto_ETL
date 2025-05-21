@@ -1,225 +1,181 @@
+# src/stream/kafka_producer.py
 import pandas as pd
 import json
-import time
 import logging
 from kafka import KafkaProducer
 from kafka.errors import KafkaError
-from sqlalchemy import text
-
-import sys
-import os
-SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) 
-if SRC_PATH not in sys.path:
-    sys.path.append(SRC_PATH)
-DB_MODULE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'database')) 
-if DB_MODULE_PATH not in sys.path:
-     sys.path.insert(0, DB_MODULE_PATH)
-
-try:
-    from database.db import get_db_engine
-except ImportError:
-    logger_fallback = logging.getLogger(__name__ + "_fallback_producer")
-    logger_fallback.error("Error importando get_db_engine para Kafka Producer. Asegúrate que 'src' esté en PYTHONPATH.")
-
+import time
 
 logger = logging.getLogger(__name__)
 
-
-KAFKA_BROKERS = os.getenv('KAFKA_BROKERS', 'localhost:9092').split(',')
-KAFKA_TOPIC = os.getenv('KAFKA_TOPIC_LISTINGS', 'airbnb_listings_stream')
-
-def create_kafka_producer(brokers: list = None):
+def create_kafka_producer(bootstrap_servers_list: list[str], retries: int = 5):
     """
-    Crea y retorna un productor de Kafka.
+    Crea y retorna una instancia de KafkaProducer.
+    Maneja reintentos en caso de fallo de conexión inicial.
+    """
+    producer = None
+    for attempt in range(retries):
+        try:
+            producer = KafkaProducer(
+                bootstrap_servers=bootstrap_servers_list,
+                value_serializer=lambda v: json.dumps(v).encode('utf-8'), # Serializar valores a JSON -> bytes
+                key_serializer=lambda k: str(k).encode('utf-8') if k else None, # Serializar claves (opcional) a string -> bytes
+                acks='all',  # Esperar a que todas las réplicas confirmen la recepción
+                retries=3    # Reintentos internos del productor para enviar mensajes individuales
+            )
+            logger.info(f"Productor Kafka conectado exitosamente a {bootstrap_servers_list} en el intento {attempt + 1}.")
+            return producer
+        except KafkaError as e:
+            logger.warning(f"Intento {attempt + 1} de conectar el productor Kafka falló: {e}")
+            if attempt < retries - 1:
+                time.sleep(5 * (attempt + 1)) # Espera exponencial creciente
+            else:
+                logger.error(f"No se pudo conectar el productor Kafka a {bootstrap_servers_list} después de {retries} intentos.")
+                raise  # Relanzar la última excepción si todos los intentos fallan
+    return None # Aunque con el raise anterior, esto no debería alcanzarse si falla.
+
+def send_dataframe_to_kafka(df: pd.DataFrame, topic_name: str, bootstrap_servers: str, 
+                            key_column: str = None) -> tuple[bool, int, int]:
+    """
+    Envía cada fila de un DataFrame como un mensaje JSON a un topic de Kafka.
 
     Args:
-        brokers (list, optional): Lista de brokers de Kafka. Si es None, usa KAFKA_BROKERS.
+        df (pd.DataFrame): El DataFrame a enviar.
+        topic_name (str): El nombre del topic de Kafka.
+        bootstrap_servers (str): String de servidores Kafka (ej: 'localhost:29092').
+                                 Puede ser una lista separada por comas.
+        key_column (str, optional): Nombre de la columna a usar como clave del mensaje.
+                                    Si es None, no se enviará clave.
 
     Returns:
-        KafkaProducer: Instancia del productor de Kafka, o None si falla la conexión.
+        tuple[bool, int, int]: (éxito_general, mensajes_enviados_exitosamente, mensajes_fallidos)
     """
-    brokers_to_use = brokers if brokers else KAFKA_BROKERS
+    if df.empty:
+        logger.info(f"DataFrame vacío. No se enviarán mensajes al topic '{topic_name}'.")
+        return True, 0, 0
+
+    bootstrap_servers_list = [s.strip() for s in bootstrap_servers.split(',')]
+    
     try:
-        producer = KafkaProducer(
-            bootstrap_servers=brokers_to_use,
-            value_serializer=lambda v: json.dumps(v).encode('utf-8'), # Serializar mensajes a JSON y luego a bytes
-            acks='all',  # Esperar a que todos los brokers confirmen la recepción
-            retries=5,   # Reintentar envíos fallidos
-            # request_timeout_ms=30000 # Opcional: tiempo de espera para la solicitud
-        )
-        logger.info(f"Productor de Kafka conectado exitosamente a brokers: {brokers_to_use}")
-        return producer
-    except KafkaError as e:
-        logger.error(f"Error al crear el productor de Kafka para {brokers_to_use}: {e}", exc_info=True)
-        return None
-    except Exception as e:
-        logger.error(f"Error inesperado al inicializar el productor de Kafka: {e}", exc_info=True)
-        return None
-
-
-def fetch_data_for_streaming(engine, source_table: str, batch_size: int = 100, offset: int = 0) -> pd.DataFrame:
-    """
-    Obtiene un lote de datos de la tabla fuente para streaming.
-    """
-    query = text(f"SELECT * FROM {source_table} ORDER BY listing_poi_key LIMIT :limit OFFSET :offset") # Asumiendo listing_poi_key como PK
-    try:
-        with engine.connect() as connection:
-            df = pd.read_sql_query(query, connection, params={'limit': batch_size, 'offset': offset})
-        logger.info(f"Obtenidas {len(df)} filas de '{source_table}' con offset {offset}.")
-        return df
-    except Exception as e:
-        logger.error(f"Error al obtener datos de '{source_table}': {e}", exc_info=True)
-        return pd.DataFrame()
-
-
-def stream_data_to_kafka(
-    db_name: str = "airbnb",
-    source_table_for_kafka: str = "fact_listing_pois",
-    max_messages: int = 100,
-    time_limit_seconds: int = 600, # 10 minutos
-    batch_size: int = 50, # Cuántas filas leer de la BD a la vez
-    delay_between_messages_ms: int = 100 # Pequeña pausa entre mensajes (milisegundos)
-):
-    """
-    Lee datos de una tabla de PostgreSQL y los envía a un topic de Kafka.
-    Se detiene después de enviar `max_messages` o después de `time_limit_seconds`.
-
-    Args:
-        db_name (str): Nombre de la base de datos de donde leer.
-        source_table_for_kafka (str): Nombre de la tabla fuente.
-        max_messages (int): Número máximo de mensajes a enviar.
-        time_limit_seconds (int): Límite de tiempo en segundos para la ejecución.
-        batch_size (int): Número de filas a obtener de la BD en cada consulta.
-        delay_between_messages_ms (int): Pausa en milisegundos entre el envío de cada mensaje.
-    """
-    logger.info(f"Iniciando streaming de datos desde BD '{db_name}', tabla '{source_table_for_kafka}' a Kafka topic '{KAFKA_TOPIC}'.")
-    logger.info(f"Límites: max_messages={max_messages}, time_limit_seconds={time_limit_seconds}s.")
-
-    producer = create_kafka_producer()
-    if not producer:
-        logger.error("No se pudo crear el productor de Kafka. Abortando streaming.")
-        return False # Indicar fallo
-
-    db_engine = None
-    messages_sent_count = 0
-    start_time = time.time()
-    current_offset = 0
-    all_data_streamed = False
-
-    try:
-        db_engine = get_db_engine(db_name=db_name)
-        if not db_engine:
-            logger.error("No se pudo obtener el engine de la BD. Abortando.")
-            return False
-
-        while True:
-            # Comprobar condiciones de parada
-            elapsed_time = time.time() - start_time
-            if messages_sent_count >= max_messages:
-                logger.info(f"Límite de {max_messages} mensajes alcanzado.")
-                break
-            if elapsed_time >= time_limit_seconds:
-                logger.info(f"Límite de tiempo de {time_limit_seconds}s alcanzado.")
-                break
-            if all_data_streamed:
-                logger.info("Todos los datos disponibles han sido streameados.")
-                break
-
-            # Obtener un lote de datos
-            df_batch = fetch_data_for_streaming(db_engine, source_table_for_kafka, batch_size, current_offset)
-
-            if df_batch.empty:
-                logger.info(f"No se obtuvieron más datos de '{source_table_for_kafka}' con offset {current_offset}. Asumiendo fin de datos.")
-                all_data_streamed = True
-                continue # Salta al inicio del while para comprobar condiciones de parada
-
-            # Enviar cada fila del lote como un mensaje
-            for index, row in df_batch.iterrows():
-                if messages_sent_count >= max_messages or (time.time() - start_time) >= time_limit_seconds:
-                    break # Salir del bucle de filas si se alcanza el límite
-
-                message_payload = row.to_dict()
-                try:
-                    # Usar una clave para el mensaje puede ayudar con la partición en Kafka (opcional)
-                    # message_key = str(row['listing_poi_key']).encode('utf-8') if 'listing_poi_key' in row else None
-                    
-                    future = producer.send(KAFKA_TOPIC, value=message_payload) #, key=message_key)
-                    # Esperar a que el mensaje sea enviado (bloqueante, considera hacerlo asíncrono para alto rendimiento)
-                    # Para este caso de "mantenerse activo", un poco de bloqueo está bien.
-                    metadata = future.get(timeout=10) # Espera hasta 10s por confirmación
-                    
-                    messages_sent_count += 1
-                    logger.debug(f"Mensaje #{messages_sent_count} enviado a Kafka (topic: {metadata.topic}, partition: {metadata.partition}, offset: {metadata.offset}).")
-
-                    if delay_between_messages_ms > 0:
-                        time.sleep(delay_between_messages_ms / 1000.0)
-
-                except KafkaError as ke:
-                    logger.error(f"Error de Kafka al enviar mensaje: {ke}. Payload: {message_payload}", exc_info=True)
-                    # Podrías decidir reintentar o abortar aquí
-                except Exception as e:
-                    logger.error(f"Error al enviar mensaje a Kafka: {e}. Payload: {message_payload}", exc_info=True)
+        producer = create_kafka_producer(bootstrap_servers_list)
+        if not producer:
+            return False, 0, len(df) # Si no se pudo crear el productor
             
-            current_offset += len(df_batch) # Actualizar offset para el siguiente lote
+    except Exception as e: # Captura errores de create_kafka_producer
+        logger.error(f"Error al crear el productor Kafka para el topic '{topic_name}': {e}", exc_info=True)
+        return False, 0, len(df)
 
-        logger.info(f"Streaming finalizado. Total de mensajes enviados: {messages_sent_count}.")
-        return True
+    sent_count = 0
+    failed_count = 0
+    
+    logger.info(f"Iniciando envío de {len(df)} mensajes al topic '{topic_name}' en {bootstrap_servers_list}...")
 
-    except Exception as e:
-        logger.error(f"Error general durante el proceso de streaming a Kafka: {e}", exc_info=True)
-        return False
-    finally:
-        if producer:
-            logger.info("Cerrando productor de Kafka...")
-            producer.flush(timeout=10) # Esperar a que los mensajes en buffer se envíen
-            producer.close(timeout=10)
-            logger.info("Productor de Kafka cerrado.")
-        if db_engine:
-            db_engine.dispose()
-            logger.info("Engine de base de datos (Kafka producer) dispuesto.")
+    for index, row in df.iterrows():
+        message_payload = row.to_dict()
+        message_key = row[key_column] if key_column and key_column in row else None
+        
+        try:
+            # Enviar mensaje
+            future = producer.send(topic_name, key=message_key, value=message_payload)
+            
+            # Bloquear hasta que el mensaje sea enviado o falle (con timeout)
+            # metadata = future.get(timeout=10) # Opcional: esperar confirmación por mensaje
+            # logger.debug(f"Mensaje enviado al topic {metadata.topic} partición {metadata.partition} offset {metadata.offset}")
+            sent_count += 1
+        except KafkaError as e:
+            logger.error(f"Error enviando mensaje (key: {message_key}) al topic '{topic_name}': {e}", exc_info=True)
+            failed_count += 1
+        except Exception as e:
+            logger.error(f"Error inesperado enviando mensaje (key: {message_key}): {e}", exc_info=True)
+            failed_count += 1
 
+    if producer:
+        try:
+            producer.flush(timeout=30)  # Asegurar que todos los mensajes en buffer sean enviados
+            logger.info("Productor Kafka hizo flush de mensajes pendientes.")
+        except KafkaError as e:
+            logger.error(f"Error durante el flush del productor Kafka: {e}", exc_info=True)
+            # Los mensajes ya contados como 'sent' podrían no haberse enviado realmente.
+            # Aquí podríamos ajustar failed_count, pero se vuelve complejo.
+            # Es mejor asegurarse que el flush no falle.
+        finally:
+            producer.close(timeout=30)
+            logger.info("Productor Kafka cerrado.")
+
+    success_overall = failed_count == 0
+    if success_overall:
+        logger.info(f"Todos los {sent_count} mensajes enviados exitosamente al topic '{topic_name}'.")
+    else:
+        logger.warning(f"Envío al topic '{topic_name}' completado con {sent_count} éxitos y {failed_count} fallos.")
+        
+    return success_overall, sent_count, failed_count
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, # Cambia a DEBUG para ver logs de envío de mensajes individuales
+    logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    logger.info("--- Iniciando prueba local de stream_data_to_kafka ---")
-    # Asegúrate que tu servidor Kafka esté corriendo en localhost:9092 (o donde KAFKA_BROKERS apunte)
-    # y que el topic KAFKA_TOPIC exista (o que Kafka esté configurado para auto-crear topics).
-    # También asegúrate que la tabla 'fact_listing_pois' exista en la BD 'airbnb_test_model'
-    # y tenga algunos datos (puedes ejecutar las pruebas de load_dimensional.py primero).
+    # --- Configuración para prueba local ---
+    # Asegúrate de que Kafka esté corriendo según tu docker-compose.yml
+    TEST_BOOTSTRAP_SERVERS = 'localhost:29092'
+    TEST_TOPIC_NAME = 'airbnb_publications_test' # Usa un topic de prueba
 
-    # Para la prueba, reducimos los límites para que no tarde mucho
-    test_db = "airbnb_test_model" # La BD donde cargaste el modelo dimensional
-    test_table = "fact_listing_pois"
-    test_max_messages = 20
-    test_time_limit_seconds = 60 # 1 minuto
-    test_batch_size = 5
-    test_delay_ms = 200 # 200ms entre mensajes
+    # Crear un DataFrame de ejemplo
+    sample_data = {
+        'publication_key': [101, 102, 103, 104, 105],
+        'host_id': [1, 2, 1, 3, 2],
+        'price': [100.0, 150.50, 90.0, 200.75, 120.0],
+        'name': ['Cozy Apartment', 'Sunny Loft', 'Charming Studio', 'Spacious House', 'Modern Flat'],
+        'reviews_per_month': [1.5, None, 3.1, 0.5, 2.2], # Incluir None para probar serialización
+        'last_review_date': [20230115, 20230210, None, 20230301, 20221220] # Incluir None
+    }
+    test_df = pd.DataFrame(sample_data)
+    # Convertir columnas que podrían ser Int64 o Float64 de Pandas a tipos nativos para JSON
+    for col in ['reviews_per_month', 'last_review_date']: # Añade otras columnas si es necesario
+        if col in test_df.columns:
+             # Convertir Int64/Float64 a tipos nativos, manejando <NA>
+            if pd.api.types.is_integer_dtype(test_df[col].dtype) and test_df[col].hasnans:
+                test_df[col] = test_df[col].astype(object).where(pd.notna(test_df[col]), None)
+            elif pd.api.types.is_float_dtype(test_df[col].dtype) and test_df[col].hasnans:
+                test_df[col] = test_df[col].astype(object).where(pd.notna(test_df[col]), None)
 
-    # Crear el topic manualmente si no existe (opcional, Kafka puede auto-crearlo)
-    # from kafka.admin import KafkaAdminClient, NewTopic
-    # try:
-    #     admin_client = KafkaAdminClient(bootstrap_servers=KAFKA_BROKERS)
-    #     topic_list = [NewTopic(name=KAFKA_TOPIC, num_partitions=1, replication_factor=1)]
-    #     admin_client.create_topics(new_topics=topic_list, validate_only=False)
-    #     logger.info(f"Topic '{KAFKA_TOPIC}' asegurado/creado.")
-    # except Exception as e_topic:
-    #     logger.warning(f"No se pudo crear el topic '{KAFKA_TOPIC}' (puede que ya exista o haya un problema de permisos/conexión): {e_topic}")
 
+    logger.info(f"--- Iniciando prueba local de send_dataframe_to_kafka ---")
+    logger.info(f"DataFrame de prueba:\n{test_df.to_string()}")
 
-    success_streaming = stream_data_to_kafka(
-        db_name=test_db,
-        source_table_for_kafka=test_table,
-        max_messages=test_max_messages,
-        time_limit_seconds=test_time_limit_seconds,
-        batch_size=test_batch_size,
-        delay_between_messages_ms=test_delay_ms
+    # Prueba 1: Enviar sin clave
+    success, sent, failed = send_dataframe_to_kafka(
+        df=test_df,
+        topic_name=TEST_TOPIC_NAME,
+        bootstrap_servers=TEST_BOOTSTRAP_SERVERS
     )
+    logger.info(f"Prueba 1 (sin clave) - Éxito: {success}, Enviados: {sent}, Fallidos: {failed}")
 
-    if success_streaming:
-        logger.info("Prueba de streaming a Kafka completada exitosamente (o según límites).")
+    if not test_df.empty:
+        # Prueba 2: Enviar con 'publication_key' como clave
+        logger.info(f"\n--- Nueva prueba con clave 'publication_key' ---")
+        success_k, sent_k, failed_k = send_dataframe_to_kafka(
+            df=test_df,
+            topic_name=TEST_TOPIC_NAME,
+            bootstrap_servers=TEST_BOOTSTRAP_SERVERS,
+            key_column='publication_key'
+        )
+        logger.info(f"Prueba 2 (con clave) - Éxito: {success_k}, Enviados: {sent_k}, Fallidos: {failed_k}")
+
+        # Prueba 3: DataFrame vacío
+        logger.info(f"\n--- Nueva prueba con DataFrame vacío ---")
+        empty_df = pd.DataFrame()
+        success_e, sent_e, failed_e = send_dataframe_to_kafka(
+            df=empty_df,
+            topic_name=TEST_TOPIC_NAME,
+            bootstrap_servers=TEST_BOOTSTRAP_SERVERS
+        )
+        logger.info(f"Prueba 3 (vacío) - Éxito: {success_e}, Enviados: {sent_e}, Fallidos: {failed_e}")
     else:
-        logger.error("La prueba de streaming a Kafka falló.")
+        logger.info("DataFrame de prueba estaba vacío, omitiendo pruebas 2 y 3.")
 
-    logger.info("--- Prueba local de stream_data_to_kafka finalizada ---")
+
+    logger.info("--- Prueba local de send_dataframe_to_kafka finalizada ---")
+
+    # Para verificar los mensajes, puedes usar kafka-console-consumer o un script de consumidor:
+    # Ejemplo de comando para el consumidor de consola (ejecutar en otra terminal después de levantar Kafka con docker-compose):
+    # docker exec -it kafka_broker kafka-console-consumer --bootstrap-server localhost:29092 --topic airbnb_publications_test --from-beginning --property print.key=true

@@ -17,8 +17,9 @@ def clean_api_data(df_input: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame transformado y limpio.
     """
     df_clean = df_input[df_input['region'].isin(['NJ', 'CT', 'PA'])]
-    logger.info("Número de registros en df:", len(df_clean))
-    
+    logger.info("Número de registros en df: %s", len(df_clean))
+
+
     category_mapping = {
         'cultural': [
             'Art Museum', 'Art Gallery', 'History Museum', 'Museum', 'Public Art',

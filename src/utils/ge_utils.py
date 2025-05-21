@@ -92,7 +92,8 @@ def validate_dataframe_with_ge(
             logger.info(f"Abrir Data Docs en navegador: {docs_path}")
             if os.name == "posix" and "microsoft" in os.uname().release.lower():  # WSL
                 windows_path = subprocess.check_output(["wslpath", "-w", docs_path]).decode("utf-8").strip()
-                file_url = f"file:///{windows_path.replace('\\', '/')}"
+                cleaned_windows_path = windows_path.replace('\\', '/')
+                file_url = f"file:///{cleaned_windows_path}"
                 subprocess.Popen(["cmd.exe", "/C", f'start chrome {file_url}'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 

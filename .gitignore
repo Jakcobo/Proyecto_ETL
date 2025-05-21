@@ -1,7 +1,98 @@
-env/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+# Ya estás ignorando 'venv/' con el flag -I en tree, pero es bueno tenerlo
 venv/
-airflow/*
-!airflow/dags/
-!airflow/dags/**
-.env
+.venv/
+ENV/
 env/
+env.bak/
+venv.bak/
+
+# Airflow local instance files
+# Ignora todo el directorio AIRFLOW_HOME si cada desarrollador tiene el suyo
+# o si es puramente local.
+# Si necesitas versionar Dags, añádelos explícitamente con ! (ver abajo)
+airflow/airflow.db
+airflow/airflow.db-shm
+airflow/airflow.db-wal
+airflow/logs/
+airflow/airflow.db*
+airflow/airflow.cfg
+airflow/airflow.cfg.bak
+airflow/webserver_config.py
+airflow/webserver_config.py.bak
+airflow/airflow-webserver.pid
+airflow/standalone_admin_password.txt
+airflow/unittests.cfg
+# Nota: Los DAGs en airflow/dags/ SÍ se suelen versionar.
+# Si tu AIRFLOW_HOME es el directorio 'airflow/' en la raíz y quieres versionar tus dags:
+# Descomenta la siguiente línea y ajusta si tu estructura es diferente:
+# !airflow/dags/
+# !airflow/dags/*
+# !airflow/dags/**
+# Pero cuidado de no re-incluir __pycache__ dentro de dags si lo haces así.
+# Una mejor manera es mantener los DAGs en una carpeta separada (ej. 'dags/')
+# y configurar AIRFLOW_HOME para que apunte allí, o copiar/symlink los dags a AIRFLOW_HOME/dags.
+# Por ahora, asumiendo que todo 'airflow/' es local y no se versiona excepto los dags.
+# Para ser más explícito y seguro con los dags si están dentro de 'airflow/':
+!airflow/dags # Permite rastrear el directorio dags
+!airflow/dags/** # Permite rastrear todo dentro de dags
+airflow/dags/*/__pycache__/ # Pero ignora pycache dentro de dags o subdirectorios de dags
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Credenciales y archivos sensibles
+env/.env
+.env
+*.pem
+*.key
+secrets.yml
+credentials.json
+
+# Archivos de configuración y setup personales
+airflow_setup.txt
+creacion_venv_airflow.txt
+*.txt.bak # Backups de texto genéricos
+
+# Archivos de documentación generados o copias
+great_expectationscopia.yml
+*.pdf:Zone.Identifier # Alternate Data Streams de Windows
+
+# Datos generados por el ETL (si aplica)
+data/clean/
+data/processed/
+# Considera si los datos en data/raw/ deben ser versionados o no.
+# Si son muy grandes, es mejor no hacerlo.
+
+# Logs de Jupyter Notebooks y salidas HTML
+Notebooks/**/*.log
+Notebooks/**/*.html 
+# Excepto si algún HTML es una salida intencional que quieres versionar
+# !Notebooks/ny_heatmap.html # Ejemplo si este SÍ lo quieres
+
+# Great Expectations - el .gitignore interno debería cubrir mucho, pero por si acaso:
+great_expectations/uncommitted/data_docs/
+great_expectations/uncommitted/validations/
+# El archivo great_expectations.yml SÍ se versiona
+
+# Otros
+*.log # Logs genéricos (cuidado si tienes logs que SÍ quieres versionar)
+*.sqlite3
+*.db # Bases de datos locales (excepto si es parte del setup inicial del proyecto)
+
+# Archivos específicos de tu proyecto
+# (añade aquí otros archivos o patrones que no quieras versionar)
