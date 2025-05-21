@@ -22,7 +22,7 @@ from transform.airbnb_transform import clean_airbnb_data
 from transform.api_transform import clean_api_data
 from load.merge_operacional import merge_operacional
 from database.create_dimensional import create_and_prepare_dimensional_model_data
-from database.load_dimensional import load_dimensional_data
+from load.load_dimensional import load_dimensional_data
 from load.data_merge import data_merge
 
 GE_CONTEXT_ROOT_DIR = os.path.join(PROJECT_ROOT, "great_expectations")
