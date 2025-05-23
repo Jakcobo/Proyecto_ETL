@@ -10,92 +10,107 @@ from datetime import datetime # Para convertir la fecha
 logger = logging.getLogger(__name__)
 
 # --- CONFIGURACIÓN POWER BI ---
-# Reemplaza esta URL con la tuya real si es diferente
 POWERBI_STREAMING_URL = "https://api.powerbi.com/beta/693cbea0-4ef9-4254-8977-76e05cb5f556/datasets/6b4e2f65-3022-4590-adbc-5b7783074aec/rows?experience=power-bi&key=DSXqyJ5CA8adQiT5nUbGkQ2HFpLkxmOGfPe%2B6nxkYaVGnZVo6bTSqfMg92aVrDLwdH0MVuGeUq5FAuEHNEP3yQ%3D%3D"
-POWERBI_BATCH_SIZE = 100  # Cuántos mensajes acumular antes de enviar (ajusta según necesidad y límites)
-POWERBI_SEND_INTERVAL_S = 5 # O enviar cada X segundos (100 mensajes / 5s = 20 mensajes/s)
+POWERBI_BATCH_SIZE = 100  # Ajusta según sea necesario, 100 es un buen punto de partida
+POWERBI_SEND_INTERVAL_S = 5 # Envía cada 5 segundos si el lote no se llena antes
 
 # --- FIN CONFIGURACIÓN POWER BI ---
 
 def send_data_to_powerbi(data_payload: list, powerbi_url: str, retries: int = 3, backoff_factor: float = 0.5) -> bool:
-    """
-    Envía un lote de datos (payload) a un endpoint de streaming de Power BI.
-
-    Args:
-        data_payload (list): Lista de diccionarios, donde cada diccionario es una fila.
-        powerbi_url (str): La URL completa del endpoint de streaming de Power BI.
-        retries (int): Número de reintentos en caso de fallo.
-        backoff_factor (float): Factor para el backoff exponencial.
-
-    Returns:
-        bool: True si el envío fue exitoso, False en caso contrario.
-    """
     if not data_payload:
-        logger.info("Payload para Power BI vacío, no se envía nada.")
-        return True # Considerado éxito ya que no había nada que enviar
+        logger.debug("Payload para Power BI vacío, no se envía nada.")
+        return True
 
     headers = {
         "Content-Type": "application/json"
     }
     
+    if data_payload:
+        logger.debug(f"Enviando a Power BI. Muestra del primer objeto en el payload: {json.dumps(data_payload[0], indent=2, default=str)}") # default=str para manejar tipos no serializables
+
     for attempt in range(retries):
         try:
-            response = requests.post(powerbi_url, headers=headers, data=json.dumps(data_payload))
-            response.raise_for_status()  # Lanza una excepción para códigos de error HTTP 4xx/5xx
-            logger.debug(f"Datos enviados a Power BI exitosamente. Status: {response.status_code}")
+            # Convertir el payload a una lista de diccionarios antes de json.dumps
+            payload_to_send = [dict(row) for row in data_payload]
+            response = requests.post(powerbi_url, headers=headers, data=json.dumps(payload_to_send, default=str)) # default=str
+            
+            logger.debug(f"Respuesta de Power BI (intento {attempt + 1}): Status={response.status_code}, Contenido='{response.text[:500]}...'")
+            
+            response.raise_for_status()
+            logger.info(f"Lote de {len(data_payload)} mensajes enviado a Power BI exitosamente. Status: {response.status_code}")
             return True
         except requests.exceptions.HTTPError as http_err:
-            logger.warning(f"Error HTTP enviando a Power BI (intento {attempt + 1}/{retries}): {http_err.response.status_code} - {http_err.response.text}")
-            if response.status_code < 500 and response.status_code != 429: # Errores de cliente (4xx) no suelen resolverse reintentando, excepto 429 (Too Many Requests)
+            error_message = f"Error HTTP enviando a Power BI (intento {attempt + 1}/{retries}): {http_err.response.status_code}"
+            try:
+                error_detail = http_err.response.json()
+                error_message += f" - {error_detail}"
+            except json.JSONDecodeError:
+                error_message += f" - {http_err.response.text[:500]}"
+            logger.warning(error_message)
+            if http_err.response.status_code < 500 and http_err.response.status_code != 429:
+                logger.error(f"Error de cliente ({http_err.response.status_code}) no recuperable por reintento. Deteniendo reintentos para este lote.")
                 break 
         except requests.exceptions.RequestException as req_err:
             logger.warning(f"Error de red/conexión enviando a Power BI (intento {attempt + 1}/{retries}): {req_err}")
+        except TypeError as type_err: # Capturar errores de serialización JSON
+            logger.error(f"Error de serialización JSON al preparar payload para Power BI (intento {attempt + 1}): {type_err}")
+            logger.debug(f"Payload problemático (primer elemento): {data_payload[0] if data_payload else 'Lote vacío'}")
+            break # No reintentar si hay error de serialización
         
         if attempt < retries - 1:
             sleep_time = backoff_factor * (2 ** attempt)
             logger.info(f"Reintentando envío a Power BI en {sleep_time:.2f} segundos...")
             time.sleep(sleep_time)
         else:
-            logger.error(f"Falló el envío a Power BI después de {retries} intentos.")
+            logger.error(f"Falló el envío a Power BI después de {retries} intentos para el lote actual.")
             return False
     return False
 
 
 def transform_for_powerbi(kafka_message_value: dict) -> dict:
-    """
-    Transforma un mensaje de Kafka para que coincida con el esquema esperado por Power BI.
-    Principalmente maneja la conversión de fechas.
-    """
-    transformed_row = kafka_message_value.copy() # Trabajar con una copia
+    if not isinstance(kafka_message_value, dict):
+        logger.warning(f"Valor del mensaje Kafka no es un diccionario: {type(kafka_message_value)}. No se puede transformar.")
+        return {}
 
-    # Convertir 'last_review' (YYYYMMDD int) a formato ISO 8601 string para Power BI
-    if 'last_review' in transformed_row and transformed_row['last_review'] is not None:
-        try:
-            date_int = int(transformed_row['last_review'])
-            # Si la fecha es la ficticia de 'sin revisión', enviarla como None o una fecha muy antigua
-            if date_int == 22620411: # La fecha que usaste para nulos
-                 transformed_row['last_review'] = None # O "1900-01-01T00:00:00Z" si Power BI necesita una fecha
-            else:
-                date_obj = datetime.strptime(str(date_int), '%Y%m%d')
-                transformed_row['last_review'] = date_obj.isoformat() + "Z" # Formato ISO 8601 UTC
-        except (ValueError, TypeError) as e:
-            logger.warning(f"No se pudo convertir 'last_review' ({transformed_row['last_review']}): {e}. Se enviará como None.")
-            transformed_row['last_review'] = None
-    
-    # Asegurar que los booleanos sean booleanos de Python (json.dumps los maneja bien)
-    for bool_col in ['host_verification', 'instant_bookable_flag']:
-        if bool_col in transformed_row:
-            if isinstance(transformed_row[bool_col], str):
-                transformed_row[bool_col] = transformed_row[bool_col].lower() == 'true'
-            elif transformed_row[bool_col] is None: # pd.NA se convierte a None en la serialización
-                transformed_row[bool_col] = None # O False si prefieres un default
-            else:
-                transformed_row[bool_col] = bool(transformed_row[bool_col])
+    logger.debug(f"Transformando mensaje para Power BI. Datos originales: {kafka_message_value}")
+    transformed_row = {}
 
-    # Otros tipos de datos (números, texto) generalmente se mapean bien si los nombres de columna coinciden.
-    # Si Power BI espera tipos estrictos (ej. entero vs decimal), asegúrate aquí.
-    # Por ejemplo, si 'price' debe ser siempre float con dos decimales, aunque json.dumps lo maneja.
-    
+    # **ACCIÓN IMPORTANTE: Revisa y ajusta los nombres de las claves aquí**
+    # para que coincidan EXACTAMENTE con tu esquema de Power BI.
+    key_map = {
+        # "nombre_columna_en_kafka": "NombreColumnaEnPowerBI",
+        "construction_year": "construction_year", # Ejemplo: Si en Power BI se llama 'ConstructionYear' -> "ConstructionYear"
+        # Añade otros mapeos si son necesarios
+    }
+
+    for kafka_key, value in kafka_message_value.items():
+        powerbi_key = key_map.get(kafka_key, kafka_key) # Usa el nombre mapeado o el original si no hay mapeo
+
+        if kafka_key == 'last_review':
+            if value is not None:
+                try:
+                    date_int = int(value)
+                    if date_int == 22620411:
+                        transformed_row[powerbi_key] = None
+                    else:
+                        date_obj = datetime.strptime(str(date_int), '%Y%m%d')
+                        transformed_row[powerbi_key] = date_obj.isoformat() + "Z"
+                except (ValueError, TypeError) as e:
+                    logger.warning(f"No se pudo convertir '{kafka_key}' ({value}): {e}. Se enviará como None.")
+                    transformed_row[powerbi_key] = None
+            else:
+                transformed_row[powerbi_key] = None
+        elif kafka_key in ['host_verification', 'instant_bookable_flag']:
+            if isinstance(value, str):
+                transformed_row[powerbi_key] = value.lower() == 'true'
+            elif value is None:
+                transformed_row[powerbi_key] = None
+            else:
+                transformed_row[powerbi_key] = bool(value)
+        else:
+            transformed_row[powerbi_key] = value
+            
+    logger.debug(f"Mensaje transformado para Power BI: {transformed_row}")
     return transformed_row
 
 
@@ -104,20 +119,21 @@ def consume_messages_and_send_to_powerbi(
     bootstrap_servers: str, 
     powerbi_url: str,
     batch_size: int,
-    send_interval_s: float, # Intervalo para enviar si el lote no se llena
+    send_interval_s: float,
     group_id: str = 'powerbi_streaming_consumer_group', 
-    auto_offset_reset: str = 'latest', # 'latest' es común para dashboards en tiempo real
-    consume_timeout_ms: int = 1000 # Tiempo que el iterador consumer espera por más mensajes
+    auto_offset_reset: str = 'earliest', # Cambiado a 'earliest' para la prueba
+    consume_timeout_ms: int = 5000 # Aumentado un poco para dar más margen
 ):
     bootstrap_servers_list = [s.strip() for s in bootstrap_servers.split(',')]
-    logger.info(f"Conectando consumidor al topic '{topic_name}' en {bootstrap_servers_list} con group_id '{group_id}' para Power BI...")
+    logger.info(f"Conectando consumidor al topic '{topic_name}' en {bootstrap_servers_list} con group_id '{group_id}' para Power BI (auto_offset_reset='{auto_offset_reset}')...")
 
     message_batch = []
     last_send_time = time.time()
-    total_messages_processed = 0
-    total_batches_sent = 0
-    total_messages_sent_to_pbi = 0
+    total_messages_processed_kafka = 0
+    total_batches_sent_to_pbi_successfully = 0
+    total_messages_in_successful_pbi_batches = 0
 
+    consumer = None # Inicializar para el bloque finally
     try:
         consumer = KafkaConsumer(
             topic_name,
@@ -128,99 +144,103 @@ def consume_messages_and_send_to_powerbi(
             value_deserializer=lambda v: json.loads(v.decode('utf-8')),
             key_deserializer=lambda k: k.decode('utf-8') if k else None,
         )
-        logger.info(f"Consumidor conectado y suscrito a '{topic_name}'. Esperando mensajes para Power BI...")
+        logger.info(f"Consumidor conectado y suscrito a '{topic_name}'. Esperando mensajes...")
 
-        while True: # Bucle para seguir intentando consumir mientras el script corra
-            batch_filled_by_timeout = False
+        running = True
+        while running:
             try:
-                for message in consumer: # Este bucle interno se romperá si consumer_timeout_ms se alcanza
-                    total_messages_processed += 1
-                    logger.debug(f"Raw Kafka msg: Key={message.key}, Offset={message.offset}")
+                messages_in_poll = 0
+                for message in consumer: 
+                    messages_in_poll +=1
+                    total_messages_processed_kafka += 1
+                    logger.info(f"Kafka msg #{total_messages_processed_kafka} RECIBIDO: Key={message.key}, Offset={message.offset}, Partition={message.partition}")
                     
-                    # Transformar el mensaje para el esquema de Power BI
                     powerbi_row_data = transform_for_powerbi(message.value)
-                    message_batch.append(powerbi_row_data)
-                    logger.debug(f"Mensaje procesado y añadido al lote Power BI. Lote actual: {len(message_batch)}")
-
-                    if len(message_batch) >= batch_size:
-                        break # Salir del bucle for para enviar el lote
-
-                # Después del bucle for, o porque se llenó el lote o porque hubo timeout
-                current_time = time.time()
-                if not message_batch and (current_time - last_send_time) < send_interval_s :
-                    # No hay mensajes en el lote Y no ha pasado el intervalo de envío
-                    # Si el consumer_timeout_ms fue alcanzado, el bucle for terminó.
-                    # Si consumer_timeout_ms es bajo, esto puede pasar a menudo.
-                    # Si no hubo mensajes, el bucle for no se ejecutó.
-                    if consumer.assignment() and not any(consumer.position(tp) < consumer.highwater(tp) for tp in consumer.assignment()):
-                         logger.debug(f"Sin mensajes nuevos en Kafka. Lote vacío. Esperando {send_interval_s - (current_time - last_send_time):.2f}s o nuevos mensajes.")
-                    # Pequeña pausa para no hacer un bucle while True muy ajustado si no hay mensajes
-                    time.sleep(0.1) 
-                    continue
-
-
-                if len(message_batch) >= batch_size or \
-                   (message_batch and (current_time - last_send_time) >= send_interval_s):
+                    if powerbi_row_data:
+                        message_batch.append(powerbi_row_data)
                     
+                    if len(message_batch) >= batch_size:
+                        logger.debug(f"Lote lleno ({len(message_batch)} mensajes). Rompiendo bucle de fetch para enviar.")
+                        break 
+
+                if messages_in_poll == 0 and not message_batch:
+                     logger.debug(f"No se recibieron nuevos mensajes de Kafka en este poll (timeout: {consume_timeout_ms}ms). El lote está vacío.")
+
+                current_time = time.time()
+                time_since_last_send = current_time - last_send_time
+                
+                should_send_batch = False
+                if len(message_batch) >= batch_size:
+                    logger.info(f"Preparando para enviar lote porque alcanzó el tamaño máximo ({len(message_batch)}/{batch_size}).")
+                    should_send_batch = True
+                elif message_batch and time_since_last_send >= send_interval_s:
+                    logger.info(f"Preparando para enviar lote ({len(message_batch)} mensajes) porque ha pasado el intervalo de tiempo ({time_since_last_send:.2f}s >= {send_interval_s}s).")
+                    should_send_batch = True
+                
+                if should_send_batch:
                     logger.info(f"Enviando lote de {len(message_batch)} mensajes a Power BI...")
-                    success = send_data_to_powerbi(message_batch, powerbi_url)
+                    success = send_data_to_powerbi(list(message_batch), powerbi_url) 
                     if success:
-                        logger.info(f"Lote enviado exitosamente a Power BI. Total mensajes PBI: {total_messages_sent_to_pbi + len(message_batch)}")
-                        total_messages_sent_to_pbi += len(message_batch)
-                        total_batches_sent += 1
-                        message_batch = [] 
+                        total_messages_in_successful_pbi_batches += len(message_batch)
+                        total_batches_sent_to_pbi_successfully += 1
+                        message_batch.clear() 
                     else:
-                        logger.warning("Falló el envío del lote a Power BI. Los mensajes de este lote se perderán (o implementa dead-letter queue).")
-                        message_batch = [] # Descartar lote fallido por ahora
+                        logger.warning("Falló el envío del lote a Power BI. Descartando lote actual.")
+                        message_batch.clear() 
                     last_send_time = time.time()
                 
-                # Si salimos del bucle for debido a consumer_timeout_ms y no hay nada en el lote,
-                # el logger de arriba ("Sin mensajes nuevos...") lo manejará.
-                # No necesitamos un 'else' explícito aquí para el caso de lote vacío post-timeout.
+                # Si no hay mensajes de Kafka y no hay nada en el lote, hacer una pequeña pausa
+                if messages_in_poll == 0 and not message_batch:
+                    time.sleep(0.5) # Pausa para no consumir CPU si no hay actividad
 
-            except StopIteration: # Esto puede ocurrir si el topic es finito y se alcanza el final.
-                logger.info("StopIteration: No más mensajes en el topic o final alcanzado.")
-                break # Salir del while True si el topic realmente terminó.
+            except StopIteration: 
+                logger.info("StopIteration: No más mensajes en el topic o final alcanzado por el consumidor. Finalizando.")
+                running = False
             except KeyboardInterrupt:
-                logger.info("Interrupción por teclado recibida. Saliendo...")
-                break # Salir del while True
+                logger.info("Interrupción por teclado recibida. Finalizando bucle de consumo...")
+                running = False
+            except Exception as e:
+                logger.error(f"Error inesperado en el bucle de consumo: {e}", exc_info=True)
+                time.sleep(1)
 
-        logger.info(f"Bucle de consumo finalizado. Total mensajes Kafka procesados: {total_messages_processed}.")
+        logger.info(f"Bucle de consumo principal finalizado. Total mensajes Kafka procesados: {total_messages_processed_kafka}.")
 
     except KafkaError as e:
-        logger.error(f"Error de Kafka durante el consumo para Power BI: {e}", exc_info=True)
+        logger.error(f"Error de Kafka (fuera del bucle de consumo) para Power BI: {e}", exc_info=True)
     except Exception as e:
-        logger.error(f"Error inesperado durante el consumo para Power BI: {e}", exc_info=True)
+        logger.error(f"Error inesperado (fuera del bucle de consumo) para Power BI: {e}", exc_info=True)
     finally:
-        # Envío final de cualquier mensaje restante en el lote al cerrar
         if message_batch:
             logger.info(f"Enviando lote final de {len(message_batch)} mensajes a Power BI al cerrar...")
-            send_data_to_powerbi(message_batch, powerbi_url)
+            send_data_to_powerbi(list(message_batch), powerbi_url)
         
-        if 'consumer' in locals() and consumer:
+        if consumer:
             logger.info("Cerrando consumidor Kafka...")
-            consumer.close()
+            consumer.close(autocommit=False) 
             logger.info("Consumidor Kafka cerrado.")
-        logger.info(f"Resumen: Total lotes enviados a PBI: {total_batches_sent}, Total mensajes en lotes exitosos a PBI: {total_messages_sent_to_pbi}")
+        logger.info(f"Resumen Final: Lotes exitosos a PBI: {total_batches_sent_to_pbi_successfully}, Mensajes en lotes exitosos a PBI: {total_messages_in_successful_pbi_batches}")
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, # Cambia a logging.DEBUG para ver más detalle
-                        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level=logging.INFO, # Puedes cambiar a logging.DEBUG para más detalle
+                        format='%(asctime)s - %(name)s - %(levelname)s - %(module)s - %(funcName)s - %(lineno)d - %(message)s')
 
     TEST_BOOTSTRAP_SERVERS_CONSUMER = 'localhost:29092'
-    # APUNTA ESTE AL TOPIC CORRECTO DONDE EL DAG ENVÍA LOS DATOS
     TEST_TOPIC_NAME_CONSUMER = 'airbnb_publications_enriched' 
     
-    # Usa un group_id que recuerde su posición si quieres continuidad, 
-    # o uno dinámico para empezar desde 'latest'/'earliest' cada vez.
-    # consumer_group_id = f'powerbi_streamer_group_{int(time.time())}' 
-    consumer_group_id = 'powerbi_streamer_group_static_1' # Para reanudar si se cae
+    # Para forzar la lectura desde el principio cada vez que ejecutas para pruebas:
+    consumer_group_id = f'powerbi_debug_consumer_{int(time.time())}'
+    effective_auto_offset_reset = 'earliest'
+    
+    # Si quisieras que recuerde dónde se quedó (ej. para un servicio continuo):
+    # consumer_group_id = 'powerbi_streaming_service_group_1'
+    # effective_auto_offset_reset = 'latest' # Para empezar con datos nuevos si el grupo ya existe
 
     logger.info(f"--- Iniciando consumidor para Power BI ---")
     logger.info(f"Consumiendo del topic: {TEST_TOPIC_NAME_CONSUMER}")
     logger.info(f"Servidores Bootstrap: {TEST_BOOTSTRAP_SERVERS_CONSUMER}")
     logger.info(f"Group ID: {consumer_group_id}")
+    logger.info(f"Auto Offset Reset: {effective_auto_offset_reset}")
     logger.info(f"URL Power BI: {POWERBI_STREAMING_URL[:POWERBI_STREAMING_URL.find('key=') + 4]}...") # No loguear la key completa
 
     consume_messages_and_send_to_powerbi(
@@ -230,8 +250,8 @@ if __name__ == '__main__':
         batch_size=POWERBI_BATCH_SIZE,
         send_interval_s=POWERBI_SEND_INTERVAL_S,
         group_id=consumer_group_id,
-        auto_offset_reset='latest', # 'latest' para no reenviar datos viejos si se reinicia
-        consume_timeout_ms=1000  # Timeout corto para el iterador, el while True maneja la persistencia
+        auto_offset_reset=effective_auto_offset_reset, 
+        consume_timeout_ms=5000 # Espera 5 segundos por nuevos mensajes en cada poll
     )
 
     logger.info("--- Consumidor para Power BI finalizado (o interrumpido) ---")

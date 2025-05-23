@@ -39,7 +39,7 @@ default_args = {
 }
 
 @dag(
-    dag_id="ETL_Airbnb_Foursquare_To_Postgres_and_Kafka", # ID Actualizado
+    dag_id="ETL_Airbnb_Foursquare_Kafka", # ID Actualizado
     default_args=default_args,
     description='Pipeline ETL para datos de AirBnB y FourSquare, cargando a Postgres y enviando a Kafka.', # Descripción Actualizada
     schedule_interval=timedelta(days=1),
