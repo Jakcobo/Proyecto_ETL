@@ -1,59 +1,94 @@
-# ETL Project: Airbnb Data Pipeline with Apache Airflow
-This project implements a full ETL (Extract, Transform, Load) pipeline for Airbnb data and Foursquare Places API data using Python, Jupyter notebooks, and Apache Airflow. The data is transformed, cleaned, analyzed, and loaded into a PostgreSQL database for further exploration and modeling.
+# Project ETL with Apache Airflow and Kafka
 
-## Project Structure
+> A modular **ETL** (Extract–Transform–Load) solution combining batch processing and real-time streaming via **Kafka**, orchestrated with **Apache Airflow**, and data quality validation using **Great Expectations**.
 
-```
-Proyecto_ETL/
-│
-├── airflow/                  # Apache Airflow DAGs and tasks
-│   └── dags/
-│       ├── dag.py            # DAG orchestration
-│       └── task_etl.py       # Task functions for ETL
-│
-├── data/
-│   └── Airbnb_Open_Data.csv  # Raw Airbnb dataset
-│
-├── database/
-│   ├── db.py                 # PostgreSQL connection and database creation
-│   └── model.py              # Database schema and model setup
-│
-├── extract/
-│   └── extract.py            # Data extraction logic
-│
-├── load/
-│   ├── load_data.py          # Load data into PostgreSQL
-│   └── model_dimensional.py  # Dimensional model logic
-│
-├── transform/
-│   ├── api_clean.py          # Data cleaning from APIs
-│   └── dataset_clean.py      # Airbnb data cleaning scripts
-│
-├── Notebooks/
-│   ├── 001_DataLoad.ipynb    # Load Airbnb data into PostgreSQL
-│   ├── 002_EDA.ipynb         # Exploratory Data Analysis
-│   ├── 003_CleanData.ipynb   # Data cleaning and transformation
-│   └── 004_EDA_Api.ipynb     # EDA on Foursquare API data
-│
-├── env/
-│   └── .env                  # PostgreSQL credentials (ignored in Git)
-│
+---
+
+## 📖 Table of Contents
+
+1. [Overview](#overview)
+2. [Repository Structure](#repository-structure)
+3. [Installation & Configuration](#installation--configuration)
+
+   1. [Airflow Virtual Environment](#airflow-virtual-environment)
+   2. [Dependencies](#dependencies)
+4. [Docker Compose Deployment](#docker-compose-deployment)
+5. [Apache Airflow](#apache-airflow)
+
+   1. [Main DAGs](#main-dags)
+6. [Data Validation (Great Expectations)](#data-validation–great-expectations)
+7. [Batch Processing (Batch ETL)](#batch-processing–batch-etl)
+8. [Real-Time Processing (Kafka Streaming)](#real-time-processing–kafka-streaming)
+9. [Jupyter Notebooks](#jupyter-notebooks)
+10. [Cache Cleaning](#cache-cleaning)
+
+---
+
+## 📌 Overview
+
+This project implements a complete data pipeline that:
+
+* **Extract**: Fetches raw data from various sources (CSV, API, Kafka).
+* **Transform**: Cleans and enriches data using business rules and quality checks.
+* **Load**: Inserts processed data into a dimensional model in **PostgreSQL**.
+* **Orchestrate**: Manages task dependencies and scheduling with **Apache Airflow**.
+* **Stream**: Processes data in real time using **Kafka** (producer/consumer).
+* **Validate**: Verifies data quality with **Great Expectations**.
+
+---
+
+## 🗂 Repository Structure
+
+```text
+.
 ├── .gitignore
-├── credentials.json          # (Ignored) PostgreSQL config
-├── configuration_venv_airflow.txt
-├── delete_pycache.sh
-├── model_dimensional.pdf     # Star schema diagram
-├── requeriremntes.txt
-└── README.md                 # You are here
+├── docker-compose.yml
+├── clean_pycache.sh
+├── create_airflow_venv.txt
+├── dashboard_project01_final_.pdf
+├── md_03_project.pdf
+├── requirements.txt
+├── src/
+│   ├── producer.py
+│   ├── consumer.py
+│   ├── etl_utils.py
+│   └── …
+├── src_nico/
+├── scripts_ge/
+│   └── run_validations.py
+├── great_expectations/
+│   ├── great_expectations.yml
+│   └── suites/
+├── airflow/
+│   └── dags/
+│       ├── etl_dag.py
+│       └── kafka_streaming_dag.py
+├── Notebooks/
+│   ├── 01_DataLoad.ipynb
+│   ├── 02_EDA.ipynb
+│   └── 03_StreamEDA.ipynb
+├── data/
+└── .vscode/
 ```
-## Installation
-Install the required libraries:
 
-bash
-pip install pandas==2.1.4 numpy==1.26.4 sqlalchemy psycopg2 matplotlib seaborn
-Create a file named credentials.json:
+* **`.gitignore`**: Files and folders to ignore (envs, caches, credentials).
+* **`docker-compose.yml`**: Defines Docker services (Zookeeper, Kafka, PostgreSQL, Airflow).
+* **`clean_pycache.sh`**: Bash script to remove `__pycache__` directories and `.pyc` files.
+* **`create_airflow_venv.txt`**: Steps to create and activate a virtual environment for Airflow.
+* **`requirements.txt`**: Python dependencies (`pandas`, `sqlalchemy`, `kafka-python`, `apache-airflow`, `great_expectations`, etc.).
+* **`src/`**: Main ETL and streaming code (producer, consumer, utilities).
+* **`src_nico/`**: Experimental or alternative ETL modules.
+* **`scripts_ge/`**: Scripts to run Great Expectations validations.
+* **`great_expectations/`**: GE configuration, suites, and checkpoints.
+* **`airflow/dags/`**: DAG definitions for batch and streaming workflows.
+* **`Notebooks/`**: Jupyter Notebooks for EDA and pipeline testing.
+* **`data/`**: Example input data (CSV, JSON).
+* **`.vscode/`**: VS Code settings (linter, debugger, workspace).
 
-```
+---
+## Create a folder named env/ with a file called .env:
+
+```bashr
 {
   "user": "your_user",
   "password": "your_password",
@@ -62,102 +97,117 @@ Create a file named credentials.json:
   "database": "airbnb"
 }
 ```
-## Apache Airflow Pipeline
-This DAG automates the ETL pipeline using Apache Airflow. The graph below shows the execution flow:
+## ⚙️ Installation & Configuration
 
+### Airflow Virtual Environment
 
-DAG Task Flow:
-extract_data_task: Reads Airbnb data from Airbnb_Open_Data.csv.
+```bash
+python3 -m venv venv_airflow
+source venv_airflow/bin/activate
+```
 
-- **clean_data_task:** Cleans the raw data using custom transformation logic.
+### Dependencies
 
-- **load_cleaned_data_task:** Loads the cleaned data into the PostgreSQL database.
+With the virtual environment active, install Airflow and other packages:
 
-- **create_model_task:** Sets up the dimensional model (star schema).
+```bash
+pip install "apache-airflow==2.X.X" \
+  --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.X.X/constraints-3.8.txt"
 
-- **insert_data_to_model_task:** Inserts the final transformed data into the fact and dimension tables.
+pip install -r requirements.txt
+```
 
-Each task is defined using Airflow’s **@task** decorator for modularity and reusability.
+---
 
-## Jupyter Notebooks
-### 001_DataLoad.ipynb – Initial Data Load
-Loads the raw CSV file.
+## 🐳 Docker Compose Deployment
 
-Creates the airbnb PostgreSQL database.
+Bring up all services:
 
-Uploads the data into the airbnb_data table.
+```bash
+docker-compose up -d
+```
 
-Verifies the data with queries.
+* The `etl-network` connects Kafka, PostgreSQL, and Airflow.
+* Volumes persist database data and logs.
 
-### 002_EDA.ipynb – Exploratory Data Analysis
-Checks nulls, duplicates, data types.
+---
 
-Visualizes key trends:
+## 🛩 Apache Airflow
 
-Price distribution.
+1. **Initialize the metadata database**
 
-Minimum nights vs price.
+   ```bash
+   airflow db init
+   ```
+2. **Create an admin user**
 
-Room types.
+   ```bash
+   airflow users create \
+     --username admin \
+     --firstname Admin \
+     --lastname User \
+     --role Admin \
+     --email admin@example.com
+   ```
+3. **Start scheduler and webserver**
 
-Host verification.
+   ```bash
+   airflow scheduler &
+   airflow webserver --port 8080 &
+   ```
 
-Neighborhoods and policies.
+### Main DAGs
 
-### 003_CleanData.ipynb – Data Cleaning & Transformation
-Creates a new table airbnb_EDA.
+* **`etl_dag.py`**
+  Orchestrates batch extraction, transformation, and loading into the dimensional model.
 
-Renames columns for SQL compatibility.
+* **`kafka_streaming_dag.py`**
+  Manages continuous consumption from Kafka and incremental loading.
 
-Removes irrelevant columns.
+---
 
-Handles nulls:
+## ✅ Data Validation (Great Expectations)
 
-**Text:** replaced with ``"not fill"``.
+* **Configuration**: `great_expectations/great_expectations.yml` and expectation suites.
+* **Runner**: `scripts_ge/run_validations.py` executes all suites and generates an HTML report.
 
-**Numbers:** replaced with ``-1``.
+---
 
-**Dates:** transformed or filled with ``99999999``.
+## 🗃 Batch Processing (Batch ETL)
 
-Fixes typos in ``neighbourhood_group``.
+Defined in `airflow/dags/etl_dag.py`, includes:
 
-### 004_EDA_Api.ipynb – Foursquare Places API EDA
-Fetches venue data for NYC boroughs.
+1. **Extract**: Reads CSV/JSON files from `data/`.
+2. **Transform**: Cleans, normalizes, and enriches data.
+3. **Load**: Inserts records into dimension and fact tables in PostgreSQL.
 
-Normalizes categories with fuzzy matching.
+---
 
-Cleans and exports as CSV.
+## 🚀 Real-Time Processing (Kafka Streaming)
 
-### Visualizes:
+Core modules in `src/`:
 
-Venue distributions (bar chart, heatmap).
+* **`producer.py`**: Publishes messages to `etl_topic`.
+* **`consumer.py`**: Consumes messages, transforms, and loads incrementally.
+* **`etl_utils.py`**: Shared utilities for serialization, validation, and DB connections.
 
-Interactive map (Folium).
+---
 
-Top 5 categories by borough.
+## 📓 Jupyter Notebooks
 
-## Dimensional Modeling
-A star schema is implemented for Airbnb data using the following entities:
+* **`01_DataLoad.ipynb`** – Extraction and loading demos.
+* **`02_EDA.ipynb`** – Batch data exploratory analysis.
+* **`03_StreamEDA.ipynb`** – Real-time visualization from Kafka.
 
-**Fact Table:** Reservations (with price, nights, and dates).
+---
 
-**Dimensions:** ``Hosts``, ``room types``, ``location``, and ``cancellation policies``.
+## 🧹 Cache Cleaning
 
-## See model_dimensional.pdf for full schema.
+To remove compiled files:
 
-## Development Tips
-Use delete_pycache.sh to clean .pyc and __pycache__ folders.
-
-All secrets are managed through .env and .gitignore for safety.
-
-Install Airflow and activate the virtual environment using configuration_venv_airflow.txt.
-
-## Future Improvements
-Integrate a dashboard (e.g., using Streamlit).
-
-Schedule the pipeline for daily updates.
-
-Add ML predictions for dynamic pricing.
+```bash
+bash clean_pycache.sh
+```
 
 ## Authors
 ### `Jakcobo`
