@@ -64,15 +64,35 @@ def etl_pipeline_with_kafka():
     @task(task_id="2.1_transformacion_airbnb")
     def transformacion_airbnb_task(df_airbnb_raw: pd.DataFrame) -> pd.DataFrame:
         cleaned_airbnb_df = clean_airbnb_data(df_airbnb_raw)
-        if not isinstance(cleaned_airbnb_df, pd.DataFrame) or cleaned_airbnb_df.empty:
-            raise AirflowFailException("clean_airbnb_data debe devolver un DataFrame no vacío.")
+        if not isinstance(cleaned_airbnb_df, pd.DataFrame):
+            raise TypeError("clean_airbnb_data debe devolver un DataFrame")
+
+        validation_result = validate_dataframe_with_ge(
+            df=cleaned_airbnb_df,
+            expectation_suite_name="cleaned_airbnb_suite",
+            data_asset_name="cleaned_airbnb_from_pipeline",
+            ge_context_root_dir=GE_CONTEXT_ROOT_DIR
+        )
+        if not validation_result.success:
+            raise AirflowFailException("Validación GE fallida para cleaned_airbnb_suite")
+        
         return cleaned_airbnb_df
 
     @task(task_id="2.2_transformacion_api")
     def transformacion_api_task(df_api_raw: pd.DataFrame) -> pd.DataFrame:
         cleaned_api_df = clean_api_data(df_api_raw)
-        if not isinstance(cleaned_api_df, pd.DataFrame) or cleaned_api_df.empty:
-            raise AirflowFailException("clean_api_data debe devolver un DataFrame no vacío.")
+        if not isinstance(cleaned_api_df, pd.DataFrame):
+            raise TypeError("clean_api_data debe devolver un DataFrame")
+
+        validation_result = validate_dataframe_with_ge(
+            df=cleaned_api_df,
+            expectation_suite_name="cleaned_api_suite",
+            data_asset_name="cleaned_api_from_pipeline",
+            ge_context_root_dir=GE_CONTEXT_ROOT_DIR
+        )
+        if not validation_result.success:
+            raise AirflowFailException("Validación GE fallida para cleaned_api_suite")
+        
         return cleaned_api_df
 
     @task(task_id="3.1_merge_operacional")
@@ -154,26 +174,23 @@ def etl_pipeline_with_kafka():
 
     df_airbnb_clean_output = transformacion_airbnb_task(df_airbnb_raw_output)
     df_api_clean_output = transformacion_api_task(df_api_raw_output)
-
+    
     df_merged_operacional_output = merge_operacional_task(
         df_airbnb=df_airbnb_clean_output,
         df_tiendas=df_api_clean_output
     )
 
     df_final_merged_output = data_merge_task(
-        df_airbnb=df_airbnb_clean_output, 
+        df_airbnb=df_airbnb_clean_output,
         df_operations=df_merged_operacional_output
     )
 
     prepared_dimensional_data_output = preparar_modelo_dimensional_task(
         df_merged_final=df_final_merged_output
     )
-    carga_dimensional_db_result = cargar_modelo_dimensional_task( 
+
+    cargar_modelo_dimensional_task(
         prepared_data_dictionary=prepared_dimensional_data_output
     )
 
-    kafka_producer_result = kafka_producer_task(
-        df_to_produce=df_final_merged_output
-    )
-    
-etl_dag_instance = etl_pipeline_with_kafka()
+etl_dag_instance = etl_pipeline()
